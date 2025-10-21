@@ -1,0 +1,12 @@
+blogs/*
+node_modules/
+dist/   
+.env
+.DS_Store
+.vscode/
+*.log
+.idea/
+*.iml
+coverage/
+*.tmp
+*.bak

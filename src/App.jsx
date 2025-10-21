@@ -1,0 +1,79 @@
+import { useEffect } from 'react';
+import { Box, Flex, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import Header from './components/Header.jsx';
+import Footer from './sections/Footer.jsx';
+import Home from './pages/Home.jsx';
+import Highlights from './pages/Highlights.jsx';
+import HighlightRandomWalk from './pages/HighlightRandomWalk.jsx';
+import HighlightBees from './pages/HighlightBees.jsx';
+import HighlightFutureReady from './pages/HighlightFutureReady.jsx';
+
+function ColorModeToggle() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const iconColor = useColorModeValue('gray.700', 'yellow.200');
+  const toggleBg = useColorModeValue('whiteAlpha.900', 'blackAlpha.500');
+  const border = useColorModeValue('rgba(148,163,184,0.35)', 'rgba(148,163,184,0.35)');
+
+  return (
+    <IconButton
+      aria-label="Toggle color mode"
+      icon={colorMode === 'light' ? <FaMoon /> : <FaSun />}
+      onClick={toggleColorMode}
+      bg={toggleBg}
+      border="1px solid"
+      borderColor={border}
+      color={iconColor}
+      size="lg"
+      position="fixed"
+      bottom={8}
+      right={8}
+      zIndex={10}
+      borderRadius="full"
+      boxShadow="xl"
+      _hover={{
+        transform: 'translateY(-2px)',
+        boxShadow: '2xl'
+      }}
+      _active={{
+        transform: 'translateY(0)'
+      }}
+    />
+  );
+}
+
+const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const { hash, pathname } = location;
+    if (hash) {
+      const target = document.getElementById(hash.replace('#', ''));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
+
+  return (
+    <Box minH="100vh" position="relative" display="flex" flexDirection="column">
+      <Header />
+      <Flex as="main" direction="column" flex="1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/highlights" element={<Highlights />} />
+          <Route path="/highlights/random-walk-of-the-penguins" element={<HighlightRandomWalk />} />
+          <Route path="/highlights/bees-health-detection" element={<HighlightBees />} />
+          <Route path="/highlights/future-ready-champions" element={<HighlightFutureReady />} />
+        </Routes>
+      </Flex>
+      <Footer />
+      <ColorModeToggle />
+    </Box>
+  );
+};
+
+export default App;
