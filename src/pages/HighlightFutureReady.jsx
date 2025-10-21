@@ -56,10 +56,10 @@ const pillars = [
     eyebrow: 'Winning Solution',
     title: 'Azure Agriculture Hub for inclusive growth.',
     description:
-      'Our Tata Consultancy Services team created a farmer-first assistant that fuses Azure AI with agronomy knowledge to deliver actionable insights.',
+      'Ambarish created a farmer-first assistant that fuses Azure AI with agronomy knowledge to deliver actionable insights.',
     bullets: [
-      'Aggregated weather, market, and agronomy data through Azure Cognitive Services and Azure Maps.',
-      'Multilingual conversational experiences powered by Azure OpenAI to guide farmers in daily decision-making.',
+      'Aggregated weather, market, and agronomy data through Azure Cognitive Services.',
+     
       'Data-driven crop planning, yield forecasts, and supply-chain coordination for cooperatives and government programs.'
     ]
   },
@@ -75,37 +75,10 @@ const pillars = [
   }
 ];
 
-const implementationSteps = [
-  'Complete Microsoft Cloud certification pathways to build a resilient Azure foundation.',
-  'Ideate around national priorities: agriculture, public services, smart infrastructure, sustainability.',
-  'Prototype cloud-native solutions using Azure AI, Data, IoT, and developer services.',
-  'Validate impact and scalability with mentors from Microsoft and industry partners.',
-  'Showcase solutions at forums like the Future Ready Technology Summit to drive adoption.'
-];
-
-const stats = [
-  {
-    value: '100K+',
-    label: 'Developers skilled through Future Ready Champions of Code'
-  },
-  {
-    value: 'Top honour',
-    label: 'Winning solution at the Future Ready Technology Summit'
-  },
-  {
-    value: '7.3M+ learners',
-    label: 'Broader Microsoft skilling ambition in India'
-  }
-];
-
 const resources = [
   {
     label: 'Microsoft press release',
     href: 'https://news.microsoft.com/en-in/microsoft-celebrates-future-ready-champions-of-code-with-over-100k-developers-and-technology-enthusiasts/'
-  },
-  {
-    label: 'Detailed blog recap',
-    href: '/blogs/future-ready-champions'
   },
   {
     label: 'Connect to collaborate',
@@ -121,215 +94,130 @@ const HighlightFutureReady = () => {
   const cardBg = useColorModeValue('whiteAlpha.900', 'rgba(15,23,42,0.85)');
   const imageBorder = useColorModeValue('rgba(148, 163, 184, 0.35)', 'rgba(148, 163, 184, 0.25)');
   const pillarBorderColor = useColorModeValue('brand.500', 'brand.300');
-  const statValueColor = useColorModeValue('brand.700', 'brand.200');
-  const implementationHeadingColor = useColorModeValue('brand.600', 'brand.300');
-  const quoteHighlightColor = useColorModeValue('brand.700', 'brand.200');
   const quoteAttributionColor = useColorModeValue('brand.600', 'brand.300');
-  const quoteBorderColor = useColorModeValue('brand.400', 'brand.500');
 
   return (
     <Box as="article">
       <Box
         bg={heroBg}
-        py={{ base: 16, md: 20 }}
-        borderBottom="1px solid"
-        borderColor="outline"
         position="relative"
         overflow="hidden"
+        borderBottom="1px solid"
+        borderColor="outline"
+        py={{ base: 16, md: 20 }}
       >
         <Box
           position="absolute"
-          top="-16"
-          right="-16"
-          width="52"
-          height="52"
+          top={{ base: '-10rem', md: '-12rem' }}
+          left={{ base: '-14rem', md: '-10rem' }}
+          w={{ base: '24rem', md: '28rem' }}
+          h={{ base: '24rem', md: '28rem' }}
           bg="linear-gradient(135deg, rgba(59,134,245,0.35) 0%, rgba(255,215,0,0.25) 100%)"
           borderRadius="full"
-          filter="blur(32px)"
-          opacity={0.7}
+          filter="blur(90px)"
+          opacity={0.85}
         />
         <Box
           position="absolute"
-          bottom="-20"
-          left="-24"
-          width="56"
-          height="56"
-          bg="linear-gradient(135deg, rgba(34,211,238,0.25) 0%, rgba(59,130,246,0.3) 100%)"
+          bottom={{ base: '-12rem', md: '-10rem' }}
+          right={{ base: '-14rem', md: '-12rem' }}
+          w={{ base: '26rem', md: '32rem' }}
+          h={{ base: '26rem', md: '32rem' }}
+          bg="linear-gradient(135deg, rgba(14,165,233,0.25) 0%, rgba(59,130,246,0.3) 100%)"
           borderRadius="full"
-          filter="blur(36px)"
-          opacity={0.5}
+          filter="blur(95px)"
+          opacity={0.6}
         />
         <Container maxW="6xl" position="relative" zIndex={1}>
-          <Grid
-            templateColumns={{ base: '1fr', lg: '7fr 5fr' }}
-            gap={{ base: 10, lg: 14 }}
-            alignItems="center"
-          >
-            <Stack spacing={{ base: 6, lg: 8 }} align="flex-start">
-              <Tag size="lg" colorScheme="brand" variant="subtle" px={4} py={2} borderRadius="full">
-                Microsoft India Showcase
-              </Tag>
-              <Heading size={{ base: 'xl', md: '2xl' }} maxW="3xl" lineHeight={1.05}>
-                {hero.title}
-              </Heading>
-              <Text fontSize={{ base: 'md', md: 'lg' }} maxW="3xl" color="subtleText">
-                {hero.subtitle}
-              </Text>
-              <Wrap spacing={2}>
-                {hero.tags.map((tag) => (
-                  <WrapItem key={tag}>
-                    <Badge colorScheme="brand" variant="subtle" px={3} py={1} borderRadius="full">
-                      {tag}
-                    </Badge>
-                  </WrapItem>
-                ))}
-              </Wrap>
-              <Stack direction={{ base: 'column', sm: 'row' }} spacing={3}>
-                <Button
-                  as="a"
-                  href={hero.primaryCta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  colorScheme="brand"
+          <Grid templateColumns={{ base: '1fr', lg: '7fr 5fr' }} gap={{ base: 12, lg: 16 }} alignItems="center">
+            <GridItem>
+              <Stack spacing={{ base: 6, lg: 8 }} maxW={{ base: 'full', md: 'lg' }}>
+                <Tag
                   size="lg"
-                  rightIcon={<ExternalLinkIcon />}
-                >
-                  {hero.primaryCta.label}
-                </Button>
-                <Button
-                  as={RouterLink}
-                  to={hero.secondaryCta.to}
-                  variant="outline"
-                  size="lg"
+                  variant="solid"
                   colorScheme="brand"
-                  rightIcon={<ArrowForwardIcon />}
+                  w="fit-content"
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  letterSpacing="0.06em"
                 >
-                  {hero.secondaryCta.label}
-                </Button>
+                  Microsoft India Showcase
+                </Tag>
+                <Heading size={{ base: 'xl', md: '2xl' }} lineHeight={1.1}>
+                  {hero.title}
+                </Heading>
+                <Text fontSize={{ base: 'md', md: 'lg' }} color="subtleText">
+                  {hero.subtitle}
+                </Text>
+                <Wrap spacing={2}>
+                  {hero.tags.map((tag) => (
+                    <WrapItem key={tag}>
+                      <Badge colorScheme="brand" variant="subtle" px={3} py={1} borderRadius="full">
+                        {tag}
+                      </Badge>
+                    </WrapItem>
+                  ))}
+                </Wrap>
+                <Stack direction={{ base: 'column', sm: 'row' }} spacing={3}>
+                  <Button
+                    as="a"
+                    href={hero.primaryCta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    colorScheme="brand"
+                    size="lg"
+                    rightIcon={<ExternalLinkIcon />}
+                  >
+                    {hero.primaryCta.label}
+                  </Button>
+                 
+                </Stack>
               </Stack>
-            </Stack>
-            <AspectRatio ratio={16 / 10}>
-              <Image
-                src={HERO_IMAGE}
-                fallbackSrc="https://via.placeholder.com/960x540.png?text=Future+Ready+Champions+of+Code"
-                alt="Future Ready Champions of Code celebration"
-                borderRadius="2xl"
-                border="1px solid"
-                borderColor={imageBorder}
-                objectFit="cover"
-                boxShadow="xl"
-              />
-            </AspectRatio>
+            </GridItem>
           </Grid>
-          <SimpleGrid
-            columns={{ base: 1, sm: 3 }}
-            spacing={{ base: 6, md: 8 }}
-            mt={{ base: 12, md: 16 }}
-          >
-            {stats.map((stat) => (
-              <Box
-                key={stat.label}
-                p={{ base: 4, md: 6 }}
-                border="1px solid"
-                borderColor="outline"
-                borderRadius="xl"
-                bg={cardBg}
-                boxShadow="md"
-              >
-                <Text fontSize="2xl" fontWeight="semibold" color={statValueColor}>
-                  {stat.value}
-                </Text>
-                <Text fontSize="sm" mt={1} color="subtleText">
-                  {stat.label}
-                </Text>
-              </Box>
-            ))}
-          </SimpleGrid>
         </Container>
       </Box>
 
       <Container maxW="6xl" py={{ base: 16, md: 20 }}>
-        <Grid templateColumns={{ base: '1fr', md: '7fr 5fr' }} gap={{ base: 12, md: 16 }}>
-          <GridItem>
-            {pillars.map((pillar) => (
+        <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={{ base: 8, md: 10 }} mb={16}>
+          {pillars.map((pillar) => (
+            <Box
+              key={pillar.title}
+              position="relative"
+              p={{ base: 6, md: 8 }}
+              bg={cardBg}
+              borderRadius="2xl"
+              boxShadow="xl"
+              borderLeftWidth="4px"
+              borderLeftColor={pillarBorderColor}
+            >
               <Box
-                key={pillar.title}
-                mb={{ base: 12, md: 16 }}
-                layerStyle="card"
-                p={{ base: 6, md: 8 }}
-                borderLeftWidth="4px"
-                borderLeftColor={pillarBorderColor}
-                boxShadow="lg"
-              >
-                <SectionHeading
-                  eyebrow={pillar.eyebrow}
-                  title={pillar.title}
-                  description={pillar.description}
-                />
-                <Stack spacing={3} mt={6}>
-                  {pillar.bullets.map((bullet) => (
-                    <Stack key={bullet} direction="row" spacing={3} align="flex-start">
-                      <Icon as={CheckCircleIcon} color="brand.400" boxSize={5} mt={1} />
-                      <Text color="subtleText">{bullet}</Text>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Box>
-            ))}
-          </GridItem>
+                position="absolute"
+                insetX={0}
+                top={0}
+                h="3px"
+                bgGradient="linear(to-r, brand.400, brand.200)"
+              />
+              <SectionHeading
+                eyebrow={pillar.eyebrow}
+                title={pillar.title}
+                description={pillar.description}
+              />
+              <Stack spacing={3} mt={6}>
+                {pillar.bullets.map((bullet) => (
+                  <Stack direction="row" spacing={3} align="flex-start" key={bullet}>
+                    <Icon as={CheckCircleIcon} color="brand.400" boxSize={5} mt={1} />
+                    <Text color="subtleText">{bullet}</Text>
+                  </Stack>
+                ))}
+              </Stack>
+            </Box>
+          ))}
+        </SimpleGrid>
+        <Divider borderColor="outline" />
 
-          <GridItem>
-            <Stack spacing={8}>
-              <Box layerStyle="card" p={{ base: 4, md: 6 }} boxShadow="xl">
-                <AspectRatio ratio={4 / 3}>
-                  <Image
-                    src={HERO_IMAGE}
-                    fallbackSrc="https://via.placeholder.com/960x540.png?text=Future+Ready+Champions+of+Code"
-                    alt="Future Ready Champions of Code celebration"
-                    borderRadius="2xl"
-                    border="1px solid"
-                    borderColor={imageBorder}
-                    objectFit="cover"
-                  />
-                </AspectRatio>
-              </Box>
-              <Box layerStyle="subtleCard" p={{ base: 6, md: 8 }} boxShadow="md">
-                <Heading size="sm" color={implementationHeadingColor} mb={4}>
-                  Implementation Playbook
-                </Heading>
-                <Stack spacing={3} color="subtleText" fontSize="sm">
-                  {implementationSteps.map((step) => (
-                    <Stack key={step} direction="row" spacing={3} align="flex-start">
-                      <Icon as={CheckCircleIcon} color="brand.400" boxSize={4} mt={1} />
-                      <Text>{step}</Text>
-                    </Stack>
-                  ))}
-                </Stack>
-              </Box>
-              <Box
-                layerStyle="subtleCard"
-                p={{ base: 6, md: 8 }}
-                borderLeft="4px solid"
-                borderColor={quoteBorderColor}
-                boxShadow="md"
-              >
-                <Text fontStyle="italic" color={quoteHighlightColor}>
-                  "Future Ready Champions of Code shows how inclusive skilling and purposeful innovation can
-                  accelerate digital transformation for every community."
-                </Text>
-                <Text mt={4} fontWeight="semibold" color={quoteAttributionColor}>
-                  Program Mentorship Cohort
-                </Text>
-                <Text fontSize="sm" color="subtleText">
-                  Microsoft India &amp; Tata Consultancy Services
-                </Text>
-              </Box>
-            </Stack>
-          </GridItem>
-        </Grid>
-
-        <Divider my={{ base: 16, md: 20 }} borderColor="outline" />
-
+        {/* Resources Section */}
         <SectionHeading
           eyebrow="Resources"
           title="Keep the momentum going."
@@ -356,19 +244,21 @@ const HighlightFutureReady = () => {
           })}
         </Stack>
 
+        {/* Explore More Highlights Footer */}
         <Box
           mt={{ base: 16, md: 20 }}
           layerStyle="subtleCard"
           p={{ base: 6, md: 8 }}
+          borderRadius="2xl"
+          boxShadow="lg"
           display="flex"
           flexDirection={{ base: 'column', md: 'row' }}
-          justifyContent="space-between"
           alignItems={{ base: 'flex-start', md: 'center' }}
+          justifyContent="space-between"
           gap={6}
-          boxShadow="md"
         >
           <Box>
-            <Heading size="sm" color={quoteAttributionColor} mb={2}>
+            <Heading size="md" mb={2} color={quoteAttributionColor}>
               Explore more highlights
             </Heading>
             <Text color="subtleText" maxW="lg">
@@ -383,6 +273,8 @@ const HighlightFutureReady = () => {
             px={5}
             py={3}
             borderRadius="full"
+            fontSize="md"
+            cursor="pointer"
           >
             Back to Highlights
           </Tag>

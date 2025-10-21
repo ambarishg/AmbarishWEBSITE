@@ -19,6 +19,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { hero } from '../data/profile.js';
+import heroAvatar from '../../images/AG.jpg';
 
 const Hero = () => {
   const accent = useColorModeValue('brand.600', 'brand.300');
@@ -188,6 +189,7 @@ const Hero = () => {
               <Flex layerStyle="subtleCard" align="center" gap={4} p={{ base: 5, md: 6 }}>
                 <Avatar
                   size="xl"
+                  src={heroAvatar}
                   name={hero.name}
                   bg="brand.500"
                   color="white"
