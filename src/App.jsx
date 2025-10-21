@@ -9,6 +9,8 @@ import Highlights from './pages/Highlights.jsx';
 import HighlightRandomWalk from './pages/HighlightRandomWalk.jsx';
 import HighlightBees from './pages/HighlightBees.jsx';
 import HighlightFutureReady from './pages/HighlightFutureReady.jsx';
+import HighlightAzureBlogathon from './pages/HighlightAzureBlogathon.jsx';
+import HighlightAzureBlogathonCassava from './pages/HighlightAzureBlogathonCassava.jsx';
 
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -68,6 +70,8 @@ const App = () => {
           <Route path="/highlights/random-walk-of-the-penguins" element={<HighlightRandomWalk />} />
           <Route path="/highlights/bees-health-detection" element={<HighlightBees />} />
           <Route path="/highlights/future-ready-champions" element={<HighlightFutureReady />} />
+          <Route path="/highlights/azure-blogathon-champion" element={<HighlightAzureBlogathon />} />
+          <Route path="/highlights/azure-blogathon-cassava" element={<HighlightAzureBlogathonCassava />} />
         </Routes>
       </Flex>
       <Footer />

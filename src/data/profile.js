@@ -158,8 +158,12 @@ export const achievements = [
         tags: ['Microsoft', 'Azure', 'Hackathon']
       },
       {
-        description: 'Azure Blogathon champion (two-time winner).',
-        tags: ['Azure', 'Developer Community', 'Content']
+        description: 'Azure Blogathon Winner – Enterprise architecture storytelling.',
+        tags: ['Azure Blogathon', 'Developer Community', 'Content']
+      },
+      {
+        description: 'Azure Blogathon Winner – Cassava Leaf Disease Detection case study.',
+        tags: ['Azure Blogathon', 'Azure AI', 'Agritech']
       },
       {
         description:

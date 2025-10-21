@@ -34,6 +34,18 @@ const linkForHighlight = (description) => {
       to: '/highlights/future-ready-champions'
     };
   }
+  if (description.includes('Enterprise architecture storytelling')) {
+    return {
+      label: 'Read the Azure Blogathon case study >',
+      to: '/highlights/azure-blogathon-champion'
+    };
+  }
+  if (description.includes('Cassava Leaf Disease Detection')) {
+    return {
+      label: 'Read the Cassava case study >',
+      to: '/highlights/azure-blogathon-cassava'
+    };
+  }
   return null;
 };
 
