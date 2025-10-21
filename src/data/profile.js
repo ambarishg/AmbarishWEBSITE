@@ -24,7 +24,8 @@ export const hero = {
 export const summary = [
   'Hands-on leader guiding enterprise innovation across Utilities Data & Analytics, Cloud, Energy Trading, and Risk Management.',
   'Trusted mentor for large transformation programs spanning customer care, billing, and field service ecosystems.',
-  'Over 25 years translating critical business goals into resilient data platforms and AI experiences.'
+  'Over 25 years translating critical business goals into resilient data platforms and AI experiences.',
+  'Grounded in a formal academic blend—a B.Sc (Hons) in Physics from St. Xavier\'s College and a B.Tech in Computer Science & Engineering from the University of Calcutta—that fuses analytical rigor with engineering execution.'
 ];
 
 export const experiences = [
