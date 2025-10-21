@@ -145,15 +145,6 @@ export const achievements = [
         tags: ['Azure', 'Computer Vision', 'Agritech', 'Microsoft']
       },
       {
-        description:
-          'Kaggle Kernel Master with multiple Kernel Awards including Kiva Crowdfunding and DonorsChoose.org challenges.',
-        tags: ['Kaggle', 'Machine Learning', 'Social Impact']
-      },
-      {
-        description: 'DST Geospatial Hackathon 2023 Winner.',
-        tags: ['Geospatial', 'Government of India', 'Hackathon']
-      },
-      {
         description: 'Future Ready Champions of Code - Microsoft Hackathon (1st Prize).',
         tags: ['Microsoft', 'Azure', 'Hackathon']
       },
@@ -167,9 +158,18 @@ export const achievements = [
       },
       {
         description:
+          'Kaggle Kernel Master with multiple Kernel Awards including Kiva Crowdfunding and DonorsChoose.org challenges.',
+        tags: ['Kaggle', 'Machine Learning', 'Social Impact']
+      },
+      {
+        description:
           'Kaggle Weekly Kernel Award and Themed Kernel Winner (Spooky Author Competition).',
         tags: ['Kaggle', 'NLP', 'Kernel Award']
-      }
+      },
+      {
+        description: 'DST Geospatial Hackathon 2023 Winner.',
+        tags: ['Geospatial', 'Government of India', 'Hackathon']
+      },
     ]
   },
 
