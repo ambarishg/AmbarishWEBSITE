@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { label: 'Experience', to: { pathname: '/', hash: '#experience' } },
   { label: 'Case Studies', to: '/highlights' },
   { label: 'Credentials', to: { pathname: '/', hash: '#credentials' } },
-  { label: 'Blogs', href: 'https://ambarish.hashnode.dev' }
+  { label: 'Blogs', href: 'https://blog.ambarishganguly.com' }
 ];
 
 const Header = () => {
