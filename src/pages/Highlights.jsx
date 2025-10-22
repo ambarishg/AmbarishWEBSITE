@@ -46,6 +46,12 @@ const linkForHighlight = (description) => {
       to: '/highlights/azure-blogathon-cassava'
     };
   }
+  if (description.includes('DST Geospatial Hackathon 2023 Winner')) {
+    return {
+      label: 'Explore the Socio Economic Hub story >',
+      to: '/highlights/dst-geospatial-hackathon'
+    };
+  }
   return null;
 };
 
