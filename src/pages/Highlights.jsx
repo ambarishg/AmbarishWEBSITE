@@ -34,7 +34,7 @@ const linkForHighlight = (description) => {
       to: '/highlights/future-ready-champions'
     };
   }
-  if (description.includes('Enterprise architecture storytelling')) {
+  if (description.includes('Recommendation engine for careers with an Enterprise Architecture')) {
     return {
       label: 'Read the Azure Blogathon case study >',
       to: '/highlights/azure-blogathon-champion'
