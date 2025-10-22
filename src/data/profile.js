@@ -150,7 +150,7 @@ export const achievements = [
         tags: ['Microsoft', 'Azure', 'Hackathon']
       },
       {
-        description: 'Azure Blogathon Winner – Enterprise architecture storytelling.',
+        description: 'Azure Blogathon Winner – Recommendation engine for careers with an Enterprise Architecture.',
         tags: ['Azure Blogathon', 'Developer Community', 'Content']
       },
       {
