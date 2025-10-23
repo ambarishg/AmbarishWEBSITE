@@ -40,6 +40,12 @@ const linkForHighlight = (description) => {
       to: '/highlights/donors-choose-recommendation'
     };
   }
+  if (description.includes('Kiva Crowd Funding Data Challenge')) {
+    return {
+      label: 'Explore the Kiva analytics story >',
+      to: '/highlights/kiva-crowdfunding-analysis'
+    };
+  }
   if (description.includes('Recommendation engine for careers with an Enterprise Architecture')) {
     return {
       label: 'Read the Azure Blogathon case study >',

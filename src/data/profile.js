@@ -164,7 +164,7 @@ export const achievements = [
       },
       {
         description:
-          'Kaggle Kernel Master with multiple Kernel Awards including Kiva Crowdfunding and DonorsChoose.org challenges.',
+          'Kiva Crowd Funding Data Challenge - Data Analysis Award for insights on social impact lending.',
         tags: ['Kaggle', 'Machine Learning', 'Social Impact']
       },
       {
