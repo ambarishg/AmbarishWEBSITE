@@ -226,7 +226,7 @@ export const achievements = [
 ];
 
 export const certifications = [
-  'Microsoft Certified: Azure Data Engineer Associate',
+  'Microsoft Certified: Azure AI Engineer Associate',
   'Microsoft Certified: Azure Machine Learning Associate',
   'Data Engineering with Google Cloud Specialization',
   'Foundations of Marketing Analytics - ESSEC Business School',
