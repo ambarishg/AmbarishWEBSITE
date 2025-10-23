@@ -8,6 +8,7 @@ import {
   ListItem,
   Stack,
   Tag,
+  Text,
   Wrap,
   useColorModeValue
 } from '@chakra-ui/react';
@@ -19,6 +20,7 @@ import { achievements } from '../data/profile.js';
 const Achievements = () => {
   const accent = useColorModeValue('brand.500', 'brand.300');
   const textColor = useColorModeValue('gray.700', 'gray.200');
+  const subtle = useColorModeValue('gray.600', 'gray.400');
 
   return (
     <Box id="highlights" py={{ base: 16, md: 20 }}>
@@ -45,6 +47,11 @@ const Achievements = () => {
               >
                 {group.category}
               </Heading>
+              {group.description ? (
+                <Text color={subtle} mb={4}>
+                  {group.description}
+                </Text>
+              ) : null}
               <List spacing={2}>
                 {group.items.map((item) => {
                   const description =

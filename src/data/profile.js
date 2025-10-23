@@ -133,7 +133,9 @@ export const experiences = [
 
 export const achievements = [
   {
-    category: 'Competitions & Recognition',
+    category: 'Climate & Agritech',
+    description:
+      'AI and analytics that protect ecosystems, strengthen food security, and advance responsible field operations.',
     items: [
       {
         description:
@@ -141,56 +143,83 @@ export const achievements = [
         tags: ['Data Science', 'NASA', 'DrivenData', 'Climate']
       },
       {
+        description: 'Agriculture Hub - Future Ready Champions of Code - Microsoft Hackathon (1st Prize).',
+        tags: ['Agritech','Microsoft', 'Azure', 'Hackathon']
+      },
+      {
         description:
           'Bees health detection solution on Microsoft Azure showcased by Microsoft India.',
         tags: ['Azure', 'Computer Vision', 'Agritech', 'Microsoft']
       },
       {
-        description: 'Future Ready Champions of Code - Microsoft Hackathon (1st Prize).',
-        tags: ['Microsoft', 'Azure', 'Hackathon']
+        description: 'Azure Blogathon Winner - Cassava Leaf Disease Detection case study.',
+        tags: ['Azure Blogathon', 'Azure AI', 'Agritech']
       },
+
+    ]
+  },
+  {
+    category: 'Recommendation Systems',
+    description:
+      'Personalised AI experiences that connect donors, learners, and stakeholders with the opportunities that matter most.',
+    items: [
       {
         description:
           'DonorsChoose.org Recommendation Challenge - Stage 1 Exploratory Analysis Winner & Stage 2 Recommendation Award.',
         tags: ['Kaggle', 'Recommendation Systems', 'Education']
       },
       {
-        description: 'Azure Blogathon Winner – Recommendation engine for careers with an Enterprise Architecture.',
-        tags: ['Azure Blogathon', 'Developer Community', 'Content']
+        description:
+          'Azure Blogathon Winner - Recommendation engine for careers with an Enterprise Architecture.',
+        tags: ['Azure Blogathon', 'Developer Community', 'Content', 'Recommendation Systems']
       },
+      
+    ]
+  },
+  {
+    category: 'Geospatial Intelligence',
+    description:
+      'Geo-analytics programs guiding infrastructure planning and socio-economic development.',
+    items: [
       {
-        description: 'Azure Blogathon Winner – Cassava Leaf Disease Detection case study.',
-        tags: ['Azure Blogathon', 'Azure AI', 'Agritech']
-      },
+        description: 'DST Geospatial Hackathon 2023 Winner.',
+        tags: ['Geospatial', 'Government of India', 'Hackathon']
+      }
+    ]
+  },
+  {
+    category: 'Mixed Impact',
+    description:
+      'Cross-industry hackathons, award-winning analyses, and publications that sustain community leadership.',
+    items: [
       {
         description:
           'Kiva Crowd Funding Data Challenge - Data Analysis Award for insights on social impact lending.',
         tags: ['Kaggle', 'Machine Learning', 'Social Impact']
       },
+      
       {
         description:
           'Kaggle Weekly Kernel Award and Themed Kernel Winner (Spooky Author Competition).',
-        tags: ['Kaggle', 'NLP', 'Kernel Award']
+        tags: ['Kaggle', 'NLP', 'Kernel Award', 'Data Analysis']
       },
-      {
-        description: 'DST Geospatial Hackathon 2023 Winner.',
-        tags: ['Geospatial', 'Government of India', 'Hackathon']
-      },
+     
     ]
   },
-
   {
-    category: 'Publications',
+    category: 'Publications ',
+    description:
+      'Publications and conference presentations that share knowledge and advance the state of the art.',
     items: [
-      '"Predicting the future is hard" - Lessons from population time series forecasting competitions.',
-      '"Histopathological Image and Lymphoma Image Classification" - Custom deep learning with advanced optimization.'
+     'Predicting the future is hard - Lessons from population time series forecasting competitions.',
+      'Histopathological Image and Lymphoma Image Classification - Custom deep learning with advanced optimization.'
     ]
   }
 ];
 
 export const certifications = [
-  'DonorsChoose.org Recommendation Project (Two Awards)',
   'Microsoft Certified: Azure Data Engineer Associate',
+  'Microsoft Certified: Azure Machine Learning Associate',
   'Data Engineering with Google Cloud Specialization',
   'Foundations of Marketing Analytics - ESSEC Business School',
   'AI for Medical Prognosis',
@@ -248,5 +277,7 @@ export const blogs = [
     actionLabel: 'Read on Hashnode'
   }
 ];
+
+
 
 
