@@ -118,7 +118,8 @@ const Highlights = () => {
   const dividerColor = useColorModeValue('rgba(226,232,240,0.7)', 'rgba(74,85,104,0.55)');
   const ctaBg = useColorModeValue('rgba(244,249,255,0.92)', 'rgba(30,41,59,0.88)');
   const ctaHoverBg = useColorModeValue('rgba(231,244,255,0.96)', 'rgba(45,55,72,0.9)');
-  const ctaBorder = useColorModeValue('rgba(99,102,241,0.35)', 'rgba(147,197,253,0.45)');
+  const ctaBorder = useColorModeValue('rgba(37,99,235,0.75)', 'rgba(165,180,252,0.85)');
+  const ctaHoverBorder = useColorModeValue('rgba(30,64,175,0.9)', 'rgba(191,219,254,0.95)');
   const ctaText = useColorModeValue('brand.600', 'brand.200');
   const ctaShadow = useColorModeValue(
     '0 16px 35px -24px rgba(59,130,246,0.55)',
@@ -376,12 +377,13 @@ const Highlights = () => {
                                 alignSelf="flex-start"
                                 bg={ctaBg}
                                 color={ctaText}
-                                border="1px solid"
+                                borderWidth="2px"
                                 borderColor={ctaBorder}
                                 boxShadow={ctaShadow}
                                 backdropFilter="blur(6px)"
                                 _hover={{
                                   bg: ctaHoverBg,
+                                  borderColor: ctaHoverBorder,
                                   boxShadow: ctaShadow,
                                   textDecoration: 'none',
                                   transform: 'translateY(-1px)'
