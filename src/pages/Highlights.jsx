@@ -66,6 +66,12 @@ const linkForHighlight = (description) => {
       to: '/highlights/african-conflicts-visualisation'
     };
   }
+  if (description.includes('Center for Policing Equity (CPE) Hackathon Winner')) {
+    return {
+      label: 'See the policing equity insights >',
+      to: '/highlights/cpe-equity-visualisation'
+    };
+  }
   if (description.includes('DST Geospatial Hackathon 2023 Winner')) {
     return {
       label: 'Explore the Socio Economic Hub story >',

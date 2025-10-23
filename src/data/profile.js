@@ -184,6 +184,10 @@ export const achievements = [
       {
         description: 'DST Geospatial Hackathon 2023 Winner.',
         tags: ['Geospatial', 'Government of India', 'Hackathon']
+      },
+      {
+        description: 'The Center for Policing Equity (CPE) Hackathon Winner.',
+        tags: ['Geospatial', 'Hackathon']
       }
     ]
   },
@@ -207,7 +211,7 @@ export const achievements = [
           'Kaggle Themed Kernel Winner (Spooky Author Competition).',
         tags: ['Kaggle', 'NLP', 'Kernel Award', 'Data Analysis']
       },
-     
+
     ]
   },
   {

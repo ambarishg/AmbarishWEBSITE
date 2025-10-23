@@ -1,0 +1,13 @@
+The Center for Policing Equity (CPE) is research scientists, race and equity experts, data virtuosos, and community trainers working together to build more fair and just systems. Data and science are our tools; law enforcement and communities are our partners. Our aim is to bridge the divide created by communication problems, suffering and generational mistrust, and forge a path towards public safety, community trust, and racial equity.
+
+Police departments across the United States have joined our National Justice Database, the first and largest collection of standardized police behavioral data. In exchange for unprecedented access to their records (such as use of force incidents, vehicle stops, pedestrian stops, calls for service, and crime data), our scientists use advanced analytics to diagnose disparities in policing, shed light on police behavior, and provide actionable recommendations. Our highly-detailed custom reports help police departments improve public safety, restore trust, and do their work in a way that aligns with their own values.
+
+# Problem Statement
+How do you measure justice? And how do you solve the problem of racism in policing? We look for factors that drive racial disparities in policing by analyzing census and police department deployment data. The ultimate goal is to inform police agencies where they can make improvements by identifying deployment areas where racial disparities exist and are not explainable by crime rates and poverty levels.
+
+Our biggest challenge is automating the combination of police data, census-level data, and other socioeconomic factors. Shapefiles are unusual and messy -- which makes it difficult to, for instance, generate maps of police behavior with precinct boundary layers mixed with census layers. Police incident data are also very difficult to normalize and standardize across departments since there are no federal standards for data collection
+
+# Solution and Winning Approach
+This submission highlights confounding variables by visualizing mapped census data side by side. It demonstrates why applying policies uniformly across a jurisdiction is not always effective, even within a single precinct where race and income variables can vary greatly. This analysis uses intensive data cleaning, geospatial joins, and visualizations to highlight these disparities.
+
+https://www.kaggle.com/ambarish/very-detailed-analysis-of-cpe-and-automation
