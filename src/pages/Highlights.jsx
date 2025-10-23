@@ -34,6 +34,12 @@ const linkForHighlight = (description) => {
       to: '/highlights/future-ready-champions'
     };
   }
+  if (description.includes('DonorsChoose.org Recommendation Challenge')) {
+    return {
+      label: 'Explore the DonorsChoose.org story >',
+      to: '/highlights/donors-choose-recommendation'
+    };
+  }
   if (description.includes('Recommendation engine for careers with an Enterprise Architecture')) {
     return {
       label: 'Read the Azure Blogathon case study >',

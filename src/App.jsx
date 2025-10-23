@@ -12,6 +12,7 @@ import HighlightFutureReady from './pages/HighlightFutureReady.jsx';
 import HighlightAzureBlogathon from './pages/HighlightAzureBlogathon.jsx';
 import HighlightAzureBlogathonCassava from './pages/HighlightAzureBlogathonCassava.jsx';
 import HighlightDSTGeospatial from './pages/HighlightDSTGeospatial.jsx';
+import HighlightDonorsChoose from './pages/HighlightDonorsChoose.jsx';
 
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -74,6 +75,7 @@ const App = () => {
           <Route path="/highlights/azure-blogathon-champion" element={<HighlightAzureBlogathon />} />
           <Route path="/highlights/azure-blogathon-cassava" element={<HighlightAzureBlogathonCassava />} />
           <Route path="/highlights/dst-geospatial-hackathon" element={<HighlightDSTGeospatial />} />
+          <Route path="/highlights/donors-choose-recommendation" element={<HighlightDonorsChoose />} />
         </Routes>
       </Flex>
       <Footer />

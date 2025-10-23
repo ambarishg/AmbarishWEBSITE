@@ -150,6 +150,11 @@ export const achievements = [
         tags: ['Microsoft', 'Azure', 'Hackathon']
       },
       {
+        description:
+          'DonorsChoose.org Recommendation Challenge - Stage 1 Exploratory Analysis Winner & Stage 2 Recommendation Award.',
+        tags: ['Kaggle', 'Recommendation Systems', 'Education']
+      },
+      {
         description: 'Azure Blogathon Winner – Recommendation engine for careers with an Enterprise Architecture.',
         tags: ['Azure Blogathon', 'Developer Community', 'Content']
       },
@@ -184,6 +189,7 @@ export const achievements = [
 ];
 
 export const certifications = [
+  'DonorsChoose.org Recommendation Project (Two Awards)',
   'Microsoft Certified: Azure Data Engineer Associate',
   'Data Engineering with Google Cloud Specialization',
   'Foundations of Marketing Analytics - ESSEC Business School',
