@@ -197,10 +197,14 @@ export const achievements = [
           'Kiva Crowd Funding Data Challenge - Data Analysis Award for insights on social impact lending.',
         tags: ['Kaggle', 'Machine Learning', 'Social Impact']
       },
-      
       {
         description:
-          'Kaggle Weekly Kernel Award and Themed Kernel Winner (Spooky Author Competition).',
+          'Kaggle Weekly Kernel Award on African Conflicts Data Visualization',
+        tags: ['Kaggle', 'Kernel Award', 'Data Analysis']
+      },
+      {
+        description:
+          'Kaggle Themed Kernel Winner (Spooky Author Competition).',
         tags: ['Kaggle', 'NLP', 'Kernel Award', 'Data Analysis']
       },
      

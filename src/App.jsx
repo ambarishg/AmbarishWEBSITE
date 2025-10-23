@@ -14,6 +14,7 @@ import HighlightAzureBlogathonCassava from './pages/HighlightAzureBlogathonCassa
 import HighlightDSTGeospatial from './pages/HighlightDSTGeospatial.jsx';
 import HighlightDonorsChoose from './pages/HighlightDonorsChoose.jsx';
 import HighlightKiva from './pages/HighlightKiva.jsx';
+import HighlightAfricanConflicts from './pages/HighlightAfricanConflicts.jsx';
 
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -78,6 +79,7 @@ const App = () => {
           <Route path="/highlights/dst-geospatial-hackathon" element={<HighlightDSTGeospatial />} />
           <Route path="/highlights/donors-choose-recommendation" element={<HighlightDonorsChoose />} />
           <Route path="/highlights/kiva-crowdfunding-analysis" element={<HighlightKiva />} />
+          <Route path="/highlights/african-conflicts-visualisation" element={<HighlightAfricanConflicts />} />
         </Routes>
       </Flex>
       <Footer />

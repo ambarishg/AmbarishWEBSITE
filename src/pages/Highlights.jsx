@@ -60,6 +60,12 @@ const linkForHighlight = (description) => {
       to: '/highlights/azure-blogathon-cassava'
     };
   }
+  if (description.includes('Kaggle Weekly Kernel Award on African Conflicts Data Visualization')) {
+    return {
+      label: 'Explore the African Conflicts visualisation >',
+      to: '/highlights/african-conflicts-visualisation'
+    };
+  }
   if (description.includes('DST Geospatial Hackathon 2023 Winner')) {
     return {
       label: 'Explore the Socio Economic Hub story >',
