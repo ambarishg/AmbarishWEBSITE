@@ -169,7 +169,7 @@ const Highlights = () => {
         bg={heroBg}
         borderBottom="1px solid"
         borderColor="outline"
-        py={{ base: 16, md: 24 }}
+        py={{ base: 14, md: 24 }}
       >
         <Box
           position="absolute"
@@ -179,6 +179,7 @@ const Highlights = () => {
           h={{ base: '320px', md: '420px' }}
           bgGradient="radial(rgba(99,102,241,0.35), transparent 65%)"
           filter="blur(6px)"
+          display={{ base: 'none', md: 'block' }}
         />
         <Box
           position="absolute"
@@ -188,9 +189,10 @@ const Highlights = () => {
           h={{ base: '260px', md: '320px' }}
           bgGradient="radial(rgba(59,130,246,0.35), transparent 70%)"
           filter="blur(8px)"
+          display={{ base: 'none', md: 'block' }}
         />
         <Container maxW="6xl" position="relative">
-          <Stack spacing={{ base: 8, md: 10 }} align="flex-start">
+          <Stack spacing={{ base: 8, md: 10 }} align={{ base: 'stretch', md: 'flex-start' }}>
             <Breadcrumb fontSize="sm" separator="/" color={breadcrumbColor}>
               <BreadcrumbItem>
                 <BreadcrumbLink as={RouterLink} to="/">
@@ -204,8 +206,8 @@ const Highlights = () => {
             <Stack
               spacing={{ base: 4, md: 3 }}
               maxW="3xl"
-              align={{ base: 'center', md: 'flex-start' }}
-              textAlign={{ base: 'center', md: 'left' }}
+              align={{ base: 'flex-start', md: 'flex-start' }}
+              textAlign="left"
             >
               <Tag
                 size="sm"
@@ -219,17 +221,17 @@ const Highlights = () => {
               >
                 Impact Portfolio
               </Tag>
-              <Heading size={{ base: 'xl', md: '2xl' }} color={headingColor} lineHeight={1.1}>
+              <Heading size={{ base: 'lg', md: '2xl' }} color={headingColor} lineHeight={{ base: 1.2, md: 1.1 }}>
                 Recognitions across climate, recommendations, geospatial, and community impact.
               </Heading>
-              <Text color={subtle} fontSize={{ base: 'md', md: 'lg' }}>
+              <Text color={subtle} fontSize={{ base: 'md', md: 'lg' }} maxW={{ base: 'full', md: '2xl' }}>
                 Explore how award-winning analytics, responsible AI, and open collaboration have delivered measurable
                 outcomes for conservation, education, national missions, and developer ecosystems.
               </Text>
             </Stack>
             <SimpleGrid
-              columns={{ base: 1, sm: 2, xl: 3 }}
-              spacing={{ base: 4, lg: 6 }}
+              columns={{ base: 1, md: 2, xl: 3 }}
+              spacing={{ base: 4, md: 5, xl: 6 }}
               w="full"
               pt={{ base: 2, md: 4 }}
             >
@@ -240,7 +242,7 @@ const Highlights = () => {
                   border="1px solid"
                   borderColor={statBorder}
                   borderRadius="lg"
-                  px={{ base: 5, md: 6 }}
+                  px={{ base: 4, md: 6 }}
                   py={{ base: 5, md: 6 }}
                   boxShadow="0 18px 40px -25px rgba(59,130,246,0.55)"
                 >
@@ -260,8 +262,8 @@ const Highlights = () => {
         </Container>
       </Box>
 
-      <Container maxW="6xl" py={{ base: 16, md: 20 }}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 8, md: 10 }}>
+      <Container maxW="6xl" py={{ base: 14, md: 20 }}>
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, lg: 10 }}>
           {achievements.map((group) => (
             <Box
               key={group.category}
@@ -270,7 +272,7 @@ const Highlights = () => {
               border="1px solid"
               borderColor={border}
               borderRadius="28px"
-              p={{ base: 7, md: 9 }}
+              p={{ base: 6, md: 8, xl: 9 }}
               boxShadow={cardShadow}
               backdropFilter="blur(14px)"
               zIndex={0}
@@ -348,7 +350,7 @@ const Highlights = () => {
                             bg={iconBg}
                             borderRadius="full"
                             p={2.5}
-                            alignSelf={{ base: 'center', sm: 'flex-start' }}
+                            alignSelf="flex-start"
                             flexShrink={0}
                           >
                             <Icon as={CheckCircleIcon} color={iconColor} boxSize={5} />
@@ -356,14 +358,15 @@ const Highlights = () => {
                           <Stack
                             spacing={3}
                             flex="1"
-                            align={{ base: 'center', sm: 'flex-start' }}
-                            textAlign={{ base: 'center', sm: 'left' }}
+                            align="flex-start"
+                            textAlign="left"
+                            w="full"
                           >
                             <Text color={bodyColor} fontWeight="semibold" lineHeight={1.6}>
                               {description}
                             </Text>
                             {tags.length ? (
-                              <Wrap spacing={2} justify={{ base: 'center', sm: 'flex-start' }}>
+                              <Wrap spacing={2} justify="flex-start">
                                 {tags.map((tag) => (
                                   <Tag
                                     key={`${description}-${tag}`}
@@ -386,7 +389,7 @@ const Highlights = () => {
                                 borderRadius="full"
                                 px={5}
                                 fontWeight="semibold"
-                                alignSelf={{ base: 'center', sm: 'flex-start' }}
+                                alignSelf="flex-start"
                                 bg={ctaBg}
                                 color={ctaText}
                                 borderWidth="2px"
