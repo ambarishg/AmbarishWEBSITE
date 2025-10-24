@@ -3,6 +3,7 @@ import {
   Box,
   Container,
   Heading,
+  Link,
   List,
   ListIcon,
   ListItem,
@@ -11,6 +12,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
+import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
 import { experiences } from '../data/profile.js';
 
@@ -18,6 +20,8 @@ const Experience = () => {
   const accent = useColorModeValue('brand.500', 'brand.300');
   const divider = useColorModeValue('rgba(59,134,245,0.2)', 'rgba(59,134,245,0.35)');
   const subtle = useColorModeValue('gray.600', 'gray.400');
+  const academyLinkColor = useColorModeValue('brand.700', 'brand.200');
+  const academyHoverColor = useColorModeValue('brand.600', 'brand.300');
 
   return (
     <Box
@@ -53,7 +57,20 @@ const Experience = () => {
                 rounded="full"
               />
               <Stack spacing={2} mb={8} pl={{ base: 5, md: 8 }}>
-                <Heading size="md">{experience.company}</Heading>
+                <Heading size="md">
+                  {experience.company === 'Ambarish Ganguly Academy' ? (
+                    <Link
+                      as={RouterLink}
+                      to="/ag-academy"
+                      color={academyLinkColor}
+                      _hover={{ textDecoration: 'none', color: academyHoverColor }}
+                    >
+                      {experience.company}
+                    </Link>
+                  ) : (
+                    experience.company
+                  )}
+                </Heading>
                 <Text color="subtleText">{experience.location}</Text>
                 <Badge
                   colorScheme="brand"
