@@ -201,7 +201,12 @@ const Highlights = () => {
                 <BreadcrumbLink>Highlights</BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
-            <Stack spacing={3} maxW="3xl">
+            <Stack
+              spacing={{ base: 4, md: 3 }}
+              maxW="3xl"
+              align={{ base: 'center', md: 'flex-start' }}
+              textAlign={{ base: 'center', md: 'left' }}
+            >
               <Tag
                 size="sm"
                 colorScheme="brand"
@@ -223,8 +228,8 @@ const Highlights = () => {
               </Text>
             </Stack>
             <SimpleGrid
-              columns={{ base: 1, sm: 3 }}
-              spacing={{ base: 4, md: 6 }}
+              columns={{ base: 1, sm: 2, xl: 3 }}
+              spacing={{ base: 4, lg: 6 }}
               w="full"
               pt={{ base: 2, md: 4 }}
             >
@@ -330,8 +335,8 @@ const Highlights = () => {
                     return (
                       <Box key={description}>
                         <Stack
-                          direction="row"
-                          spacing={4}
+                          direction={{ base: 'column', sm: 'row' }}
+                          spacing={{ base: 3, md: 4 }}
                           align="flex-start"
                           bg={itemBg}
                           border="1px solid"
@@ -343,15 +348,22 @@ const Highlights = () => {
                             bg={iconBg}
                             borderRadius="full"
                             p={2.5}
+                            alignSelf={{ base: 'center', sm: 'flex-start' }}
+                            flexShrink={0}
                           >
                             <Icon as={CheckCircleIcon} color={iconColor} boxSize={5} />
                           </Box>
-                          <Stack spacing={3} flex="1">
+                          <Stack
+                            spacing={3}
+                            flex="1"
+                            align={{ base: 'center', sm: 'flex-start' }}
+                            textAlign={{ base: 'center', sm: 'left' }}
+                          >
                             <Text color={bodyColor} fontWeight="semibold" lineHeight={1.6}>
                               {description}
                             </Text>
                             {tags.length ? (
-                              <Wrap spacing={2}>
+                              <Wrap spacing={2} justify={{ base: 'center', sm: 'flex-start' }}>
                                 {tags.map((tag) => (
                                   <Tag
                                     key={`${description}-${tag}`}
@@ -374,7 +386,7 @@ const Highlights = () => {
                                 borderRadius="full"
                                 px={5}
                                 fontWeight="semibold"
-                                alignSelf="flex-start"
+                                alignSelf={{ base: 'center', sm: 'flex-start' }}
                                 bg={ctaBg}
                                 color={ctaText}
                                 borderWidth="2px"
