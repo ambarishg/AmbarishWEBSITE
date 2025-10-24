@@ -16,7 +16,7 @@ const NAV_LINKS = [
   { label: 'About', to: { pathname: '/', hash: '#about' } },
   { label: 'Experience', to: { pathname: '/', hash: '#experience' } },
   { label: 'Case Studies', to: '/highlights' },
-  { label: 'AG Academy', to: '/ag-academy' },
+  { label: 'YouTube', to: '/ag-academy' },
   { label: 'Credentials', to: { pathname: '/', hash: '#credentials' } },
   { label: 'Blogs', href: 'https://blog.ambarishganguly.com' }
 ];
