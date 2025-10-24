@@ -30,19 +30,19 @@ const sections = [
         title: 'Machine Learning',
         description:
           'Model selection, feature engineering, and deployment stories that bridge classical ML with modern MLOps so teams can deliver faster and learners understand lifecycle trade-offs.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVXsNh6Ue24VyF0DG1R64Trh'
+        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVXy_x4sijpwqJwgaW1-7GFZ'
       },
       {
         title: 'Python for Data & AI',
         description:
           'Practical Python fluency with notebooks, libraries, and workflow tips that help professionals coach teams and students progress from syntax to production habits.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVVuNaV90NH9Qq35iPb4TJcz'
+        href: 'https://www.youtube.com/watch?v=flz1QiY4wV4&list=PL3mYo8cDslVUVl0S537VZTIBYM_tCJrgM'
       },
       {
         title: 'Pandas in Practice',
         description:
           'Data wrangling recipes that shorten delivery cycles for analysts while giving new entrants the pattern library they need for internships and capstone projects.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWriSnAA7K7o3KAkdvDBUC1'
+        href: 'https://www.youtube.com/watch?v=PFMpiQvu8j0&list=PL3mYo8cDslVX8aRx-CectIIorzMHPy2nB'
       }
     ]
   },
@@ -51,35 +51,30 @@ const sections = [
     summary:
       'Structured fundamentals that keep senior professionals sharp and give students the conceptual depth required before stepping into advanced AI roles.',
     playlists: [
-      {
-        title: 'Statistics Essentials',
-        description:
-          'From descriptive to inferential statistics, the series connects formulas to decision frameworks so leaders can challenge analytics output and students can build rigorous intuition.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWW3dVHwNdMChz_HMz_Z_2i'
-      },
+      
       {
         title: 'Descriptive Statistics',
         description:
           'Practical coverage of summarisation techniques, visualization choices, and bias checks - ideal for professionals directing data storytelling and students learning to frame analyses.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWXWkwmo7aX6ixkmK_14R9C'
+        href: 'https://www.youtube.com/watch?v=2rk-dpfOGTU&list=PL3mYo8cDslVVHiZsJh9c-VYVwkQ_hpqmB'
       },
       {
         title: 'Probability & Distributions',
         description:
           'Explainability-first sessions on random variables, distributions, and uncertainty so delivery teams can defend model assumptions while students master exam-grade problem solving.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVXgsuTPwKMWqRMwBPk2U06T'
+        href: 'https://www.youtube.com/watch?v=F9FpJmC1MGQ&list=PL3mYo8cDslVXgsuTPwKMWqRMwBPk2U06T'
       },
       {
         title: 'Confidence Intervals',
         description:
           'Concise lessons that connect interval math to real stakeholder questions, equipping managers to interpret risk while students practise data-driven storytelling.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWbjgiyt8lT4yf4El9pHqol'
+        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWtlUj3NzIitFvpsm5MEiuV'
       },
       {
         title: 'Principal Component Analysis',
         description:
           'Visual, code-driven treatment of dimensionality reduction that shows how to balance interpretability and performance - valuable for solution architects and learners alike.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVULqYbUVEk8VzUDJMhpI0QK'
+        href: 'https://www.youtube.com/watch?v=StuJaa5O2Rc&list=PL3mYo8cDslVUuYu3zuEdvRjMg40eYCifn'
       }
     ]
   },
@@ -92,31 +87,31 @@ const sections = [
         title: 'Architectures',
         description:
           'Reference patterns for cloud-native, data-centric, and resilient architectures - positioning leaders to make informed trade-offs and students to understand enterprise design language.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVVH2PevkvFovvyZh-MwFQ9Z'
+        href: 'https://www.youtube.com/watch?v=ymkPWP0gqfw&list=PL3mYo8cDslVULABKlF7c0eUUeLor1AU05'
       },
       {
         title: 'Distributed Systems',
         description:
           'Foundational concepts on microservices, orchestration, and resilience that help engineering managers coach teams while students experience systems thinking early.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVUDIIacFZoitNJ6rxVrAcEb'
+        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVV2Dl_0PvMTIWy8KMIKH24Q'
       },
       {
         title: 'Apache Spark Deep Dive',
         description:
           'Performance tuning, structured streaming, and governance techniques so data leaders can run reliable platforms and students can grasp big-data engineering beyond theory.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVV_uc6qWarqvWBlL3hZLoxj'
+        href: 'https://www.youtube.com/watch?v=dSZ8-Ounnvs&list=PL3mYo8cDslVXl78NB5oILULGWQ0hZXXwG'
       },
       {
         title: 'Docker, Kubernetes, Microservices',
         description:
           'Containerisation and orchestration playbooks that align platform teams on DevOps practices and give students deployable templates for projects.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVVzr4LGBsTELoW5hQ3y-jkh'
+        href: 'https://www.youtube.com/watch?v=YWrZyPaFW50&list=PL3mYo8cDslVVIwa1IyWuGTFEl2bTuurOW'
       },
       {
         title: 'AWS SageMaker',
         description:
           'Cross-cloud ML engineering covering training, deployment, and monitoring so leaders can compare platforms and learners can expand beyond Azure.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVULx8FwLcbKTaagTaLEtm4s'
+        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVXFr-u5bHtVnLc2hDwxiJR_'
       }
     ]
   },
@@ -129,25 +124,25 @@ const sections = [
         title: 'AI-102 Azure AI Engineer Associate',
         description:
           'Scenario-led walkthroughs of Azure AI services, responsible AI practices, and deployment options so professionals can lead platform rollouts while students gain exam-ready confidence.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVVIJxDq92wQt1ayP2Ti6Wdq'
+        href: 'https://www.youtube.com/watch?v=2U2X87QWlFE&list=PL3mYo8cDslVXoTPtKArA-TjEPc7_ciTeT'
       },
       {
         title: 'Databricks Data Engineering (DP-203)',
         description:
           'End-to-end data engineering patterns covering Lakehouse design, Delta, and orchestration. Practitioners get repeatable delivery templates; students learn how modern data stacks operate.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVW_gvWAmdygEI7z7GrvELeO'
+        href: 'https://www.youtube.com/watch?v=U8_gdFR810c&list=PL3mYo8cDslVUIZnP-wimuEgFkHMbdmd9M'
       },
       {
         title: 'Apache Spark Developer Associate',
         description:
           'Hands-on preparation for Databricks certification, pairing Spark internals with optimization playbooks that matter when you own production clusters or are preparing for your first big-data role.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWVATwj230Q1YQs_9nPrAba'
+        href: 'https://www.youtube.com/watch?v=ia_GNojUntk&list=PL3mYo8cDslVWwOPjAuJt86-4J8Dp7iQuI'
       },
       {
         title: 'DP-100 Azure Data Scientist',
         description:
           'Podcast-style briefings on MLOps, ML pipelines, and responsible AI to help leaders align teams on Microsoft\'s reference architecture while students internalize exam domains.',
-        href: 'https://www.youtube.com/playlist?list=PL3mYo8cDslVWY7_rUhlKymW2iVYq548iQ'
+        href: 'https://www.youtube.com/watch?v=P_AmyuJ9SYg&list=PL3mYo8cDslVWltH4208DYzomtcrDqWlSS'
       }
     ]
   },
