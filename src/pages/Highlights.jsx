@@ -211,7 +211,7 @@ const Highlights = () => {
           display={{ base: 'none', md: 'block' }}
         />
         <Container maxW="6xl" position="relative">
-          <Stack spacing={{ base: 8, md: 10 }} align={{ base: 'stretch', md: 'flex-start' }}>
+          <Stack spacing={{ base: 10, md: 12 }} align={{ base: 'stretch', md: 'flex-start' }}>
             <Breadcrumb fontSize="sm" separator="/" color={breadcrumbColor}>
               <BreadcrumbItem>
                 <BreadcrumbLink as={RouterLink} to="/">
@@ -223,29 +223,39 @@ const Highlights = () => {
               </BreadcrumbItem>
             </Breadcrumb>
             <Stack
-              spacing={{ base: 4, md: 3 }}
+              spacing={{ base: 5, md: 6 }}
               maxW="3xl"
               align={{ base: 'flex-start', md: 'flex-start' }}
               textAlign="left"
             >
-              <Tag
-                size="sm"
-                colorScheme="brand"
-                variant="subtle"
+              <Text
+                fontSize="sm"
+                letterSpacing="0.3em"
                 textTransform="uppercase"
-                letterSpacing="0.12em"
-                px={4}
-                py={2}
-                borderRadius="full"
+                color={subtle}
+                fontWeight="semibold"
               >
                 Impact Portfolio
-              </Tag>
-              <Heading size={{ base: 'xl', md: '3xl' }} color={headingColor} lineHeight={{ base: 1.15, md: 1.05 }}>
+              </Text>
+              <Heading
+                size={{ base: 'xl', md: '3xl' }}
+                color={headingColor}
+                lineHeight={{ base: 1.1, md: 1.05 }}
+                fontWeight="extrabold"
+              >
                 {heroHeading}
               </Heading>
-              <Text color={subtle} fontSize={{ base: 'md', md: 'lg' }} maxW={{ base: 'full', md: '2xl' }}>
-                Explore how award-winning analytics, responsible AI, and open collaboration have delivered measurable
-                outcomes for conservation, education, national missions, and developer ecosystems.
+              <Text color={subtle} fontSize={{ base: 'md', md: 'lg' }} maxW={{ base: 'full', md: '2xl' }} lineHeight={1.8}>
+                Explore how award-winning analytics, responsible AI, and open collaboration deliver measurable outcomes
+                across conservation, education, national missions, and developer ecosystems.
+              </Text>
+              <Text
+                bgGradient="linear(to-r, brand.400, brand.200)"
+                bgClip="text"
+                fontWeight="semibold"
+                letterSpacing="0.08em"
+              >
+                Celebrating momentum in Generative AI, agents, climate resilience, and beyond.
               </Text>
             </Stack>
             <SimpleGrid
@@ -258,20 +268,30 @@ const Highlights = () => {
                 <Box
                   key={stat.label}
                   bg={statCardBg}
+                  position="relative"
+                  borderRadius="2xl"
+                  px={{ base: 5, md: 7 }}
+                  py={{ base: 6, md: 7 }}
+                  boxShadow="0 28px 65px -40px rgba(59,130,246,0.6)"
                   border="1px solid"
                   borderColor={statBorder}
-                  borderRadius="lg"
-                  px={{ base: 4, md: 6 }}
-                  py={{ base: 5, md: 6 }}
-                  boxShadow="0 18px 40px -25px rgba(59,130,246,0.55)"
+                  overflow="hidden"
                 >
-                  <Text fontSize="sm" textTransform="uppercase" letterSpacing="0.18em" color={statSubtle}>
+                  <Box
+                    position="absolute"
+                    insetX="6"
+                    top="0"
+                    h="2px"
+                    borderRadius="full"
+                    bgGradient="linear(to-r, rgba(59,130,246,0.85), rgba(129,140,248,0.85))"
+                  />
+                  <Text fontSize="xs" textTransform="uppercase" letterSpacing="0.28em" color={statSubtle} mt={1}>
                     {stat.label}
                   </Text>
-                  <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" color={statHeading} mt={2}>
+                  <Heading size={{ base: 'lg', md: 'xl' }} color={statHeading} mt={{ base: 3, md: 4 }}>
                     {stat.value}
-                  </Text>
-                  <Text fontSize="xs" color={statSubtle} mt={2} lineHeight={1.6}>
+                  </Heading>
+                  <Text fontSize="sm" color={statSubtle} mt={{ base: 3, md: 4 }} lineHeight={1.7}>
                     {stat.description}
                   </Text>
                 </Box>
@@ -282,61 +302,70 @@ const Highlights = () => {
       </Box>
 
       <Container maxW="6xl" py={{ base: 14, md: 20 }}>
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, lg: 10 }}>
-          {achievements.map((group) => (
-            <Box
-              key={group.category}
-              position="relative"
-              bg={cardBg}
-              border="1px solid"
-              borderColor={border}
-              borderRadius="28px"
-              p={{ base: 6, md: 8, xl: 9 }}
-              boxShadow={cardShadow}
-              backdropFilter="blur(14px)"
-              zIndex={0}
-              transition="all 0.3s ease"
-              _hover={{
-                transform: 'translateY(-6px)',
-                boxShadow: cardHoverShadow,
-                borderColor: 'brand.400'
-              }}
-              _before={{
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                height: '6px',
-                borderTopLeftRadius: 'inherit',
-                borderTopRightRadius: 'inherit',
-                bg: accentGradient,
-                opacity: 0.85
-              }}
-            >
-              <Stack spacing={7}>
-                <Stack spacing={3}>
-                  <Tag
-                    size="sm"
-                    variant="subtle"
-                    colorScheme="brand"
-                    w="fit-content"
-                    px={3}
-                    py={1.5}
-                    borderRadius="full"
-                    bg={tagBg}
-                    letterSpacing="0.08em"
-                    textTransform="uppercase"
-                  >
-                    Focus Area
-                  </Tag>
-                  <Heading size={{ base: 'lg', md: 'xl' }} color={headingColor} lineHeight={1.2}>
-                    {group.category}
-                  </Heading>
-                  {group.description ? (
-                    <Text color={subtle} fontSize={{ base: 'sm', md: 'md' }} lineHeight={1.7}>
-                      {group.description}
-                    </Text>
+            <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, lg: 10 }}>
+              {achievements.map((group) => (
+                <Box
+                  key={group.category}
+                  position="relative"
+                  bg={cardBg}
+                  border="1px solid"
+                  borderColor={border}
+                  borderRadius="28px"
+                  p={{ base: 6, md: 8, xl: 9 }}
+                  boxShadow={cardShadow}
+                  backdropFilter="blur(14px)"
+                  zIndex={0}
+                  transition="all 0.3s ease"
+                  _hover={{
+                    transform: 'translateY(-6px)',
+                    boxShadow: cardHoverShadow,
+                    borderColor: 'brand.400'
+                  }}
+                  _before={{
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '6px',
+                    borderTopLeftRadius: 'inherit',
+                    borderTopRightRadius: 'inherit',
+                    bg: accentGradient,
+                    opacity: 0.85
+                  }}
+                  _after={{
+                    content: '""',
+                    position: 'absolute',
+                    inset: '18px',
+                    borderRadius: '22px',
+                    border: '1px solid rgba(148,163,184,0.12)',
+                    pointerEvents: 'none'
+                  }}
+                >
+                  <Stack spacing={7}>
+                    <Stack spacing={3}>
+                      <Text
+                        fontSize="xs"
+                        letterSpacing="0.26em"
+                        textTransform="uppercase"
+                        color={subtle}
+                        fontWeight="semibold"
+                      >
+                        Focus Area
+                      </Text>
+                      <Heading
+                        size={{ base: 'lg', md: 'xl' }}
+                        lineHeight={1.2}
+                        fontWeight="extrabold"
+                        bgGradient="linear(to-r, brand.400, brand.200)"
+                        bgClip="text"
+                      >
+                        {normalizeCategory(group.category)}
+                      </Heading>
+                      {group.description ? (
+                        <Text color={subtle} fontSize={{ base: 'sm', md: 'md' }} lineHeight={1.7}>
+                          {group.description}
+                        </Text>
                   ) : null}
                 </Stack>
                 <Divider borderColor={dividerColor} />
@@ -360,10 +389,20 @@ const Highlights = () => {
                           spacing={{ base: 3, md: 4 }}
                           align="flex-start"
                           bg={itemBg}
+                          borderRadius="2xl"
+                          p={{ base: 5, md: 6 }}
                           border="1px solid"
                           borderColor={itemBorder}
-                          borderRadius="xl"
-                          p={{ base: 4, md: 5 }}
+                          position="relative"
+                          overflow="hidden"
+                          _before={{
+                            content: '""',
+                            position: 'absolute',
+                            inset: '0',
+                            bgGradient: 'linear(to-br, rgba(59,130,246,0.15), transparent 70%)',
+                            opacity: 0.6,
+                            pointerEvents: 'none'
+                          }}
                         >
                           <Box
                             bg={iconBg}
@@ -403,28 +442,24 @@ const Highlights = () => {
                                 as={RouterLink}
                                 to={link.to}
                                 rightIcon={<ArrowForwardIcon />}
-                                variant="solid"
                                 size="sm"
                                 borderRadius="full"
                                 px={5}
                                 fontWeight="semibold"
                                 alignSelf="flex-start"
-                                bg={ctaBg}
-                                color={ctaText}
-                                borderWidth="2px"
-                                borderColor={ctaBorder}
+                                bgGradient="linear(to-r, brand.500, brand.300)"
+                                color="white"
                                 boxShadow={ctaShadow}
+                                letterSpacing="0.04em"
                                 backdropFilter="blur(6px)"
                                 _hover={{
-                                  bg: ctaHoverBg,
-                                  borderColor: ctaHoverBorder,
+                                  bgGradient: 'linear(to-r, brand.400, brand.200)',
                                   boxShadow: ctaShadow,
-                                  textDecoration: 'none',
                                   transform: 'translateY(-1px)'
                                 }}
                                 _active={{
                                   transform: 'translateY(0)',
-                                  boxShadow: '0 10px 24px -20px rgba(59,130,246,0.55)'
+                                  boxShadow: '0 18px 32px -24px rgba(59,130,246,0.65)'
                                 }}
                               >
                                 {link.label}

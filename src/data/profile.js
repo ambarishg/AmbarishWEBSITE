@@ -139,8 +139,22 @@ export const achievements = [
     items: [
       {
         description:
-          'Declared winner for the BBC NEWS dataset competition hosted on Kaggle using RAG with Qdrant and Gemma 2B.',
+          'Winner for the BBC NEWS dataset competition hosted on Kaggle using RAG with Qdrant and Gemma 2B.',
         tags: ['Kaggle', 'RAG', 'Qdrant', 'Gemma 2B']
+      },
+      {
+        description:
+          'Microsoft CTO funded Blogathon Winner - \
+          BBC News Q&A with Advanced RAG and Microsoft Phi3',
+        tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'Microsoft Phi3']
+      },
+      {
+        description:
+          'Microsoft CTO funded Agentic AI Blogathon Winner  - \
+          Solving Business Problems with Agentic RAG',
+        tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'CrewAI', 'Agentic AI',
+          'Azure OpenAI'
+        ]
       },
     ]
   },
