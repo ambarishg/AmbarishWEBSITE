@@ -133,6 +133,18 @@ export const experiences = [
 
 export const achievements = [
   {
+    category: 'Generative AI & Agents',
+    description:
+      'Innovative applications of Generative AI, Large Language Models, Agents, and Retrieval Augmented Generation across industries.',
+    items: [
+      {
+        description:
+          'Declared winner for the BBC NEWS dataset competition hosted on Kaggle using RAG with Qdrant and Gemma 2B.',
+        tags: ['Kaggle', 'RAG', 'Qdrant', 'Gemma 2B']
+      },
+    ]
+  },
+  {
     category: 'Climate & Agritech',
     description:
       'AI and analytics that protect ecosystems, strengthen food security, and advance responsible field operations.',

@@ -19,6 +19,22 @@ import { ArrowForwardIcon, CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import { achievements } from '../data/profile.js';
 
+const normalizeCategory = (category) => (category ? category.trim() : '');
+
+const formatFocusAreasHeadline = (categories) => {
+  const filtered = categories.map(normalizeCategory).filter(Boolean);
+  if (!filtered.length) {
+    return '';
+  }
+  if (filtered.length === 1) {
+    return filtered[0];
+  }
+  if (filtered.length === 2) {
+    return `${filtered[0]} | ${filtered[1]}`;
+  }
+  return `${filtered[0]} | ${filtered[1]} | More`;
+};
+
 const linkForHighlight = (description) => {
   if (description.includes('Random Walk of the Penguins')) {
     return {
@@ -126,6 +142,9 @@ const Highlights = () => {
     '0 16px 35px -20px rgba(129,140,248,0.55)'
   );
 
+  const focusAreaSummary = formatFocusAreasHeadline(achievements.map((group) => group.category));
+  const heroHeading = focusAreaSummary || 'Impact highlights.';
+
   const totalHighlights = achievements.reduce((sum, group) => {
     const itemCount = group.items.reduce((count, item) => {
       const description = typeof item === 'string' || item === null ? item : item.description;
@@ -221,8 +240,8 @@ const Highlights = () => {
               >
                 Impact Portfolio
               </Tag>
-              <Heading size={{ base: 'lg', md: '2xl' }} color={headingColor} lineHeight={{ base: 1.2, md: 1.1 }}>
-                Recognitions across climate, recommendations, geospatial, and community impact.
+              <Heading size={{ base: 'xl', md: '3xl' }} color={headingColor} lineHeight={{ base: 1.15, md: 1.05 }}>
+                {heroHeading}
               </Heading>
               <Text color={subtle} fontSize={{ base: 'md', md: 'lg' }} maxW={{ base: 'full', md: '2xl' }}>
                 Explore how award-winning analytics, responsible AI, and open collaboration have delivered measurable
