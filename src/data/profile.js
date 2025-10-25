@@ -1,6 +1,6 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: 'Building Data & AI Platforms in Energy, Utilities, and Resources',
+  title: 'Building Data & AI Platforms',
   location: 'Kolkata, West Bengal, India',
   contact: {
     email: 'ambarish.ganguly@gmail.com',
