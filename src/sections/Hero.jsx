@@ -202,7 +202,7 @@ const Hero = () => {
                     26+ years of experience
                   </Text>
                   <Text color="subtleText" fontSize="sm">
-                    Driving utility transformation through data and AI
+                    Data and AI leadership 
                   </Text>
                 </Box>
               </Flex>
