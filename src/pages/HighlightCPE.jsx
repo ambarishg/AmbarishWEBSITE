@@ -22,14 +22,14 @@ import SectionHeading from '../components/SectionHeading.jsx';
 const meta = {
   title: 'Center for Policing Equity Hackathon Winning Visualisation',
   subtitle:
-    'Award-winning geospatial analytics that exposes racial disparities in policing by combining agency records with community demographics.',
+    'Award-winning geospatial analytics that combines police operations with community demographics to rebuild trust and expose racial disparities.',
   tags: ['Hackathon', 'Geospatial Analytics', 'Equity', 'Data Visualization']
 };
 
 const mission = [
-  'The Center for Policing Equity (CPE) unites scientists, equity experts, and community practitioners to build fairer public safety systems.',
-  'Through the National Justice Database, CPE gathers the largest standardized collection of police behavioral data in the United States.',
-  'Departments share detailed operational data in exchange for diagnostics that surface disparities and pathways to rebuild trust.'
+  'The Center for Policing Equity (CPE) brings together research scientists, race and equity experts, data virtuosos, and community trainers to build systems that feel fair to every community.',
+  'Data and science are the tools, while law enforcement and communities partner with CPE to bridge communication gaps rooted in suffering and generational mistrust.',
+  'Through the National Justice Database - the largest standardized collection of police behavioral data in the United States - departments share unprecedented records in exchange for disparity diagnostics and trust-building roadmaps.'
 ];
 
 const problemStatement = [
@@ -42,7 +42,7 @@ const solutionHighlights = [
   {
     title: 'Unified geospatial data pipeline',
     description:
-      'Engineered intensive cleaning and geospatial joins to align police incidents with census boundaries and socioeconomic profiles.'
+      'Engineered intensive cleaning and geospatial joins to align police incidents with district and tract boundaries alongside census and socioeconomic profiles.'
   },
   {
     title: 'Side-by-side equity visualisations',
@@ -74,6 +74,54 @@ const takeaways = [
   'Equity-focused analytics must account for confounding variables beyond crime rates to earn community trust.',
   'Automating messy shapefile integration is critical for repeatable, precinct-level policing insights.',
   'Open-sourcing methodologies accelerates reform by letting agencies and researchers build on a shared baseline.'
+];
+
+const methodology = [
+  {
+    title: 'Layered geospatial harmonisation',
+    description:
+      'Combined police district shapefiles with US Census data and introduced census tract shapefiles to anchor demographic intelligence to operational geography.'
+  },
+  {
+    title: 'Automated data standardisation',
+    description:
+      'Normalised disparate police incident feeds alongside census and socioeconomic indicators despite the absence of federal reporting standards.'
+  },
+  {
+    title: 'Precision-weighted attribution',
+    description:
+      'Calculated proportional overlaps between census tracts and police districts so every population, income, and education metric reflects the jurisdiction it serves.'
+  }
+];
+
+const weightingSteps = [
+  'Identify census tracts that span multiple police districts to determine proportional coverage.',
+  'Assign weights (for example, 60% for District 1 and 40% for District 2) based on the shared geographic area.',
+  'Multiply population and socioeconomic figures by those weights so comparisons across districts stay defensible.'
+];
+
+const analysisInsights = [
+  'Black population concentrations overlap with high poverty and low median income zones, highlighting socioeconomic drivers behind reported crime disparities.',
+  'Visual comparisons show crime attributed to Black residents often exceeds their share of the population, revealing where uniform policies fall short.',
+  'Layering education attainment, poverty, and income indicators equips public safety and community partners with targeted levers for prevention.'
+];
+
+const anomalySpotlights = [
+  {
+    location: 'Hennepin County, Minnesota',
+    insight:
+      'Maps reveal districts where crime associated with Black residents far outweighs their population share, underscoring the need for contextualised interventions.'
+  },
+  {
+    location: 'Travis County, Texas',
+    insight:
+      'Contrasting race and income combinations across adjacent districts demonstrates why uniform countywide policies can miss neighbourhood-level inequities.'
+  },
+  {
+    location: 'Downtown Marion County, Indiana',
+    insight:
+      'Precinct-level overlays show divergent crime distributions within a compact urban core, proving equitable strategies must extend beyond city aggregates.'
+  }
 ];
 
 const HighlightCPE = () => {
@@ -161,6 +209,40 @@ const HighlightCPE = () => {
               <Divider borderColor="outline" />
 
               <SectionHeading
+                eyebrow="Methodology"
+                title="Combining shapefiles, census intelligence, and police records."
+                description="Automation aligned district boundaries with demographic context to unlock actionable insights."
+              />
+              <Stack spacing={6} mt={6}>
+                {methodology.map((item) => (
+                  <Box key={item.title} layerStyle="card" p={{ base: 6, md: 7 }}>
+                    <Heading size="sm" mb={3} color={useColorModeValue('brand.600', 'brand.300')}>
+                      {item.title}
+                    </Heading>
+                    <Text color={subtleText}>{item.description}</Text>
+                  </Box>
+                ))}
+                <Box layerStyle="card" p={{ base: 6, md: 7 }}>
+                  <Heading size="sm" mb={3} color={useColorModeValue('brand.600', 'brand.300')}>
+                    Weighted attribution in practice
+                  </Heading>
+                  <Text color={subtleText}>
+                    When a census tract spans multiple districts, the analysis apportions population and socioeconomic data before comparisons are made.
+                  </Text>
+                  <Stack spacing={3} mt={4}>
+                    {weightingSteps.map((step) => (
+                      <Stack key={step} direction="row" spacing={3} align="flex-start">
+                        <Icon as={CheckCircleIcon} color="brand.400" boxSize={5} mt={1} />
+                        <Text color={subtleText}>{step}</Text>
+                      </Stack>
+                    ))}
+                  </Stack>
+                </Box>
+              </Stack>
+
+              <Divider borderColor="outline" />
+
+              <SectionHeading
                 eyebrow="Winning Approach"
                 title="Visual analytics that expose disparities."
                 description="The notebook turns messy shapefiles and agency data into transparent, precinct-level insight."
@@ -172,6 +254,40 @@ const HighlightCPE = () => {
                       {item.title}
                     </Heading>
                     <Text color={subtleText}>{item.description}</Text>
+                  </Box>
+                ))}
+              </Stack>
+
+              <Divider borderColor="outline" />
+
+              <SectionHeading
+                eyebrow="Equity Insights"
+                title="What the layered analysis uncovered."
+                description="Synthesised race, income, education, and deployment signals to shape reform priorities."
+              />
+              <Stack spacing={3} mt={6}>
+                {analysisInsights.map((item) => (
+                  <Stack key={item} direction="row" spacing={3} align="flex-start">
+                    <Icon as={CheckCircleIcon} color="brand.400" boxSize={5} mt={1} />
+                    <Text color={subtleText}>{item}</Text>
+                  </Stack>
+                ))}
+              </Stack>
+
+              <Divider borderColor="outline" />
+
+              <SectionHeading
+                eyebrow="Spotlight Maps"
+                title="Where disparities intensify."
+                description="Select jurisdictions from the notebook illustrate why tailored interventions matter."
+              />
+              <Stack spacing={4} mt={6}>
+                {anomalySpotlights.map((spotlight) => (
+                  <Box key={spotlight.location} layerStyle="card" p={{ base: 5, md: 6 }}>
+                    <Heading size="sm" mb={2} color={useColorModeValue('brand.600', 'brand.300')}>
+                      {spotlight.location}
+                    </Heading>
+                    <Text color={subtleText}>{spotlight.insight}</Text>
                   </Box>
                 ))}
               </Stack>
@@ -262,4 +378,3 @@ const HighlightCPE = () => {
 };
 
 export default HighlightCPE;
-
