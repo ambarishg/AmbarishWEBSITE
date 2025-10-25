@@ -75,10 +75,6 @@ const links = [
     href: 'https://www.youtube.com/watch?v=d92H_wPyrUE&t=16s'
   },
   {
-    label: 'Read the detailed build log',
-    href: '/blogs/bees-health-detection'
-  },
-  {
     label: 'View the GitHub reference implementation',
     href: 'https://github.com/ambarishg/beeshealthdetection'
   }
