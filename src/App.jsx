@@ -69,7 +69,7 @@ const App = () => {
   return (
     <Box minH="100vh" position="relative" display="flex" flexDirection="column">
       <Header />
-      <Flex as="main" direction="column" flex="1">
+      <Flex as="main" id="main-content" direction="column" flex="1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/highlights" element={<Highlights />} />

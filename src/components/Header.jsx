@@ -39,6 +39,30 @@ const Header = () => {
       backdropFilter="blur(14px)"
       boxShadow="md"
     >
+      <Link
+        href="#main-content"
+        position="absolute"
+        left="-999px"
+        top="auto"
+        bg="brand.500"
+        color="white"
+        px={4}
+        py={2}
+        borderRadius="full"
+        fontWeight="semibold"
+        _focus={{
+          left: '16px',
+          top: '16px',
+          outline: '2px solid',
+          outlineColor: 'brand.500'
+        }}
+        _focusVisible={{
+          left: '16px',
+          top: '16px'
+        }}
+      >
+        Skip to main content
+      </Link>
       <Container maxW="7xl">
         <Flex
           align="center"

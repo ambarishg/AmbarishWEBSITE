@@ -18,6 +18,8 @@ import {
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const meta = {
   title: 'Kiva Crowd Funding Data Challenge - Data Analysis Award',
@@ -34,7 +36,7 @@ const background = [
 
 const approach = [
   'Explored the two-year lending dataset to surface geographic, sector, and borrower trends that correlate with poverty indicators.',
-  'Blended Kiva loan attributes with external socioeconomic data to craft a naive poverty metric that could be refined by Kiva’s analysts.',
+  "Blended Kiva loan attributes with external socioeconomic data to craft a naive poverty metric that could be refined by Kiva's analysts.",
   'Delivered transparent kernel documentation so Kiva teams and fellow competitors could reuse data preparation, feature engineering, and exploratory visuals.'
 ];
 
@@ -52,6 +54,7 @@ const quickFacts = [
 ];
 
 const HighlightKiva = () => {
+  useSEO(seo.highlightKiva);
   const heroBg = useColorModeValue(
     'linear-gradient(135deg, rgba(59,134,245,0.12) 0%, rgba(14,116,244,0.18) 100%)',
     'linear-gradient(135deg, rgba(59,134,245,0.25) 0%, rgba(14,116,244,0.35) 100%)'

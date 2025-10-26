@@ -6,6 +6,6 @@ This kernel won the Kaggle Weekly Kernel Awards. Some generous words from Kaggle
 
 > August 18, 2017
 
-> Our team is very pleased to announce the second Kernels award! Kaggler Ambarish’s R notebook kernel “Exploratory Data Analysis of African Conflict with Leaflet” is an impressive combination of insight-sharing and gorgeous interactive maps. He uses data from the remarkable Armed Conflict Location and Event Data Project dataset published on Kaggle which covers political violence and protest events from all African countries from 1997 to today.
+> Our team is very pleased to announce the second Kernels award! Kaggler Ambarishâ€™s R notebook kernel  - Exploratory Data Analysis of African Conflict with Leafletâ€ is an impressive combination of insight-sharing and gorgeous interactive maps. He uses data from the remarkable Armed Conflict Location and Event Data Project dataset published on Kaggle which covers political violence and protest events from all African countries from 1997 to today.
 
 > Congratulations, Ambarish!

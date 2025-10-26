@@ -80,7 +80,7 @@ const Summary = () => {
               Featured NASA Interview
             </Heading>
             <Text color="subtleText" maxW="3xl">
-              NASA profiled Ambarish’s citizen science journey—spotlighting contributions to planetary research, open data, and applied AI for sustainability.
+              NASA profiled Ambarish's citizen science journey - spotlighting contributions to planetary research, open data, and applied AI for sustainability.
             </Text>
             <Button
               as={Link}

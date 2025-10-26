@@ -18,6 +18,8 @@ import {
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const meta = {
   title: 'Center for Policing Equity Hackathon Winning Visualisation',
@@ -125,6 +127,7 @@ const anomalySpotlights = [
 ];
 
 const HighlightCPE = () => {
+  useSEO(seo.highlightCPE);
   const heroBg = useColorModeValue(
     'linear-gradient(135deg, rgba(59,134,245,0.12) 0%, rgba(14,116,244,0.18) 100%)',
     'linear-gradient(135deg, rgba(59,134,245,0.25) 0%, rgba(14,116,244,0.35) 100%)'

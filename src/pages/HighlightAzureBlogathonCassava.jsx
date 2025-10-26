@@ -22,7 +22,9 @@ import {
 import { ArrowForwardIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
-import cassavaCaseStudy from '../../blogs/Cassava.pdf?url';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
+import cassavaCaseStudy from '../../blogs/Cassava.pdf';
 import cassavaImage from '../../images/AG.jpg';
 
 const hero = {
@@ -65,7 +67,7 @@ const highlights = [
     title: 'Production-ready AI in weeks, not months',
     points: [
       'Container Apps and Custom Vision abstract away undifferentiated heavy lifting, letting the team focus on agronomy.',
-      'Layered observability—Application Insights and Cosmos DB metrics—surface drift or anomalies for continuous improvement.',
+      'Layered observability - Application Insights and Cosmos DB metrics - surface drift or anomalies for continuous improvement.',
       'Helm templates and GitHub Actions pipelines codify infrastructure, supporting rapid replication across regions.'
     ]
   },
@@ -97,6 +99,7 @@ const WrapTags = ({ tags, color }) => {
 };
 
 const HighlightAzureBlogathonCassava = () => {
+  useSEO(seo.highlightAzureBlogathonCassava);
   const linkColor = useColorModeValue('brand.600', 'brand.300');
   const subtleText = useColorModeValue('gray.600', 'gray.400');
   const badgeColor = useColorModeValue('brand.600', 'brand.300');
@@ -225,4 +228,3 @@ const HighlightAzureBlogathonCassava = () => {
 };
 
 export default HighlightAzureBlogathonCassava;
-

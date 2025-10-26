@@ -18,6 +18,8 @@ import {
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const meta = {
   title: 'Kaggle Weekly Kernel Award: African Conflicts Data Visualization',
@@ -52,12 +54,12 @@ const visualizationHighlights = [
 
 const recognitionNotes = [
   'Awarded the Kaggle Weekly Kernel Award for August 18, 2017.',
-  'Praised by Kaggle for combining “insight-sharing and gorgeous interactive maps.”',
+  'Praised by Kaggle for combining ? - insight-sharing and gorgeous interactive maps."',
   'Highlighted how open data and accessible visualisation can inform humanitarian dialogue.'
 ];
 
 const quickFacts = [
-  { label: 'Dataset', value: 'ACLED – Armed Conflict Location & Event Data' },
+  { label: 'Dataset', value: 'ACLED - Armed Conflict Location & Event Data' },
   { label: 'Time Span', value: '1997 onwards (Africa-wide coverage)' },
   { label: 'Toolkit', value: 'R Notebook, Leaflet, Geospatial EDA' },
   { label: 'Recognition', value: 'Kaggle Weekly Kernel Award' }
@@ -70,6 +72,7 @@ const takeaways = [
 ];
 
 const HighlightAfricanConflicts = () => {
+  useSEO(seo.highlightAfricanConflicts);
   const heroBg = useColorModeValue(
     'linear-gradient(135deg, rgba(59,134,245,0.12) 0%, rgba(14,116,244,0.18) 100%)',
     'linear-gradient(135deg, rgba(59,134,245,0.25) 0%, rgba(14,116,244,0.35) 100%)'
@@ -243,4 +246,3 @@ const HighlightAfricanConflicts = () => {
 };
 
 export default HighlightAfricanConflicts;
-

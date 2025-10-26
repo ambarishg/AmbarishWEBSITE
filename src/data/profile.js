@@ -25,7 +25,7 @@ export const summary = [
   'Hands-on leader guiding enterprise innovation across Utilities Data & Analytics, Cloud, Energy Trading, and Risk Management.',
   'Trusted mentor for large transformation programs spanning customer care, billing, and field service ecosystems.',
   'Over 25 years translating critical business goals into resilient data platforms and AI experiences.',
-  'Grounded in a formal academic blend—a B.Sc (Hons) in Physics from St. Xavier\'s College and a B.Tech in Computer Science & Engineering from the University of Calcutta—that fuses analytical rigor with engineering execution.'
+  'Grounded in a formal academic blend - a B.Sc (Hons) in Physics from St. Xavier\'s College and a B.Tech in Computer Science & Engineering from the University of Calcutta - that fuses analytical rigor with engineering execution.'
 ];
 
 export const experiences = [
@@ -150,7 +150,7 @@ export const achievements = [
       },
       {
         description:
-          'Microsoft CTO funded Agentic AI Blogathon Winner  - \
+          'Microsoft CTO funded Agentic AI Blogathon Winner - \
           Solving Business Problems with Agentic RAG',
         tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'CrewAI', 'Agentic AI',
           'Azure OpenAI'
@@ -273,7 +273,7 @@ export const education = [
   },
   {
     school: "St. Xavier's College, Kolkata",
-    degree: 'Higher Secondary (+2), Maths · Physics · Chemistry · Biology',
+    degree: 'Higher Secondary (+2), Maths, Physics, Chemistry, Biology',
     period: '1991 - 1993'
   },
   {

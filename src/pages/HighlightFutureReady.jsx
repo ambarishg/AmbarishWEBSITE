@@ -21,6 +21,8 @@ import {
 import { ArrowForwardIcon, CheckCircleIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const HERO_IMAGE =
   'https://news.microsoft.com/en-in/wp-content/uploads/sites/145/2023/01/Future-ready-champions-of-code-hero.jpg';
@@ -143,6 +145,7 @@ const impactStats = [
 ];
 
 const HighlightFutureReady = () => {
+  useSEO(seo.highlightFutureReady);
   const heroBg = useColorModeValue(
     'linear-gradient(120deg, rgba(59,134,245,0.12) 0%, rgba(255,215,0,0.15) 100%)',
     'linear-gradient(120deg, rgba(59,134,245,0.3) 0%, rgba(250,204,21,0.25) 100%)'

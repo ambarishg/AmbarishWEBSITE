@@ -15,11 +15,13 @@ import {
 import { ArrowForwardIcon, CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const meta = {
-  title: 'Random Walk of the Penguins – Winning NASA-Sponsored Forecast',
+  title: 'Random Walk of the Penguins - Winning NASA-Sponsored Forecast',
   subtitle:
-    'How a blended ensemble, disciplined data repair, and close collaboration delivered the top spot in DrivenData’s Antarctic conservation challenge.',
+    "How a blended ensemble, disciplined data repair, and close collaboration delivered the top spot in DrivenData's Antarctic conservation challenge.",
   tags: ['Time Series Forecasting', 'Ecology', 'XGBoost', 'ARIMA', 'NASA Award'],
   links: [
     {
@@ -36,11 +38,11 @@ const meta = {
 const phases = [
   {
     heading: 'Mission',
-    body: `Oceanites, NASA, and Stony Brook University needed reliable forecasts for Adélie, Chinstrap, and Gentoo penguin colonies. Most field stations capture only sporadic counts, so conservation teams asked the data science community to fill the gaps and project populations through 2017.`
+    body: `Oceanites, NASA, and Stony Brook University needed reliable forecasts for Adelie, Chinstrap, and Gentoo penguin colonies. Most field stations capture only sporadic counts, so conservation teams asked the data science community to fill the gaps and project populations through 2017.`
   },
   {
     heading: 'Data reality',
-    body: `The dataset included 648 species–site combinations, stretching back to 1875 with wildly inconsistent sampling. Long stretches of missing data, sudden spikes driven by weather and krill cycles, and differing colony behaviours required a customised signal reconstruction plan before any forecasting model could be trusted.`
+    body: `The dataset included 648 species - site combinations, stretching back to 1875 with wildly inconsistent sampling. Long stretches of missing data, sudden spikes driven by weather and krill cycles, and differing colony behaviours required a customised signal reconstruction plan before any forecasting model could be trusted.`
   },
   {
     heading: 'Outcome',
@@ -64,12 +66,13 @@ const models = [
 ];
 
 const insights = [
-  'Data empathy is non-negotiable — ecological limits must constrain every imputation step.',
+  'Data empathy is non-negotiable - ecological limits must constrain every imputation step.',
   'Model plurality keeps forecasts honest; no single algorithm dominates across 648 colonies.',
   'Narrative reporting matters. Visual walkthroughs and uncertainty bands help scientists adopt machine learning outputs.'
 ];
 
 const HighlightRandomWalk = () => {
+  useSEO(seo.highlightRandomWalk);
   const heroBg = useColorModeValue(
     'linear-gradient(135deg, rgba(59,134,245,0.12) 0%, rgba(14,116,244,0.18) 100%)',
     'linear-gradient(135deg, rgba(59,134,245,0.25) 0%, rgba(14,116,244,0.35) 100%)'
@@ -82,7 +85,7 @@ const HighlightRandomWalk = () => {
         <Container maxW="6xl">
           <Stack spacing={6} align="flex-start">
             <Tag size="lg" colorScheme="brand" variant="subtle" px={4} py={2} borderRadius="full">
-              Winner · NASA-Sponsored Challenge
+              Winner - NASA-Sponsored Challenge
             </Tag>
             <Heading size="2xl" maxW="3xl" lineHeight={1.1}>
               {meta.title}
@@ -128,7 +131,7 @@ const HighlightRandomWalk = () => {
             <SectionHeading
               eyebrow="Project Context"
               title="Forecasting penguin populations to protect the Southern Ocean."
-              description="The goal: supply ecologists with defensible colony projections for 2014–2017 so they could prioritise conservation funding across remote Antarctic sites."
+              description="The goal: supply ecologists with defensible colony projections for 2014 - 2017 so they could prioritise conservation funding across remote Antarctic sites."
             />
 
             <Stack spacing={10} mt={12}>
@@ -156,13 +159,13 @@ const HighlightRandomWalk = () => {
                   Lynch (Stony Brook), NASA
                 </Text>
                 <Text>
-                  <strong>Species covered:</strong> Adélie, Chinstrap, Gentoo
+                  <strong>Species covered:</strong> Adelie, Chinstrap, Gentoo
                 </Text>
                 <Text>
-                  <strong>Series:</strong> 648 site–species combinations (1875–2013)
+                  <strong>Series:</strong> 648 site - species combinations (1875 - 2013)
                 </Text>
                 <Text>
-                  <strong>Forecast horizon:</strong> 2014–2017
+                  <strong>Forecast horizon:</strong> 2014 - 2017
                 </Text>
                 <Text>
                   <strong>Role:</strong> Lead data scientist & winning competitor

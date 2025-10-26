@@ -1,4 +1,4 @@
-﻿import {
+import {
   Avatar,
   Box,
   Button,
@@ -156,7 +156,7 @@ const Hero = () => {
                             fontWeight="semibold"
                             fontSize="sm"
                           >
-                            Read the Random Walk case study →
+                            Read the Random Walk case study -&gt;
                           </Link>
                         ) : null}
                         {isBeesShowcase ? (
@@ -167,7 +167,7 @@ const Hero = () => {
                             fontWeight="semibold"
                             fontSize="sm"
                           >
-                            Watch the Azure showcase →
+                            Watch the Azure showcase -&gt;
                           </Link>
                         ) : null}
                         {isFutureReady ? (
@@ -178,7 +178,7 @@ const Hero = () => {
                             fontWeight="semibold"
                             fontSize="sm"
                           >
-                            Explore the Future Ready win →
+                            Explore the Future Ready win -&gt;
                           </Link>
                         ) : null}
                       </Stack>

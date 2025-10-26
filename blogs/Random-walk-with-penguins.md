@@ -12,22 +12,22 @@ Honoured to win the 1st prize in the [Random Walk of Penguins](https://www.drive
 
 Penguins are among the most charismatic animals in the world and have captured the imaginations of news-makers, scientists, film producers, and the general public. Beyond their charm, they are considered important ecosystem indicators. Monitoring these resilient birds helps scientists understand the health of the Antarctic because penguins are major krill and fish predators; fluctuations in their populations often signal changes in ocean temperatures, prey availability, or human impact.
 
-Unfortunately, data on penguin colonies are sparse. Most monitoring stations are situated near permanent research bases, and expeditions to remote cliffs and icy archipelagos are infrequent. Time series are short, riddled with missing values, and inconsistent across locations. The competition set a bold challenge: build trustworthy models that could extrapolate populations for hard-to-reach sites and extend projections through 2017—enabling policy makers to proactively respond to ecological risk.
+Unfortunately, data on penguin colonies are sparse. Most monitoring stations are situated near permanent research bases, and expeditions to remote cliffs and icy archipelagos are infrequent. Time series are short, riddled with missing values, and inconsistent across locations. The competition set a bold challenge: build trustworthy models that could extrapolate populations for hard-to-reach sites and extend projections through 2017"enabling policy makers to proactively respond to ecological risk.
 
 This initiative brought together **Oceanites, Inc., Black Bawks Data Science Ltd., and Dr. Heather Lynch's lab at Stony Brook University**, with generous support from **NASA (Award NNX14AC32G)**. For me, it was a rare opportunity to blend environmental stewardship with applied machine learning at scale.
 
 # Understanding the data             
 
-The organisers released longitudinal counts for three penguin species—Adélie, Chinstrap, and Gentoo—spanning 548 Antarctic sites between 1875 and 2013. After combining species and site identifiers, we were left with 648 unique time series. Each series was unevenly sampled, contained long gaps, and exhibited starkly different behaviours: explosive growth near certain colonies, slow recovery after El Niño events, and plateaus where predators stabilised.
+The organisers released longitudinal counts for three penguin species"AdÃ©lie, Chinstrap, and Gentoo"spanning 548 Antarctic sites between 1875 and 2013. After combining species and site identifiers, we were left with 648 unique time series. Each series was unevenly sampled, contained long gaps, and exhibited starkly different behaviours: explosive growth near certain colonies, slow recovery after El NiÃ±o events, and plateaus where predators stabilised.
 
-The task was to forecast annual colony sizes for 2014–2017. Success depended on addressing both data quality and methodological diversity; a single algorithm could not capture the heterogeneity present across the Southern Ocean.
+The task was to forecast annual colony sizes for 2014"2017. Success depended on addressing both data quality and methodological diversity; a single algorithm could not capture the heterogeneity present across the Southern Ocean.
 
 # Solution architecture         
 
 I split the workflow into two deliberate stages:
 
-1. **Data imputation** – stabilise every time series so models receive coherent signals.
-2. **Model ensemble** – build a diverse set of learners and aggregate their strengths.
+1. **Data imputation** " stabilise every time series so models receive coherent signals.
+2. **Model ensemble** " build a diverse set of learners and aggregate their strengths.
 
 An orchestration notebook generated reproducible pipelines per species-site combination, keeping experiment logs and metrics aligned for quick comparison.
 

@@ -18,6 +18,8 @@ import {
 import { ArrowForwardIcon, CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import { achievements } from '../data/profile.js';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const normalizeCategory = (category) => (category ? category.trim() : '');
 
@@ -113,6 +115,8 @@ const linkForHighlight = (description) => {
 };
 
 const Highlights = () => {
+  useSEO(seo.highlights);
+
   const pageBg = useColorModeValue('gray.50', '#0f172a');
   const heroBg = useColorModeValue(
     'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.18) 100%)',

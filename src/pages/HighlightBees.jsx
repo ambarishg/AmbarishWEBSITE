@@ -17,11 +17,13 @@ import {
 import { ArrowForwardIcon, CheckCircleIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const hero = {
   title: 'Bees Health Detection on Azure',
   subtitle:
-    'A computer-vision pipeline that helps beekeepers detect disease early—featured by Microsoft India for advancing sustainability with AI.',
+    'A computer-vision pipeline that helps beekeepers detect disease early - featured by Microsoft India for advancing sustainability with AI.',
   tags: ['Custom Vision', 'Agritech', 'Computer Vision', 'Azure AI']
 };
 
@@ -72,7 +74,7 @@ const implementationSteps = [
 const links = [
   {
     label: 'Watch the Microsoft India showcase',
-    href: 'https://www.youtube.com/watch?v=d92H_wPyrUE&t=16s'
+    href: 'https://www.youtube.com/watchv=d92H_wPyrUE&t=16s'
   },
   {
     label: 'View the GitHub reference implementation',
@@ -81,6 +83,7 @@ const links = [
 ];
 
 const HighlightBees = () => {
+  useSEO(seo.highlightBees);
   const heroGradient = useColorModeValue(
     'linear-gradient(120deg, rgba(255, 215, 0, 0.18) 0%, rgba(59, 134, 245, 0.15) 100%)',
     'linear-gradient(120deg, rgba(250, 204, 21, 0.35) 0%, rgba(37, 99, 235, 0.3) 100%)'
@@ -171,7 +174,7 @@ const HighlightBees = () => {
                 </Heading>
                 <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden" border="1px solid" borderColor={videoBorder}>
                   <iframe
-                    src="https://www.youtube.com/embed/d92H_wPyrUE?start=16"
+                    src="https://www.youtube.com/embed/d92H_wPyrU'start=16"
                     title="Bees Health Detection on Azure"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen

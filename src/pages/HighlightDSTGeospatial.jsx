@@ -16,6 +16,8 @@ import {
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
 
 const highlight = {
   eyebrow: 'National Innovation Challenge',
@@ -87,6 +89,7 @@ const narrative = [
 ];
 
 const HighlightDSTGeospatial = () => {
+  useSEO(seo.highlightDSTGeospatial);
   const badgeColor = useColorModeValue('brand.600', 'brand.300');
   const subtleText = useColorModeValue('gray.600', 'gray.400');
   const accentBorder = useColorModeValue('brand.500', 'brand.300');

@@ -1,4 +1,4 @@
-**Every third bite of food relies on pollination by bees.** Honey beehive losses spike when disease spreads unchecked, and traditional inspection methods are intrusive and time-consuming. Our Azure-powered Bees Health Detection solution uses computer vision to monitor for deformed wings, mites, and other visible symptoms—helping beekeepers protect colonies before collapse occurs.
+**Every third bite of food relies on pollination by bees.** Honey beehive losses spike when disease spreads unchecked, and traditional inspection methods are intrusive and time-consuming. Our Azure-powered Bees Health Detection solution uses computer vision to monitor for deformed wings, mites, and other visible symptoms"helping beekeepers protect colonies before collapse occurs.
 
 This expanded walkthrough documents the full lifecycle, from dataset curation to model deployment, along with the story behind Microsoft India showcasing the project.
 
@@ -17,7 +17,7 @@ This expanded walkthrough documents the full lifecycle, from dataset curation to
 
 Primary dataset: [Honey Bee Images Full Set](https://www.kaggle.com/jenny18/honey-bee-annotated-images)
 
-To accelerate experiments, I curated a derived subset—[Bees Little Data Set](https://www.kaggle.com/ambarish/beeslittledataset)—with ~100 images per class (healthy, ant problems, varro/hive beetles).
+To accelerate experiments, I curated a derived subset"[Bees Little Data Set](https://www.kaggle.com/ambarish/beeslittledataset)"with ~100 images per class (healthy, ant problems, varro/hive beetles).
 
 Key preparation steps:
 
@@ -48,7 +48,7 @@ Key preparation steps:
 - **Holdout images** (never tagged) provide manual validation.
 - **Telemetry:** Precision/recall scores consistently high across classes.
 
-Example: An input bee showing ant infestation returned the highest probability for the “ant problems” tag—confirming the model’s efficacy.
+Example: An input bee showing ant infestation returned the highest probability for the  - ant problemsâ€ tag"confirming the modelâ€™s efficacy.
 
 ---
 
@@ -110,13 +110,13 @@ const testFile = fs.readFileSync('f:/bees/Test/040_314.png');
 
 # Showcase: Microsoft India feature
 
-Microsoft India spotlighted the solution in their “AI for Farmers and Sustainability” series, highlighting:
+Microsoft India spotlighted the solution in their  - AI for Farmers and Sustainabilityâ€ series, highlighting:
 
 - Low-code Azure tooling enabling domain experts to prototype quickly.
 - Real-world impact for agriculture and apiculture communities.
 - Inspiration for leveraging cloud AI services for conservation.
 
-Watch the feature: [Bees Health Detection on Microsoft Azure](https://www.youtube.com/watch?v=d92H_wPyrUE&t=16s)
+Watch the feature: [Bees Health Detection on Microsoft Azure](https://www.youtube.com/watchv=d92H_wPyrUE&t=16s)
 
 ---
 
@@ -125,7 +125,7 @@ Watch the feature: [Bees Health Detection on Microsoft Azure](https://www.youtub
 - **Accuracy:** Ensemble model maintained high precision/recall across all classes.
 - **Efficiency:** Automated screening reduces manual inspections and hive disruption.
 - **Scalability:** Azure-hosted API supports mobile/edge integration for field teams.
-- **Visibility:** The project’s showcase amplified awareness of tech-enabled conservation.
+- **Visibility:** The projectâ€™s showcase amplified awareness of tech-enabled conservation.
 
 ---
 
@@ -140,9 +140,9 @@ Watch the feature: [Bees Health Detection on Microsoft Azure](https://www.youtub
 
 # References
 
-1. [Node.js & Azure Custom Vision Quickstart](https://learn.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classification?tabs=visual-studio&pivots=programming-language-javascript)
+1. [Node.js & Azure Custom Vision Quickstart](https://learn.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classificationtabs=visual-studio&pivots=programming-language-javascript)
 
 ---
 
-*If you implement or extend this solution, I’d love to hear from you—let’s build technology that protects pollinators worldwide.*
+*If you implement or extend this solution, Iâ€™d love to hear from you"letâ€™s build technology that protects pollinators worldwide.*
 

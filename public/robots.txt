@@ -1,0 +1,5 @@
+# robots.txt for Ambarish Ganguly website
+User-agent: *
+Allow: /
+
+Sitemap: https://ambarishganguly.com/sitemap.xml

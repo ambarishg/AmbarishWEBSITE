@@ -19,7 +19,9 @@ import {
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading.jsx';
-import careerCaseStudy from '../../blogs/Career.pdf?url';
+import useSEO from '../hooks/useSEO.js';
+import { seo } from '../data/seo.js';
+import careerCaseStudy from '../../blogs/Career.pdf';
 
 const highlight = {
   title: 'Azure Blogathon Champion | CareerVillage Case Study',
@@ -40,7 +42,7 @@ const highlight = {
 
 const impactStats = [
   {
-    value: '≈500 : 1',
+    value: '500 : 1',
     label: 'Students per counsellor in the U.S.',
     description: 'Highlights the scale of the guidance gap the solution addresses.'
   },
@@ -93,7 +95,7 @@ const sections = [
     description:
       'The notebook details how text features, TF-IDF weighting, and cosine similarity create fast, interpretable recommendations aligned with Azure ML best practices.',
     paragraphs: [
-      'Tokenisation, stop-word removal, and TF-IDF scoring downplay high-frequency words such as “the” while amplifying context-rich signals like “first internship” or “cloud architect”.',
+      'Tokenisation, stop-word removal, and TF-IDF scoring downplay high-frequency words such as "the" while amplifying context-rich signals like "first internship" or "cloud architect".',
       'Cosine similarity matrices compare live questions to a curated library of answered prompts, returning the highest relevance scores in milliseconds.',
       'The user interface surfaces each recommended answer alongside its author, ensuring transparency and trust for students reviewing guidance.'
     ],
@@ -157,11 +159,11 @@ const architectureLayers = [
 const quickFacts = [
   {
     label: 'Competition',
-    value: 'Azure Blogathon – community storytelling challenge (2× champion)'
+    value: 'Azure Blogathon - community storytelling challenge (2x champion)'
   },
   {
     label: 'Use case',
-    value: 'CareerVillage.org – career recommendations for underserved youth'
+    value: 'CareerVillage.org - career recommendations for underserved youth'
   },
   {
     label: 'Azure focus',
@@ -174,6 +176,7 @@ const quickFacts = [
 ];
 
 const HighlightAzureBlogathon = () => {
+  useSEO(seo.highlightAzureBlogathon);
   const badgeColor = useColorModeValue('brand.600', 'brand.300');
   const subtleText = useColorModeValue('gray.600', 'gray.400');
   const statBg = useColorModeValue('whiteAlpha.900', 'rgba(15,23,42,0.88)');
@@ -338,7 +341,7 @@ const HighlightAzureBlogathon = () => {
             <SectionHeading
               eyebrow="Solution Layers"
               title="Holistic Azure architecture delivered as a reusable playbook"
-              description="Each layer of the solution focuses on one dimension—intelligence, orchestration, and integration—so teams can recompose the pattern for their own domains."
+              description="Each layer of the solution focuses on one dimension - intelligence, orchestration, and integration - so teams can recompose the pattern for their own domains."
             />
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 6, md: 8 }} mt={{ base: 6, md: 8 }}>
               {architectureLayers.map((layer) => (
@@ -381,7 +384,7 @@ const HighlightAzureBlogathon = () => {
             <SectionHeading
               eyebrow="Deployment Experience"
               title="From notebook to production without losing observability or empathy"
-              description="The case study guides engineers and community stakeholders through every stage—from lab experimentation to student-facing rollout."
+              description="The case study guides engineers and community stakeholders through every stage - from lab experimentation to student-facing rollout."
             />
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8 }} mt={8}>
               <Stack spacing={4}>
@@ -390,13 +393,13 @@ const HighlightAzureBlogathon = () => {
                 </Heading>
                 <Stack spacing={3}>
                   <Text color={subtleText}>
-                    • Students submit a question through the UI; the recommender instantly surfaces the ten closest answered matches so learners gain immediate context.
+                     Students submit a question through the UI; the recommender instantly surfaces the ten closest answered matches so learners gain immediate context.
                   </Text>
                   <Text color={subtleText}>
-                    • Recommended pairs are written to Azure SQL, forming a living backlog for any questions needing deeper, bespoke responses.
+                     Recommended pairs are written to Azure SQL, forming a living backlog for any questions needing deeper, bespoke responses.
                   </Text>
                   <Text color={subtleText}>
-                    • CareerVillage administrators monitor fulfilment metrics to spot topics that need additional volunteer recruitment.
+                     CareerVillage administrators monitor fulfilment metrics to spot topics that need additional volunteer recruitment.
                   </Text>
                 </Stack>
               </Stack>
@@ -406,13 +409,13 @@ const HighlightAzureBlogathon = () => {
                 </Heading>
                 <Stack spacing={3}>
                   <Text color={subtleText}>
-                    • Azure DevOps or GitHub Actions containerise the microservices and deploy them to AKS with blue/green rollouts for zero-downtime releases.
+                     Azure DevOps or GitHub Actions containerise the microservices and deploy them to AKS with blue/green rollouts for zero-downtime releases.
                   </Text>
                   <Text color={subtleText}>
-                    • Service Bus diagnostics, AKS health probes, and SQL telemetry feed Azure Monitor dashboards for proactive alerting.
+                     Service Bus diagnostics, AKS health probes, and SQL telemetry feed Azure Monitor dashboards for proactive alerting.
                   </Text>
                   <Text color={subtleText}>
-                    • The GitHub repository packages infrastructure-as-code snippets, runbooks, and automation scripts so other organisations can replicate the stack quickly.
+                     The GitHub repository packages infrastructure-as-code snippets, runbooks, and automation scripts so other organisations can replicate the stack quickly.
                   </Text>
                 </Stack>
               </Stack>
@@ -459,4 +462,3 @@ const WrapTags = ({ tags, badgeColor, chipBg }) => {
 };
 
 export default HighlightAzureBlogathon;
-

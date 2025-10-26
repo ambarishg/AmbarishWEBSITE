@@ -13,7 +13,7 @@ The Agent would first search in the Vector Database and then it would try to fin
 The Agent would use Tools to get this information.
 
 <div data-node-type="callout">
-<div data-node-type="callout-emoji">💡</div>
+<div data-node-type="callout-emoji">'</div>
 <div data-node-type="callout-text">The code associated with the Blog is in the Github repository [ <a target="_self" rel="noopener noreferrer nofollow" href="https://github.com/ambarishg/crewai_azure" style="pointer-events: none">https://github.com/ambarishg/crewai_azure</a> ]</div>
 </div>
 
@@ -244,7 +244,7 @@ crew = Crew(
 ```plaintext
 # User input for travel preferences
 user_input = {
-    "questions": "What is naked trust ?"
+    "questions": "What is naked trust  - 
 }
 
 # Execute the Crew
