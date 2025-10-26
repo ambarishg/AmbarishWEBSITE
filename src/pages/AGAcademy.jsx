@@ -87,7 +87,7 @@ const sections = [
         title: 'Confidence Intervals',
         description:
           'Concise lessons that connect interval math to real stakeholder questions, equipping managers to interpret risk while students practise data-driven storytelling.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVWtlUj3NzIitFvpsm5MEiuV'
+        href: 'https://www.youtube.com/watch?v=4nUhy9kc2VU&list=PL3mYo8cDslVWtlUj3NzIitFvpsm5MEiuV'
       },
       {
         title: 'Principal Component Analysis',
@@ -112,7 +112,7 @@ const sections = [
         title: 'Distributed Systems',
         description:
           'Foundational concepts on microservices, orchestration, and resilience that help engineering managers coach teams while students experience systems thinking early.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVV2Dl_0PvMTIWy8KMIKH24Q'
+        href: 'https://www.youtube.com/watch?v=C0v8ZujsH8Y&list=PL3mYo8cDslVV2Dl_0PvMTIWy8KMIKH24Q'
       },
       {
         title: 'Apache Spark Deep Dive',
@@ -130,7 +130,7 @@ const sections = [
         title: 'AWS SageMaker',
         description:
           'Cross-cloud ML engineering covering training, deployment, and monitoring so leaders can compare platforms and learners can expand beyond Azure.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVXFr-u5bHtVnLc2hDwxiJR_'
+        href: 'https://www.youtube.com/watch?v=InTBvFRzz-0&list=PL3mYo8cDslVXFr-u5bHtVnLc2hDwxiJR_'
       }
     ]
   },
