@@ -30,9 +30,22 @@ const formatFocusAreasHeadline = (categories) => {
     return filtered[0];
   }
   if (filtered.length === 2) {
-    return `${filtered[0]} | ${filtered[1]}`;
+    return `${filtered[0]} & ${filtered[1]}`;
   }
-  return `${filtered[0]} | ${filtered[1]} | More`;
+  if (filtered.length === 3) {
+    return `${filtered[0]}, ${filtered[1]}, ${filtered[2]}`;
+  }
+  const [first, second, third] = filtered;
+  const remaining = filtered.length - 3;
+  return `${first}, ${second}, ${third} + ${remaining} more`;
+};
+
+const toAnchorId = (category, index) => {
+  const base = normalizeCategory(category)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+  return base ? `focus-${base}` : `focus-area-${index + 1}`;
 };
 
 const linkForHighlight = (description) => {
@@ -139,6 +152,10 @@ const Highlights = () => {
     });
   });
   const featuredTags = Array.from(allTags).slice(0, 8);
+  const focusAreaNav = achievements.map((group, index) => ({
+    label: normalizeCategory(group.category) || `Focus Area ${index + 1}`,
+    anchor: toAnchorId(group.category, index)
+  }));
 
   const stats = [
     {
@@ -193,7 +210,14 @@ const Highlights = () => {
                 >
                   Impact Portfolio
                 </Tag>
-                <Heading size={{ base: '2xl', md: '3xl' }} color={headingColor} lineHeight={{ base: 1.15, md: 1.05 }}>
+                <Heading
+                  size={{ base: 'xl', md: '2xl' }}
+                  color={headingColor}
+                  lineHeight={{ base: 1.25, md: 1.2 }}
+                  fontWeight="extrabold"
+                  letterSpacing={{ base: '-0.5px', md: '-1px' }}
+                  noOfLines={2}
+                >
                   {heroHeading}
                 </Heading>
                 <Text fontSize={{ base: 'md', md: 'lg' }} color={bodyColor} lineHeight={1.75}>
@@ -225,6 +249,46 @@ const Highlights = () => {
                       </Tag>
                     ))}
                   </Wrap>
+                ) : null}
+                {focusAreaNav.length ? (
+                  <Stack spacing={2} pt={{ base: 4, md: 6 }} w="full">
+                    <Text
+                      fontSize="xs"
+                      letterSpacing="0.3em"
+                      textTransform="uppercase"
+                      color={subtle}
+                      fontWeight="semibold"
+                    >
+                      Jump to a focus area
+                    </Text>
+                    <Wrap spacing={2}>
+                      {focusAreaNav.map((area) => (
+                        <Button
+                          key={area.anchor}
+                          as="a"
+                          href={`#${area.anchor}`}
+                          size="sm"
+                          rightIcon={<ArrowForwardIcon />}
+                          borderRadius="full"
+                          px={4}
+                          variant="ghost"
+                          color={headingColor}
+                          border="1px solid"
+                          borderColor="transparent"
+                          bg={surface}
+                          boxShadow="0 16px 34px -30px rgba(59,130,246,0.75)"
+                          _hover={{
+                            borderColor: highlightBorder,
+                            bg: highlightBg,
+                            transform: 'translateY(-2px)'
+                          }}
+                          _active={{ transform: 'translateY(0)' }}
+                        >
+                          {area.label}
+                        </Button>
+                      ))}
+                    </Wrap>
+                  </Stack>
                 ) : null}
               </Stack>
               <SimpleGrid
@@ -269,56 +333,116 @@ const Highlights = () => {
 
       <Container maxW="6xl" pt={{ base: 12, md: 16 }}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 8, lg: 12 }}>
-          {achievements.map((group) => (
-            <Stack
-              key={group.category}
-              spacing={6}
-              bg={surface}
-              borderRadius="2xl"
-              p={{ base: 6, md: 8 }}
-              border="1px solid"
-              borderColor={cardBorder}
-              boxShadow="0 28px 60px -40px rgba(37,99,235,0.55)"
-              transition="transform 0.25s ease"
-              _hover={{ transform: 'translateY(-6px)' }}
-            >
-              <Stack spacing={3}>
-                <Tag
-                  size="sm"
-                  width="fit-content"
-                  textTransform="uppercase"
-                  letterSpacing="0.28em"
-                  bg="transparent"
-                  color={subtle}
-                >
-                  Focus Area
-                </Tag>
-                <Heading size={{ base: 'lg', md: 'xl' }} color={headingColor} lineHeight={1.2}>
-                  {normalizeCategory(group.category)}
-                </Heading>
-                {group.description ? (
-                  <Text color={bodyColor} fontSize={{ base: 'sm', md: 'md' }} lineHeight={1.7}>
-                    {group.description}
-                  </Text>
-                ) : null}
-              </Stack>
-              <Divider borderColor={dividerColor} />
-              <Stack spacing={5}>
-                {group.items.map((item) => {
-                  const description =
-                    typeof item === 'string' || item === null ? item : item.description;
-                  if (!description) {
-                    return null;
-                  }
-                  const tags =
-                    typeof item === 'object' && item !== null && Array.isArray(item.tags)
-                      ? item.tags
-                      : [];
-                  const link = linkForHighlight(description);
+          {achievements.map((group, groupIndex) => {
+            const anchorId = toAnchorId(group.category, groupIndex);
+            const fallbackLabel = `Focus Area ${groupIndex + 1}`;
+            const categoryLabel = normalizeCategory(group.category) || fallbackLabel;
+            const highlightItems = [];
+            const aggregatedTagSet = new Set();
+            const items = Array.isArray(group.items) ? group.items : [];
 
-                  return (
+            items.forEach((item) => {
+              const description =
+                typeof item === 'string' || item === null ? item : item.description;
+              if (!description) {
+                return;
+              }
+              const tags =
+                typeof item === 'object' && item !== null && Array.isArray(item.tags)
+                  ? item.tags
+                  : [];
+              tags.forEach((tag) => aggregatedTagSet.add(tag));
+              highlightItems.push({
+                description,
+                tags,
+                link: linkForHighlight(description)
+              });
+            });
+
+            const aggregatedTags = Array.from(aggregatedTagSet);
+            const highlightCount = highlightItems.length;
+            const highlightCopy = highlightCount
+              ? `${highlightCount} highlight${highlightCount === 1 ? '' : 's'}${
+                  aggregatedTags.length
+                    ? ` spanning ${aggregatedTags.length} theme${
+                        aggregatedTags.length === 1 ? '' : 's'
+                      }`
+                    : ''
+                }.`
+              : 'Watch this space for upcoming highlights.';
+
+            return (
+              <Stack
+                key={anchorId}
+                id={anchorId}
+                spacing={6}
+                bg={surface}
+                borderRadius="2xl"
+                p={{ base: 6, md: 8 }}
+                border="1px solid"
+                borderColor={cardBorder}
+                boxShadow="0 28px 60px -40px rgba(37,99,235,0.55)"
+                transition="transform 0.25s ease"
+                _hover={{ transform: 'translateY(-6px)' }}
+              >
+                <Stack spacing={3}>
+                  <Tag
+                    size="sm"
+                    width="fit-content"
+                    textTransform="uppercase"
+                    letterSpacing="0.28em"
+                    bg="transparent"
+                    color={subtle}
+                  >
+                    Focus Area
+                  </Tag>
+                  <Heading size={{ base: 'lg', md: 'xl' }} color={headingColor} lineHeight={1.2}>
+                    {categoryLabel}
+                  </Heading>
+                  {group.description ? (
+                    <Text color={bodyColor} fontSize={{ base: 'sm', md: 'md' }} lineHeight={1.7}>
+                      {group.description}
+                    </Text>
+                  ) : null}
+                  <Text color={subtle} fontSize="sm" lineHeight={1.6}>
+                    {highlightCopy}
+                  </Text>
+                  {aggregatedTags.length ? (
+                    <Wrap spacing={2}>
+                      {aggregatedTags.slice(0, 4).map((tag) => (
+                        <Tag
+                          key={`${anchorId}-${tag}`}
+                          size="sm"
+                          variant="subtle"
+                          bg={badgeBg}
+                          color={badgeColor}
+                          borderRadius="full"
+                        >
+                          {tag}
+                        </Tag>
+                      ))}
+                      {aggregatedTags.length > 4 ? (
+                        <Tag
+                          key={`${anchorId}-more`}
+                          size="sm"
+                          variant="subtle"
+                          bg="transparent"
+                          color={subtle}
+                          borderRadius="full"
+                          border="1px dashed"
+                          borderColor={highlightBorder}
+                        >
+                          +{aggregatedTags.length - 4} more
+                        </Tag>
+                      ) : null}
+                    </Wrap>
+                  ) : null}
+                </Stack>
+                <Divider borderColor={dividerColor} />
+                <Stack spacing={5}>
+                  {highlightItems.map(({ description, tags, link }) => (
                     <Box
-                      key={description}
+                      key={`${anchorId}-${description}`}
                       borderRadius="xl"
                       border="1px solid"
                       borderColor={highlightBorder}
@@ -348,7 +472,7 @@ const Highlights = () => {
                             <Wrap spacing={2}>
                               {tags.map((tag) => (
                                 <Tag
-                                  key={`${description}-${tag}`}
+                                  key={`${anchorId}-${description}-${tag}`}
                                   size="sm"
                                   variant="subtle"
                                   bg={badgeBg}
@@ -388,11 +512,11 @@ const Highlights = () => {
                         </Stack>
                       </Stack>
                     </Box>
-                  );
-                })}
+                  ))}
+                </Stack>
               </Stack>
-            </Stack>
-          ))}
+            );
+          })}
         </SimpleGrid>
       </Container>
     </Box>

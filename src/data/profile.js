@@ -272,6 +272,11 @@ export const education = [
     period: '1993 - 1996'
   },
   {
+    school: "St. Xavier's College, Kolkata",
+    degree: 'Higher Secondary (+2), Maths · Physics · Chemistry · Biology',
+    period: '1991 - 1993'
+  },
+  {
     school: "St. Mary's Orphanage and Day School, Kolkata",
     degree: 'Primary & Secondary Education',
     period: '1982 - 1991'
