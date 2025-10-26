@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  AspectRatio,
   useColorModeValue
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
@@ -15,6 +16,22 @@ import useSEO from '../hooks/useSEO.js';
 import { seo } from '../data/seo.js';
 
 const channelLink = 'https://www.youtube.com/@ambarishg';
+
+const normalizeYouTubeUrl = (url) => {
+  if (!url) {
+    return channelLink;
+  }
+  let cleaned = url.trim();
+  cleaned = cleaned.replace('watchv=', 'watch?v=').replace('playlistlist', 'playlist?list=');
+  const hasProtocol = cleaned.startsWith('http://') || cleaned.startsWith('https://');
+  return hasProtocol ? cleaned : `https://${cleaned}`;
+};
+
+const getPlaylistEmbedUrl = (url) => {
+  const cleaned = normalizeYouTubeUrl(url);
+  const [, playlistId] = cleaned.match(/[?&]list=([\w-]+)/) || [];
+  return playlistId ? `https://www.youtube.com/embed/videoseries?list=${playlistId}` : null;
+};
 
 const sections = [
   {
@@ -26,13 +43,13 @@ const sections = [
         title: 'Generative AI',
         description:
           'Blueprints for prompt engineering, evaluation, and orchestration that show how to operationalise GenAI safely - ideal for leaders piloting new use cases and students experimenting with frontier tools.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVVNnNCZOnnDqHlI7nLDotnW'
+        href: 'https://www.youtube.com/watch?v=x8t2mIQNnbw&list=PL3mYo8cDslVVNnNCZOnnDqHlI7nLDotnW'
       },
       {
         title: 'Machine Learning',
         description:
           'Model selection, feature engineering, and deployment stories that bridge classical ML with modern MLOps so teams can deliver faster and learners understand lifecycle trade-offs.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVXy_x4sijpwqJwgaW1-7GFZ'
+        href: 'https://www.youtube.com/watch?v=Dg1X2o0RppY&list=PL3mYo8cDslVXy_x4sijpwqJwgaW1-7GFZ'
       },
       {
         title: 'Python for Data & AI',
@@ -158,13 +175,13 @@ const sections = [
         title: 'Cricket Analytics',
         description:
           'Sports analytics casework translating match data into strategic insight - great for leaders showcasing storytelling techniques and students practising full-stack analysis.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVVaoSmpGVv-fvgUX_tVALHb'
+        href: 'https://www.youtube.com/watch?v=StuJaa5O2Rc&list=PL3mYo8cDslVW4ZGXujokM9S_iXMAXb0hE'
       },
       {
         title: 'Talks & Panels',
         description:
           'Conference sessions and community keynotes that surface lessons from real transformation programs, giving both executives and students context on leadership in action.',
-        href: 'https://www.youtube.com/playlistlist=PL3mYo8cDslVW4Ck2XTOczig7zuimhZpWL'
+        href: 'https://www.youtube.com/watch?v=hVRwKt7TUqg&list=PL3mYo8cDslVUy2dhN1gmGCvO5ktija5j5'
       }
     ]
   }
@@ -225,36 +242,61 @@ const AGAcademy = () => {
                     {section.summary}
                   </Text>
                 </Stack>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 6, md: 8 }}>
-                  {section.playlists.map((playlist) => (
-                    <Stack
-                      key={playlist.title}
-                      spacing={4}
-                      layerStyle="card"
-                      bg={cardBg}
-                      p={{ base: 6, md: 8 }}
-                      borderRadius="2xl"
-                      justify="space-between"
-                    >
-                      <Stack spacing={3}>
-                        <Heading size="sm">{playlist.title}</Heading>
-                        <Text color="subtleText">{playlist.description}</Text>
-                      </Stack>
-                      <Button
-                        as="a"
-                        href={playlist.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        size="sm"
-                        colorScheme="brand"
-                        rightIcon={<ExternalLinkIcon />}
-                        alignSelf="flex-start"
+                <Stack spacing={{ base: 6, md: 8 }}>
+                  {section.playlists.map((playlist) => {
+                    const playlistUrl = normalizeYouTubeUrl(playlist.href);
+                    const embedUrl = getPlaylistEmbedUrl(playlist.href);
+
+                    return (
+                      <Stack
+                        key={playlist.title}
+                        spacing={{ base: 6, lg: 10 }}
+                        direction={{ base: 'column', lg: 'row' }}
+                        layerStyle="card"
+                        bg={cardBg}
+                        p={{ base: 6, md: 8 }}
+                        borderRadius="2xl"
+                        align="stretch"
                       >
-                        Watch the playlist
-                      </Button>
-                    </Stack>
-                  ))}
-                </SimpleGrid>
+                        <Stack spacing={3} flex="1">
+                          <Heading size="md">{playlist.title}</Heading>
+                          <Text color="subtleText">{playlist.description}</Text>
+                          <Button
+                            as="a"
+                            href={playlistUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            size="sm"
+                            colorScheme="brand"
+                            rightIcon={<ExternalLinkIcon />}
+                            alignSelf="flex-start"
+                          >
+                            Watch the playlist
+                          </Button>
+                        </Stack>
+                        {embedUrl && (
+                          <AspectRatio
+                            ratio={16 / 9}
+                            flex={{ base: 'unset', lg: '0 0 360px' }}
+                            w="100%"
+                            maxW={{ base: 'full', lg: '420px' }}
+                            borderRadius="xl"
+                            overflow="hidden"
+                            boxShadow="md"
+                          >
+                            <Box
+                              as="iframe"
+                              src={`${embedUrl}&rel=0`}
+                              title={`${playlist.title} playlist`}
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          </AspectRatio>
+                        )}
+                      </Stack>
+                    );
+                  })}
+                </Stack>
               </Stack>
             ))}
           </Stack>
