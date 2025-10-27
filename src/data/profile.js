@@ -242,14 +242,17 @@ export const achievements = [
       {
         description: 'DST Geospatial Hackathon 2023 Winner.',
         tags: ['Geospatial', 'Government of India', 'Hackathon'],
-        
+         link: {
+          label: 'View Socio Economic Hub story',
+          to: '/highlights/dst-geospatial-hackathon'
+        },
       },
       {
         description: 'The Center for Policing Equity (CPE) Hackathon Winner.',
         tags: ['Geospatial', 'Hackathon'],
         link: {
-          label: 'View Socio Economic Hub story',
-          to: '/highlights/dst-geospatial-hackathon'
+          label: 'CPE Equity Visualisation story',
+          to: '/highlights/cpe-equity-visualisation'
         },
         spotlights: ['kaggle']
       }
