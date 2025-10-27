@@ -24,7 +24,7 @@ const NAV_LINKS = [
     label: 'Case Studies',
     to: '/highlights',
     submenu: [
-      { label: 'Highlights Overview', to: '/highlights' },
+      { label: 'Overview', to: '/highlights' },
       { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
     ]
   },
