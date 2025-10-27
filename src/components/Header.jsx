@@ -25,7 +25,7 @@ const NAV_LINKS = [
     to: '/highlights',
     submenu: [
       { label: 'Highlights Overview', to: '/highlights' },
-      { label: 'Kaggle Achievements', to: '/highlights/kaggle-achievements' }
+      { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
     ]
   },
   { label: 'YouTube', to: '/ag-academy' },
