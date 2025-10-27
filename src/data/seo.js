@@ -68,6 +68,10 @@ const highlightsList = [
   {
     title: 'Center for Policing Equity Visualisation',
     path: '/highlights/cpe-equity-visualisation'
+  },
+  {
+    title: 'Kaggle Achievements',
+    path: '/highlights/kaggle-achievements'
   }
 ];
 
@@ -265,6 +269,23 @@ export const seo = {
       'Ambarish Ganguly Academy showcases award-winning AI learning paths, workshops, and mentoring for practitioners.',
     pathname: '/ag-academy',
     keywords: ['AI academy', 'mentoring', 'learning paths']
+  },
+  kaggleAchievements: {
+    title: 'Kaggle Achievements',
+    description:
+      'Kaggle competition wins, kernel awards, and data storytelling highlights delivered by Ambarish Ganguly.',
+    pathname: '/highlights/kaggle-achievements',
+    keywords: ['Kaggle award', 'Kaggle competition winner', 'data science kernels', 'Ambarish Ganguly'],
+    structuredData: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Kaggle Achievements',
+        url: absoluteUrl('/highlights/kaggle-achievements'),
+        description:
+          'Collection of Kaggle awards, kernels, and competition outcomes by data and AI leader Ambarish Ganguly.'
+      }
+    ]
   }
 };
 

@@ -140,22 +140,31 @@ export const achievements = [
       {
         description:
           'Winner for the BBC NEWS dataset competition hosted on Kaggle using RAG with Qdrant and Gemma 2B.',
-        tags: ['Kaggle', 'RAG', 'Qdrant', 'Gemma 2B']
+        tags: ['Kaggle', 'RAG', 'Qdrant', 'Gemma 2B'],
+        link: {
+          label: 'Explore Kaggle achievements',
+          to: '/highlights/kaggle-achievements#kaggle-generative-ai-agents'
+        },
+        spotlights: ['kaggle']
       },
       {
         description:
-          'Microsoft CTO funded Blogathon Winner - \
-          BBC News Q&A with Advanced RAG and Microsoft Phi3',
-        tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'Microsoft Phi3']
+          'Microsoft CTO funded Blogathon Winner - BBC News Q&A with Advanced RAG and Microsoft Phi3.',
+        tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'Microsoft Phi3'],
+        link: {
+          label: 'View Azure Blogathon case study',
+          to: '/highlights/azure-blogathon-champion'
+        }
       },
       {
         description:
-          'Microsoft CTO funded Agentic AI Blogathon Winner - \
-          Solving Business Problems with Agentic RAG',
-        tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'CrewAI', 'Agentic AI',
-          'Azure OpenAI'
-        ]
-      },
+          'Microsoft CTO funded Agentic AI Blogathon Winner - Solving Business Problems with Agentic RAG.',
+        tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'CrewAI', 'Agentic AI', 'Azure OpenAI'],
+        link: {
+          label: 'View Azure Blogathon case study',
+          to: '/highlights/azure-blogathon-champion'
+        }
+      }
     ]
   },
   {
@@ -166,22 +175,37 @@ export const achievements = [
       {
         description:
           'Winner, Random Walk of the Penguins Data Science Challenge (DrivenData.org, NASA-sponsored).',
-        tags: ['Data Science', 'NASA', 'DrivenData', 'Climate']
+        tags: ['Data Science', 'NASA', 'DrivenData', 'Climate'],
+        link: {
+          label: 'View Random Walk case study',
+          to: '/highlights/random-walk-of-the-penguins'
+        }
       },
       {
         description: 'Agriculture Hub - Future Ready Champions of Code - Microsoft Hackathon (1st Prize).',
-        tags: ['Agritech','Microsoft', 'Azure', 'Hackathon']
+        tags: ['Agritech', 'Microsoft', 'Azure', 'Hackathon'],
+        link: {
+          label: 'View hackathon story',
+          to: '/highlights/future-ready-champions'
+        }
       },
       {
         description:
           'Bees health detection solution on Microsoft Azure showcased by Microsoft India.',
-        tags: ['Azure', 'Computer Vision', 'Agritech', 'Microsoft']
+        tags: ['Azure', 'Computer Vision', 'Agritech', 'Microsoft'],
+        link: {
+          label: 'Watch Azure showcase',
+          to: '/highlights/bees-health-detection'
+        }
       },
       {
         description: 'Azure Blogathon Winner - Cassava Leaf Disease Detection case study.',
-        tags: ['Azure Blogathon', 'Azure AI', 'Agritech']
-      },
-
+        tags: ['Azure Blogathon', 'Azure AI', 'Agritech'],
+        link: {
+          label: 'View Cassava case study',
+          to: '/highlights/azure-blogathon-cassava'
+        }
+      }
     ]
   },
   {
@@ -192,14 +216,22 @@ export const achievements = [
       {
         description:
           'DonorsChoose.org Recommendation Challenge - Stage 1 Exploratory Analysis Winner & Stage 2 Recommendation Award.',
-        tags: ['Kaggle', 'Recommendation Systems', 'Education']
+        tags: ['Kaggle', 'Recommendation Systems', 'Education'],
+        link: {
+          label: 'View DonorsChoose.org story',
+          to: '/highlights/donors-choose-recommendation'
+        },
+        spotlights: ['kaggle']
       },
       {
         description:
           'Azure Blogathon Winner - Recommendation engine for careers with an Enterprise Architecture.',
-        tags: ['Azure Blogathon', 'Developer Community', 'Content', 'Recommendation Systems']
-      },
-      
+        tags: ['Azure Blogathon', 'Developer Community', 'Content', 'Recommendation Systems'],
+        link: {
+          label: 'View Azure Blogathon case study',
+          to: '/highlights/azure-blogathon-champion'
+        }
+      }
     ]
   },
   {
@@ -209,43 +241,63 @@ export const achievements = [
     items: [
       {
         description: 'DST Geospatial Hackathon 2023 Winner.',
-        tags: ['Geospatial', 'Government of India', 'Hackathon']
+        tags: ['Geospatial', 'Government of India', 'Hackathon'],
+        
       },
       {
         description: 'The Center for Policing Equity (CPE) Hackathon Winner.',
-        tags: ['Geospatial', 'Hackathon']
+        tags: ['Geospatial', 'Hackathon'],
+        link: {
+          label: 'View Socio Economic Hub story',
+          to: '/highlights/dst-geospatial-hackathon'
+        },
+        spotlights: ['kaggle']
       }
     ]
   },
   {
-    category: 'Mixed Impact',
+    category: 'Kaggle Storytelling & Analysis',
     description:
-      'Cross-industry hackathons, award-winning analyses, and publications that sustain community leadership.',
+      'Kaggle kernels, storytelling awards, and data analysis features that highlight clear communication and community impact.',
     items: [
       {
         description:
           'Kiva Crowd Funding Data Challenge - Data Analysis Award for insights on social impact lending.',
-        tags: ['Kaggle', 'Machine Learning', 'Social Impact']
+        tags: ['Kaggle', 'Machine Learning', 'Social Impact'],
+        link: {
+          label: 'View Kiva analytics story',
+          to: '/highlights/kiva-crowdfunding-analysis'
+        },
+        spotlights: ['kaggle']
       },
       {
         description:
-          'Kaggle Weekly Kernel Award on African Conflicts Data Visualization',
-        tags: ['Kaggle', 'Kernel Award', 'Data Analysis']
+          'Kaggle Weekly Kernel Award on African Conflicts Data Visualization.',
+        tags: ['Kaggle', 'Kernel Award', 'Data Analysis'],
+        link: {
+          label: 'View African Conflicts visualisation',
+          to: '/highlights/african-conflicts-visualisation'
+        },
+        spotlights: ['kaggle']
       },
       {
         description:
           'Kaggle Themed Kernel Winner (Spooky Author Competition).',
-        tags: ['Kaggle', 'NLP', 'Kernel Award', 'Data Analysis']
-      },
-
+        tags: ['Kaggle', 'NLP', 'Kernel Award', 'Data Analysis'],
+        spotlights: ['kaggle'],
+        link: {
+          label: 'Explore Kaggle achievements',
+          to: '/highlights/kaggle-achievements#kaggle-kaggle-storytelling-analysis'
+        }
+      }
     ]
   },
   {
-    category: 'Publications ',
+    category: 'Publications',
     description:
       'Publications and conference presentations that share knowledge and advance the state of the art.',
     items: [
-     'Predicting the future is hard - Lessons from population time series forecasting competitions.',
+      'Predicting the future is hard - Lessons from population time series forecasting competitions.',
       'Histopathological Image and Lymphoma Image Classification - Custom deep learning with advanced optimization.'
     ]
   }

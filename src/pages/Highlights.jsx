@@ -50,70 +50,6 @@ const toAnchorId = (category, index) => {
   return base ? `focus-${base}` : `focus-area-${index + 1}`;
 };
 
-const linkForHighlight = (description) => {
-  if (description.includes('Random Walk of the Penguins')) {
-    return {
-      label: 'View Random Walk case study',
-      to: '/highlights/random-walk-of-the-penguins'
-    };
-  }
-  if (description.includes('Bees health detection solution')) {
-    return {
-      label: 'Watch the Azure showcase',
-      to: '/highlights/bees-health-detection'
-    };
-  }
-  if (description.includes('Future Ready Champions of Code')) {
-    return {
-      label: 'View hackathon story',
-      to: '/highlights/future-ready-champions'
-    };
-  }
-  if (description.includes('DonorsChoose.org Recommendation Challenge')) {
-    return {
-      label: 'View DonorsChoose.org story',
-      to: '/highlights/donors-choose-recommendation'
-    };
-  }
-  if (description.includes('Kiva Crowd Funding Data Challenge')) {
-    return {
-      label: 'View Kiva analytics story',
-      to: '/highlights/kiva-crowdfunding-analysis'
-    };
-  }
-  if (description.includes('Recommendation engine for careers with an Enterprise Architecture')) {
-    return {
-      label: 'View Azure Blogathon case study',
-      to: '/highlights/azure-blogathon-champion'
-    };
-  }
-  if (description.includes('Cassava Leaf Disease Detection')) {
-    return {
-      label: 'View Cassava case study',
-      to: '/highlights/azure-blogathon-cassava'
-    };
-  }
-  if (description.includes('Kaggle Weekly Kernel Award on African Conflicts Data Visualization')) {
-    return {
-      label: 'View African Conflicts visualisation',
-      to: '/highlights/african-conflicts-visualisation'
-    };
-  }
-  if (description.includes('Center for Policing Equity (CPE) Hackathon Winner')) {
-    return {
-      label: 'View policing equity insights',
-      to: '/highlights/cpe-equity-visualisation'
-    };
-  }
-  if (description.includes('DST Geospatial Hackathon 2023 Winner')) {
-    return {
-      label: 'View Socio Economic Hub story',
-      to: '/highlights/dst-geospatial-hackathon'
-    };
-  }
-  return null;
-};
-
 const Highlights = () => {
   useSEO(seo.highlights);
 
@@ -346,20 +282,33 @@ const Highlights = () => {
             const items = Array.isArray(group.items) ? group.items : [];
 
             items.forEach((item) => {
-              const description =
-                typeof item === 'string' || item === null ? item : item.description;
+              if (typeof item === 'string' || item === null) {
+                if (item) {
+                  highlightItems.push({
+                    description: item,
+                    tags: [],
+                    link: null
+                  });
+                }
+                return;
+              }
+
+              if (typeof item !== 'object') {
+                return;
+              }
+
+              const description = typeof item.description === 'string' ? item.description : '';
               if (!description) {
                 return;
               }
-              const tags =
-                typeof item === 'object' && item !== null && Array.isArray(item.tags)
-                  ? item.tags
-                  : [];
+
+              const tags = Array.isArray(item.tags) ? item.tags : [];
               tags.forEach((tag) => aggregatedTagSet.add(tag));
+
               highlightItems.push({
                 description,
                 tags,
-                link: linkForHighlight(description)
+                link: item.link || null
               });
             });
 
@@ -444,79 +393,93 @@ const Highlights = () => {
                 </Stack>
                 <Divider borderColor={dividerColor} />
                 <Stack spacing={5}>
-                  {highlightItems.map(({ description, tags, link }) => (
-                    <Box
-                      key={`${anchorId}-${description}`}
-                      borderRadius="xl"
-                      border="1px solid"
-                      borderColor={highlightBorder}
-                      bg={highlightBg}
-                      p={{ base: 4, md: 5 }}
-                    >
-                      <Stack
-                        direction={{ base: 'column', sm: 'row' }}
-                        spacing={{ base: 3, md: 4 }}
-                        align={{ base: 'flex-start', sm: 'center' }}
+                  {highlightItems.map(({ description, tags, link }) => {
+                    const linkProps = link
+                      ? link.to
+                        ? { as: RouterLink, to: link.to }
+                        : link.href
+                        ? {
+                            as: 'a',
+                            href: link.href,
+                            target: link.target || '_blank',
+                            rel: link.rel || 'noopener noreferrer'
+                          }
+                        : null
+                      : null;
+
+                    return (
+                      <Box
+                        key={`${anchorId}-${description}`}
+                        borderRadius="xl"
+                        border="1px solid"
+                        borderColor={highlightBorder}
+                        bg={highlightBg}
+                        p={{ base: 4, md: 5 }}
                       >
-                        <Box
-                          bg={itemIconBg}
-                          borderRadius="full"
-                          p={2.5}
-                          display="flex"
-                          alignItems="center"
-                          justifyContent="center"
+                        <Stack
+                          direction={{ base: 'column', sm: 'row' }}
+                          spacing={{ base: 3, md: 4 }}
+                          align={{ base: 'flex-start', sm: 'center' }}
                         >
-                          <Icon as={CheckCircleIcon} color={itemIconColor} boxSize={5} />
-                        </Box>
-                        <Stack spacing={3} flex="1" w="full">
-                          <Text color={bodyColor} fontWeight="semibold" lineHeight={1.6}>
-                            {description}
-                          </Text>
-                          {tags.length ? (
-                            <Wrap spacing={2}>
-                              {tags.map((tag) => (
-                                <Tag
-                                  key={`${anchorId}-${description}-${tag}`}
-                                  size="sm"
-                                  variant="subtle"
-                                  bg={badgeBg}
-                                  color={badgeColor}
-                                  borderRadius="full"
-                                >
-                                  {tag}
-                                </Tag>
-                              ))}
-                            </Wrap>
-                          ) : null}
-                          {link ? (
-                            <Button
-                              as={RouterLink}
-                              to={link.to}
-                              rightIcon={<ArrowForwardIcon />}
-                              size="sm"
-                              borderRadius="full"
-                              px={5}
-                              fontWeight="semibold"
-                              alignSelf={{ base: 'flex-start', sm: 'flex-end' }}
-                              bgGradient="linear(to-r, brand.500, brand.300)"
-                              color="white"
-                              boxShadow="0 18px 32px -24px rgba(59,130,246,0.65)"
-                              letterSpacing="0.04em"
-                              _hover={{
-                                bgGradient: 'linear(to-r, brand.400, brand.200)',
-                                transform: 'translateY(-1px)'
-                              }}
-                              _active={{
-                                transform: 'translateY(0)'
-                              }}
-                            >
-                              {link.label}
-                            </Button>
-                          ) : null}
+                          <Box
+                            bg={itemIconBg}
+                            borderRadius="full"
+                            p={2.5}
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                          >
+                            <Icon as={CheckCircleIcon} color={itemIconColor} boxSize={5} />
+                          </Box>
+                          <Stack spacing={3} flex="1" w="full">
+                            <Text color={bodyColor} fontWeight="semibold" lineHeight={1.6}>
+                              {description}
+                            </Text>
+                            {tags.length ? (
+                              <Wrap spacing={2}>
+                                {tags.map((tag) => (
+                                  <Tag
+                                    key={`${anchorId}-${description}-${tag}`}
+                                    size="sm"
+                                    variant="subtle"
+                                    bg={badgeBg}
+                                    color={badgeColor}
+                                    borderRadius="full"
+                                  >
+                                    {tag}
+                                  </Tag>
+                                ))}
+                              </Wrap>
+                            ) : null}
+                            {linkProps ? (
+                              <Button
+                                {...linkProps}
+                                rightIcon={<ArrowForwardIcon />}
+                                size="sm"
+                                borderRadius="full"
+                                px={5}
+                                fontWeight="semibold"
+                                alignSelf={{ base: 'flex-start', sm: 'flex-end' }}
+                                bgGradient="linear(to-r, brand.500, brand.300)"
+                                color="white"
+                                boxShadow="0 18px 32px -24px rgba(59,130,246,0.65)"
+                                letterSpacing="0.04em"
+                                _hover={{
+                                  bgGradient: 'linear(to-r, brand.400, brand.200)',
+                                  transform: 'translateY(-1px)'
+                                }}
+                                _active={{
+                                  transform: 'translateY(0)'
+                                }}
+                              >
+                                {link.label}
+                              </Button>
+                            ) : null}
+                          </Stack>
                         </Stack>
-                      </Stack>
-                    </Box>
-                  ))}
+                      </Box>
+                    );
+                  })}
                 </Stack>
               </Stack>
             );

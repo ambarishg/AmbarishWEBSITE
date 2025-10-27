@@ -17,6 +17,7 @@ import HighlightKiva from './pages/HighlightKiva.jsx';
 import HighlightAfricanConflicts from './pages/HighlightAfricanConflicts.jsx';
 import HighlightCPE from './pages/HighlightCPE.jsx';
 import AGAcademy from './pages/AGAcademy.jsx';
+import KaggleAchievements from './pages/KaggleAchievements.jsx';
 
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -83,6 +84,7 @@ const App = () => {
           <Route path="/highlights/kiva-crowdfunding-analysis" element={<HighlightKiva />} />
           <Route path="/highlights/african-conflicts-visualisation" element={<HighlightAfricanConflicts />} />
           <Route path="/highlights/cpe-equity-visualisation" element={<HighlightCPE />} />
+          <Route path="/highlights/kaggle-achievements" element={<KaggleAchievements />} />
           <Route path="/ag-academy" element={<AGAcademy />} />
         </Routes>
       </Flex>
