@@ -148,18 +148,10 @@ const KaggleAchievements = () => {
                 <BreadcrumbLink>Kaggle Achievements</BreadcrumbLink>
               </BreadcrumbItem>
             </Breadcrumb>
-            <Stack spacing={4} maxW={{ base: 'full', md: '3xl' }}>
-              <Tag
-                size="full"
-                width="fit-content"
-                colorScheme="brand"
-                variant="subtle"
-                px={4}
-                py={2}
-                borderRadius="full"
-              >
-                Kaggle Awards & Recognition
-              </Tag>
+            <Stack spacing={{ base: 4, md: 5 }}>
+                <Heading size={{ base: '2xl', md: '3xl' }} color={headingColor} lineHeight={1.1}>
+                  Kaggle Impact Portfolio
+                </Heading>
               
               <Text fontSize={{ base: 'md', md: 'lg' }} color={bodyColor} lineHeight={1.7}>
                 A curated view of competition wins, community kernels, and analysis features that elevated
