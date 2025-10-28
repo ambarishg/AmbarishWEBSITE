@@ -1,16 +1,5 @@
-import {
-  Badge,
-  Box,
-  Button,
-  Container,
-  Heading,
-  SimpleGrid,
-  Stack,
-  Text,
-  AspectRatio,
-  useColorModeValue
-} from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Badge, Box, Button, Container, Heading, Stack, Text, useColorModeValue, Icon } from '@chakra-ui/react';
+import { ExternalLinkIcon, CheckCircleIcon } from '@chakra-ui/icons';
 import SectionHeading from '../components/SectionHeading.jsx';
 import useSEO from '../hooks/useSEO.js';
 import { seo } from '../data/seo.js';
@@ -27,17 +16,16 @@ const normalizeYouTubeUrl = (url) => {
   return hasProtocol ? cleaned : `https://${cleaned}`;
 };
 
-const getPlaylistEmbedUrl = (url) => {
-  const cleaned = normalizeYouTubeUrl(url);
-  const [, playlistId] = cleaned.match(/[?&]list=([\w-]+)/) || [];
-  return playlistId ? `https://www.youtube.com/embed/videoseries?list=${playlistId}` : null;
-};
-
 const sections = [
   {
     category: 'Applied Machine Learning',
     summary:
       'Code-first explorations that translate AI concepts into delivery-ready assets, keeping practitioners current while helping students build a demonstrable portfolio.',
+    valueProps: [
+      'Step-by-step notebooks and datasets ready for immediate experimentation.',
+      'Architecture callouts distilled from award-winning hackathon solutions.',
+      'Mentorship prompts that help teams translate prototypes into production.'
+    ],
     playlists: [
       {
         title: 'Generative AI',
@@ -69,6 +57,11 @@ const sections = [
     category: 'Core Data & AI Foundations',
     summary:
       'Structured fundamentals that keep senior professionals sharp and give students the conceptual depth required before stepping into advanced AI roles.',
+    valueProps: [
+      'Industry scenarios that connect theory with stakeholder expectations.',
+      'Visual explanations that make complex statistical ideas memorable.',
+      'Assignments and practice prompts reusable in classrooms or bootcamps.'
+    ],
     playlists: [
       
       {
@@ -101,6 +94,11 @@ const sections = [
     category: 'Platform & Architecture Leadership',
     summary:
       'Architectural primers that help decision makers govern cloud-scale systems and give students a window into production-grade design.',
+    valueProps: [
+      'Annotated architecture patterns and trade-off discussions for leadership reviews.',
+      'Governance and reliability checklists tailored to production platforms.',
+      'Comparisons across tooling stacks to accelerate strategic decisions.'
+    ],
     playlists: [
       {
         title: 'Architectures',
@@ -138,6 +136,11 @@ const sections = [
     category: 'Certification Accelerators',
     summary:
       'Guided learning paths that turn exam objectives into production-focused skills, helping delivery leads stay ahead while giving students a blueprint for industry credentials.',
+    valueProps: [
+      'Objective-to-skill mappings that prioritise what matters for the exam.',
+      'Exam-style checkpoints paired with quick references to official resources.',
+      'Environment setup guidance to keep practice sessions efficient and repeatable.'
+    ],
     playlists: [
       {
         title: 'AI-102 Azure AI Engineer Associate',
@@ -170,6 +173,11 @@ const sections = [
     category: 'Applied Analytics & Inspiration',
     summary:
       'Domain narratives that demonstrate how data and AI leadership delivers measurable impact and keep learners motivated with contextual examples.',
+    valueProps: [
+      'Storytelling frameworks that translate analytics into executive influence.',
+      'Community case studies showcasing measurable outcomes and social impact.',
+      'Discussion prompts you can reuse for mentoring circles or team retros.'
+    ],
     playlists: [
       {
         title: 'Cricket Analytics',
@@ -194,6 +202,10 @@ const AGAcademy = () => {
     'linear-gradient(135deg, rgba(59,134,245,0.25) 0%, rgba(14,116,244,0.35) 100%)'
   );
   const cardBg = useColorModeValue('whiteAlpha.900', 'rgba(15,23,42,0.85)');
+  const calloutBorder = useColorModeValue('rgba(148,163,184,0.35)', 'rgba(148,163,184,0.3)');
+  const calloutBg = useColorModeValue('white', 'rgba(15,23,42,0.6)');
+  const calloutHeading = useColorModeValue('brand.600', 'brand.300');
+  const calloutIcon = useColorModeValue('brand.500', 'brand.200');
 
   return (
     <Box as="article">
@@ -245,12 +257,12 @@ const AGAcademy = () => {
                 <Stack spacing={{ base: 6, md: 8 }}>
                   {section.playlists.map((playlist) => {
                     const playlistUrl = normalizeYouTubeUrl(playlist.href);
-                    const embedUrl = getPlaylistEmbedUrl(playlist.href);
+                    const takeaways = section.valueProps || [];
 
                     return (
                       <Stack
                         key={playlist.title}
-                        spacing={{ base: 6, lg: 10 }}
+                        spacing={{ base: 6, lg: 8 }}
                         direction={{ base: 'column', lg: 'row' }}
                         layerStyle="card"
                         bg={cardBg}
@@ -274,25 +286,32 @@ const AGAcademy = () => {
                             Watch the playlist
                           </Button>
                         </Stack>
-                        {embedUrl && (
-                          <AspectRatio
-                            ratio={16 / 9}
-                            flex={{ base: 'unset', lg: '0 0 360px' }}
-                            w="100%"
-                            maxW={{ base: 'full', lg: '420px' }}
+                        {takeaways.length ? (
+                          <Stack
+                            flex={{ base: 'unset', lg: '0 0 320px' }}
+                            spacing={3}
+                            p={{ base: 4, md: 5 }}
                             borderRadius="xl"
-                            overflow="hidden"
+                            border="1px solid"
+                            borderColor={calloutBorder}
+                            bg={calloutBg}
                             boxShadow="md"
                           >
-                            <Box
-                              as="iframe"
-                              src={`${embedUrl}&rel=0`}
-                              title={`${playlist.title} playlist`}
-                              allowFullScreen
-                              loading="lazy"
-                            />
-                          </AspectRatio>
-                        )}
+                            <Heading size="sm" color={calloutHeading}>
+                              What you&apos;ll gain
+                            </Heading>
+                            <Stack spacing={2}>
+                              {takeaways.map((point) => (
+                                <Stack key={point} direction="row" spacing={3} align="flex-start">
+                                  <Icon as={CheckCircleIcon} color={calloutIcon} boxSize={4} mt={1} />
+                                  <Text color="subtleText" fontSize="sm">
+                                    {point}
+                                  </Text>
+                                </Stack>
+                              ))}
+                            </Stack>
+                          </Stack>
+                        ) : null}
                       </Stack>
                     );
                   })}

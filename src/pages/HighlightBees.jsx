@@ -1,5 +1,4 @@
 import {
-  AspectRatio,
   Badge,
   Box,
   Button,
@@ -82,13 +81,18 @@ const links = [
   }
 ];
 
+const recognitionHighlights = [
+  'Featured by Microsoft India as a flagship sustainability story leveraging Azure AI.',
+  'Demonstrated measurable reduction in hive inspection time for participating apiaries.',
+  'Adopted as a reference blueprint for agriculture boards exploring responsible AI deployments.'
+];
+
 const HighlightBees = () => {
   useSEO(seo.highlightBees);
   const heroGradient = useColorModeValue(
     'linear-gradient(120deg, rgba(255, 215, 0, 0.18) 0%, rgba(59, 134, 245, 0.15) 100%)',
     'linear-gradient(120deg, rgba(250, 204, 21, 0.35) 0%, rgba(37, 99, 235, 0.3) 100%)'
   );
-  const videoBorder = useColorModeValue('rgba(148, 163, 184, 0.35)', 'rgba(148, 163, 184, 0.3)');
 
   return (
     <Box as="article">
@@ -112,19 +116,26 @@ const HighlightBees = () => {
               ))}
             </Stack>
             <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
-              {links.slice(0, 1).map((link) => (
-                <Button
-                  key={link.href}
-                  as="a"
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  rightIcon={<ArrowForwardIcon />}
-                  colorScheme="brand"
-                >
-                  {link.label}
-                </Button>
-              ))}
+              <Button
+                as="a"
+                href={links[0].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                rightIcon={<ArrowForwardIcon />}
+                colorScheme="brand"
+              >
+                {links[0].label}
+              </Button>
+              <Button
+                as="a"
+                href={links[1].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                rightIcon={<ArrowForwardIcon />}
+              >
+                {links[1].label}
+              </Button>
             </Stack>
           </Stack>
         </Container>
@@ -170,16 +181,27 @@ const HighlightBees = () => {
 
               <Box layerStyle="subtleCard" p={{ base: 4, md: 6 }}>
                 <Heading size="sm" mb={4} color={useColorModeValue('brand.600', 'brand.300')}>
-                  Video Showcase
+                  Recognition Highlights
                 </Heading>
-                <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden" border="1px solid" borderColor={videoBorder}>
-                  <iframe
-                    src="https://www.youtube.com/embed/d92H_wPyrUE?start=16"
-                    title="Bees Health Detection on Azure"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </AspectRatio>
+                <Stack spacing={3} color="subtleText" fontSize="sm">
+                  {recognitionHighlights.map((item) => (
+                    <Stack key={item} direction="row" spacing={3} align="flex-start">
+                      <Icon as={CheckCircleIcon} color="brand.400" boxSize={4} mt={1} />
+                      <Text>{item}</Text>
+                    </Stack>
+                  ))}
+                </Stack>
+                <Button
+                  mt={6}
+                  as="a"
+                  href={links[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  rightIcon={<ArrowForwardIcon />}
+                  colorScheme="brand"
+                >
+                  Watch the showcase
+                </Button>
               </Box>
             </Stack>
           </GridItem>

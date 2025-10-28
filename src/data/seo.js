@@ -182,7 +182,7 @@ export const seo = {
         },
         url: absoluteUrl('/highlights/bees-health-detection'),
         mainEntityOfPage: absoluteUrl('/highlights/bees-health-detection'),
-        image: 'https://www.youtube.com/watchv=d92H_wPyrUE&t=16s'
+        image: 'https://www.youtube.com/watch?v=d92H_wPyrUE&t=16s'
       }
     ]
   },
