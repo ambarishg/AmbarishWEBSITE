@@ -74,7 +74,7 @@ const implementationSteps = [
 const links = [
   {
     label: 'Watch the Microsoft India showcase',
-    href: 'https://www.youtube.com/watchv=d92H_wPyrUE&t=16s'
+    href: 'https://www.youtube.com/watch?v=d92H_wPyrUE&t=16s'
   },
   {
     label: 'View the GitHub reference implementation',
@@ -174,7 +174,7 @@ const HighlightBees = () => {
                 </Heading>
                 <AspectRatio ratio={16 / 9} borderRadius="lg" overflow="hidden" border="1px solid" borderColor={videoBorder}>
                   <iframe
-                    src="https://www.youtube.com/embed/d92H_wPyrU'start=16"
+                    src="https://www.youtube.com/embed/d92H_wPyrUE?start=16"
                     title="Bees Health Detection on Azure"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
