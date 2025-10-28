@@ -50,6 +50,10 @@ const highlightsList = [
     path: '/highlights/azure-blogathon-cassava'
   },
   {
+    title: 'Microsoft & Azure Impact Portfolio',
+    path: '/highlights/microsoft-azure'
+  },
+  {
     title: 'DST Geospatial Hackathon Winner',
     path: '/highlights/dst-geospatial-hackathon'
   },
@@ -222,6 +226,23 @@ export const seo = {
     pathname: '/highlights/azure-blogathon-cassava',
     keywords: ['Cassava leaf detection', 'Azure AI', 'computer vision'],
     type: 'article'
+  },
+  highlightMicrosoftAzure: {
+    title: 'Microsoft & Azure Impact Portfolio',
+    description:
+      'Collection of Microsoft-recognised case studies, hackathon wins, and Azure-first architectures delivered by Ambarish Ganguly.',
+    pathname: '/highlights/microsoft-azure',
+    keywords: ['Microsoft Azure case studies', 'Azure AI', 'Microsoft hackathon winners'],
+    structuredData: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Microsoft & Azure Impact Portfolio',
+        description:
+          'Showcase of Microsoft and Azure achievements including Blogathon wins, Future Ready programmes, and platform architectures.',
+        url: absoluteUrl('/highlights/microsoft-azure')
+      }
+    ]
   },
   highlightDSTGeospatial: {
     title: 'DST Geospatial Hackathon Winner',

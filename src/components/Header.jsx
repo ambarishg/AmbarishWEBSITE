@@ -25,6 +25,7 @@ const NAV_LINKS = [
     to: '/highlights',
     submenu: [
       { label: 'Overview', to: '/highlights' },
+      { label: 'Azure', to: '/highlights/microsoft-azure' },
       { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
     ]
   },
