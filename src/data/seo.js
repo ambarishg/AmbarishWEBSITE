@@ -284,6 +284,14 @@ export const seo = {
     keywords: ['Center for Policing Equity', 'data visualisation', 'hackathon winner'],
     type: 'article'
   },
+  speakingConferences: {
+    title: 'Speaking & Conferences',
+    description:
+      'Recent lectures, panels, and chairing work that spotlight Responsible AI, advanced agents, and signal analysis forums.',
+    pathname: '/speaking-conferences',
+    keywords: ['speaking engagements', 'SIGNASS 2026', 'academic lectures', 'data leadership'],
+    image: '/images/AG.jpg'
+  },
   agAcademy: {
     title: 'AG Academy',
     description:

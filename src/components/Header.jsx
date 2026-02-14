@@ -29,6 +29,7 @@ const NAV_LINKS = [
       { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
     ]
   },
+  { label: 'Speaking & Conferences', to: '/speaking-conferences' },
   { label: 'YouTube', to: '/ag-academy' },
   { label: 'Credentials', to: { pathname: '/', hash: '#credentials' } },
   { label: 'Blogs', href: 'https://blog.ambarishganguly.com' }
