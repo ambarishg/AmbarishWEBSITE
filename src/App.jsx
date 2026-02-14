@@ -19,6 +19,7 @@ import HighlightCPE from './pages/HighlightCPE.jsx';
 import AGAcademy from './pages/AGAcademy.jsx';
 import KaggleAchievements from './pages/KaggleAchievements.jsx';
 import HighlightMicrosoftAzure from './pages/HighlightMicrosoftAzure.jsx';
+import SpeakingConferences from './pages/SpeakingConferences.jsx';
 
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -88,6 +89,7 @@ const App = () => {
           <Route path="/highlights/microsoft-azure" element={<HighlightMicrosoftAzure />} />
           <Route path="/highlights/kaggle-achievements" element={<KaggleAchievements />} />
           <Route path="/ag-academy" element={<AGAcademy />} />
+          <Route path="/speaking-conferences" element={<SpeakingConferences />} />
         </Routes>
       </Flex>
       <Footer />
