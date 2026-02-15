@@ -20,6 +20,7 @@ import useSEO from '../hooks/useSEO.js';
 import { seo } from '../data/seo.js';
 import ACMJUImage from '../../docs/ACM-JU.jpg';
 import SIGNASSImage from '../../docs/SIGNASS.jpg';
+import { Link as RouterLink } from 'react-router-dom';
 
 const lectureHighlights = [
   'Advanced retrieval-augmented generation architectures with agent orchestration and safety guardrails.',
@@ -192,6 +193,16 @@ const SpeakingConferences = () => {
                 colorScheme="brand"
               >
                 View SIGNASS 2026 programme
+              </Button>
+              <Button
+                as={RouterLink}
+                to="/speaking-conferences/signass-2006"
+                variant="outline"
+                colorScheme="brand"
+                rightIcon={<ArrowForwardIcon />}
+                alignSelf="flex-start"
+              >
+                Explore SIGNASS 2006 reflections
               </Button>
             </Stack>
           </Stack>
