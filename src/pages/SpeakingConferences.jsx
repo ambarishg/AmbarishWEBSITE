@@ -69,8 +69,7 @@ const SpeakingConferences = () => {
               <Text fontSize={{ base: 'md', md: 'lg' }} color={bodyColor} lineHeight={1.8}>
                 Recent invitations blend academic forums and industry summits, focusing on responsible
                 retrieval-augmented generation, agent orchestration, and domain-aware signal intelligence.
-                The highlights below showcase momentum across university communities and flagship sessions
-                through February 2026.
+                The highlights below showcase momentum across university communities and flagship sessions.
               </Text>
             </Stack>
           </Stack>
@@ -156,6 +155,8 @@ const SpeakingConferences = () => {
               <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.2}>
                 International Conference on Signal Analysis for Smart Systems
               </Heading>
+              <Text fontSize="sm" color="gray.400">
+                February 12–14, 2026 </Text>
               <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
                 The conference convenes researchers and industry teams to explore signal analysis innovations
                 for smart systems, spanning sensors, embedded analytics, and deployment disciplines, with the

@@ -21,7 +21,7 @@ import SIGNASSSceneOne from '../../docs/SIGNASS-01.png';
 import SIGNASSSceneTwo from '../../docs/SIGNASS-02.jpeg';
 const contributionHighlights = [
   'Session Chair for the Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives track, keeping the dialogue aligned to deployment realities, ethical guardrails, and measurable signal outcomes.',
-  'Industry panelist throughout the panel, addressing the themes captured in the official questionnaire where I am listed as “Mr. Ambarish Ganguly (Industry)” and covering data preparation effort, generative AI use cases, and reliability/security trade-offs.'
+  'Industry panelist throughout the panel, addressing the themes covering data preparation effort, generative AI use cases, and reliability/security trade-offs.'
 ];
 
 const Signass2006 = () => {
@@ -37,10 +37,11 @@ const Signass2006 = () => {
   return (
     <Box bg={pageBg} minH="100vh">
       <Box
-        bgGradient="linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,64,175,0.55))"
+        bgGradient="linear-gradient(145deg, rgba(5,16,32,0.96), rgba(16,58,130,0.85))"
         borderBottom="1px solid"
-        borderColor={borderColor}
-        boxShadow="0 25px 45px -30px rgba(15,23,42,0.95)"
+        borderColor="rgba(29,78,216,0.6)"
+        boxShadow="0 30px 60px -40px rgba(15,23,42,0.85)"
+        backdropFilter="blur(40px)"
       >
         <Container maxW="6xl" py={{ base: 12, md: 20 }}>
           <Stack spacing={{ base: 4, md: 8 }} maxW="3xl">
@@ -70,8 +71,15 @@ const Signass2006 = () => {
           border="1px solid"
           borderColor={borderColor}
           boxShadow="0 20px 60px -35px rgba(15,118,201,0.65)"
+          bg={useColorModeValue('gray.200', 'gray.800')}
         >
-          <Image src={SIGNASSBanner} alt="SIGNASS 2026 conference banner" objectFit="cover" w="full" h={{ base: '220px', md: '320px' }} />
+          <Image
+            src={SIGNASSBanner}
+            alt="SIGNASS 2026 conference banner"
+            objectFit="contain"
+            w="100%"
+            maxH={{ base: '260px', md: '360px' }}
+          />
         </Box>
       </Container>
 
@@ -92,9 +100,7 @@ const Signass2006 = () => {
               </Heading>
               <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
                 The Domain-Aware AI/ML for Real-World Signal Processing panel blended insights across healthcare,
-                communication, and the power sector. As Session Chair I guided the agenda toward responsible
-                outcomes, and as Panelist I addressed practical questions about data quality, generative AI,
-                and trust documented in the official panel questionnaire.
+                communication, and the power sector. 
               </Text>
             </Stack>
             <Divider borderColor={borderColor} />
