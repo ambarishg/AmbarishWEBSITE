@@ -29,7 +29,7 @@ const lectureHighlights = [
 ];
 
 const SignassDetails = [
-  'Session Chair, SIGNAL ANALYSIS FOR SMART SYSTEMS 2026 track.',
+  'Session Chair for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing at SIGNASS 2026.',
   'Panel Discussion on Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication.',
   'Collaboration with researchers exploring sensors, embedded analytics, and responsible deployment at scale.'
 ];
@@ -182,7 +182,7 @@ const SpeakingConferences = () => {
                 ))}
               </List>
               <Text color="gray.500" fontSize="sm">
-                Venue: Galleria Mall Conference Center, 81 Nilgunj Road, Agarpara (Kolkata).
+                Venue: 81 Nilgunj Road, Agarpara (Kolkata).
               </Text>
               <Button
                 as={Link}

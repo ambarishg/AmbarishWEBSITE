@@ -4,8 +4,7 @@ Speaking & Conferences Page , there should be 2 entries
 
 1. Lecture on Advanced RAG , Agents and Industry Use cases delivered for ACM Jadavpur University Student Chapter delivered on 30th January 2026. Please also use the docs\ACM-JU.jpg for emphasizing this
 
-SIGNASS 2026 International Conference on Signal Analysis for Smart Systems - Please get all the details from https://www.nit.ac.in/SIGNASS/ 
-- Session Chair at SIGNASS 2026
+- Session Chair for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing at SIGNASS 2026
 - Panel Discussion on Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication at SIGNASS 2026. 
 
 Make it very professional
@@ -54,3 +53,7 @@ make it very professional aligning with SIGNASS Color theme
 Mention the date prominently in the Speaking and Conferences Page
 
 Add docs\SIGNASS-03.jpeg to the SIGNASS page appropriately to display in a very professional and visible manner
+
+Change the wording in the pages covering SIGNASS to mention that Session Chair was for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing in the conference
+
+Change should be reflected in the JSX pages
