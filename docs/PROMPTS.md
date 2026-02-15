@@ -17,3 +17,25 @@ Make the heading shorter and Crisper.
 For the SIGNASS 2026, Please also use the docs\SIGNASS.jpg for emphasizing this.docs\Programme-schedule-signass-2026-NiT.pdf - Please use this in the screen.
 
 Remove the programme PDF 
+
+Make a seperate page for Signas 2006 and include the following
+
+1. Images docs\SIGNASS-01.png and docs\SIGNASS-02.png and docs\SIGNASS.jpg                   
+2. Highlight the contribution made as a Session Chair as well as the Panelist in the Panel discussion of Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives.Use the document docs\SIGNASS_Panel_Discussion_Questionnaire_v1.pdf to higlight my contribution [ see the mention as Mr. Ambarish Ganguly in the PDF] in the Panel Discussion         
+
+1. The Heading is on top of the Image. Please adjust the Image and Heading so that they are seperate.
+
+2. docs\SIGNASS-01.png should be visible completely
+
+3. Read the document docs\SIGNASS-Panel.md and summarise the discussion.
+4. Remove the Panel Question Link
+
+Make the docs\SIGNASS-02.png more prominent  
+remove the (from docs/SIGNASS-Panel.md) text
+Session Chair is separate and Panel discussion is seperate. Adjust the text in the heading
+
+Make the docs\SIGNASS-02.png more prominent so that the full image is visible. It should be more  prominent. 
+
+Increase the width of the image so that it is prominent and fully visible
+
+Read the full page on SIGNASS2026  and create a post which is suitable for posting in LinkedIn for my profile. 

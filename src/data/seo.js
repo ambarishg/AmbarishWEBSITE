@@ -292,6 +292,14 @@ export const seo = {
     keywords: ['speaking engagements', 'SIGNASS 2026', 'academic lectures', 'data leadership'],
     image: '/images/AG.jpg'
   },
+  signass2006: {
+    title: 'SIGNASS Panel: Session Chair & Panelist',
+    description:
+      'Documented Session Chair and panelist contributions to the Domain-Aware AI/ML for Real-World Signal Processing panel at SIGNASS, with the panel questionnaire describing the dialogue captured at the conference.',
+    pathname: '/speaking-conferences/signass-2006',
+    keywords: ['SIGNASS 2026', 'session chair', 'panel discussion', 'Domain-Aware AI/ML', 'signal processing'],
+    image: '/docs/SIGNASS.jpg'
+  },
   agAcademy: {
     title: 'AG Academy',
     description:

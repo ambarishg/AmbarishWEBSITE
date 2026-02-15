@@ -1,0 +1,10 @@
+Just wrapped up a full day at SIGNASS 2026 — the Signal Analysis for Smart Systems conference brought together domain experts from healthcare, communications, and industry to benchmark how AI/ML is being made trustworthy in real-world signal processing.
+
+I had the privilege of participating in the Domain-Aware AI/ML panel, keeping the conversation anchored in deployment realities such as data prep overhead, governance, and human-in-the-loop reliability. As a panelist I also shared practical takeaways on how industry teams are using generative AI for signal synthesis, anomaly detection, and automation while balancing compliance/security.
+
+Highlights I’m proud to share:
+• Guiding the panel track toward actionable, domain-aware dialogue.
+• Reinforcing that “signal-to-system” work often begins long before model training.
+• Calling for closer collaboration with academia so smart system deployments stay grounded in field-tested constraints.
+
+Grateful to the organizers and fellow panelists for an insightful session — here’s to making signal intelligence safer, more responsible, and more impactful across healthcare and communication systems.
