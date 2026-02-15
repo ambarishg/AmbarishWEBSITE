@@ -108,10 +108,7 @@ const Signass2006 = () => {
                   {highlight}
                 </Text>
               ))}
-              <Text color={bodyColor} fontSize="sm">
-                The panel questionnaire (SIGNASS Panel Discussion Questionnaire v1) references the prompts I addressed
-                and lists me explicitly as “Mr. Ambarish Ganguly (Industry)” across the sub-theme sections.
-              </Text>
+            
             </Stack>
           </Stack>
 
