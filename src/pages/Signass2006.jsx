@@ -37,10 +37,11 @@ const Signass2006 = () => {
   return (
     <Box bg={pageBg} minH="100vh">
       <Box
-        bgGradient="linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,64,175,0.55))"
+        bgGradient="linear-gradient(145deg, rgba(5,16,32,0.96), rgba(16,58,130,0.85))"
         borderBottom="1px solid"
-        borderColor={borderColor}
-        boxShadow="0 25px 45px -30px rgba(15,23,42,0.95)"
+        borderColor="rgba(29,78,216,0.6)"
+        boxShadow="0 30px 60px -40px rgba(15,23,42,0.85)"
+        backdropFilter="blur(40px)"
       >
         <Container maxW="6xl" py={{ base: 12, md: 20 }}>
           <Stack spacing={{ base: 4, md: 8 }} maxW="3xl">
@@ -70,8 +71,15 @@ const Signass2006 = () => {
           border="1px solid"
           borderColor={borderColor}
           boxShadow="0 20px 60px -35px rgba(15,118,201,0.65)"
+          bg={useColorModeValue('gray.200', 'gray.800')}
         >
-          <Image src={SIGNASSBanner} alt="SIGNASS 2026 conference banner" objectFit="cover" w="full" h={{ base: '220px', md: '320px' }} />
+          <Image
+            src={SIGNASSBanner}
+            alt="SIGNASS 2026 conference banner"
+            objectFit="contain"
+            w="100%"
+            maxH={{ base: '260px', md: '360px' }}
+          />
         </Box>
       </Container>
 

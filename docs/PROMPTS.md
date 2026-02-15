@@ -39,3 +39,16 @@ Make the docs\SIGNASS-02.png more prominent so that the full image is visible. I
 Increase the width of the image so that it is prominent and fully visible
 
 Read the full page on SIGNASS2026  and create a post which is suitable for posting in LinkedIn for my profile. 
+
+
+The image docs\SIGNASS.jpg  make it fully visible with no cropping
+
+<Box
+        bgGradient="linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,64,175,0.55))"
+        borderBottom="1px solid"
+        borderColor={borderColor}
+        boxShadow="0 25px 45px -30px rgba(15,23,42,0.95)"
+      >
+make it very professional aligning with SIGNASS Color theme
+
+Mention the date prominently in the Speaking and Conferences Page
