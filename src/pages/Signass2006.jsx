@@ -19,6 +19,7 @@ import { seo } from '../data/seo.js';
 import SIGNASSBanner from '../../docs/SIGNASS.jpg';
 import SIGNASSSceneOne from '../../docs/SIGNASS-01.png';
 import SIGNASSSceneTwo from '../../docs/SIGNASS-02.jpeg';
+import SIGNASSSceneThree from '../../docs/SIGNASS-03.jpeg';
 const contributionHighlights = [
   'Session Chair for the Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives track, keeping the dialogue aligned to deployment realities, ethical guardrails, and measurable signal outcomes.',
   'Industry panelist throughout the panel, addressing the themes covering data preparation effort, generative AI use cases, and reliability/security trade-offs.'
@@ -168,7 +169,7 @@ const Signass2006 = () => {
             boxShadow="0 18px 48px -30px rgba(15,118,201,0.45)"
           >
             <Heading size={{ base: 'md', md: 'lg' }}>Scenes from SIGNASS 2026</Heading>
-            <Grid templateColumns={{ base: '1fr', md: '1fr 1.7fr' }} gap={4}>
+            <Grid templateColumns={{ base: '1fr', md: 'repeat(3, minmax(0, 1fr))' }} gap={4}>
               <Box
                 borderRadius="2xl"
                 overflow="hidden"
@@ -188,6 +189,16 @@ const Signass2006 = () => {
                 minH={{ base: '320px', md: '360px' }}
               >
                 <Image src={SIGNASSSceneTwo} alt="SIGNASS snapshot 2" objectFit="cover" w="full" h="full" />
+              </Box>
+              <Box
+                borderRadius="2xl"
+                overflow="hidden"
+                border="1px solid"
+                borderColor={borderColor}
+                bg={imageBg}
+                minH={{ base: '320px', md: '360px' }}
+              >
+                <Image src={SIGNASSSceneThree} alt="SIGNASS snapshot 3" objectFit="cover" w="full" h="full" />
               </Box>
             </Grid>
             <Text color={bodyColor} fontSize="sm">
