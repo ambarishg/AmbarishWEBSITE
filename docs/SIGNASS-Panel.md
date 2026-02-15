@@ -2,6 +2,7 @@ Panel Discussion
 Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication
 Perspectives
 Conference: SIGNASS — Signal Analysis for Smart Systems
+Session Chair: Track 4 — Imaging, Computer Vision, and Multimedia Signal Processing
 Sub-Theme 1: Today’s Commercial Applications of AI/ML in Power Sector &
 Communication and Healthcare
 Focus: Perspectives from Power Sector & Communication, Healthcare, and Industry

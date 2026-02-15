@@ -295,9 +295,19 @@ export const seo = {
   signass2006: {
     title: 'SIGNASS Panel: Session Chair & Panelist',
     description:
-      'Documented Session Chair and panelist contributions to the Domain-Aware AI/ML for Real-World Signal Processing panel at SIGNASS, with the panel questionnaire describing the dialogue captured at the conference.',
+      'Documented Session Chair for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing and panelist contributions to the Domain-Aware AI/ML for Real-World Signal Processing panel at SIGNASS, with the panel questionnaire describing the dialogue captured at the conference.',
     pathname: '/speaking-conferences/signass-2006',
-    keywords: ['SIGNASS 2026', 'session chair', 'panel discussion', 'Domain-Aware AI/ML', 'signal processing'],
+    keywords: [
+      'SIGNASS 2026',
+      'track 4',
+      'Imaging',
+      'Computer Vision',
+      'Multimedia Signal Processing',
+      'session chair',
+      'panel discussion',
+      'Domain-Aware AI/ML',
+      'signal processing'
+    ],
     image: '/docs/SIGNASS.jpg'
   },
   agAcademy: {

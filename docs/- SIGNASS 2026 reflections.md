@@ -5,7 +5,7 @@
 - The Domain-Aware AI/ML for Real-World Signal Processing panel blended insights across healthcare, communication, and the power sector.  
 
 - Contributions  
-- Session Chair for the Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives track, keeping the dialogue aligned to deployment realities, ethical guardrails, and measurable signal outcomes.  
+- Session Chair for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing, keeping the Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives dialogue aligned to deployment realities, ethical guardrails, and measurable signal outcomes.  
 - Industry panelist throughout the panel, addressing the themes covering data preparation effort, generative AI use cases, and reliability/security trade-offs.  
 
 - Panel discussion summary  

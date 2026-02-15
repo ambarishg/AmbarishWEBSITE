@@ -21,8 +21,8 @@ import SIGNASSSceneOne from '../../docs/SIGNASS-01.png';
 import SIGNASSSceneTwo from '../../docs/SIGNASS-02.jpeg';
 import SIGNASSSceneThree from '../../docs/SIGNASS-03.jpeg';
 const contributionHighlights = [
-  'Session Chair for the Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives track, keeping the dialogue aligned to deployment realities, ethical guardrails, and measurable signal outcomes.',
-  'Industry panelist throughout the panel, addressing the themes covering data preparation effort, generative AI use cases, and reliability/security trade-offs.'
+  'Session Chair for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing',
+  'Industry panelist for Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives'
 ];
 
 const Signass2006 = () => {
@@ -65,27 +65,8 @@ const Signass2006 = () => {
         </Container>
       </Box>
 
-      <Container maxW="6xl" py={{ base: 6, md: 10 }}>
-        <Box
-          borderRadius="3xl"
-          overflow="hidden"
-          border="1px solid"
-          borderColor={borderColor}
-          boxShadow="0 20px 60px -35px rgba(15,118,201,0.65)"
-          bg={useColorModeValue('gray.200', 'gray.800')}
-        >
-          <Image
-            src={SIGNASSBanner}
-            alt="SIGNASS 2026 conference banner"
-            objectFit="contain"
-            w="100%"
-            maxH={{ base: '260px', md: '360px' }}
-          />
-        </Box>
-      </Container>
-
       <Container maxW="6xl" py={{ base: 10, md: 16 }}>
-        <Stack spacing={10}>
+        <Stack spacing={5}>
           <Stack
             spacing={6}
             borderRadius="3xl"
@@ -95,16 +76,6 @@ const Signass2006 = () => {
             p={{ base: 5, md: 8 }}
             boxShadow="0 18px 48px -30px rgba(15,118,201,0.65)"
           >
-            <Stack spacing={3}>
-              <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.3}>
-                A sustained focus on deployment-ready signal intelligence
-              </Heading>
-              <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
-                The Domain-Aware AI/ML for Real-World Signal Processing panel blended insights across healthcare,
-                communication, and the power sector. 
-              </Text>
-            </Stack>
-            <Divider borderColor={borderColor} />
             <Stack spacing={3}>
               <Text fontWeight="semibold" color={emphasis}>
                 Contributions
