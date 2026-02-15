@@ -21,7 +21,7 @@ import SIGNASSSceneOne from '../../docs/SIGNASS-01.png';
 import SIGNASSSceneTwo from '../../docs/SIGNASS-02.jpeg';
 const contributionHighlights = [
   'Session Chair for the Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication Perspectives track, keeping the dialogue aligned to deployment realities, ethical guardrails, and measurable signal outcomes.',
-  'Industry panelist throughout the panel, addressing the themes captured in the official questionnaire where I am listed as “Mr. Ambarish Ganguly (Industry)” and covering data preparation effort, generative AI use cases, and reliability/security trade-offs.'
+  'Industry panelist throughout the panel, addressing the themes covering data preparation effort, generative AI use cases, and reliability/security trade-offs.'
 ];
 
 const Signass2006 = () => {
@@ -100,9 +100,7 @@ const Signass2006 = () => {
               </Heading>
               <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
                 The Domain-Aware AI/ML for Real-World Signal Processing panel blended insights across healthcare,
-                communication, and the power sector. As Session Chair I guided the agenda toward responsible
-                outcomes, and as Panelist I addressed practical questions about data quality, generative AI,
-                and trust documented in the official panel questionnaire.
+                communication, and the power sector. 
               </Text>
             </Stack>
             <Divider borderColor={borderColor} />
