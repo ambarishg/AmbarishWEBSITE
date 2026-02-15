@@ -52,3 +52,5 @@ The image docs\SIGNASS.jpg  make it fully visible with no cropping
 make it very professional aligning with SIGNASS Color theme
 
 Mention the date prominently in the Speaking and Conferences Page
+
+Add docs\SIGNASS-03.jpeg to the SIGNASS page appropriately to display in a very professional and visible manner
