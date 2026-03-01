@@ -65,3 +65,17 @@ List the exact assets and preferred format so the implementer can pick the right
 5. West Bengal Government — `docs/WBGOVT.png`
 
 Keep the badge section compact (single row or responsive grid), keep all the logos size-consistent, and add matching alt text (e.g., “Trusted by NASA”). Ensure there is subtle spacing or divide so the row doesn’t overwhelm the surrounding content.
+
+------------------------------------------------
+
+Add a New Section — “Public Service & Advisory”
+
+After your main hero section and before case studies:
+
+New Section Title:
+
+Public Service & Government Advisory
+
+Add:
+
+Served as Subject Matter Expert (Pro Bono) for the Government of West Bengal – Centre of Excellence on Data Science & Machine Learning, contributing to the Intern Selection Process and strengthening AI talent development in the state.
