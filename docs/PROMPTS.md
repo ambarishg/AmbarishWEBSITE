@@ -78,4 +78,4 @@ Public Service & Government Advisory
 
 Add:
 
-Served as Subject Matter Expert (Pro Bono) for the Government of West Bengal – Centre of Excellence on Data Science & Machine Learning, contributing to the Intern Selection Process and strengthening AI talent development in the state.
+Appointed as Pro Bono Subject Matter Expert by the Government of West Bengal's Centre of Excellence on Data Science & Machine Learning, advising on AI talent assessment and contributing to the development of the state's next-generation data science workforce.

@@ -25,12 +25,13 @@ const PublicServiceAdvisory = () => {
         >
           <Stack spacing={4}>
             <Text color="text" fontSize={{ base: 'lg', md: 'xl' }}>
-              Served as Subject Matter Expert (Pro Bono) for the Government of West Bengal  Centre of Excellence
-              on Data Science &amp; Machine Learning, contributing to the Intern Selection Process and strengthening
-              AI talent development in the state.
+              Appointed as Pro Bono Subject Matter Expert by the Government of West Bengal's Centre of Excellence on Data
+              Science &amp; Machine Learning, advising on AI talent assessment and contributing to the development of the
+              state's next-generation data science workforce.
             </Text>
             <Text color={accent} fontWeight="semibold" fontSize="sm">
-              Advisory focus: principled AI hiring, candidate quality calibration, and program-level mentorship.
+              Advisory focus: AI talent assessment, principled hiring, candidate quality calibration, and strategic
+              mentorship.
             </Text>
           </Stack>
         </Box>
