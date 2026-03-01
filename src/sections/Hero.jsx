@@ -190,17 +190,21 @@ const Hero = () => {
                 })}
               </Flex>
               <Flex layerStyle="subtleCard" align="center" gap={4} p={{ base: 5, md: 6 }}>
-                <Avatar
-                  boxSize={{ base: '140px', md: '180px' }}
-                  src={heroAvatar}
-                  name={hero.name}
-                  bg="neutral.900"
-                  color="white"
-                  showBorder
-                  borderWidth="4px"
-                  borderColor={accent}
-                  boxShadow="0 18px 40px -20px rgba(0, 0, 0, 0.5)"
-                />
+                <Box
+                  p={{ base: '3px', md: '4px' }}
+                  rounded="full"
+                  bgGradient={gradient}
+                  boxShadow="0 25px 50px -30px rgba(15, 23, 42, 0.8)"
+                >
+                  <Avatar
+                    boxSize={{ base: '152px', md: '198px' }}
+                    src={heroAvatar}
+                    name={hero.name}
+                    bg="neutral.900"
+                    color="white"
+                    boxShadow="0 30px 60px rgba(15, 23, 42, 0.35)"
+                  />
+                </Box>
                 <Box>
                   <Text fontWeight="semibold" color="text">
                     26+ years of experience
