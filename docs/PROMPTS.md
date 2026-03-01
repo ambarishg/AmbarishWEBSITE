@@ -57,3 +57,4 @@ Add docs\SIGNASS-03.jpeg to the SIGNASS page appropriately to display in a very 
 Change the wording in the pages covering SIGNASS to mention that Session Chair was for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing in the conference
 
 Change should be reflected in the JSX pages
+-------------------------------------------
