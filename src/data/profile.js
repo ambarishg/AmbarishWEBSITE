@@ -3,7 +3,7 @@ export const hero = {
   title: 'Building Data & AI Platforms',
   location: 'Kolkata, West Bengal, India',
   professionalStatement:
-    'Industry-focused Data & AI leader delivering regulated utilities and energy transformations across cloud, analytics, and AI since 1999.',
+    '',
   contact: {
     email: 'ambarish.ganguly@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ambarish-ganguly/'

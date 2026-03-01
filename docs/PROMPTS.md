@@ -56,29 +56,12 @@ Add docs\SIGNASS-03.jpeg to the SIGNASS page appropriately to display in a very 
 
 Change the wording in the pages covering SIGNASS to mention that Session Chair was for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing in the conference
 
-Change should be reflected in the JSX pages
----------------------------------------------------------
+Add a small “Trusted by” badge strip that uses the logos stored in the docs folder so the visual-system section feels professional and concise.
+List the exact assets and preferred format so the implementer can pick the right file by name:
+1. NASA — `docs/nasa-logo.svg`
+2. Kaggle — `docs/KAGGLE-LOGO.svg`
+3. Microsoft — use the Microsoft asset that lives in `docs/` (rename it to `Microsoft-logo.*` if needed so it matches the others)
+4. Survey — `docs/SURVEY-LOGO.png`
+5. West Bengal Government — `docs/WBGOVT.png`
 
-Change the theme color of the complete web site to a more executive color scheme who has been in the industry for more than 27 years and is a very accomplished professional. Please use a color scheme which is more aligned with the industry and is more executive in nature. Please also change the font to a more professional one which is more suitable for an accomplished industry professional.
-
-Use this color scheme for the website:
-Charcoal + Soft White + Steel Blue (Modern Authority)
-
-Primary: Charcoal (#2B2B2B)
-Secondary: Warm white
-Accent: Steel blue or slate
-
-Font
-
-Headlines: Cormorant Garamond
-Body: Inter
-
-For the Home Page , for the profile picture,
-
-Ideal Display Size (Hero Section Context)
-
-160–200px diameter for desktop
-
-Maintain circular crop
-
-Slightly increase border thickness or subtle shadow for depth
+Keep the badge section compact (single row or responsive grid), keep all the logos size-consistent, and add matching alt text (e.g., “Trusted by NASA”). Ensure there is subtle spacing or divide so the row doesn’t overwhelm the surrounding content.
