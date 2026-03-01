@@ -1,0 +1,21 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 160' role='img' aria-labelledby='goi-logo'>
+  <title id='goi-logo'>Government of India</title>
+  <rect width='280' height='50' fill='#FF9933'/>
+  <rect y='50' width='280' height='60' fill='#FFFFFF'/>
+  <rect y='110' width='280' height='50' fill='#138808'/>
+  <g transform='translate(140, 80)'>
+    <circle r='30' fill='none' stroke='#054187' stroke-width='4'/>
+    <circle r='7' fill='#054187'/>
+    <g stroke='#054187' stroke-width='2'>
+      <line x1='0' y1='-30' x2='0' y2='-12'/>
+      <line x1='0' y1='30' x2='0' y2='12'/>
+      <line x1='-30' y1='0' x2='-12' y2='0'/>
+      <line x1='30' y1='0' x2='12' y2='0'/>
+      <line x1='-21.2' y1='-21.2' x2='-8.5' y2='-8.5'/>
+      <line x1='21.2' y1='21.2' x2='8.5' y2='8.5'/>
+      <line x1='21.2' y1='-21.2' x2='8.5' y2='-8.5'/>
+      <line x1='-21.2' y1='21.2' x2='-8.5' y2='8.5'/>
+    </g>
+  </g>
+  <text x='140' y='150' font-family='Segoe UI, Arial, sans-serif' font-size='16' fill='#0F172A' text-anchor='middle' font-weight='600'>Government of India</text>
+</svg>
