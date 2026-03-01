@@ -90,6 +90,9 @@ const Hero = () => {
               <Text fontSize="md" color="caption">
                 {hero.location}
               </Text>
+              <Text fontSize="md" color="text" maxW="32rem">
+                {hero.professionalStatement}
+              </Text>
             </Stack>
 
             <Wrap spacing={3}>
@@ -188,14 +191,15 @@ const Hero = () => {
               </Flex>
               <Flex layerStyle="subtleCard" align="center" gap={4} p={{ base: 5, md: 6 }}>
                 <Avatar
-                  size="xl"
+                  boxSize={{ base: '140px', md: '180px' }}
                   src={heroAvatar}
                   name={hero.name}
-                  bg="brand.500"
+                  bg="neutral.900"
                   color="white"
                   showBorder
+                  borderWidth="4px"
                   borderColor={accent}
-                  boxShadow="lg"
+                  boxShadow="0 18px 40px -20px rgba(0, 0, 0, 0.5)"
                 />
                 <Box>
                   <Text fontWeight="semibold" color="text">

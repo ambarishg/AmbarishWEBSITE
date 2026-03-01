@@ -57,3 +57,28 @@ Add docs\SIGNASS-03.jpeg to the SIGNASS page appropriately to display in a very 
 Change the wording in the pages covering SIGNASS to mention that Session Chair was for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing in the conference
 
 Change should be reflected in the JSX pages
+---------------------------------------------------------
+
+Change the theme color of the complete web site to a more executive color scheme who has been in the industry for more than 27 years and is a very accomplished professional. Please use a color scheme which is more aligned with the industry and is more executive in nature. Please also change the font to a more professional one which is more suitable for an accomplished industry professional.
+
+Use this color scheme for the website:
+Charcoal + Soft White + Steel Blue (Modern Authority)
+
+Primary: Charcoal (#2B2B2B)
+Secondary: Warm white
+Accent: Steel blue or slate
+
+Font
+
+Headlines: Cormorant Garamond
+Body: Inter
+
+For the Home Page , for the profile picture,
+
+Ideal Display Size (Hero Section Context)
+
+160–200px diameter for desktop
+
+Maintain circular crop
+
+Slightly increase border thickness or subtle shadow for depth
