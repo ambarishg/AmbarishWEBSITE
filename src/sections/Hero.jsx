@@ -30,6 +30,14 @@ const Hero = () => {
   );
   const overlay = useColorModeValue('brand.50', 'rgba(59, 130, 246, 0.12)');
   const headingColor = useColorModeValue('brand.800', 'brand.100');
+  const secondaryTagBg = useColorModeValue('rgba(148, 163, 184, 0.2)', 'rgba(148, 163, 184, 0.25)');
+  const secondaryTagColor = useColorModeValue('gray.600', 'gray.300');
+  const primarySkills = new Set([
+    'Mentoring & Leadership',
+    'Generative AI',
+    'Large Language Models',
+    'Enterprise Architecture'
+  ]);
 
   return (
     <Box
@@ -67,31 +75,44 @@ const Hero = () => {
         rounded="full"
       />
       <Container maxW="7xl" position="relative">
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 12, lg: 16 }}>
-          <Stack spacing={6} justify="center">
-            <Stack spacing={4}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 12, lg: 16 }} alignItems="start">
+          <Stack spacing={6} justify="flex-start">
+            <Stack spacing={5}>
               <Tag
-                size="lg"
+                size="md"
                 colorScheme="brand"
                 variant="subtle"
-                bg={useColorModeValue('rgba(59, 134, 245, 0.12)', 'rgba(59, 134, 245, 0.18)')}
+                opacity={0.85}
+                letterSpacing="0.02em"
                 w="fit-content"
-                px={5}
+                px={4}
                 py={2}
+                mb={1}
               >
                 Data & AI Transformation Leader
               </Tag>
-              <Heading as="h1" size="2xl" lineHeight={1.05} maxW="32rem" color={headingColor}>
+              <Heading
+                as="h1"
+                size="2xl"
+                lineHeight={1.05}
+                letterSpacing="-0.5px"
+                maxW="32rem"
+                color={headingColor}
+              >
                 {hero.name}
               </Heading>
-              <Text fontSize={{ base: 'lg', md: 'xl' }} color="subtleText">
-                {hero.title}
-              </Text>
+              <Stack spacing={1} maxW="32rem">
+                <Text fontSize={{ base: 'lg', md: 'xl' }} color="subtleText">
+                  {hero.title}
+                </Text>
+                {hero.professionalStatement ? (
+                  <Text fontSize="md" color="text" lineHeight="1.6">
+                    {hero.professionalStatement}
+                  </Text>
+                ) : null}
+              </Stack>
               <Text fontSize="md" color="caption">
                 {hero.location}
-              </Text>
-              <Text fontSize="md" color="text" maxW="32rem">
-                {hero.professionalStatement}
               </Text>
             </Stack>
 
@@ -123,7 +144,22 @@ const Hero = () => {
             <Wrap spacing={2}>
               {hero.skills.map((skill) => (
                 <WrapItem key={skill}>
-                  <Tag size="md" variant="subtle" colorScheme="brand" px={4} py={1.5}>
+                  <Tag
+                    size="md"
+                    variant="subtle"
+                    px={3}
+                    py={1}
+                    color={
+                      primarySkills.has(skill)
+                        ? useColorModeValue('brand.600', 'brand.300')
+                        : secondaryTagColor
+                    }
+                    bg={
+                      primarySkills.has(skill)
+                        ? useColorModeValue('rgba(59, 134, 245, 0.15)', 'rgba(59, 134, 245, 0.25)')
+                        : secondaryTagBg
+                    }
+                  >
                     {skill}
                   </Tag>
                 </WrapItem>
@@ -131,91 +167,79 @@ const Hero = () => {
             </Wrap>
           </Stack>
 
-          <Flex align="center" justify="center">
-            <Stack spacing={8} w="full">
-              <Flex direction="column" gap={4} layerStyle="card" p={{ base: 6, md: 8 }}>
-                {hero.headlineHighlights.map((item) => {
-                  const isNASAHighlight = item.includes('NASA Citizen Scientist');
-                  const isBeesShowcase = item.includes('Bees health detection solution');
-                  const isFutureReady = item.includes('Future Ready Champions of Code');
-                  return (
-                    <Flex key={item} align="flex-start" gap={4}>
-                      <Icon
-                        as={CheckCircleIcon}
-                        color={accent}
-                        boxSize={5}
-                        mt={1}
-                        sx={{ flexShrink: 0 }}
-                      />
-                      <Stack spacing={2}>
-                        <Text color="text" fontSize="md">
-                          {item}
-                        </Text>
-                        {isNASAHighlight ? (
-                          <Link
-                            as={RouterLink}
-                            to="/highlights/random-walk-of-the-penguins"
-                            color={linkAccent}
-                            fontWeight="semibold"
-                            fontSize="sm"
-                          >
-                            Read the Random Walk case study -&gt;
-                          </Link>
-                        ) : null}
-                        {isBeesShowcase ? (
-                          <Link
-                            as={RouterLink}
-                            to="/highlights/bees-health-detection"
-                            color={linkAccent}
-                            fontWeight="semibold"
-                            fontSize="sm"
-                          >
-                            Watch the Azure showcase -&gt;
-                          </Link>
-                        ) : null}
-                        {isFutureReady ? (
-                          <Link
-                            as={RouterLink}
-                            to="/highlights/future-ready-champions"
-                            color={linkAccent}
-                            fontWeight="semibold"
-                            fontSize="sm"
-                          >
-                            Explore the Future Ready win -&gt;
-                          </Link>
-                        ) : null}
-                      </Stack>
-                    </Flex>
-                  );
-                })}
-              </Flex>
-              <Flex layerStyle="subtleCard" align="center" gap={4} p={{ base: 5, md: 6 }}>
-                <Box
-                  p={{ base: '3px', md: '4px' }}
-                  rounded="full"
-                  bgGradient={gradient}
-                  boxShadow="0 25px 50px -30px rgba(15, 23, 42, 0.8)"
-                >
-                  <Avatar
-                    boxSize={{ base: '152px', md: '198px' }}
-                    src={heroAvatar}
-                    name={hero.name}
-                    bg="neutral.900"
-                    color="white"
-                    boxShadow="0 30px 60px rgba(15, 23, 42, 0.35)"
-                  />
-                </Box>
-                <Box>
-                  <Text fontWeight="semibold" color="text">
-                    26+ years of experience
-                  </Text>
-                  <Text color="subtleText" fontSize="sm">
-                    Data and AI leadership 
-                  </Text>
-                </Box>
-              </Flex>
+          <Stack spacing={6} align="flex-start" w="full">
+            <Avatar
+              boxSize={{ base: '180px', md: '250px' }}
+              src={heroAvatar}
+              name={hero.name}
+              bg="neutral.900"
+              color="white"
+              boxShadow="0 25px 65px rgba(15, 23, 42, 0.18)"
+              filter="contrast(0.95) saturate(1.1) brightness(1.02)"
+            />
+            <Stack
+              layerStyle="card"
+              spacing={3}
+              w="full"
+              p={{ base: 5, md: 6 }}
+              bg={useColorModeValue('white', 'gray.800')}
+            >
+              {hero.headlineHighlights.map((item) => {
+                const isNASAHighlight = item.includes('NASA Citizen Scientist');
+                const isBeesShowcase = item.includes('Bees health detection solution');
+                const isFutureReady = item.includes('Future Ready Champions of Code');
+                return (
+                  <Flex key={item} align="flex-start" gap={3}>
+                    <Icon
+                      as={CheckCircleIcon}
+                      color={accent}
+                      boxSize={4}
+                      mt={1}
+                      sx={{ flexShrink: 0 }}
+                    />
+                    <Stack spacing={1}>
+                      <Text color="text" fontSize="md" lineHeight="tall">
+                        {item}
+                      </Text>
+                      {isNASAHighlight ? (
+                        <Link
+                          as={RouterLink}
+                          to="/highlights/random-walk-of-the-penguins"
+                          color={linkAccent}
+                          fontWeight="semibold"
+                          fontSize="sm"
+                        >
+                          Read the Random Walk case study -&gt;
+                        </Link>
+                      ) : null}
+                      {isBeesShowcase ? (
+                        <Link
+                          as={RouterLink}
+                          to="/highlights/bees-health-detection"
+                          color={linkAccent}
+                          fontWeight="semibold"
+                          fontSize="sm"
+                        >
+                          Watch the Azure showcase -&gt;
+                        </Link>
+                      ) : null}
+                      {isFutureReady ? (
+                        <Link
+                          as={RouterLink}
+                          to="/highlights/future-ready-champions"
+                          color={linkAccent}
+                          fontWeight="semibold"
+                          fontSize="sm"
+                        >
+                          Explore the Future Ready win -&gt;
+                        </Link>
+                      ) : null}
+                    </Stack>
+                  </Flex>
+                );
+              })}
             </Stack>
-          </Flex>
+          </Stack>
         </SimpleGrid>
       </Container>
     </Box>

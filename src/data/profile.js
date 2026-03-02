@@ -1,9 +1,9 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: 'Building Data & AI Platforms',
+  title: '',
   location: 'Kolkata, West Bengal, India',
   professionalStatement:
-    '',
+    'Helping enterprises and executive teams operationalize AI at scale.',
   contact: {
     email: 'ambarish.ganguly@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ambarish-ganguly/'
@@ -14,12 +14,15 @@ export const hero = {
     'Microsoft Most Valuable Professional (Alumni)',
     'Recognized by Government of India, NASA, Google (Kaggle), and Microsoft'
   ],
-  skills: ['Mentoring & Leadership','Architecture','Generative AI', 'Large Language Models', 'Machine Learning',
-    'Deep Learning','Data Engineering',
-    'Energy Trading & Risk Management',
-    'Utilities Customer Care & Billing',
-    'Cloud Platforms (Azure, AWS)',
-    'IoT & Edge Computing']
+  skills: [
+    'Mentoring & Leadership',
+    'Enterprise Architecture',
+    'Generative AI',
+    'Large Language Models',
+    'Data Engineering',
+    'Energy & Utilities',
+    'Cloud Platforms (Azure, AWS)'
+  ]
   
 };
 

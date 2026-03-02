@@ -79,3 +79,188 @@ Public Service & Government Advisory
 Add:
 
 Appointed as Pro Bono Subject Matter Expert by the Government of West Bengal's Centre of Excellence on Data Science & Machine Learning, advising on AI talent assessment and contributing to the development of the state's next-generation data science workforce.
+
+-------------------------------------------------
+Profile picture enhancements
+
+Increase size by 15–25%
+Maintain the circular frame (it works well)
+Slightly reduce the empty padding around it so it feels more intentional
+
+Move the profile picture up — aligned horizontally with your name.
+
+Example structure:
+Left side:
+Name
+Tagline
+Location
+
+Buttons
+Right side (top):
+Large profile photo
+Under it: credentials bullets
+
+This makes:
+Face + name = instant recognition
+Then credentials reinforce authority
+
+------------------
+This is already much stronger. 👌
+The larger photo and higher placement immediately improves authority and presence.
+
+Now I’ll give you executive-level refinement suggestions — small changes that create disproportionate impact.
+
+---
+
+# 🔎 High-Impact Improvements
+
+## 1️⃣ The Headline Hierarchy (Most Important)
+
+Right now the visual order is:
+
+1. “Data & AI Transformation Leader” (badge)
+2. Your name
+3. “Building Data & AI Platforms”
+
+The problem:
+The badge feels slightly more important than it should.
+
+### Improvement:
+
+Make your **name the undisputed focal point**.
+
+**Do this:**
+
+* Reduce badge opacity or size by ~10–15%
+* Increase spacing between badge and name slightly
+* Consider tightening the name letter spacing just a touch
+
+The eye should land:
+**Name → Face → Authority → Details**
+
+---
+
+## 2️⃣ The Photo Treatment
+
+The bigger size works well. Now refine it.
+
+### Option A (Best for premium feel)
+
+Add:
+
+* Very subtle soft shadow (more diffused than current)
+* Slight warm tone adjustment (not sepia — just reduce the grayscale harshness)
+
+Right now the grayscale + strong contrast makes you look slightly severe.
+For leadership branding, you want:
+
+**Strong + Approachable**
+
+A tiny warmth shift achieves that psychologically.
+
+---
+
+## 3️⃣ Credentials Card – Visual Weight
+
+The credentials box is good, but:
+
+It currently competes with the photo.
+
+### Improve balance:
+
+* Reduce padding slightly
+* Increase line spacing inside bullets
+* Make check icons slightly smaller
+* Reduce overall box height by ~10%
+
+This keeps it strong but not overpowering.
+
+---
+
+## 4️⃣ Skill Tags – Subtle Upgrade
+
+These are good but slightly dense.
+
+Two refinements:
+
+### A) Reduce horizontal padding inside pills
+
+They feel a bit bulky.
+
+### B) Slight color hierarchy
+
+Keep:
+
+* 3–4 primary strengths darker
+* Rest lighter tint
+
+For example:
+Primary:
+
+* Mentoring & Leadership
+* Generative AI
+* Architecture
+* Large Language Models
+
+Secondary:
+Everything else lighter shade.
+
+This subtly guides the eye toward your positioning.
+
+---
+
+## 5️⃣ Add One Strategic Line (Optional but Powerful)
+
+Under:
+**Building Data & AI Platforms**
+
+Consider adding a short value statement:
+
+Examples:
+
+* “Driving enterprise-scale AI transformation across industries.”
+* “Bridging strategy, architecture, and execution in AI.”
+* “Transforming energy & utilities through data-driven innovation.”
+
+This elevates you from *builder* to *strategic leader*.
+
+---
+
+# 🎯 Executive Branding Score (Current State)
+
+Visual Presence: 8.5/10
+Authority Signal: 8/10
+Clarity of Positioning: 7.5/10
+Memorability: 8/10
+
+With the refinements above → easily 9.2–9.5/10.
+
+---
+
+For freelance advisory, emphasize:
+
+Primary Row:
+
+Mentoring & Leadership
+
+Enterprise Architecture
+
+Generative AI
+
+Large Language Models
+
+Secondary:
+
+Data Engineering
+
+Energy & Utilities
+
+Cloud Platforms
+
+Remove or reduce:
+
+IoT & Edge
+
+Utilities Customer Care
+
+Risk Management (unless niche consulting focus)
