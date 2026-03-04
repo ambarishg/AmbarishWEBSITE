@@ -264,3 +264,5 @@ IoT & Edge
 Utilities Customer Care
 
 Risk Management (unless niche consulting focus)
+--------------------------------------------------
+Visit https://bhuvana.saryoo.com/ and adjust the front page according to give a executive and leadership look like the website https://bhuvana.saryoo.com/

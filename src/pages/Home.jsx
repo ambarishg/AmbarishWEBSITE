@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Hero from '../sections/Hero.jsx';
+import TrustedBy from '../sections/TrustedBy.jsx';
 import PublicServiceAdvisory from '../sections/PublicServiceAdvisory.jsx';
 import Summary from '../sections/Summary.jsx';
 import Experience from '../sections/Experience.jsx';
@@ -13,6 +14,7 @@ const Home = () => {
   return (
     <Fragment>
       <Hero />
+      <TrustedBy />
       <PublicServiceAdvisory />
       <Summary />
       <Experience />

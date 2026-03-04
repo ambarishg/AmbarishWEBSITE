@@ -1,9 +1,11 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: '',
-  location: 'Kolkata, West Bengal, India',
+  title: 'Executive advisor for AI & data platforms in industry',
+  valueStatement:
+    'Bridging strategy, architecture, and execution to operationalize AI at scale across energy, utilities, and enterprise programs.',
+  location: '',
   professionalStatement:
-    'Helping enterprises and executive teams operationalize AI at scale.',
+    '',
   contact: {
     email: 'ambarish.ganguly@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ambarish-ganguly/'
@@ -14,6 +16,13 @@ export const hero = {
     'Microsoft Most Valuable Professional (Alumni)',
     'Recognized by Government of India, NASA, Google (Kaggle), and Microsoft'
   ],
+  primarySkills: [
+    'Mentoring & Leadership',
+    'Enterprise Architecture',
+    'Generative AI',
+    'Large Language Models'
+  ],
+  secondarySkills: ['Data Engineering', 'Energy & Utilities', 'Cloud Platforms (Azure, AWS)'],
   skills: [
     'Mentoring & Leadership',
     'Enterprise Architecture',
@@ -23,15 +32,28 @@ export const hero = {
     'Energy & Utilities',
     'Cloud Platforms (Azure, AWS)'
   ]
-  
 };
 
-export const summary = [
-  'Hands-on leader guiding enterprise innovation across Utilities Data & Analytics, Cloud, Energy Trading, and Risk Management.',
-  'Trusted mentor for large transformation programs spanning customer care, billing, and field service ecosystems.',
-  'Over 25 years translating critical business goals into resilient data platforms and AI experiences.',
-  'Grounded in a formal academic blend - a B.Sc (Hons) in Physics from St. Xavier\'s College and a B.Tech in Computer Science & Engineering from the University of Calcutta - that fuses analytical rigor with engineering execution.'
-];
+export const summary = {
+  cards: [
+    {
+      title: 'Enterprise data & AI leadership',
+      description:
+        'Hands-on leader guiding enterprise innovation across utilities data & analytics, cloud, energy trading, and risk management.'
+    },
+    {
+      title: 'Trusted transformation partner',
+      description:
+        'Mentors executive and delivery teams through customer care, billing, and field service modernization for high-stakes programs.'
+    },
+    {
+      title: 'Proven delivery track record',
+      description: 'More than 25 years translating critical business goals into resilient data platforms and AI experiences.'
+    }
+  ],
+  conclusion:
+    'Grounded in a formal academic blend - B.Sc (Hons) Physics from St. Xavier\'s College and B.Tech Computer Science & Engineering from the University of Calcutta - that fuses analytical rigor with engineering execution.'
+};
 
 export const experiences = [
   {

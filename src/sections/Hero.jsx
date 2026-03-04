@@ -23,21 +23,14 @@ import heroAvatar from '../../images/AG.jpg';
 
 const Hero = () => {
   const accent = useColorModeValue('brand.600', 'brand.300');
-  const linkAccent = useColorModeValue('brand.600', 'brand.300');
-  const gradient = useColorModeValue(
-    'linear(to-br, brand.500, brand.300)',
-    'linear(to-br, brand.300, brand.500)'
-  );
-  const overlay = useColorModeValue('brand.50', 'rgba(59, 130, 246, 0.12)');
-  const headingColor = useColorModeValue('brand.800', 'brand.100');
-  const secondaryTagBg = useColorModeValue('rgba(148, 163, 184, 0.2)', 'rgba(148, 163, 184, 0.25)');
-  const secondaryTagColor = useColorModeValue('gray.600', 'gray.300');
-  const primarySkills = new Set([
-    'Mentoring & Leadership',
-    'Generative AI',
-    'Large Language Models',
-    'Enterprise Architecture'
-  ]);
+  const badgeBg = useColorModeValue('rgba(59, 134, 245, 0.08)', 'rgba(59, 134, 245, 0.18)');
+  const badgeColor = useColorModeValue('brand.700', 'brand.200');
+  const textColor = useColorModeValue('gray.600', 'gray.300');
+  const cardBg = useColorModeValue('white', 'gray.800');
+  const cardBorder = useColorModeValue('rgba(59, 134, 245, 0.15)', 'rgba(59, 134, 245, 0.35)');
+  const secondarySkillBg = useColorModeValue('rgba(15, 23, 42, 0.04)', 'rgba(255, 255, 255, 0.08)');
+  const secondarySkillColor = useColorModeValue('gray.500', 'gray.400');
+  const primarySkills = new Set(hero.primarySkills ?? hero.skills.slice(0, 4));
 
   return (
     <Box
@@ -54,13 +47,13 @@ const Hero = () => {
       />
       <Box
         position="absolute"
-        top={{ base: '-4rem', md: '-6rem' }}
+        top={{ base: '-6rem', md: '-8rem' }}
         left={{ base: '-10rem', md: '-8rem' }}
-        w={{ base: '24rem', md: '32rem' }}
-        h={{ base: '24rem', md: '32rem' }}
-        bgGradient={gradient}
+        w={{ base: '26rem', md: '32rem' }}
+        h={{ base: '26rem', md: '32rem' }}
+        bg="linear-gradient(135deg, rgba(59, 124, 223, 0.75), rgba(59, 134, 245, 0.55))"
         opacity={0.35}
-        filter="blur(80px)"
+        filter="blur(90px)"
         rounded="full"
       />
       <Box
@@ -69,53 +62,49 @@ const Hero = () => {
         right={{ base: '-8rem', md: '-6rem' }}
         w={{ base: '18rem', md: '24rem' }}
         h={{ base: '18rem', md: '24rem' }}
-        bg={overlay}
+        bg={useColorModeValue('rgba(15, 23, 42, 0.75)', 'rgba(59, 134, 245, 0.08)')}
         opacity={0.6}
         filter="blur(90px)"
         rounded="full"
       />
       <Container maxW="7xl" position="relative">
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 12, lg: 16 }} alignItems="start">
-          <Stack spacing={6} justify="flex-start">
-            <Stack spacing={5}>
-              <Tag
-                size="md"
-                colorScheme="brand"
-                variant="subtle"
-                opacity={0.85}
-                letterSpacing="0.02em"
-                w="fit-content"
-                px={4}
-                py={2}
-                mb={1}
-              >
-                Data & AI Transformation Leader
-              </Tag>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 12, lg: 16 }} alignItems="flex-start">
+          <Stack spacing={6} align="flex-start">
+            <Tag
+              size="sm"
+              variant="subtle"
+              bg={badgeBg}
+              color={badgeColor}
+              letterSpacing="0.2em"
+              textTransform="uppercase"
+            >
+              Data & AI Transformation Leader
+            </Tag>
+            <Heading
+              as="h1"
+              size="2xl"
+              lineHeight={1.1}
+              letterSpacing="-0.5px"
+              color={useColorModeValue('brand.800', 'brand.100')}
+            >
+              {hero.name}
+            </Heading>
+            {hero.title && (
               <Heading
-                as="h1"
-                size="2xl"
-                lineHeight={1.05}
-                letterSpacing="-0.5px"
-                maxW="32rem"
-                color={headingColor}
+                as="h2"
+                size="lg"
+                fontWeight="semibold"
+                lineHeight={1.4}
+                color={useColorModeValue('gray.600', 'gray.200')}
               >
-                {hero.name}
+                {hero.title}
               </Heading>
-              <Stack spacing={1} maxW="32rem">
-                <Text fontSize={{ base: 'lg', md: 'xl' }} color="subtleText">
-                  {hero.title}
-                </Text>
-                {hero.professionalStatement ? (
-                  <Text fontSize="md" color="text" lineHeight="1.6">
-                    {hero.professionalStatement}
-                  </Text>
-                ) : null}
-              </Stack>
-              <Text fontSize="md" color="caption">
-                {hero.location}
+            )}
+            {hero.valueStatement && (
+              <Text fontSize="lg" color={textColor} maxW="32rem" lineHeight={1.7}>
+                {hero.valueStatement}
               </Text>
-            </Stack>
-
+            )}
             <Wrap spacing={3}>
               <WrapItem>
                 <Button
@@ -140,25 +129,19 @@ const Hero = () => {
                 </Button>
               </WrapItem>
             </Wrap>
-
-            <Wrap spacing={2}>
+            <Wrap spacing={3}>
               {hero.skills.map((skill) => (
                 <WrapItem key={skill}>
                   <Tag
-                    size="md"
-                    variant="subtle"
+                    size="sm"
                     px={3}
                     py={1}
-                    color={
-                      primarySkills.has(skill)
-                        ? useColorModeValue('brand.600', 'brand.300')
-                        : secondaryTagColor
-                    }
                     bg={
                       primarySkills.has(skill)
-                        ? useColorModeValue('rgba(59, 134, 245, 0.15)', 'rgba(59, 134, 245, 0.25)')
-                        : secondaryTagBg
+                        ? 'rgba(59, 134, 245, 0.12)'
+                        : secondarySkillBg
                     }
+                    color={primarySkills.has(skill) ? accent : secondarySkillColor}
                   >
                     {skill}
                   </Tag>
@@ -167,78 +150,75 @@ const Hero = () => {
             </Wrap>
           </Stack>
 
-          <Stack spacing={6} align="flex-start" w="full">
+          <Stack spacing={5} align="flex-start">
             <Avatar
-              boxSize={{ base: '180px', md: '250px' }}
+              boxSize={{ base: '210px', md: '270px' }}
               src={heroAvatar}
               name={hero.name}
-              bg="neutral.900"
+              bg={useColorModeValue('brand.900', 'brand.900')}
               color="white"
-              boxShadow="0 25px 65px rgba(15, 23, 42, 0.18)"
-              filter="contrast(0.95) saturate(1.1) brightness(1.02)"
+              boxShadow="0 35px 70px rgba(15, 23, 42, 0.3)"
+              filter="contrast(1.05) saturate(1.08) brightness(1.05)"
             />
-            <Stack
-              layerStyle="card"
-              spacing={3}
+            <Box
               w="full"
+              layerStyle="card"
               p={{ base: 5, md: 6 }}
-              bg={useColorModeValue('white', 'gray.800')}
+              bg={cardBg}
+              borderColor={cardBorder}
+              boxShadow="floating"
             >
-              {hero.headlineHighlights.map((item) => {
-                const isNASAHighlight = item.includes('NASA Citizen Scientist');
-                const isBeesShowcase = item.includes('Bees health detection solution');
-                const isFutureReady = item.includes('Future Ready Champions of Code');
-                return (
-                  <Flex key={item} align="flex-start" gap={3}>
-                    <Icon
-                      as={CheckCircleIcon}
-                      color={accent}
-                      boxSize={4}
-                      mt={1}
-                      sx={{ flexShrink: 0 }}
-                    />
-                    <Stack spacing={1}>
-                      <Text color="text" fontSize="md" lineHeight="tall">
-                        {item}
-                      </Text>
-                      {isNASAHighlight ? (
-                        <Link
-                          as={RouterLink}
-                          to="/highlights/random-walk-of-the-penguins"
-                          color={linkAccent}
-                          fontWeight="semibold"
-                          fontSize="sm"
-                        >
-                          Read the Random Walk case study -&gt;
-                        </Link>
-                      ) : null}
-                      {isBeesShowcase ? (
-                        <Link
-                          as={RouterLink}
-                          to="/highlights/bees-health-detection"
-                          color={linkAccent}
-                          fontWeight="semibold"
-                          fontSize="sm"
-                        >
-                          Watch the Azure showcase -&gt;
-                        </Link>
-                      ) : null}
-                      {isFutureReady ? (
-                        <Link
-                          as={RouterLink}
-                          to="/highlights/future-ready-champions"
-                          color={linkAccent}
-                          fontWeight="semibold"
-                          fontSize="sm"
-                        >
-                          Explore the Future Ready win -&gt;
-                        </Link>
-                      ) : null}
-                    </Stack>
-                  </Flex>
-                );
-              })}
-            </Stack>
+              <Stack spacing={3}>
+                {hero.headlineHighlights.map((item) => {
+                  const isNASAHighlight = item.includes('NASA Citizen Scientist');
+                  const isBeesShowcase = item.includes('Bees health detection solution');
+                  const isFutureReady = item.includes('Future Ready Champions of Code');
+                  return (
+                    <Flex key={item} align="flex-start" gap={3}>
+                      <Icon as={CheckCircleIcon} color={accent} boxSize={4} mt={1} />
+                      <Stack spacing={1}>
+                        <Text color="text" fontSize="md" lineHeight="tall">
+                          {item}
+                        </Text>
+                        {isNASAHighlight ? (
+                          <Link
+                            as={RouterLink}
+                            to="/highlights/random-walk-of-the-penguins"
+                            color={accent}
+                            fontWeight="semibold"
+                            fontSize="sm"
+                          >
+                            Read the Random Walk case study →
+                          </Link>
+                        ) : null}
+                        {isBeesShowcase ? (
+                          <Link
+                            as={RouterLink}
+                            to="/highlights/bees-health-detection"
+                            color={accent}
+                            fontWeight="semibold"
+                            fontSize="sm"
+                          >
+                            Watch the Azure showcase →
+                          </Link>
+                        ) : null}
+                        {isFutureReady ? (
+                          <Link
+                            as={RouterLink}
+                            to="/highlights/future-ready-champions"
+                            color={accent}
+                            fontWeight="semibold"
+                            fontSize="sm"
+                          >
+                            Explore the Future Ready win →
+                          </Link>
+                        ) : null}
+                      </Stack>
+                    </Flex>
+                  );
+                })}
+              </Stack>
+            </Box>
           </Stack>
         </SimpleGrid>
       </Container>
