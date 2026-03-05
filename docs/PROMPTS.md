@@ -265,4 +265,31 @@ Utilities Customer Care
 
 Risk Management (unless niche consulting focus)
 --------------------------------------------------
-Visit https://bhuvana.saryoo.com/ and adjust the front page according to give a executive and leadership look like the website https://bhuvana.saryoo.com/
+
+Make a section in the front page to create a executive presence using the following facts and make each section a seperate Card
+Card 1 - Hands on Practitioner in Data and AI for more than 25 years
+Card 2 - NASA Citizen scientist [ Please see the dedicated page in NASA WEBSITE https://science.nasa.gov/people/ambarish-ganguly/ ]
+Card 3 - 
+Microsoft Most Valuable Professional in AI Category [ Alumni now]
+Microsoft Certified Trainer
+2 times Azure Blogathon winner
+Bees Health detection with Microsoft Azure has been showcased by Microsoft India [https://www.youtube.com/watch?v=d92H_wPyrUE]
+1st prize in Future Ready Champions of Code - Hackathon organized by Microsoft  Press Release Link
+
+Card 4-
+1st prize winner in Random Walk of the Penguins organized by DrivenData.org. Sponsored by NASA
+
+Card 5
+Winner of the DST Geospatial Hackathon 2023 [ https://www.indianweb2.com/2023/06/winners-of-dst-geospatial-hackathon-2023.html ]
+
+Card 6 - Kaggle [ a Google Company] achievements
+Kaggle Kernel Master
+Kaggle Weekly Kernel Award Winner
+Themed Kernel Award Winner - Spooky Author Competition
+Kernel Award Winner - Data Science for Good: Kiva Crowdfunding dataset
+Kernel Award Winner - DonorsChoose.org Application Screening
+Kernel Award Winner - DonorsChoose.org Recommender Competition
+Kernel Award for Recommender System - DonorsChoose.org Recommender Competition
+
+Merge the Mission-Critical Impact and Hackathon & Government wins as 
+Hackthon Wins [organized by Microsoft and Govt ] and make it feel executive
