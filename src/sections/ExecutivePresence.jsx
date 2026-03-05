@@ -7,12 +7,16 @@ const cards = [
     title: 'Hands-on Practitioner in Data & AI',
     description:
       'Over 25 years of delivery across utilities, energy, and enterprise programs, pairing strategy, analytics, and AI with measurable outcomes.',
-    minH: '170px'
+    minH: '180px'
   },
   {
-    title: 'NASA Citizen Scientist',
+    title: 'NASA citizen scientist & Random Walk of the Penguins champion',
     description:
-      'Featured by NASA for applied citizen science projects and ongoing collaboration with planetary research programs.',
+      'Featured by NASA for applied citizen science and honored with the DrivenData Random Walk of the Penguins win sponsored by NASA.',
+    details: [
+      'NASA recognition for planetary citizen science collaborations.',
+      '1st prize winner of the climate intelligence Random Walk of the Penguins challenge on DrivenData.org.'
+    ],
     link: { label: 'Read the NASA profile', href: 'https://science.nasa.gov/people/ambarish-ganguly/' },
     minH: '200px'
   },
@@ -33,19 +37,13 @@ const cards = [
         href: 'https://news.microsoft.com/en-in/microsoft-celebrates-future-ready-champions-of-code-with-over-100k-developers-and-technology-enthusiasts/'
       }
     ],
-    minH: '320px'
-  },
-  {
-    title: 'Random Walk of the Penguins — DrivenData',
-    description:
-      '1st prize winner of the NASA-sponsored climate intelligence challenge that mapped penguin population distributions.',
-    minH: '180px'
+    minH: '280px'
   },
   {
     title: 'DST Geospatial Hackathon 2023',
     description: 'Winner of the Government of India DST hackathon building geospatial intelligence for policy & infrastructure planning.',
     link: { label: 'See the DST announcement', href: 'https://www.indianweb2.com/2023/06/winners-of-dst-geospatial-hackathon-2023.html' },
-    minH: '200px'
+    minH: '180px'
   },
   {
     title: 'Kaggle achievements (a Google company)',
@@ -60,23 +58,25 @@ const cards = [
       'Kernel Award for Recommender System — DonorsChoose.org Recommender Competition'
     ],
     link: { label: 'Explore the Kaggle story', href: '/highlights/kaggle-achievements' },
-    minH: '380px'
+    minH: '280px'
   }
 ];
 
 const ExecutivePresence = () => {
   const bg = useColorModeValue('surface', 'rgba(255,255,255,0.02)');
   const accent = useColorModeValue('brand.500', 'brand.200');
+  const gridTemplate = { base: 'repeat(1, minmax(0, 1fr))', md: 'repeat(2, minmax(0, 1fr))', xl: 'repeat(3, minmax(0, 1fr))' };
+  const gridGap = { base: 3, md: 4 };
 
   return (
-    <Box id="executive-presence" py={{ base: 16, md: 20 }}>
+    <Box id="executive-presence" py={{ base: 12, md: 16 }}>
       <Container maxW="7xl">
         <SectionHeading
           eyebrow="Executive presence"
           title="Executive proof points across NASA, Microsoft, and national hackathons"
           description="Each card highlights a credential, award, or recognition that reinforces the executive narrative on the homepage."
         />
-        <Grid templateColumns={{ base: 'repeat(1, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))' }} gap={6} mt={10}>
+        <Grid templateColumns={gridTemplate} gridAutoRows="1fr" gap={gridGap} mt={8}>
           {cards.map((card) => (
             <Box
               key={card.title}
@@ -84,10 +84,12 @@ const ExecutivePresence = () => {
               bg={bg}
               borderColor="outline"
               borderWidth="1px"
-              p={{ base: 6, md: 7 }}
+              p={{ base: 5, md: 6 }}
+              display="flex"
+              flexDirection="column"
               minH={card.minH}
             >
-              <Stack spacing={3}>
+              <Stack spacing={2} flex={1}>
                 <Heading size="md" color={accent}>
                   {card.title}
                 </Heading>
@@ -113,6 +115,21 @@ const ExecutivePresence = () => {
                   >
                     {card.link.label}
                   </Link>
+                ) : null}
+                {card.links ? (
+                  <Stack spacing={2}>
+                    {card.links.map((link) => (
+                      <Link
+                        key={link.label + link.href}
+                        href={link.href}
+                        color={accent}
+                        fontWeight="semibold"
+                        isExternal={link.href.startsWith('http')}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </Stack>
                 ) : null}
               </Stack>
             </Box>
