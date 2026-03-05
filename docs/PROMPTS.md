@@ -290,3 +290,5 @@ Kernel Award Winner - DonorsChoose.org Recommender Competition
 Kernel Award for Recommender System - DonorsChoose.org Recommender Competition
 
 Make the card section compact and visually cohesive - reduce excess padding, keep cards aligned in a tidy responsive grid (two per row on desktop, single on mobile), and ensure consistent height so it reads as a single executive-strength component.
+
+Make the Kaggle Card take 2 columns so that the card view is more compact

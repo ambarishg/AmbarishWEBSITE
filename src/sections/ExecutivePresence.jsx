@@ -1,4 +1,4 @@
-ï»¿import { Box, Container, Grid, Heading, Link, List, ListIcon, ListItem, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, Grid, GridItem, Heading, Link, List, ListIcon, ListItem, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import SectionHeading from '../components/SectionHeading.jsx';
 
@@ -51,14 +51,15 @@ const cards = [
     details: [
       'Kaggle Kernel Master',
       'Kaggle Weekly Kernel Award Winner',
-      'Themed Kernel Award Winner â€” Spooky Author Competition',
-      'Kernel Award Winner â€” Data Science for Good: Kiva Crowdfunding dataset',
-      'Kernel Award Winner â€” DonorsChoose.org Application Screening',
-      'Kernel Award Winner â€” DonorsChoose.org Recommender Competition',
-      'Kernel Award for Recommender System â€” DonorsChoose.org Recommender Competition'
+      'Themed Kernel Award Winner — Spooky Author Competition',
+      'Kernel Award Winner — Data Science for Good: Kiva Crowdfunding dataset',
+      'Kernel Award Winner — DonorsChoose.org Application Screening',
+      'Kernel Award Winner — DonorsChoose.org Recommender Competition',
+      'Kernel Award for Recommender System — DonorsChoose.org Recommender Competition'
     ],
     link: { label: 'Explore the Kaggle story', href: '/highlights/kaggle-achievements' },
-    minH: '280px'
+    minH: '280px',
+    colSpan: { base: 1, md: 2 }
   }
 ];
 
@@ -78,61 +79,62 @@ const ExecutivePresence = () => {
         />
         <Grid templateColumns={gridTemplate} gridAutoRows="1fr" gap={gridGap} mt={8}>
           {cards.map((card) => (
-            <Box
-              key={card.title}
-              layerStyle="card"
-              bg={bg}
-              borderColor="outline"
-              borderWidth="1px"
-              p={{ base: 5, md: 6 }}
-              display="flex"
-              flexDirection="column"
-              minH={card.minH}
-            >
-              <Stack spacing={2} flex={1}>
-                <Heading size="md" color={accent}>
-                  {card.title}
-                </Heading>
-                <Text color="subtleText" lineHeight={1.6}>
-                  {card.description}
-                </Text>
-                {card.details ? (
-                  <List spacing={2} pl={0}>
-                    {card.details.map((detail) => (
-                      <ListItem key={detail} color="text" fontSize="sm">
-                        <ListIcon as={CheckCircleIcon} color={accent} />
-                        {detail}
-                      </ListItem>
-                    ))}
-                  </List>
-                ) : null}
-                {card.link ? (
-                  <Link
-                    href={card.link.href}
-                    color={accent}
-                    fontWeight="semibold"
-                    isExternal={card.link.href.startsWith('http')}
-                  >
-                    {card.link.label}
-                  </Link>
-                ) : null}
-                {card.links ? (
-                  <Stack spacing={2}>
-                    {card.links.map((link) => (
-                      <Link
-                        key={link.label + link.href}
-                        href={link.href}
-                        color={accent}
-                        fontWeight="semibold"
-                        isExternal={link.href.startsWith('http')}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </Stack>
-                ) : null}
-              </Stack>
-            </Box>
+            <GridItem key={card.title} colSpan={card.colSpan ?? 1}>
+              <Box
+                layerStyle="card"
+                bg={bg}
+                borderColor="outline"
+                borderWidth="1px"
+                p={{ base: 5, md: 6 }}
+                display="flex"
+                flexDirection="column"
+                minH={card.minH}
+              >
+                <Stack spacing={2} flex={1}>
+                  <Heading size="md" color={accent}>
+                    {card.title}
+                  </Heading>
+                  <Text color="subtleText" lineHeight={1.6}>
+                    {card.description}
+                  </Text>
+                  {card.details ? (
+                    <List spacing={2} pl={0}>
+                      {card.details.map((detail) => (
+                        <ListItem key={detail} color="text" fontSize="sm">
+                          <ListIcon as={CheckCircleIcon} color={accent} />
+                          {detail}
+                        </ListItem>
+                      ))}
+                    </List>
+                  ) : null}
+                  {card.link ? (
+                    <Link
+                      href={card.link.href}
+                      color={accent}
+                      fontWeight="semibold"
+                      isExternal={card.link.href.startsWith('http')}
+                    >
+                      {card.link.label}
+                    </Link>
+                  ) : null}
+                  {card.links ? (
+                    <Stack spacing={2}>
+                      {card.links.map((link) => (
+                        <Link
+                          key={link.label + link.href}
+                          href={link.href}
+                          color={accent}
+                          fontWeight="semibold"
+                          isExternal={link.href.startsWith('http')}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </Stack>
+                  ) : null}
+                </Stack>
+              </Box>
+            </GridItem>
           ))}
         </Grid>
       </Container>
