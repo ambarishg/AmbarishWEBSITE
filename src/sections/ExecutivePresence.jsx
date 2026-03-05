@@ -51,11 +51,11 @@ const cards = [
     details: [
       'Kaggle Kernel Master',
       'Kaggle Weekly Kernel Award Winner',
-      'Themed Kernel Award Winner — Spooky Author Competition',
-      'Kernel Award Winner — Data Science for Good: Kiva Crowdfunding dataset',
-      'Kernel Award Winner — DonorsChoose.org Application Screening',
-      'Kernel Award Winner — DonorsChoose.org Recommender Competition',
-      'Kernel Award for Recommender System — DonorsChoose.org Recommender Competition'
+      'Themed Kernel Award Winner - Spooky Author Competition',
+      'Kernel Award Winner - Data Science for Good: Kiva Crowdfunding dataset',
+      'Kernel Award Winner - DonorsChoose.org Application Screening',
+      'Kernel Award Winner - DonorsChoose.org Recommender Competition',
+      'Kernel Award for Recommender System - DonorsChoose.org Recommender Competition'
     ],
     link: { label: 'Explore the Kaggle story', href: '/highlights/kaggle-achievements' },
     minH: '280px',
