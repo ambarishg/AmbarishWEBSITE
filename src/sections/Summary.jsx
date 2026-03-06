@@ -13,7 +13,7 @@ const Summary = () => {
       <Container maxW="7xl">
         <SectionHeading
           eyebrow="Summary"
-          title="Guiding mission-critical utilities through data, analytics, and AI."
+          title="Executive leadership anchored in delivery."
         />
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mt={12}>
           {cards.map((card) => (
@@ -55,10 +55,10 @@ const Summary = () => {
             textAlign={{ base: 'left', md: 'center' }}
           >
             <Heading size="md" color={accent}>
-              Featured NASA interview
+              External recognition
             </Heading>
             <Text color="subtleText" maxW="3xl">
-              NASA profiled Ambarish&apos;s citizen science journey, spotlighting contributions to planetary research, open data, and applied AI for sustainability-led programs.
+              External recognition reinforces the operating record rather than defining it, including a NASA profile on applied citizen science and sustained industry recognition for practical AI leadership.
             </Text>
             <Button
               as={Link}

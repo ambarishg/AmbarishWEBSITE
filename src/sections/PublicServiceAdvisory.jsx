@@ -11,8 +11,8 @@ const PublicServiceAdvisory = () => {
       <Container maxW="6xl">
         <SectionHeading
           eyebrow="Public Service & Advisory"
-          title="Public Service & Government Advisory"
-          description="Partnering with civic programs to seed AI talent, build trust, and scale data-science capacity."
+          title="Government advisory with practical operating focus"
+          description="Extending leadership beyond enterprise programs into public-sector capability building and talent development."
         />
         <Box
           mt={10}
@@ -25,13 +25,12 @@ const PublicServiceAdvisory = () => {
         >
           <Stack spacing={4}>
             <Text color="text" fontSize={{ base: 'lg', md: 'xl' }}>
-              Appointed as Pro Bono Subject Matter Expert by the Government of West Bengal's Centre of Excellence on Data
-              Science &amp; Machine Learning, advising on AI talent assessment and contributing to the development of the
-              state's next-generation data science workforce.
+              Appointed as Pro Bono Subject Matter Expert by the Government of West Bengal&apos;s Centre of Excellence on
+              Data Science &amp; Machine Learning, advising on AI talent assessment and helping shape a stronger pipeline
+              of industry-ready data science talent.
             </Text>
             <Text color={accent} fontWeight="semibold" fontSize="sm">
-              Advisory focus: AI talent assessment, principled hiring, candidate quality calibration, and strategic
-              mentorship.
+              Advisory focus: talent standards, candidate quality calibration, principled hiring, and strategic mentorship.
             </Text>
           </Stack>
         </Box>

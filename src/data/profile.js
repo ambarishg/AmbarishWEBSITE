@@ -1,8 +1,8 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: 'Executive advisor for AI & data platforms in industry',
+  title: 'Executive Leader, Data & AI Transformation',
   valueStatement:
-    'Bridging strategy, architecture, and execution to operationalize AI at scale across energy, utilities, and enterprise programs.',
+    'Driving enterprise transformation across utilities, energy, and AI-led modernization.',
   location: '',
   professionalStatement:
     '',
@@ -11,10 +11,10 @@ export const hero = {
     linkedin: 'https://www.linkedin.com/in/ambarish-ganguly/'
   },
   headlineHighlights: [
-    'Data & Analytics Practice Head, Energy Resources & Utilities at TCS',
-    'NASA Citizen Scientist',
-    'Microsoft Most Valuable Professional (Alumni)',
-    'Recognized by Government of India, NASA, Google (Kaggle), and Microsoft'
+    'Data & Analytics Practice Head for Energy, Resources & Utilities at TCS',
+    'Leads enterprise modernization across data platforms, customer operations, field service, and AI adoption',
+    'Trusted by executive and delivery teams to shape multi-year transformation programs and strategic deals',
+    'Recognized by NASA, Microsoft, the Government of India, and Kaggle for applied innovation'
   ],
   primarySkills: [
     'Mentoring & Leadership',
@@ -37,22 +37,23 @@ export const hero = {
 export const summary = {
   cards: [
     {
-      title: 'Enterprise data & AI leadership',
+      title: 'Operating executive with technical depth',
       description:
-        'Hands-on leader guiding enterprise innovation across utilities data & analytics, cloud, energy trading, and risk management.'
+        'Combines executive accountability with architecture-level involvement, staying close to delivery decisions that determine whether transformation programs succeed.'
     },
     {
-      title: 'Trusted transformation partner',
+      title: 'Leadership across mission-critical operations',
       description:
-        'Mentors executive and delivery teams through customer care, billing, and field service modernization for high-stakes programs.'
+        'Guides modernization across customer care, billing, field service, energy trading, and utility operations where resilience, regulation, and customer impact all matter.'
     },
     {
-      title: 'Proven delivery track record',
-      description: 'More than 25 years translating critical business goals into resilient data platforms and AI experiences.'
+      title: '25+ years of execution at scale',
+      description:
+        'Builds confidence through sustained delivery, translating business priorities into durable data platforms, AI solutions, and operating change across global programs.'
     }
   ],
   conclusion:
-    'Grounded in a formal academic blend - B.Sc (Hons) Physics from St. Xavier\'s College and B.Tech Computer Science & Engineering from the University of Calcutta - that fuses analytical rigor with engineering execution.'
+    'Grounded in physics and computer science training, with a leadership style defined by analytical rigor, engineering judgment, and direct ownership of outcomes.'
 };
 
 export const experiences = [

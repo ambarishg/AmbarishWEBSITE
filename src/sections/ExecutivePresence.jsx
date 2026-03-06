@@ -4,31 +4,35 @@ import SectionHeading from '../components/SectionHeading.jsx';
 
 const cards = [
   {
-    title: 'Hands-on Practitioner in Data & AI',
+    title: 'Enterprise mandate with hands-on involvement',
     description:
-      'Over 25 years of delivery across utilities, energy, and enterprise programs, pairing strategy, analytics, and AI with measurable outcomes.',
-    minH: '180px'
+      'More than 25 years leading transformation across utilities and energy, while staying directly involved in architecture, solution shaping, and execution tradeoffs.',
+    details: [
+      'Leads data, analytics, AI, and modernization mandates for enterprise utility programs.',
+      'Operates across strategy, operating model, delivery governance, and technical direction.'
+    ],
+    minH: '220px'
   },
   {
-    title: 'NASA citizen scientist & Random Walk of the Penguins champion',
+    title: 'Public-sector and research credibility',
     description:
-      'Featured by NASA for applied citizen science and honored with the DrivenData Random Walk of the Penguins win sponsored by NASA.',
+      'Credibility built through real contribution, including NASA recognition and work that connects data science to public-interest and sustainability outcomes.',
     details: [
-      'NASA recognition for planetary citizen science collaborations.',
-      '1st prize winner of the climate intelligence Random Walk of the Penguins challenge on DrivenData.org.'
+      'Featured by NASA for citizen science contributions.',
+      'Winner of the NASA-sponsored Random Walk of the Penguins challenge on DrivenData.'
     ],
     link: { label: 'Read the NASA profile', href: 'https://science.nasa.gov/people/ambarish-ganguly/' },
     minH: '200px'
   },
   {
-    title: 'Microsoft & Azure recognitions',
+    title: 'Microsoft validation for practical AI leadership',
     description:
-      'Microsoft Most Valuable Professional (AI) alum, Certified Trainer, and repeat Blogathon champion running production-ready Azure solutions.',
+      'Recognition from Microsoft reflects a pattern of building practical, production-oriented AI and cloud solutions rather than purely conceptual work.',
     details: [
-      'Microsoft Most Valuable Professional in the AI category (Alumni).',
-      'Microsoft Certified Trainer delivering Azure & AI mastery sessions.',
-      'Two-time Azure Blogathon winner and the Future Ready Champions of Code victory.',
-      'Bees Health detection on Azure showcased by Microsoft India.'
+      'Microsoft Most Valuable Professional in AI (Alumni).',
+      'Microsoft Certified Trainer and repeat Azure Blogathon winner.',
+      'Future Ready Champions of Code winner.',
+      'Azure-based solution showcased by Microsoft India.'
     ],
     links: [
       { label: 'Watch the Bees health showcase', href: 'https://www.youtube.com/watch?v=d92H_wPyrUE' },
@@ -40,25 +44,22 @@ const cards = [
     minH: '280px'
   },
   {
-    title: 'DST Geospatial Hackathon 2023',
-    description: 'Winner of the Government of India DST hackathon building geospatial intelligence for policy & infrastructure planning.',
+    title: 'Government-facing problem solving',
+    description: 'Recognition from Government of India programs demonstrates the ability to connect analytics and AI with infrastructure, policy, and societal outcomes.',
     link: { label: 'See the DST announcement', href: 'https://www.indianweb2.com/2023/06/winners-of-dst-geospatial-hackathon-2023.html' },
     minH: '180px'
   },
   {
-    title: 'Kaggle achievements (a Google company)',
-    description: 'Kernel awards, storytelling, and recommender wins that complement the executive advisory portfolio.',
+    title: 'Analytical depth and communication range',
+    description: 'A strong Kaggle record adds evidence of analytical range, clear storytelling, and the discipline to turn complex data into actionable decisions.',
     details: [
       'Kaggle Kernel Master',
       'Kaggle Weekly Kernel Award Winner',
-      'Themed Kernel Award Winner - Spooky Author Competition',
-      'Kernel Award Winner - Data Science for Good: Kiva Crowdfunding dataset',
-      'Kernel Award Winner - DonorsChoose.org Application Screening',
-      'Kernel Award Winner - DonorsChoose.org Recommender Competition',
-      'Kernel Award for Recommender System - DonorsChoose.org Recommender Competition'
+      'Award-winning work in recommendation systems and social-impact analysis',
+      'Recognized for both technical quality and communication clarity'
     ],
     link: { label: 'Explore the Kaggle story', href: '/highlights/kaggle-achievements' },
-    minH: '280px',
+    minH: '240px',
     colSpan: { base: 1, md: 2 }
   }
 ];
@@ -74,8 +75,8 @@ const ExecutivePresence = () => {
       <Container maxW="7xl">
         <SectionHeading
           eyebrow="Executive presence"
-          title="Executive proof points across NASA, Microsoft, and national hackathons"
-          description="Each card highlights a credential, award, or recognition that reinforces the executive narrative on the homepage."
+          title="Selective proof points that support the leadership narrative"
+          description="These recognitions matter because they reinforce an operating record built on execution, judgment, and technical credibility."
         />
         <Grid templateColumns={gridTemplate} gridAutoRows="1fr" gap={gridGap} mt={8}>
           {cards.map((card) => (
