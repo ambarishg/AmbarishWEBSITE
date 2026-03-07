@@ -32,8 +32,8 @@ const Experience = () => {
       <Container maxW="7xl">
         <SectionHeading
           eyebrow="Experience"
-          title="Longevity, depth, and delivery across energy utilities and AI."
-          description="Strategic and hands-on leadership across global transformation programs, data platforms, and AI innovation."
+          title="Enterprise leadership across utilities, energy, and AI."
+          description="A sustained record of leading transformation programs, data platforms, and applied AI from strategy to delivery."
         />
         <Stack spacing={10} mt={12}>
           {experiences.map((experience) => (

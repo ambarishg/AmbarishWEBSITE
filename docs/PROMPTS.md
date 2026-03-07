@@ -298,3 +298,7 @@ Review the first page and remove repetitive mentions as a whole and make it very
 Make the title and subtitle associated with the front page more compact in less words and more crisp. Too much of words does not provide confidence
 
 Make it more executive and leadership
+
+------------------------------------------
+
+Refine the "Longevity, depth, and delivery across energy utilities and AI" section to feel more executive and visually polished. Make the copy crisper, more compact, and more aesthetically balanced.
