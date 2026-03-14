@@ -311,4 +311,6 @@ Would removing the Experience section in the front page make it more crisp and e
 
 Make the website  more leadership and authoratative in data and ai
 
+I have been involved as a Pro Bono Subject Matter Expert by the Government of West Bengal's Centre of Excellence on Data Science & Machine Learning, advising on AI talent assessment and helping shape a stronger pipeline of industry-ready data science talent. I have interviewed many candidates 3 instances. Is this properly highlighted
+
 
