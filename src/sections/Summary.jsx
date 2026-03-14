@@ -12,8 +12,8 @@ const Summary = () => {
     <Box id="about" py={{ base: 16, md: 20 }}>
       <Container maxW="7xl">
         <SectionHeading
-          eyebrow="Summary"
-          title="Executive leadership anchored in delivery."
+          eyebrow="Leadership Positioning"
+          title="Boardroom credibility backed by delivery depth."
         />
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mt={12}>
           {cards.map((card) => (
@@ -55,10 +55,10 @@ const Summary = () => {
             textAlign={{ base: 'left', md: 'center' }}
           >
             <Heading size="md" color={accent}>
-              External recognition
+              External validation
             </Heading>
             <Text color="subtleText" maxW="3xl">
-              External recognition reinforces the operating record rather than defining it, including a NASA profile on applied citizen science and sustained industry recognition for practical AI leadership.
+              External validation reinforces the operating record rather than defining it, including NASA recognition and sustained Microsoft and community acknowledgment for practical AI leadership.
             </Text>
             <Button
               as={Link}

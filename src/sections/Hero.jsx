@@ -30,6 +30,8 @@ const Hero = () => {
   const cardBorder = useColorModeValue('rgba(59, 134, 245, 0.15)', 'rgba(59, 134, 245, 0.35)');
   const secondarySkillBg = useColorModeValue('rgba(15, 23, 42, 0.04)', 'rgba(255, 255, 255, 0.08)');
   const secondarySkillColor = useColorModeValue('gray.500', 'gray.400');
+  const metricBg = useColorModeValue('rgba(255,255,255,0.78)', 'rgba(15,23,42,0.78)');
+  const metricBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
   const primarySkills = new Set(hero.primarySkills ?? hero.skills.slice(0, 4));
 
   return (
@@ -75,16 +77,18 @@ const Hero = () => {
               variant="subtle"
               bg={badgeBg}
               color={badgeColor}
-              letterSpacing="0.2em"
+              px={3}
+              py={1}
+              letterSpacing="0.24em"
               textTransform="uppercase"
             >
-              Data & AI Transformation Leader
+              Data & AI Leadership
             </Tag>
             <Heading
               as="h1"
-              size="2xl"
-              lineHeight={1.1}
-              letterSpacing="-0.5px"
+              size={{ base: '2xl', md: '3xl' }}
+              lineHeight={1}
+              letterSpacing="-1px"
               color={useColorModeValue('brand.800', 'brand.100')}
             >
               {hero.name}
@@ -101,10 +105,31 @@ const Hero = () => {
               </Heading>
             )}
             {hero.valueStatement && (
-              <Text fontSize="lg" color={textColor} maxW="32rem" lineHeight={1.7}>
+              <Text fontSize={{ base: 'lg', md: 'xl' }} color={textColor} maxW="34rem" lineHeight={1.65}>
                 {hero.valueStatement}
               </Text>
             )}
+            <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={3} w="full" maxW="40rem">
+              {hero.authorityMetrics?.map((item) => (
+                <Box
+                  key={item.label}
+                  borderRadius="xl"
+                  px={{ base: 4, md: 5 }}
+                  py={{ base: 4, md: 4.5 }}
+                  bg={metricBg}
+                  border="1px solid"
+                  borderColor={metricBorder}
+                  boxShadow="0 20px 45px -35px rgba(15,23,42,0.65)"
+                >
+                  <Text fontSize="2xl" fontWeight="extrabold" color={accent} lineHeight={1}>
+                    {item.value}
+                  </Text>
+                  <Text mt={2} fontSize="sm" color={textColor} lineHeight={1.5}>
+                    {item.label}
+                  </Text>
+                </Box>
+              ))}
+            </SimpleGrid>
             <Wrap spacing={3}>
               <WrapItem>
                 <Button
@@ -169,6 +194,15 @@ const Hero = () => {
               boxShadow="floating"
             >
               <Stack spacing={3}>
+                <Text
+                  fontSize="xs"
+                  fontWeight="bold"
+                  letterSpacing="0.28em"
+                  textTransform="uppercase"
+                  color={accent}
+                >
+                  Executive Profile
+                </Text>
                 {hero.headlineHighlights.map((item) => {
                   const isNASAHighlight = item.includes('NASA Citizen Scientist');
                   const isBeesShowcase = item.includes('Bees health detection solution');

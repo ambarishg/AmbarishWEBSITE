@@ -21,6 +21,7 @@ import KaggleAchievements from './pages/KaggleAchievements.jsx';
 import HighlightMicrosoftAzure from './pages/HighlightMicrosoftAzure.jsx';
 import SpeakingConferences from './pages/SpeakingConferences.jsx';
 import Signass2006 from './pages/Signass2006.jsx';
+import ExperiencePage from './pages/ExperiencePage.jsx';
 
 function ColorModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -92,6 +93,7 @@ const App = () => {
           <Route path="/ag-academy" element={<AGAcademy />} />
           <Route path="/speaking-conferences" element={<SpeakingConferences />} />
           <Route path="/speaking-conferences/signass-2006" element={<Signass2006 />} />
+          <Route path="/experience" element={<ExperiencePage />} />
         </Routes>
       </Flex>
       <Footer />

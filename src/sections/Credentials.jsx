@@ -27,7 +27,7 @@ const Credentials = () => {
       <Container maxW="6xl">
         <SectionHeading
           eyebrow="Credentials"
-          title="Continuous learning across data, engineering, and emerging tech."
+          title="Technical depth sustained through continuous learning."
         />
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={10}>
           <Box

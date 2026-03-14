@@ -1,8 +1,8 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: 'Executive Leader, Data & AI Transformation',
+  title: 'Data & AI Leader for Utilities, Energy, and Enterprise Transformation',
   valueStatement:
-    'Driving enterprise transformation across utilities, energy, and AI-led modernization.',
+    'Leading enterprise-scale data, AI, and modernization mandates with hands-on architectural and delivery oversight.',
   location: '',
   professionalStatement:
     '',
@@ -11,10 +11,15 @@ export const hero = {
     linkedin: 'https://www.linkedin.com/in/ambarish-ganguly/'
   },
   headlineHighlights: [
-    'Data & Analytics Practice Head for Energy, Resources & Utilities at TCS',
-    'Leads enterprise modernization across data platforms, customer operations, field service, and AI adoption',
-    'Trusted by executive and delivery teams to shape multi-year transformation programs and strategic deals',
-    'Recognized by NASA, Microsoft, the Government of India, and Kaggle for applied innovation'
+    'Practice leader for Data & Analytics in Energy, Resources, and Utilities at TCS',
+    'Shapes enterprise programs across data platforms, customer operations, field service, and AI adoption',
+    'Advises executive stakeholders on multi-year transformation strategy, operating model, and solution direction',
+    'Recognized by NASA, Microsoft, the Government of India, and Kaggle for applied AI execution'
+  ],
+  authorityMetrics: [
+    { value: '25+', label: 'Years in data, platforms, and AI delivery' },
+    { value: 'Global', label: 'Leadership across utilities and energy programs' },
+    { value: 'C-Suite', label: 'Trusted advisor for transformation mandates' }
   ],
   primarySkills: [
     'Mentoring & Leadership',
@@ -37,23 +42,23 @@ export const hero = {
 export const summary = {
   cards: [
     {
-      title: 'Operating executive with technical depth',
+      title: 'Executive mandate with technical command',
       description:
-        'Combines executive accountability with architecture-level involvement, staying close to delivery decisions that determine whether transformation programs succeed.'
+        'Owns transformation outcomes while staying close to architecture, delivery design, and the technical decisions that determine program success.'
     },
     {
-      title: 'Leadership across mission-critical operations',
+      title: 'Authority in mission-critical operations',
       description:
-        'Guides modernization across customer care, billing, field service, energy trading, and utility operations where resilience, regulation, and customer impact all matter.'
+        'Leads modernization across customer care, billing, field service, energy trading, and utility operations where resilience, regulation, and customer impact are non-negotiable.'
     },
     {
-      title: '25+ years of execution at scale',
+      title: 'Execution credibility built over 25+ years',
       description:
-        'Builds confidence through sustained delivery, translating business priorities into durable data platforms, AI solutions, and operating change across global programs.'
+        'Turns board-level priorities into durable platforms, AI capabilities, and operating change across large-scale global programs.'
     }
   ],
   conclusion:
-    'Grounded in physics and computer science training, with a leadership style defined by analytical rigor, engineering judgment, and direct ownership of outcomes.'
+    'Grounded in physics and computer science, with a leadership style defined by analytical rigor, engineering judgment, and direct ownership of outcomes.'
 };
 
 export const experiences = [

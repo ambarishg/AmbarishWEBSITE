@@ -302,3 +302,13 @@ Make it more executive and leadership
 ------------------------------------------
 
 Refine the "Longevity, depth, and delivery across energy utilities and AI" section to feel more executive and visually polished. Make the copy crisper, more compact, and more aesthetically balanced.
+
+------------------------------------------------------
+Make the Experience section more crisp and executive and simple
+
+-------------------------------------------------------------
+Would removing the Experience section in the front page make it more crisp and executive and not CV like ?
+
+Make the website  more leadership and authoratative in data and ai
+
+

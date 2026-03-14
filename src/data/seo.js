@@ -310,6 +310,20 @@ export const seo = {
     ],
     image: '/docs/SIGNASS.jpg'
   },
+  experience: {
+    title: 'Experience',
+    description:
+      'Leadership experience across utilities, energy, platforms, and applied AI, covering enterprise transformation from strategy through delivery.',
+    pathname: '/experience',
+    keywords: [
+      'enterprise leadership',
+      'utilities transformation',
+      'AI delivery',
+      'data platform leadership',
+      'energy sector experience'
+    ],
+    image: '/images/AG.jpg'
+  },
   agAcademy: {
     title: 'AG Academy',
     description:

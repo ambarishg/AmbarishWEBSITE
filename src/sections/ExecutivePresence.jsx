@@ -74,9 +74,9 @@ const ExecutivePresence = () => {
     <Box id="executive-presence" py={{ base: 12, md: 16 }}>
       <Container maxW="7xl">
         <SectionHeading
-          eyebrow="Executive presence"
-          title="Selective proof points that support the leadership narrative"
-          description="These recognitions matter because they reinforce an operating record built on execution, judgment, and technical credibility."
+          eyebrow="Authority Signals"
+          title="Proof points that reinforce leadership authority"
+          description="Recognition matters here because it supports an operating record built on judgment, execution, and technical credibility."
         />
         <Grid templateColumns={gridTemplate} gridAutoRows="1fr" gap={gridGap} mt={8}>
           {cards.map((card) => (
