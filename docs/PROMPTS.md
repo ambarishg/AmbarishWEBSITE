@@ -313,4 +313,14 @@ Make the website  more leadership and authoratative in data and ai
 
 I have been involved as a Pro Bono Subject Matter Expert by the Government of West Bengal's Centre of Excellence on Data Science & Machine Learning, advising on AI talent assessment and helping shape a stronger pipeline of industry-ready data science talent. I have interviewed many candidates 3 instances. Is this properly highlighted
 
+------------------------------------------
+
+Create a Special Section on the NASA achievement and put the link in the main menu.
+
+Get inspiration from the content written in the website and also from 
+docs\NASA.md
+
+Color combination for the NASA section on the Home Page needs to improve for visibility , crispiness and overall UX
+
+Make the NASA section at the top
 

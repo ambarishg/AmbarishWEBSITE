@@ -19,6 +19,7 @@ import { hero } from '../data/profile.js';
 
 const NAV_LINKS = [
   { label: 'About', to: { pathname: '/', hash: '#about' } },
+  { label: 'NASA', to: { pathname: '/', hash: '#nasa' } },
   { label: 'Experience', to: '/experience' },
   {
     label: 'Case Studies',
