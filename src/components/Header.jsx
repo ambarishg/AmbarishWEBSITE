@@ -20,6 +20,7 @@ import { hero } from '../data/profile.js';
 const NAV_LINKS = [
   { label: 'About', to: { pathname: '/', hash: '#about' } },
   { label: 'NASA', to: { pathname: '/', hash: '#nasa' } },
+  { label: 'Bees on Azure', to: { pathname: '/', hash: '#bees' } },
   { label: 'Experience', to: '/experience' },
   {
     label: 'Case Studies',

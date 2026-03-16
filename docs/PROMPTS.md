@@ -324,3 +324,6 @@ Color combination for the NASA section on the Home Page needs to improve for vis
 
 Make the NASA section at the top
 
+------------------------------------------
+Repeat the same process for the Bees Health Detection on Azure story and put it in the Home Page
+
