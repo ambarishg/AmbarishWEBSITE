@@ -26,7 +26,6 @@ const NAV_LINKS = [
     label: 'Case Studies',
     to: '/highlights',
     submenu: [
-      { label: 'Overview', to: '/highlights' },
       { label: 'Azure', to: '/highlights/microsoft-azure' },
       { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
     ]

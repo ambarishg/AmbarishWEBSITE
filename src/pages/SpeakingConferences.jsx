@@ -205,6 +205,16 @@ const SpeakingConferences = () => {
               >
                 Explore SIGNASS 2006 reflections
               </Button>
+              <Button
+                as={RouterLink}
+                to="/speaking-conferences/linkedin-header"
+                variant="outline"
+                colorScheme="brand"
+                rightIcon={<ArrowForwardIcon />}
+                alignSelf="flex-start"
+              >
+                View LinkedIn header page
+              </Button>
             </Stack>
           </Stack>
         </SimpleGrid>

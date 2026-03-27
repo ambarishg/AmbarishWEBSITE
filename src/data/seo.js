@@ -310,6 +310,20 @@ export const seo = {
     ],
     image: '/docs/SIGNASS.jpg'
   },
+  linkedinHeader: {
+    title: 'LinkedIn Header',
+    description:
+      'LinkedIn header themed page for SIGNASS 2026, matching the portfolio’s existing design language and conference storytelling.',
+    pathname: '/speaking-conferences/linkedin-header',
+    keywords: [
+      'LinkedIn header',
+      'SIGNASS 2026',
+      'conference banner',
+      'speaker profile',
+      'domain-aware AI'
+    ],
+    image: '/docs/SIGNASS.jpg'
+  },
   experience: {
     title: 'Experience',
     description:
