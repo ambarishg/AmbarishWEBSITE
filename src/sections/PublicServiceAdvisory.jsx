@@ -11,8 +11,8 @@ const PublicServiceAdvisory = () => {
       <Container maxW="6xl">
         <SectionHeading
           eyebrow="Public Service & Advisory"
-          title="Government advisory shaped by standards, judgment, and talent stewardship."
-          description="Leadership extending beyond enterprise delivery into public capability-building."
+          title="Public advisory work focused on standards, assessment, and capability-building."
+          description="Work that extends beyond enterprise delivery into public programmes and technical evaluation."
         />
         <Box
           mt={10}

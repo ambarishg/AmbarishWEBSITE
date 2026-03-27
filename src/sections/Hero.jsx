@@ -200,7 +200,7 @@ const Hero = () => {
                     Enterprise transformation leadership with technical judgment close to the work.
                   </Heading>
                   <Text color="subtleText" lineHeight={1.85}>
-                    Trusted across utilities, energy, public-interest AI, and platform modernisation where executive clarity and delivery credibility both matter.
+                    Work across utilities, energy, public-interest AI, and platform modernisation, with attention to both executive direction and delivery detail.
                   </Text>
                 </Stack>
               </Stack>
@@ -228,7 +228,7 @@ const Hero = () => {
                   A portfolio positioned for enterprise trust.
                 </Heading>
                 <Text color="subtleText" lineHeight={1.85}>
-                  Move from profile to evidence quickly: executive experience, applied AI case studies, and external credibility signals are structured to be scanned fast.
+                  The site is organised to make it easy to review experience, case studies, and external references without unnecessary framing.
                 </Text>
                 <Divider borderColor={panelBorder} />
                 <Stack spacing={3}>

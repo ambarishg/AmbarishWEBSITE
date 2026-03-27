@@ -125,9 +125,8 @@ const BeesAzureStory = () => {
                     Bees health detection built on Azure
                   </Heading>
                   <Text color={textMuted} fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.75} maxW="2xl">
-                    A practical computer-vision solution designed to help detect bee disease
-                    earlier, reduce invasive inspections, and support more resilient pollinator
-                    health.
+                    A computer-vision solution designed to help detect bee disease earlier,
+                    reduce invasive inspections, and support pollinator health.
                   </Text>
                 </Stack>
                 <Text color={textMuted} fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.8}>

@@ -5,13 +5,13 @@ const cards = [
   {
     title: 'Research and public-interest credibility',
     description:
-      'Recognition built through work that connects analytical discipline to conservation, public-interest, and mission-driven outcomes.',
+      'Research and public-interest work that connects analysis with conservation and other mission-led outcomes.',
     link: { label: 'Read the NASA profile', href: 'https://science.nasa.gov/people/ambarish-ganguly/' }
   },
   {
     title: 'Microsoft validation for applied AI leadership',
     description:
-      'Repeated Microsoft recognition reflects a pattern of practical cloud and AI execution rather than purely conceptual experimentation.',
+      'Microsoft recognition across multiple projects points to a consistent record of practical cloud and AI work.',
     links: [
       { label: 'Watch the Bees health showcase', href: 'https://www.youtube.com/watch?v=d92H_wPyrUE' },
       {
@@ -23,13 +23,13 @@ const cards = [
   {
     title: 'Government-facing problem solving',
     description:
-      'Recognition from public programmes demonstrates the ability to connect analytics and AI with infrastructure, policy, and societal outcomes.',
+      'Public programme work has focused on using analytics and AI in ways that connect with infrastructure, policy, and societal outcomes.',
     link: { label: 'See the DST announcement', href: 'https://www.indianweb2.com/2023/06/winners-of-dst-geospatial-hackathon-2023.html' }
   },
   {
     title: 'Analytical range with communication strength',
     description:
-      'The Kaggle record reinforces both analytical depth and the ability to communicate complex work with clarity and influence.',
+      'The Kaggle record shows both analytical range and the ability to explain technical work clearly.',
     link: { label: 'Explore the Kaggle portfolio', href: '/highlights/kaggle-achievements' }
   }
 ];
@@ -47,9 +47,8 @@ const ExecutivePresence = () => {
     <Box id="executive-presence" py={{ base: 14, md: 18 }}>
       <Container maxW="7xl">
         <SectionHeading
-          eyebrow="Authority Signals"
-          title="Proof points that reinforce leadership authority."
-          description="Recognition matters here because it supports an operating record built on judgment, execution, and technical credibility."
+          eyebrow="Selected Recognition"
+          title=""
         />
         <Grid templateColumns={{ base: '1fr', xl: '0.9fr 1.5fr' }} gap={{ base: 8, xl: 10 }} mt={10}>
           <Stack
@@ -61,7 +60,7 @@ const ExecutivePresence = () => {
             p={{ base: 6, md: 8 }}
           >
             <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
-              Leadership Context
+              Context
             </Text>
             <Heading
               as="h3"
@@ -75,7 +74,7 @@ const ExecutivePresence = () => {
               External recognition reinforces the operating record rather than defining it.
             </Heading>
             <Text color="subtleText" lineHeight={1.85}>
-              The portfolio spans enterprise transformation, public-interest research, applied AI, and community-facing delivery. What matters is not the breadth alone, but the consistency of judgment across different environments.
+              The portfolio spans enterprise transformation, public-interest research, applied AI, and community-facing delivery. The common thread is consistent technical work across different settings.
             </Text>
           </Stack>
           <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6}>

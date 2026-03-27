@@ -16,9 +16,9 @@ const Summary = () => {
     <Box id="about" py={{ base: 16, md: 20 }}>
       <Container maxW="7xl">
         <SectionHeading
-          eyebrow="Leadership Positioning"
-          title="Boardroom credibility backed by delivery depth."
-          description="A compact view of the operating style behind long-horizon transformation work."
+          eyebrow="Working Style"
+          title="A direct view of how the work is approached."
+          description="A short summary of the way large, long-running transformation work is handled."
         />
         <Grid templateColumns={{ base: '1fr', lg: '1.1fr 0.9fr' }} gap={{ base: 8, lg: 10 }} mt={12}>
           <Box

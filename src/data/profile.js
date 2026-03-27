@@ -2,7 +2,7 @@ export const hero = {
   name: 'Ambarish Ganguly',
   title: 'Data & AI Leader for Utilities, Energy, and Enterprise Transformation',
   valueStatement:
-    'Leading enterprise-scale data, AI, and modernization mandates with hands-on architectural and delivery oversight.',
+    'Working across enterprise data, AI, and modernization programs with direct involvement in architecture, delivery, and decision-making.',
   location: '',
   professionalStatement:
     '',
@@ -14,7 +14,7 @@ export const hero = {
     'Practice leader for Data & Analytics in Energy, Resources, and Utilities at TCS',
     'Shapes enterprise programs across data platforms, customer operations, field service, and AI adoption',
     'Advises executive stakeholders on multi-year transformation strategy, operating model, and solution direction',
-    'Recognized by NASA, Microsoft, the Government of India, and Kaggle for applied AI execution'
+    'Work has been recognised by NASA, Microsoft, the Government of India, and Kaggle'
   ],
   authorityMetrics: [
     { value: '26+', label: 'Years in data, platforms, and AI delivery' },
@@ -44,21 +44,21 @@ export const summary = {
     {
       title: 'Executive mandate with technical command',
       description:
-        'Owns transformation outcomes while staying close to architecture, delivery design, and the technical decisions that determine program success.'
+        'Works on transformation programs while remaining close to architecture, delivery design, and the technical decisions that shape outcomes.'
     },
     {
       title: 'Authority in mission-critical operations',
       description:
-        'Leads modernization across customer care, billing, field service, energy trading, and utility operations where resilience, regulation, and customer impact are non-negotiable.'
+        'Works across customer care, billing, field service, energy trading, and utility operations where resilience, regulation, and customer impact all matter.'
     },
     {
       title: 'Execution credibility built over 25+ years',
       description:
-        'Turns board-level priorities into durable platforms, AI capabilities, and operating change across large-scale global programs.'
+        'Has spent more than 25 years turning strategic priorities into platforms, AI capabilities, and operating changes across large programs.'
     }
   ],
   conclusion:
-    'Grounded in physics and computer science, with a leadership style defined by analytical rigor, engineering judgment, and direct ownership of outcomes.'
+    'Grounded in physics and computer science, with an approach shaped by careful analysis, engineering judgment, and direct responsibility for outcomes.'
 };
 
 export const experiences = [

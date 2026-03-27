@@ -23,3 +23,19 @@ Make the overall font system in the website
 2. Clear
 3. Visible
 4. Premium
+
+
+Make the NASA Section a standout and ULTRA Premium
+
+Remove with unmistakable analytical authority in the NASA SECTION and make NASA SECTION very authentic and trustworthy and not as a sales pitch
+
+Make the tone system in the site 
+1. Authentic
+2. Trust Worthy
+3. No sales pitch
+4. Honest
+
+Remove this
+
+A few external references that help place the work in context.
+These references matter because they provide independent context, not because they replace the work itself.

@@ -32,10 +32,10 @@ const TrustedBy = () => {
         >
           <Stack spacing={4} align="center" textAlign="center">
             <Text textStyle="eyebrow" letterSpacing="0.36em">
-              Trusted By
+              Organisations and Communities
             </Text>
             <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="600" color="text" maxW="3xl">
-              Trusted across enterprise, research, government, and practitioner communities.
+              Organisations, research communities, and public programmes connected with the work shown here.
             </Text>
             <Flex wrap="wrap" gap={{ base: 6, md: 10 }} justify="center" align="center" w="full" mt={2}>
               {trustedPartners.map((partner) => (
