@@ -185,8 +185,8 @@ export const achievements = [
           'Microsoft CTO funded Blogathon Winner - BBC News Q&A with Advanced RAG and Microsoft Phi3.',
         tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'Microsoft Phi3'],
         link: {
-          label: 'View Azure Blogathon case study',
-          to: '/highlights/azure-blogathon-champion'
+          label: 'Read the Phi3 case study',
+          href: 'https://blog.ambarishganguly.com/microsoft-phi3-revealed-a-deep-dive-into-advanced-rag-methods-with-bbc-news'
         }
       },
       {
@@ -194,8 +194,8 @@ export const achievements = [
           'Microsoft CTO funded Agentic AI Blogathon Winner - Solving Business Problems with Agentic RAG.',
         tags: ['Microsoft CTO Blogathon', 'RAG', 'Qdrant', 'CrewAI', 'Agentic AI', 'Azure OpenAI'],
         link: {
-          label: 'View Azure Blogathon case study',
-          to: '/highlights/azure-blogathon-champion'
+          label: 'Read the Agentic RAG case study',
+          href: 'https://blog.ambarishganguly.com/agentic-rag'
         }
       }
     ]

@@ -16,11 +16,11 @@ const Home = () => {
   return (
     <Fragment>
       <Hero />
+      <TrustedBy />
+      <Summary />
+      <PublicServiceAdvisory />
       <NasaAchievement />
       <BeesAzureStory />
-      <TrustedBy />
-      <PublicServiceAdvisory />
-      <Summary />
       <ExecutivePresence />
       <Credentials />
     </Fragment>

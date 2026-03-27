@@ -14,57 +14,58 @@ const trustedPartners = [
 ];
 
 const TrustedBy = () => {
-  const borderColor = useColorModeValue('rgba(148, 163, 184, 0.35)', 'rgba(148, 163, 184, 0.25)');
-  const bg = useColorModeValue('white', 'rgba(15, 23, 42, 0.6)');
+  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
+  const bg = useColorModeValue('rgba(255,255,255,0.82)', 'rgba(15,23,42,0.68)');
   const badgeSize = { maxW: '220px', minW: '160px', maxH: { base: 54, md: 64 } };
 
   return (
-    <Box py={{ base: 10, md: 14 }} id="trusted-badges">
+    <Box py={{ base: 8, md: 10 }} id="trusted-badges">
       <Container maxW="6xl">
-        <Stack
-          spacing={4}
-          layerStyle="card"
+        <Box
           borderRadius="3xl"
           border="1px solid"
           borderColor={borderColor}
           bg={bg}
-          p={{ base: 6, md: 8 }}
-          align="center"
-          textAlign="center"
+          px={{ base: 6, md: 8 }}
+          py={{ base: 6, md: 7 }}
+          backdropFilter="blur(16px)"
         >
-          <Text textStyle="eyebrow" letterSpacing="0.4em">
-            Trusted by
-          </Text>
-          <Text fontSize="xl" fontWeight="semibold" color="text">
-            Industry, research, and government partners who expect clarity and execution.
-          </Text>
-          <Flex
-            wrap="wrap"
-            gap={{ base: 6, md: 10 }}
-            justify="center"
-            align="center"
-            w="full"
-            mt={4}
-          >
-            {trustedPartners.map((partner) => (
-              <Box
-                key={partner.alt}
-                maxW={badgeSize.maxW}
-                minW={badgeSize.minW}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Image
-                  src={partner.src}
-                  alt={partner.alt}
-                  maxH={badgeSize.maxH}
-                  objectFit="contain"
-                />
-              </Box>
-            ))}
-          </Flex>
-        </Stack>
+          <Stack spacing={4} align="center" textAlign="center">
+            <Text textStyle="eyebrow" letterSpacing="0.36em">
+              Trusted By
+            </Text>
+            <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="medium" color="text" maxW="3xl">
+              Trusted across enterprise, research, government, and practitioner communities.
+            </Text>
+            <Flex
+              wrap="wrap"
+              gap={{ base: 6, md: 10 }}
+              justify="center"
+              align="center"
+              w="full"
+              mt={2}
+            >
+              {trustedPartners.map((partner) => (
+                <Box
+                  key={partner.alt}
+                  maxW={badgeSize.maxW}
+                  minW={badgeSize.minW}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  opacity={0.92}
+                >
+                  <Image
+                    src={partner.src}
+                    alt={partner.alt}
+                    maxH={badgeSize.maxH}
+                    objectFit="contain"
+                  />
+                </Box>
+              ))}
+            </Flex>
+          </Stack>
+        </Box>
       </Container>
     </Box>
   );

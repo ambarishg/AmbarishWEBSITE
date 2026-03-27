@@ -1,9 +1,9 @@
-import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, Grid, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import SectionHeading from '../components/SectionHeading.jsx';
 
 const PublicServiceAdvisory = () => {
-  const cardBg = useColorModeValue('white', 'blackAlpha.400');
-  const cardBorder = useColorModeValue('rgba(59,134,245,0.2)', 'rgba(59,134,245,0.35)');
+  const cardBg = useColorModeValue('rgba(255,255,255,0.84)', 'rgba(15,23,42,0.72)');
+  const cardBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
   const accent = useColorModeValue('brand.600', 'brand.300');
 
   return (
@@ -11,29 +11,39 @@ const PublicServiceAdvisory = () => {
       <Container maxW="6xl">
         <SectionHeading
           eyebrow="Public Service & Advisory"
-          title="Government advisory with practical operating focus"
-          description="Extending leadership beyond enterprise programs into public-sector capability building and talent development."
+          title="Government advisory shaped by standards, judgment, and talent stewardship."
+          description="Leadership extending beyond enterprise delivery into public capability-building."
         />
         <Box
           mt={10}
           p={{ base: 6, md: 8 }}
-          layerStyle="card"
+          borderRadius="3xl"
           bg={cardBg}
           border="1px solid"
           borderColor={cardBorder}
-          boxShadow="0 30px 60px rgba(15, 23, 42, 0.15)"
+          backdropFilter="blur(16px)"
         >
-          <Stack spacing={4}>
-            <Text color="text" fontSize={{ base: 'lg', md: 'xl' }}>
-              Appointed as a Pro Bono Subject Matter Expert by the Government of West Bengal&apos;s Centre of Excellence
-              on Data Science &amp; Machine Learning, contributing to AI talent assessment across three evaluation cycles
-              and interviewing candidates to help strengthen the pipeline of industry-ready data science talent.
-            </Text>
-            <Text color={accent} fontWeight="semibold" fontSize="sm">
-              Advisory focus: talent standards, candidate quality calibration, structured assessment, principled hiring,
-              and strategic mentorship.
-            </Text>
-          </Stack>
+          <Grid templateColumns={{ base: '1fr', md: '0.8fr 1.2fr' }} gap={{ base: 6, md: 10 }}>
+            <Stack spacing={2}>
+              <Text color="caption" fontSize="xs" textTransform="uppercase" letterSpacing="0.18em">
+                Advisory Mandate
+              </Text>
+              <Text color={accent} fontSize={{ base: '2xl', md: '3xl' }} fontWeight="semibold" lineHeight={1.1}>
+                Pro Bono Subject Matter Expert
+              </Text>
+              <Text color="subtleText" lineHeight={1.8}>
+                Government of West Bengal Centre of Excellence on Data Science & Machine Learning.
+              </Text>
+            </Stack>
+            <Stack spacing={4}>
+              <Text color="text" fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.9}>
+                Contributed to AI talent assessment across three evaluation cycles, interviewing candidates and helping shape a stronger pipeline of industry-ready data science capability.
+              </Text>
+              <Text color="subtleText" lineHeight={1.8}>
+                Focused on talent standards, candidate quality calibration, structured assessment, principled hiring, and strategic mentorship.
+              </Text>
+            </Stack>
+          </Grid>
         </Box>
       </Container>
     </Box>

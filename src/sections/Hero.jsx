@@ -3,20 +3,17 @@ import {
   Box,
   Button,
   Container,
-  Flex,
+  Divider,
+  Grid,
   Heading,
-  Icon,
+  HStack,
   Link,
-  SimpleGrid,
   Stack,
   Tag,
   Text,
-  useColorModeValue,
-  Wrap,
-  WrapItem
+  useColorModeValue
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import { CheckCircleIcon } from '@chakra-ui/icons';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { hero } from '../data/profile.js';
 import heroAvatar from '../../images/AG.jpg';
@@ -26,13 +23,10 @@ const Hero = () => {
   const badgeBg = useColorModeValue('rgba(59, 134, 245, 0.08)', 'rgba(59, 134, 245, 0.18)');
   const badgeColor = useColorModeValue('brand.700', 'brand.200');
   const textColor = useColorModeValue('gray.600', 'gray.300');
-  const cardBg = useColorModeValue('white', 'gray.800');
-  const cardBorder = useColorModeValue('rgba(59, 134, 245, 0.15)', 'rgba(59, 134, 245, 0.35)');
-  const secondarySkillBg = useColorModeValue('rgba(15, 23, 42, 0.04)', 'rgba(255, 255, 255, 0.08)');
-  const secondarySkillColor = useColorModeValue('gray.500', 'gray.400');
-  const metricBg = useColorModeValue('rgba(255,255,255,0.78)', 'rgba(15,23,42,0.78)');
   const metricBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const primarySkills = new Set(hero.primarySkills ?? hero.skills.slice(0, 4));
+  const panelBg = useColorModeValue('rgba(255,255,255,0.84)', 'rgba(15,23,42,0.7)');
+  const panelBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
+  const labelColor = useColorModeValue('gray.500', 'gray.400');
 
   return (
     <Box
@@ -70,112 +64,96 @@ const Hero = () => {
         rounded="full"
       />
       <Container maxW="7xl" position="relative">
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 12, lg: 16 }} alignItems="flex-start">
+        <Grid templateColumns={{ base: '1fr', lg: '1.3fr 0.9fr' }} gap={{ base: 12, lg: 16 }} alignItems="flex-start">
           <Stack spacing={6} align="flex-start">
             <Tag
-              size="sm"
-              variant="subtle"
+              size="md"
               bg={badgeBg}
               color={badgeColor}
-              px={3}
-              py={1}
-              letterSpacing="0.24em"
+              px={4}
+              py={1.5}
+              letterSpacing="0.3em"
               textTransform="uppercase"
+              fontWeight="medium"
             >
               Data & AI Leadership
             </Tag>
             <Heading
               as="h1"
               size={{ base: '2xl', md: '3xl' }}
-              lineHeight={1}
-              letterSpacing="-1px"
+              lineHeight={1.02}
+              letterSpacing="-0.04em"
               color={useColorModeValue('brand.800', 'brand.100')}
             >
               {hero.name}
             </Heading>
-            {hero.title && (
+            {hero.title ? (
               <Heading
                 as="h2"
                 size="lg"
-                fontWeight="semibold"
-                lineHeight={1.4}
+                fontWeight="medium"
+                lineHeight={1.35}
                 color={useColorModeValue('gray.600', 'gray.200')}
+                maxW="4xl"
               >
                 {hero.title}
               </Heading>
-            )}
-            {hero.valueStatement && (
-              <Text fontSize={{ base: 'lg', md: 'xl' }} color={textColor} maxW="34rem" lineHeight={1.65}>
+            ) : null}
+            {hero.valueStatement ? (
+              <Text fontSize={{ base: 'md', md: 'lg' }} color={textColor} maxW="34rem" lineHeight={1.85}>
                 {hero.valueStatement}
               </Text>
-            )}
-            <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={3} w="full" maxW="40rem">
+            ) : null}
+            <HStack
+              spacing={{ base: 0, md: 8 }}
+              flexDirection={{ base: 'column', md: 'row' }}
+              align="stretch"
+              w="full"
+              maxW="40rem"
+              borderTop="1px solid"
+              borderColor={metricBorder}
+              pt={6}
+            >
               {hero.authorityMetrics?.map((item) => (
-                <Box
-                  key={item.label}
-                  borderRadius="xl"
-                  px={{ base: 4, md: 5 }}
-                  py={{ base: 4, md: 4.5 }}
-                  bg={metricBg}
-                  border="1px solid"
-                  borderColor={metricBorder}
-                  boxShadow="0 20px 45px -35px rgba(15,23,42,0.65)"
-                >
-                  <Text fontSize="2xl" fontWeight="extrabold" color={accent} lineHeight={1}>
+                <Stack key={item.label} spacing={1} minW={{ md: '160px' }}>
+                  <Text fontSize="2xl" fontWeight="bold" color={accent} lineHeight={1}>
                     {item.value}
                   </Text>
-                  <Text mt={2} fontSize="sm" color={textColor} lineHeight={1.5}>
+                  <Text
+                    fontSize="xs"
+                    color={labelColor}
+                    lineHeight={1.6}
+                    textTransform="uppercase"
+                    letterSpacing="0.18em"
+                  >
                     {item.label}
                   </Text>
-                </Box>
+                </Stack>
               ))}
-            </SimpleGrid>
-            <Wrap spacing={3}>
-              <WrapItem>
-                <Button
-                  as={Link}
-                  href={`mailto:${hero.contact.email}`}
-                  leftIcon={<FaEnvelope />}
-                  colorScheme="brand"
-                >
-                  Email
-                </Button>
-              </WrapItem>
-              <WrapItem>
-                <Button
-                  as={Link}
-                  href={hero.contact.linkedin}
-                  leftIcon={<FaLinkedin />}
-                  variant="outline"
-                  colorScheme="brand"
-                  isExternal
-                >
-                  LinkedIn
-                </Button>
-              </WrapItem>
-            </Wrap>
-            <Wrap spacing={3}>
-              {hero.skills.map((skill) => (
-                <WrapItem key={skill}>
-                  <Tag
-                    size="sm"
-                    px={3}
-                    py={1}
-                    bg={
-                      primarySkills.has(skill)
-                        ? 'rgba(59, 134, 245, 0.12)'
-                        : secondarySkillBg
-                    }
-                    color={primarySkills.has(skill) ? accent : secondarySkillColor}
-                  >
-                    {skill}
-                  </Tag>
-                </WrapItem>
-              ))}
-            </Wrap>
+            </HStack>
+            <HStack spacing={3} flexWrap="wrap">
+              <Button
+                as={Link}
+                href={`mailto:${hero.contact.email}`}
+                leftIcon={<FaEnvelope />}
+                colorScheme="brand"
+              >
+                Email
+              </Button>
+              <Button
+                as={Link}
+                href={hero.contact.linkedin}
+                leftIcon={<FaLinkedin />}
+                variant="outline"
+                colorScheme="brand"
+                isExternal
+              >
+                LinkedIn
+              </Button>
+            </HStack>
           </Stack>
 
-          <Stack spacing={5} align="flex-start">
+          <Stack spacing={5} align="stretch">
             <Avatar
               boxSize={{ base: '210px', md: '270px' }}
               src={heroAvatar}
@@ -187,74 +165,42 @@ const Hero = () => {
             />
             <Box
               w="full"
-              layerStyle="card"
               p={{ base: 5, md: 6 }}
-              bg={cardBg}
-              borderColor={cardBorder}
-              boxShadow="floating"
+              bg={panelBg}
+              border="1px solid"
+              borderColor={panelBorder}
+              borderRadius="3xl"
+              backdropFilter="blur(16px)"
             >
-              <Stack spacing={3}>
+              <Stack spacing={4}>
                 <Text
                   fontSize="xs"
-                  fontWeight="bold"
-                  letterSpacing="0.28em"
+                  fontWeight="medium"
+                  letterSpacing="0.22em"
                   textTransform="uppercase"
-                  color={accent}
+                  color={labelColor}
                 >
                   Executive Profile
                 </Text>
-                {hero.headlineHighlights.map((item) => {
-                  const isNASAHighlight = item.includes('NASA Citizen Scientist');
-                  const isBeesShowcase = item.includes('Bees health detection solution');
-                  const isFutureReady = item.includes('Future Ready Champions of Code');
-                  return (
-                    <Flex key={item} align="flex-start" gap={3}>
-                      <Icon as={CheckCircleIcon} color={accent} boxSize={4} mt={1} />
-                      <Stack spacing={1}>
-                        <Text color="text" fontSize="md" lineHeight="tall">
-                          {item}
-                        </Text>
-                        {isNASAHighlight ? (
-                          <Link
-                            as={RouterLink}
-                            to="/highlights/random-walk-of-the-penguins"
-                            color={accent}
-                            fontWeight="semibold"
-                            fontSize="sm"
-                          >
-                            Read the Random Walk case study →
-                          </Link>
-                        ) : null}
-                        {isBeesShowcase ? (
-                          <Link
-                            as={RouterLink}
-                            to="/highlights/bees-health-detection"
-                            color={accent}
-                            fontWeight="semibold"
-                            fontSize="sm"
-                          >
-                            Watch the Azure showcase →
-                          </Link>
-                        ) : null}
-                        {isFutureReady ? (
-                          <Link
-                            as={RouterLink}
-                            to="/highlights/future-ready-champions"
-                            color={accent}
-                            fontWeight="semibold"
-                            fontSize="sm"
-                          >
-                            Explore the Future Ready win →
-                          </Link>
-                        ) : null}
-                      </Stack>
-                    </Flex>
-                  );
-                })}
+                <Heading size="md" lineHeight={1.35}>
+                  Enterprise transformation leadership with technical judgment close to the work.
+                </Heading>
+                <Text color="subtleText" lineHeight={1.85}>
+                  Trusted across utilities, energy, public-interest AI, and platform modernisation where executive clarity and delivery credibility both matter.
+                </Text>
+                <Divider borderColor={panelBorder} />
+                <Stack spacing={3}>
+                  <Link as={RouterLink} to="/experience" color={accent} fontWeight="semibold">
+                    View executive experience →
+                  </Link>
+                  <Link as={RouterLink} to="/highlights" color={accent} fontWeight="semibold">
+                    Review selected case studies →
+                  </Link>
+                </Stack>
               </Stack>
             </Box>
           </Stack>
-        </SimpleGrid>
+        </Grid>
       </Container>
     </Box>
   );

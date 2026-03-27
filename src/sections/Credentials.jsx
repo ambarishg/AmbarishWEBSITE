@@ -1,22 +1,19 @@
 import {
   Box,
   Container,
+  Grid,
   Heading,
-  List,
-  ListIcon,
-  ListItem,
-  SimpleGrid,
   Stack,
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons';
-import { FaCertificate, FaGraduationCap } from 'react-icons/fa';
 import SectionHeading from '../components/SectionHeading.jsx';
 import { certifications, education } from '../data/profile.js';
 
 const Credentials = () => {
   const subtle = useColorModeValue('gray.600', 'gray.400');
+  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
+  const panelBg = useColorModeValue('rgba(255,255,255,0.84)', 'rgba(15,23,42,0.72)');
 
   return (
     <Box
@@ -28,43 +25,53 @@ const Credentials = () => {
         <SectionHeading
           eyebrow="Credentials"
           title="Technical depth sustained through continuous learning."
+          description="Presented with emphasis on foundation and currency rather than exhaustive detail."
         />
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={10}>
+        <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={8} mt={10}>
           <Box
-            layerStyle="card"
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={borderColor}
+            bg={panelBg}
             p={{ base: 6, md: 8 }}
-            _hover={{ boxShadow: 'floating' }}
+            backdropFilter="blur(16px)"
           >
-            <Stack direction="row" align="center" spacing={3} mb={4}>
-              <FaCertificate color="#2b91e6" size={20} />
-              <Heading size="sm">Certifications & Specializations</Heading>
-            </Stack>
-            <List spacing={2}>
-              {certifications.map((item) => (
-                <ListItem key={item} color={subtle}>
-                  <ListIcon as={CheckCircleIcon} color="brand.400" />
-                  {item}
-                </ListItem>
+            <Stack spacing={5}>
+              <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
+                Certifications
+              </Text>
+              {certifications.slice(0, 6).map((item) => (
+                <Box key={item} pb={4} borderBottom="1px solid" borderColor={borderColor}>
+                  <Text color="text" fontWeight="semibold" lineHeight={1.7}>
+                    {item}
+                  </Text>
+                </Box>
               ))}
-            </List>
-            <Text mt={6} fontSize="sm" color={subtle}>
-              Language: English (Full Professional Proficiency)
-            </Text>
+              <Text fontSize="sm" color={subtle}>
+                Language: English (Full Professional Proficiency)
+              </Text>
+            </Stack>
           </Box>
           <Box
-            layerStyle="card"
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={borderColor}
+            bg={panelBg}
             p={{ base: 6, md: 8 }}
-            _hover={{ boxShadow: 'floating' }}
+            backdropFilter="blur(16px)"
           >
-            <Stack direction="row" align="center" spacing={3} mb={4}>
-              <FaGraduationCap color="#2b91e6" size={20} />
-              <Heading size="sm">Education</Heading>
-            </Stack>
-            <Stack spacing={4}>
+            <Stack spacing={5}>
+              <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
+                Education
+              </Text>
               {education.map((item) => (
-                <Box key={item.school}>
-                  <Text fontWeight="semibold">{item.school}</Text>
-                  <Text color={subtle}>{item.degree}</Text>
+                <Box key={`${item.school}-${item.degree}`} pb={4} borderBottom="1px solid" borderColor={borderColor}>
+                  <Text fontWeight="semibold" color="text">
+                    {item.school}
+                  </Text>
+                  <Text color={subtle} lineHeight={1.7}>
+                    {item.degree}
+                  </Text>
                   <Text color={subtle} fontSize="sm">
                     {item.period}
                   </Text>
@@ -72,7 +79,7 @@ const Credentials = () => {
               ))}
             </Stack>
           </Box>
-        </SimpleGrid>
+        </Grid>
       </Container>
     </Box>
   );

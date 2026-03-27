@@ -1,8 +1,15 @@
-Make the Experience Page 
-1. Premium
-2. Minimalist
-3. Avoid details
-4. Executive presence
-5. Leadership presence
+Make Home  Page 
+1. Absolute Premium
+2. Avoid details
+3. Executive presence
+4. Leadership presence
 
-Remove "Focused assignment with accountability for business alignment, operating design, and execution quality." repeated mentions
+The sections distinct still retaining the executive and leadership and premium style
+
+
+https://blog.ambarishganguly.com/microsoft-phi3-revealed-a-deep-dive-into-advanced-rag-methods-with-bbc-news 
+
+should be the associated link for the Microsoft CTO funded Blogathon Winner - BBC News Q&A with Advanced RAG and Microsoft Phi3. The link is incorrect
+
+https://blog.ambarishganguly.com/agentic-rag should be the associated link for the Microsoft CTO funded Agentic AI Blogathon Winner - Solving Business Problems with Agentic RAG.
+

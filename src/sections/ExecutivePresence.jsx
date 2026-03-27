@@ -1,113 +1,103 @@
-import { Box, Container, Grid, GridItem, Heading, Link, List, ListIcon, ListItem, Stack, Text, useColorModeValue } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons';
+import { Box, Container, Grid, Heading, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import SectionHeading from '../components/SectionHeading.jsx';
 
 const cards = [
   {
-    title: 'Enterprise mandate with hands-on involvement',
+    title: 'Research and public-interest credibility',
     description:
-      'More than 25 years leading transformation across utilities and energy, while staying directly involved in architecture, solution shaping, and execution tradeoffs.',
-    details: [
-      'Leads data, analytics, AI, and modernization mandates for enterprise utility programs.',
-      'Operates across strategy, operating model, delivery governance, and technical direction.'
-    ],
-    minH: '220px'
+      'Recognition built through work that connects analytical discipline to conservation, public-interest, and mission-driven outcomes.',
+    link: { label: 'Read the NASA profile', href: 'https://science.nasa.gov/people/ambarish-ganguly/' }
   },
   {
-    title: 'Public-sector and research credibility',
+    title: 'Microsoft validation for applied AI leadership',
     description:
-      'Credibility built through real contribution, including NASA recognition and work that connects data science to public-interest and sustainability outcomes.',
-    details: [
-      'Featured by NASA for citizen science contributions.',
-      'Winner of the NASA-sponsored Random Walk of the Penguins challenge on DrivenData.'
-    ],
-    link: { label: 'Read the NASA profile', href: 'https://science.nasa.gov/people/ambarish-ganguly/' },
-    minH: '200px'
-  },
-  {
-    title: 'Microsoft validation for practical AI leadership',
-    description:
-      'Recognition from Microsoft reflects a pattern of building practical, production-oriented AI and cloud solutions rather than purely conceptual work.',
-    details: [
-      'Microsoft Most Valuable Professional in AI (Alumni).',
-      'Microsoft Certified Trainer and repeat Azure Blogathon winner.',
-      'Future Ready Champions of Code winner.',
-      'Azure-based solution showcased by Microsoft India.'
-    ],
+      'Repeated Microsoft recognition reflects a pattern of practical cloud and AI execution rather than purely conceptual experimentation.',
     links: [
       { label: 'Watch the Bees health showcase', href: 'https://www.youtube.com/watch?v=d92H_wPyrUE' },
       {
         label: 'Future Ready Champions press release',
         href: 'https://news.microsoft.com/en-in/microsoft-celebrates-future-ready-champions-of-code-with-over-100k-developers-and-technology-enthusiasts/'
       }
-    ],
-    minH: '280px'
+    ]
   },
   {
     title: 'Government-facing problem solving',
-    description: 'Recognition from Government of India programs demonstrates the ability to connect analytics and AI with infrastructure, policy, and societal outcomes.',
-    link: { label: 'See the DST announcement', href: 'https://www.indianweb2.com/2023/06/winners-of-dst-geospatial-hackathon-2023.html' },
-    minH: '180px'
+    description:
+      'Recognition from public programmes demonstrates the ability to connect analytics and AI with infrastructure, policy, and societal outcomes.',
+    link: { label: 'See the DST announcement', href: 'https://www.indianweb2.com/2023/06/winners-of-dst-geospatial-hackathon-2023.html' }
   },
   {
-    title: 'Analytical depth and communication range',
-    description: 'A strong Kaggle record adds evidence of analytical range, clear storytelling, and the discipline to turn complex data into actionable decisions.',
-    details: [
-      'Kaggle Kernel Master',
-      'Kaggle Weekly Kernel Award Winner',
-      'Award-winning work in recommendation systems and social-impact analysis',
-      'Recognized for both technical quality and communication clarity'
-    ],
-    link: { label: 'Explore the Kaggle story', href: '/highlights/kaggle-achievements' },
-    minH: '240px',
-    colSpan: { base: 1, md: 2 }
+    title: 'Analytical range with communication strength',
+    description:
+      'The Kaggle record reinforces both analytical depth and the ability to communicate complex work with clarity and influence.',
+    link: { label: 'Explore the Kaggle portfolio', href: '/highlights/kaggle-achievements' }
   }
 ];
 
 const ExecutivePresence = () => {
-  const bg = useColorModeValue('surface', 'rgba(255,255,255,0.02)');
   const accent = useColorModeValue('brand.500', 'brand.200');
-  const gridTemplate = { base: 'repeat(1, minmax(0, 1fr))', md: 'repeat(2, minmax(0, 1fr))', xl: 'repeat(3, minmax(0, 1fr))' };
-  const gridGap = { base: 3, md: 4 };
+  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
+  const softBg = useColorModeValue('rgba(255,255,255,0.82)', 'rgba(15,23,42,0.68)');
+  const sideBg = useColorModeValue('rgba(59,134,245,0.06)', 'rgba(59,134,245,0.12)');
 
   return (
-    <Box id="executive-presence" py={{ base: 12, md: 16 }}>
+    <Box id="executive-presence" py={{ base: 14, md: 18 }}>
       <Container maxW="7xl">
         <SectionHeading
           eyebrow="Authority Signals"
-          title="Proof points that reinforce leadership authority"
+          title="Proof points that reinforce leadership authority."
           description="Recognition matters here because it supports an operating record built on judgment, execution, and technical credibility."
         />
-        <Grid templateColumns={gridTemplate} gridAutoRows="1fr" gap={gridGap} mt={8}>
-          {cards.map((card) => (
-            <GridItem key={card.title} colSpan={card.colSpan ?? 1}>
+        <Grid templateColumns={{ base: '1fr', xl: '0.9fr 1.5fr' }} gap={{ base: 8, xl: 10 }} mt={10}>
+          <Stack
+            spacing={5}
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={borderColor}
+            bg={sideBg}
+            p={{ base: 6, md: 8 }}
+          >
+            <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
+              Leadership Context
+            </Text>
+            <Heading size="md" lineHeight={1.35}>
+              External recognition reinforces the operating record rather than defining it.
+            </Heading>
+            <Text color="subtleText" lineHeight={1.85}>
+              The portfolio spans enterprise transformation, public-interest research, applied AI, and community-facing delivery. What matters is not the breadth alone, but the consistency of judgment across different environments.
+            </Text>
+          </Stack>
+          <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6}>
+            {cards.map((card, index) => (
               <Box
-                layerStyle="card"
-                bg={bg}
-                borderColor="outline"
-                borderWidth="1px"
-                p={{ base: 5, md: 6 }}
-                display="flex"
-                flexDirection="column"
-                minH={card.minH}
+                key={card.title}
+                borderRadius="3xl"
+                border="1px solid"
+                borderColor={borderColor}
+                bg={softBg}
+                p={{ base: 6, md: 7 }}
+                backdropFilter="blur(16px)"
+                position="relative"
+                overflow="hidden"
               >
-                <Stack spacing={2} flex={1}>
-                  <Heading size="md" color={accent}>
+                <Box
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  right={0}
+                  h="3px"
+                  bg={index % 2 === 0 ? accent : 'rgba(148,163,184,0.45)'}
+                />
+                <Stack spacing={4}>
+                  <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
+                    Signal {index + 1}
+                  </Text>
+                  <Heading size="sm" color={accent} lineHeight={1.4}>
                     {card.title}
                   </Heading>
-                  <Text color="subtleText" lineHeight={1.6}>
+                  <Text color="text" lineHeight={1.8}>
                     {card.description}
                   </Text>
-                  {card.details ? (
-                    <List spacing={2} pl={0}>
-                      {card.details.map((detail) => (
-                        <ListItem key={detail} color="text" fontSize="sm">
-                          <ListIcon as={CheckCircleIcon} color={accent} />
-                          {detail}
-                        </ListItem>
-                      ))}
-                    </List>
-                  ) : null}
                   {card.link ? (
                     <Link
                       href={card.link.href}
@@ -115,7 +105,7 @@ const ExecutivePresence = () => {
                       fontWeight="semibold"
                       isExternal={card.link.href.startsWith('http')}
                     >
-                      {card.link.label}
+                      {card.link.label} →
                     </Link>
                   ) : null}
                   {card.links ? (
@@ -128,15 +118,15 @@ const ExecutivePresence = () => {
                           fontWeight="semibold"
                           isExternal={link.href.startsWith('http')}
                         >
-                          {link.label}
+                          {link.label} →
                         </Link>
                       ))}
                     </Stack>
                   ) : null}
                 </Stack>
               </Box>
-            </GridItem>
-          ))}
+            ))}
+          </Grid>
         </Grid>
       </Container>
     </Box>

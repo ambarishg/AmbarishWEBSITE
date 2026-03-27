@@ -3,19 +3,18 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Button,
   Container,
   Divider,
+  Grid,
   Heading,
-  Icon,
-  SimpleGrid,
+  HStack,
+  Link,
   Stack,
   Tag,
   Text,
-  Wrap,
   useColorModeValue
 } from '@chakra-ui/react';
-import { ArrowForwardIcon, CheckCircleIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import useSEO from '../hooks/useSEO.js';
 import { seo } from '../data/seo.js';
@@ -72,22 +71,24 @@ const MicrosoftAzureHighlights = () => {
 
   const pageBg = useColorModeValue('gray.50', '#0f172a');
   const heroBg = useColorModeValue(
-    'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.18) 100%)',
-    'linear-gradient(135deg, rgba(37,99,235,0.35) 0%, rgba(15,23,42,0.9) 100%)'
+    'linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(236,243,255,0.92) 100%)',
+    'linear-gradient(180deg, rgba(15,23,42,0.84) 0%, rgba(15,23,42,0.96) 100%)'
   );
-  const heroBorder = useColorModeValue('rgba(148,163,184,0.25)', 'rgba(148,163,184,0.25)');
-  const surface = useColorModeValue('white', 'rgba(15,23,42,0.92)');
-  const cardBorder = useColorModeValue('rgba(148,163,184,0.3)', 'rgba(148,163,184,0.35)');
+  const heroBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
+  const surface = useColorModeValue('rgba(255,255,255,0.88)', 'rgba(15,23,42,0.78)');
+  const cardBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
   const headingColor = useColorModeValue('gray.900', 'gray.100');
   const bodyColor = useColorModeValue('gray.700', 'gray.200');
-  const subtle = useColorModeValue('gray.600', 'gray.400');
-  const badgeBg = useColorModeValue('rgba(59,130,246,0.12)', 'rgba(59,130,246,0.2)');
-  const badgeColor = useColorModeValue('brand.600', 'brand.200');
-  const highlightBg = useColorModeValue('rgba(59,130,246,0.06)', 'rgba(59,130,246,0.16)');
-  const highlightBorder = useColorModeValue('rgba(59,130,246,0.2)', 'rgba(59,130,246,0.35)');
-  const itemIconBg = useColorModeValue('rgba(59,130,246,0.15)', 'rgba(59,130,246,0.3)');
-  const itemIconColor = useColorModeValue('brand.600', 'brand.200');
-  const dividerColor = useColorModeValue('rgba(226,232,240,0.8)', 'rgba(74,85,104,0.6)');
+  const subtle = useColorModeValue('gray.500', 'gray.400');
+  const badgeBg = useColorModeValue('rgba(15,23,42,0.04)', 'rgba(255,255,255,0.06)');
+  const badgeColor = useColorModeValue('gray.700', 'gray.100');
+  const dividerColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
+  const statLabel = useColorModeValue('gray.500', 'gray.400');
+  const linkColor = useColorModeValue('brand.700', 'brand.200');
+  const linkHoverColor = useColorModeValue('brand.600', 'brand.300');
+  const accentLine = useColorModeValue('rgba(59,130,246,0.22)', 'rgba(96,165,250,0.32)');
+  const accentSoft = useColorModeValue('rgba(59,130,246,0.06)', 'rgba(96,165,250,0.12)');
+  const accentWarm = useColorModeValue('rgba(15,23,42,0.03)', 'rgba(255,255,255,0.04)');
 
   const focusAreas = achievements
     .map((group, index) => {
@@ -124,23 +125,22 @@ const MicrosoftAzureHighlights = () => {
   const allTags = new Set(
     focusAreas.flatMap((area) => area.aggregatedTags.filter((tag) => tag && tag.trim().length))
   );
-  const featuredTags = Array.from(allTags).slice(0, 8);
 
   const stats = [
     {
-      label: 'Azure-aligned focus areas',
+      label: 'Focus Areas',
       value: focusAreas.length,
-      description: 'Practices and programmes accelerated with Microsoft technology.'
+      description: 'Leadership themes carried through Microsoft and Azure work.'
     },
     {
-      label: 'Case studies',
+      label: 'Selected Stories',
       value: totalStories,
-      description: 'Stories recognised by Microsoft communities and hackathons.'
+      description: 'Recognised initiatives across community, product, and applied AI programmes.'
     },
     {
-      label: 'Specialised capabilities',
+      label: 'Capability Breadth',
       value: allTags.size,
-      description: 'Technical pillars spanning Azure AI, data, and cloud-native tooling.'
+      description: 'Azure-aligned signals spanning AI, data, and cloud delivery.'
     }
   ];
 
@@ -148,7 +148,7 @@ const MicrosoftAzureHighlights = () => {
     <Box bg={pageBg} minH="100vh" pb={{ base: 16, md: 24 }}>
       <Box bg={heroBg} borderBottom="1px solid" borderColor={heroBorder}>
         <Container maxW="6xl" py={{ base: 14, md: 24 }}>
-          <Stack spacing={{ base: 10, md: 14 }}>
+          <Stack spacing={{ base: 8, md: 10 }}>
             <Breadcrumb fontSize="sm" separator="/" color={subtle}>
               <BreadcrumbItem>
                 <BreadcrumbLink as={RouterLink} to="/">
@@ -165,50 +165,35 @@ const MicrosoftAzureHighlights = () => {
               </BreadcrumbItem>
             </Breadcrumb>
 
-            <Stack spacing={{ base: 6, md: 8 }} maxW="3xl">
+            <Stack spacing={{ base: 4, md: 5 }} maxW="4xl">
               <Tag
-                size="sm"
-                variant="subtle"
+                size="md"
                 alignSelf="flex-start"
                 bg={badgeBg}
                 color={badgeColor}
                 borderRadius="full"
                 px={4}
                 py={1.5}
-                fontWeight="semibold"
-                letterSpacing="0.05em"
+                fontWeight="medium"
+                letterSpacing="0.3em"
+                textTransform="uppercase"
               >
                 Azure
               </Tag>
-              <Stack spacing={{ base: 4, md: 5 }}>
-                <Heading size={{ base: '2xl', md: '3xl' }} color={headingColor} lineHeight={1.1}>
-                  Azure Impact Portfolio
-                </Heading>
-                <Text color={bodyColor} fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.7}>
-                  A curated view of programmes, hackathons, and production blueprints that earned
-                  recognition from Microsoft and demonstrate how Azure services translate into
-                  measurable community outcomes.
-                </Text>
-              </Stack>
-              {featuredTags.length ? (
-                <Wrap spacing={2}>
-                  {featuredTags.map((tag) => (
-                    <Tag
-                      key={tag}
-                      size="sm"
-                      variant="subtle"
-                      bg={badgeBg}
-                      color={badgeColor}
-                      borderRadius="full"
-                    >
-                      {tag}
-                    </Tag>
-                  ))}
-                </Wrap>
-              ) : null}
+              <Heading
+                size={{ base: '2xl', md: '3xl' }}
+                color={headingColor}
+                lineHeight={1.1}
+                letterSpacing="-0.03em"
+              >
+                Azure Impact Portfolio
+              </Heading>
+              <Text color={bodyColor} fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.85} maxW="2xl">
+                A selective view of Microsoft-recognised work across Azure, applied AI, and platform-led innovation.
+              </Text>
             </Stack>
 
-            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, md: 6 }}>
+          <Grid templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }} gap={{ base: 4, md: 6 }}>
               {stats.map((stat) => (
                 <Box
                   key={stat.label}
@@ -217,215 +202,319 @@ const MicrosoftAzureHighlights = () => {
                   borderRadius="2xl"
                   bg={surface}
                   px={{ base: 5, md: 6 }}
-                  py={{ base: 6, md: 8 }}
-                  boxShadow="0 20px 52px -32px rgba(59,130,246,0.35)"
+                  py={{ base: 6, md: 7 }}
+                  backdropFilter="blur(16px)"
                 >
-                  <Stack spacing={{ base: 1.5, md: 2 }}>
-                    <Text fontSize="sm" fontWeight="semibold" color={subtle} textTransform="uppercase">
+                  <Stack spacing={2}>
+                    <Text fontSize="xs" fontWeight="medium" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
                       {stat.label}
                     </Text>
                     <Heading size="lg" color={headingColor}>
                       {stat.value}
                     </Heading>
-                    <Text fontSize="sm" color={bodyColor} lineHeight={1.6}>
+                    <Text fontSize="sm" color={bodyColor} lineHeight={1.7}>
                       {stat.description}
                     </Text>
                   </Stack>
                 </Box>
               ))}
-            </SimpleGrid>
+            </Grid>
           </Stack>
         </Container>
       </Box>
 
-      <Container maxW="6xl" mt={{ base: -10, md: -20 }}>
-        <Stack spacing={{ base: 10, md: 16 }}>
-          {focusAreas.length > 1 ? (
-            <Box
-              bg={surface}
-              border="1px solid"
-              borderColor={cardBorder}
-              borderRadius="3xl"
-              p={{ base: 5, md: 6 }}
-              boxShadow="0 16px 48px -28px rgba(59,130,246,0.28)"
-            >
-              <Stack spacing={3}>
-                <Text fontSize="sm" fontWeight="medium" color={subtle} textTransform="uppercase">
-                  Navigate the focus areas
-                </Text>
-                <Wrap spacing={2.5}>
-                  {focusAreas.map((area) => (
-                    <Tag
-                      key={area.anchorId}
-                      as="a"
-                      href={`#${area.anchorId}`}
-                      size="sm"
-                      borderRadius="full"
-                      variant="subtle"
-                      bg={badgeBg}
-                      color={badgeColor}
-                      px={4}
-                      py={1.5}
-                      _hover={{ textDecoration: 'none', transform: 'translateY(-1px)' }}
-                    >
-                      {normalizeCategory(area.category)}
-                    </Tag>
-                  ))}
-                </Wrap>
-              </Stack>
-            </Box>
-          ) : null}
+      <Container maxW="6xl" mt={{ base: 8, md: 12 }}>
+        <Stack spacing={{ base: 8, md: 10 }}>
+          {focusAreas.map((area, index) => {
+            const variant = index % 3;
+            const primaryItems = area.items.slice(0, 2);
 
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 8, md: 10 }}>
-            {focusAreas.map((area) => (
-              <Stack
+            return (
+              <Box
                 key={area.anchorId}
                 id={area.anchorId}
-                spacing={{ base: 6, md: 8 }}
                 borderRadius="3xl"
                 border="1px solid"
                 borderColor={cardBorder}
                 bg={surface}
                 p={{ base: 6, md: 8 }}
-                boxShadow="0 24px 60px -36px rgba(30,64,175,0.35)"
+                backdropFilter="blur(16px)"
+                position="relative"
+                overflow="hidden"
               >
-                <Stack spacing={{ base: 3, md: 4 }}>
-                  <Stack spacing={1}>
-                    <Text fontSize="sm" color={subtle} textTransform="uppercase" fontWeight="semibold">
-                      {normalizeCategory(area.category)}
-                    </Text>
-                    {area.description ? (
-                      <Text color={bodyColor} fontSize="sm" lineHeight={1.6}>
-                        {area.description}
+                {variant === 0 ? (
+                  <>
+                    <Box position="absolute" left={0} top={0} bottom={0} w="4px" bg={accentLine} />
+                    <Grid templateColumns={{ base: '1fr', lg: '1.1fr 1.4fr' }} gap={{ base: 8, lg: 12 }}>
+                      <Stack spacing={4}>
+                        <Text fontSize="xs" color={subtle} textTransform="uppercase" fontWeight="medium" letterSpacing="0.18em">
+                          Portfolio Area
+                        </Text>
+                        <Heading size="md" color={headingColor} lineHeight={1.25}>
+                          {normalizeCategory(area.category)}
+                        </Heading>
+                        {area.description ? (
+                          <Text color={bodyColor} fontSize="sm" lineHeight={1.8}>
+                            {area.description}
+                          </Text>
+                        ) : null}
+                        <HStack spacing={8} pt={2} flexWrap="wrap">
+                          <Stack spacing={1}>
+                            <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                              Stories
+                            </Text>
+                            <Text color={headingColor} fontWeight="semibold">
+                              {area.items.length}
+                            </Text>
+                          </Stack>
+                          <Stack spacing={1}>
+                            <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                              Technologies
+                            </Text>
+                            <Text color={headingColor} fontWeight="semibold">
+                              {area.aggregatedTags.length}
+                            </Text>
+                          </Stack>
+                        </HStack>
+                      </Stack>
+                      <Stack spacing={5}>
+                        {primaryItems.map((item) => {
+                          const linkProps = item.link
+                            ? item.link.to
+                              ? { as: RouterLink, to: item.link.to }
+                              : item.link.href
+                              ? {
+                                  as: 'a',
+                                  href: item.link.href,
+                                  target: item.link.target || '_blank',
+                                  rel: item.link.rel || 'noopener noreferrer'
+                                }
+                              : null
+                            : null;
+
+                          return (
+                            <Stack key={`${area.anchorId}-${item.description}`} spacing={2}>
+                              <Text color={headingColor} fontWeight="semibold" lineHeight={1.7}>
+                                {item.description}
+                              </Text>
+                              {linkProps ? (
+                                <Link
+                                  {...linkProps}
+                                  color={linkColor}
+                                  fontWeight="semibold"
+                                  display="inline-flex"
+                                  alignItems="center"
+                                  gap={2}
+                                  w="fit-content"
+                                  _hover={{ textDecoration: 'none', color: linkHoverColor }}
+                                >
+                                  {item.link.label}
+                                  <ArrowForwardIcon />
+                                </Link>
+                              ) : null}
+                            </Stack>
+                          );
+                        })}
+                        {area.items.length > 2 ? (
+                          <Text color={subtle} fontSize="sm">
+                            +{area.items.length - 2} additional recognitions
+                          </Text>
+                        ) : null}
+                      </Stack>
+                    </Grid>
+                  </>
+                ) : null}
+
+                {variant === 1 ? (
+                  <Stack spacing={6}>
+                    <Box bg={accentSoft} borderRadius="2xl" px={{ base: 5, md: 6 }} py={{ base: 5, md: 6 }}>
+                      <Grid templateColumns={{ base: '1fr', md: '1.4fr 0.8fr' }} gap={{ base: 6, md: 8 }}>
+                        <Stack spacing={3}>
+                          <Text fontSize="xs" color={subtle} textTransform="uppercase" fontWeight="medium" letterSpacing="0.18em">
+                            Strategic Theme
+                          </Text>
+                          <Heading size="md" color={headingColor} lineHeight={1.25}>
+                            {normalizeCategory(area.category)}
+                          </Heading>
+                          {area.description ? (
+                            <Text color={bodyColor} fontSize="sm" lineHeight={1.8}>
+                              {area.description}
+                            </Text>
+                          ) : null}
+                        </Stack>
+                        <Stack spacing={4} justify="space-between">
+                          <Box>
+                            <Text fontSize="3xl" fontWeight="semibold" color={headingColor}>
+                              {area.items.length}
+                            </Text>
+                            <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                              Selected stories
+                            </Text>
+                          </Box>
+                          <Box>
+                            <Text fontSize="3xl" fontWeight="semibold" color={headingColor}>
+                              {area.aggregatedTags.length}
+                            </Text>
+                            <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                              Technology signals
+                            </Text>
+                          </Box>
+                        </Stack>
+                      </Grid>
+                    </Box>
+
+                    <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={{ base: 5, md: 6 }}>
+                      {primaryItems.map((item) => {
+                        const linkProps = item.link
+                          ? item.link.to
+                            ? { as: RouterLink, to: item.link.to }
+                            : item.link.href
+                            ? {
+                                as: 'a',
+                                href: item.link.href,
+                                target: item.link.target || '_blank',
+                                rel: item.link.rel || 'noopener noreferrer'
+                              }
+                            : null
+                          : null;
+
+                        return (
+                          <Box key={`${area.anchorId}-${item.description}`} borderTop="1px solid" borderColor={dividerColor} pt={4}>
+                            <Stack spacing={2}>
+                              <Text color={headingColor} fontWeight="semibold" lineHeight={1.7}>
+                                {item.description}
+                              </Text>
+                              {linkProps ? (
+                                <Link
+                                  {...linkProps}
+                                  color={linkColor}
+                                  fontWeight="semibold"
+                                  display="inline-flex"
+                                  alignItems="center"
+                                  gap={2}
+                                  w="fit-content"
+                                  _hover={{ textDecoration: 'none', color: linkHoverColor }}
+                                >
+                                  {item.link.label}
+                                  <ArrowForwardIcon />
+                                </Link>
+                              ) : null}
+                            </Stack>
+                          </Box>
+                        );
+                      })}
+                    </Grid>
+                    {area.items.length > 2 ? (
+                      <Text color={subtle} fontSize="sm">
+                        +{area.items.length - 2} additional recognitions
                       </Text>
                     ) : null}
                   </Stack>
-                  {area.aggregatedTags.length ? (
-                    <Wrap spacing={2}>
-                      {area.aggregatedTags.slice(0, 4).map((tag) => (
-                        <Tag
-                          key={`${area.anchorId}-${tag}`}
-                          size="sm"
-                          variant="subtle"
-                          bg={badgeBg}
-                          color={badgeColor}
-                          borderRadius="full"
-                        >
-                          {tag}
-                        </Tag>
-                      ))}
-                      {area.aggregatedTags.length > 4 ? (
-                        <Tag
-                          key={`${area.anchorId}-more`}
-                          size="sm"
-                          variant="subtle"
-                          bg="transparent"
-                          color={subtle}
-                          borderRadius="full"
-                          border="1px dashed"
-                          borderColor={highlightBorder}
-                        >
-                          +{area.aggregatedTags.length - 4} more
-                        </Tag>
-                      ) : null}
-                    </Wrap>
-                  ) : null}
-                </Stack>
+                ) : null}
 
-                <Divider borderColor={dividerColor} />
-
-                <Stack spacing={5}>
-                  {area.items.map((item) => {
-                    const linkProps = item.link
-                      ? item.link.to
-                        ? { as: RouterLink, to: item.link.to }
-                        : item.link.href
-                        ? {
-                            as: 'a',
-                            href: item.link.href,
-                            target: item.link.target || '_blank',
-                            rel: item.link.rel || 'noopener noreferrer'
-                          }
-                        : null
-                      : null;
-
-                    return (
-                      <Box
-                        key={`${area.anchorId}-${item.description}`}
-                        borderRadius="xl"
-                        border="1px solid"
-                        borderColor={highlightBorder}
-                        bg={highlightBg}
-                        p={{ base: 4, md: 5 }}
-                      >
-                        <Stack
-                          direction={{ base: 'column', sm: 'row' }}
-                          spacing={{ base: 3, md: 4 }}
-                          align={{ base: 'flex-start', sm: 'center' }}
-                        >
-                          <Box
-                            bg={itemIconBg}
-                            borderRadius="full"
-                            p={2.5}
-                            display="flex"
-                            alignItems="center"
-                            justifyContent="center"
-                          >
-                            <Icon as={CheckCircleIcon} color={itemIconColor} boxSize={5} />
-                          </Box>
-                          <Stack spacing={3} flex="1" w="full">
-                            <Text color={bodyColor} fontWeight="semibold" lineHeight={1.6}>
-                              {item.description}
+                {variant === 2 ? (
+                  <Grid templateColumns={{ base: '1fr', lg: '0.9fr 1.5fr' }} gap={{ base: 8, lg: 10 }}>
+                    <Stack spacing={4} justify="space-between">
+                      <Box>
+                        <Text fontSize="xs" color={subtle} textTransform="uppercase" fontWeight="medium" letterSpacing="0.18em">
+                          Capability Domain
+                        </Text>
+                        <Heading size="md" color={headingColor} lineHeight={1.25} mt={3}>
+                          {normalizeCategory(area.category)}
+                        </Heading>
+                      </Box>
+                      <Box bg={accentWarm} borderRadius="2xl" p={5}>
+                        <Stack spacing={4}>
+                          <Stack spacing={1}>
+                            <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                              Description
                             </Text>
-                            {item.tags.length ? (
-                              <Wrap spacing={2}>
-                                {item.tags.map((tag) => (
-                                  <Tag
-                                    key={`${area.anchorId}-${item.description}-${tag}`}
-                                    size="sm"
-                                    variant="subtle"
-                                    bg={badgeBg}
-                                    color={badgeColor}
-                                    borderRadius="full"
-                                  >
-                                    {tag}
-                                  </Tag>
-                                ))}
-                              </Wrap>
-                            ) : null}
-                            {linkProps ? (
-                              <Button
-                                {...linkProps}
-                                rightIcon={<ArrowForwardIcon />}
-                                size="sm"
-                                borderRadius="full"
-                                px={5}
-                                fontWeight="semibold"
-                                alignSelf={{ base: 'flex-start', sm: 'flex-end' }}
-                                bgGradient="linear(to-r, brand.500, brand.300)"
-                                color="white"
-                                boxShadow="0 18px 32px -24px rgba(59,130,246,0.65)"
-                                letterSpacing="0.04em"
-                                _hover={{
-                                  bgGradient: 'linear(to-r, brand.400, brand.200)',
-                                  transform: 'translateY(-1px)'
-                                }}
-                                _active={{
-                                  transform: 'translateY(0)'
-                                }}
-                              >
-                                {item.link.label}
-                              </Button>
-                            ) : null}
+                            <Text color={bodyColor} fontSize="sm" lineHeight={1.8}>
+                              {area.description}
+                            </Text>
                           </Stack>
+                          <Divider borderColor={dividerColor} />
+                          <HStack spacing={6}>
+                            <Stack spacing={1}>
+                              <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                                Stories
+                              </Text>
+                              <Text color={headingColor} fontWeight="semibold">
+                                {area.items.length}
+                              </Text>
+                            </Stack>
+                            <Stack spacing={1}>
+                              <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                                Technologies
+                              </Text>
+                              <Text color={headingColor} fontWeight="semibold">
+                                {area.aggregatedTags.length}
+                              </Text>
+                            </Stack>
+                          </HStack>
                         </Stack>
                       </Box>
-                    );
-                  })}
-                </Stack>
-              </Stack>
-            ))}
-          </SimpleGrid>
+                    </Stack>
+
+                    <Stack spacing={5}>
+                      {primaryItems.map((item, itemIndex) => {
+                        const linkProps = item.link
+                          ? item.link.to
+                            ? { as: RouterLink, to: item.link.to }
+                            : item.link.href
+                            ? {
+                                as: 'a',
+                                href: item.link.href,
+                                target: item.link.target || '_blank',
+                                rel: item.link.rel || 'noopener noreferrer'
+                              }
+                            : null
+                          : null;
+
+                        return (
+                          <Box
+                            key={`${area.anchorId}-${item.description}`}
+                            pl={{ base: 0, md: 6 }}
+                            borderLeft={{ base: 'none', md: '1px solid' }}
+                            borderColor={dividerColor}
+                          >
+                            <Stack spacing={2}>
+                              <Text fontSize="xs" color={statLabel} textTransform="uppercase" letterSpacing="0.18em">
+                                Highlight {itemIndex + 1}
+                              </Text>
+                              <Text color={headingColor} fontWeight="semibold" lineHeight={1.7}>
+                                {item.description}
+                              </Text>
+                              {linkProps ? (
+                                <Link
+                                  {...linkProps}
+                                  color={linkColor}
+                                  fontWeight="semibold"
+                                  display="inline-flex"
+                                  alignItems="center"
+                                  gap={2}
+                                  w="fit-content"
+                                  _hover={{ textDecoration: 'none', color: linkHoverColor }}
+                                >
+                                  {item.link.label}
+                                  <ArrowForwardIcon />
+                                </Link>
+                              ) : null}
+                            </Stack>
+                          </Box>
+                        );
+                      })}
+                      {area.items.length > 2 ? (
+                        <Text color={subtle} fontSize="sm">
+                          +{area.items.length - 2} additional recognitions
+                        </Text>
+                      ) : null}
+                    </Stack>
+                  </Grid>
+                ) : null}
+              </Box>
+            );
+          })}
         </Stack>
       </Container>
     </Box>
