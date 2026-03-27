@@ -7,9 +7,19 @@ Make Home  Page
 The sections distinct still retaining the executive and leadership and premium style
 
 
-https://blog.ambarishganguly.com/microsoft-phi3-revealed-a-deep-dive-into-advanced-rag-methods-with-bbc-news 
+Make the home page look absolutely premium 
 
-should be the associated link for the Microsoft CTO funded Blogathon Winner - BBC News Q&A with Advanced RAG and Microsoft Phi3. The link is incorrect
+The font for the following
+1. External recognition reinforces the operating record rather than defining it
+2. Research and public-interest credibility
+3. Microsoft validation for applied AI leadership
+4. Government-facing problem solving
+5. Analytical range with communication strength
 
-https://blog.ambarishganguly.com/agentic-rag should be the associated link for the Microsoft CTO funded Agentic AI Blogathon Winner - Solving Business Problems with Agentic RAG.
+needs to be more crisp and clear and visible but premimum
 
+Make the overall font system in the website
+1. Crisp
+2. Clear
+3. Visible
+4. Premium

@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Grid,
-  Heading,
   Stack,
   Text,
   useColorModeValue
@@ -12,14 +11,14 @@ import { certifications, education } from '../data/profile.js';
 
 const Credentials = () => {
   const subtle = useColorModeValue('gray.600', 'gray.400');
-  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const panelBg = useColorModeValue('rgba(255,255,255,0.84)', 'rgba(15,23,42,0.72)');
+  const borderColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const panelBg = useColorModeValue('rgba(255,250,244,0.74)', 'rgba(10,20,38,0.68)');
 
   return (
     <Box
       id="credentials"
       py={{ base: 16, md: 20 }}
-      bg={useColorModeValue('rgba(236, 243, 255, 0.4)', 'gray.900')}
+      bg={useColorModeValue('rgba(255, 246, 231, 0.35)', 'rgba(9, 18, 32, 0.55)')}
     >
       <Container maxW="6xl">
         <SectionHeading

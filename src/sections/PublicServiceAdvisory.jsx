@@ -2,9 +2,9 @@ import { Box, Container, Grid, Stack, Text, useColorModeValue } from '@chakra-ui
 import SectionHeading from '../components/SectionHeading.jsx';
 
 const PublicServiceAdvisory = () => {
-  const cardBg = useColorModeValue('rgba(255,255,255,0.84)', 'rgba(15,23,42,0.72)');
-  const cardBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const accent = useColorModeValue('brand.600', 'brand.300');
+  const cardBg = useColorModeValue('rgba(255,250,244,0.74)', 'rgba(10,20,38,0.68)');
+  const cardBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const accent = useColorModeValue('brand.700', 'accent.200');
 
   return (
     <Box id="public-service" py={{ base: 16, md: 20 }}>

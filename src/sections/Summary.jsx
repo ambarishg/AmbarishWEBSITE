@@ -4,10 +4,13 @@ import { summary } from '../data/profile.js';
 
 const Summary = () => {
   const { cards, conclusion } = summary;
-  const accent = useColorModeValue('brand.600', 'brand.200');
-  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const panelBg = useColorModeValue('rgba(255,255,255,0.82)', 'rgba(15,23,42,0.68)');
-  const featureBg = useColorModeValue('rgba(59, 134, 245, 0.06)', 'rgba(59, 134, 245, 0.12)');
+  const accent = useColorModeValue('brand.700', 'accent.200');
+  const borderColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const panelBg = useColorModeValue('rgba(255,250,244,0.7)', 'rgba(10,20,38,0.66)');
+  const featureBg = useColorModeValue(
+    'linear-gradient(180deg, rgba(255,246,231,0.86), rgba(241,245,251,0.72))',
+    'linear-gradient(180deg, rgba(26,37,59,0.84), rgba(14,23,39,0.74))'
+  );
 
   return (
     <Box id="about" py={{ base: 16, md: 20 }}>
@@ -38,7 +41,15 @@ const Summary = () => {
                   <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
                     {index === 0 ? 'Mandate' : index === 1 ? 'Authority' : 'Execution'}
                   </Text>
-                  <Heading size="sm" color={accent} lineHeight={1.35}>
+                  <Heading
+                    as="h3"
+                    fontFamily="body"
+                    fontSize={{ base: 'lg', md: 'xl' }}
+                    fontWeight="800"
+                    letterSpacing="-0.02em"
+                    lineHeight={1.3}
+                    color={useColorModeValue('brand.900', 'white')}
+                  >
                     {card.title}
                   </Heading>
                   <Text color="text" lineHeight={1.8}>
@@ -55,6 +66,7 @@ const Summary = () => {
             borderColor={borderColor}
             bg={featureBg}
             p={{ base: 6, md: 8 }}
+            boxShadow="elevated"
           >
             <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
               Perspective
@@ -71,7 +83,7 @@ const Summary = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read the NASA interview →
+              {'Read the NASA interview ->'}
             </Link>
           </Stack>
         </Grid>

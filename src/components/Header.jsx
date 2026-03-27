@@ -38,13 +38,16 @@ const NAV_LINKS = [
 ];
 
 const Header = () => {
-  const bg = useColorModeValue('rgba(255, 255, 255, 0.92)', 'rgba(17, 24, 39, 0.92)');
-  const border = useColorModeValue('rgba(148, 163, 184, 0.3)', 'rgba(148, 163, 184, 0.2)');
-  const linkColor = useColorModeValue('gray.600', 'gray.300');
-  const linkHover = useColorModeValue('brand.600', 'brand.300');
-  const menuBg = useColorModeValue('white', 'rgba(15,23,42,0.95)');
-  const menuBorder = useColorModeValue('rgba(148,163,184,0.3)', 'rgba(148,163,184,0.35)');
-  const menuHover = useColorModeValue('rgba(59, 134, 245, 0.08)', 'rgba(59, 130, 246, 0.18)');
+  const bg = useColorModeValue('rgba(247, 241, 232, 0.76)', 'rgba(10, 20, 38, 0.82)');
+  const border = useColorModeValue('rgba(38, 61, 96, 0.14)', 'rgba(208, 220, 240, 0.14)');
+  const linkColor = useColorModeValue('rgba(38, 49, 69, 0.82)', 'rgba(226, 232, 240, 0.84)');
+  const linkHover = useColorModeValue('brand.700', 'accent.200');
+  const menuBg = useColorModeValue('rgba(255,250,242,0.98)', 'rgba(10,20,38,0.96)');
+  const menuBorder = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.14)');
+  const menuHover = useColorModeValue('rgba(38, 61, 96, 0.06)', 'rgba(201, 150, 31, 0.12)');
+  const logoKicker = useColorModeValue('accent.600', 'accent.200');
+  const logoColor = useColorModeValue('brand.800', 'white');
+  const navBg = useColorModeValue('rgba(255,255,255,0.46)', 'rgba(255,255,255,0.03)');
 
   return (
     <Box
@@ -55,8 +58,8 @@ const Header = () => {
       bg={bg}
       borderBottom="1px solid"
       borderColor={border}
-      backdropFilter="blur(14px)"
-      boxShadow="md"
+      backdropFilter="blur(18px)"
+      boxShadow="0 18px 50px -32px rgba(15, 23, 42, 0.5)"
     >
       <Link
         href="#main-content"
@@ -91,21 +94,33 @@ const Header = () => {
           gap={{ base: 3, md: 0 }}
           px={{ base: 0, md: 2 }}
         >
-          <Stack spacing={0} align={{ base: 'center', md: 'flex-start' }}>
-            <Text textStyle="eyebrow" color={useColorModeValue('brand.600', 'brand.300')}>
+          <Stack spacing={0.5} align={{ base: 'center', md: 'flex-start' }}>
+            <Text textStyle="eyebrow" color={logoKicker}>
               Data & AI Leadership
             </Text>
             <Link
               as={RouterLink}
               to={{ pathname: '/', hash: '#hero' }}
-              fontWeight="semibold"
-              fontSize="lg"
-              color={useColorModeValue('brand.700', 'brand.200')}
+              fontWeight="700"
+              fontSize={{ base: 'lg', md: 'xl' }}
+              color={logoColor}
+              letterSpacing="-0.02em"
             >
               {hero.name}
             </Link>
           </Stack>
-          <HStack spacing={{ base: 2, md: 6 }} flexWrap="wrap" justify="center">
+          <HStack
+            spacing={{ base: 2, md: 4 }}
+            flexWrap="wrap"
+            justify="center"
+            bg={navBg}
+            border="1px solid"
+            borderColor={border}
+            borderRadius="full"
+            px={{ base: 3, md: 4 }}
+            py={{ base: 2, md: 2.5 }}
+            backdropFilter="blur(8px)"
+          >
             {NAV_LINKS.map((item) =>
               item.submenu ? (
                 <Menu key={item.label} placement="bottom-start">
@@ -175,7 +190,7 @@ const Header = () => {
                   _hover={{
                     color: linkHover,
                     textDecoration: 'none',
-                    bg: useColorModeValue('rgba(59, 134, 245, 0.08)', 'rgba(59, 130, 246, 0.12)')
+                    bg: menuHover
                   }}
                 >
                   {item.label}
@@ -194,14 +209,14 @@ const Header = () => {
                   _hover={{
                     color: linkHover,
                     textDecoration: 'none',
-                    bg: useColorModeValue('rgba(59, 134, 245, 0.08)', 'rgba(59, 130, 246, 0.12)')
+                    bg: menuHover
                   }}
                 >
                   {item.label}
                 </Link>
               )
             )}
-            <Button as={Link} href={`mailto:${hero.contact.email}`} size="sm" colorScheme="brand">
+            <Button as={Link} href={`mailto:${hero.contact.email}`} size="sm">
               Contact
             </Button>
           </HStack>

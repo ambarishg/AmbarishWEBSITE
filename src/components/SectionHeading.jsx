@@ -2,29 +2,29 @@ import { Divider, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/rea
 
 const SectionHeading = ({ eyebrow, title, description }) => {
   const headingGradient = useColorModeValue(
-    'linear(to-r, brand.700, brand.500)',
-    'linear(to-r, brand.200, brand.400)'
+    'linear(to-r, brand.900, brand.600)',
+    'linear(to-r, white, accent.200)'
   );
-  const divider = useColorModeValue('rgba(148,163,184,0.35)', 'rgba(148,163,184,0.25)');
+  const divider = useColorModeValue('rgba(38,61,96,0.18)', 'rgba(208,220,240,0.14)');
 
   return (
     <Stack spacing={4} align="center" textAlign="center">
       {eyebrow ? (
-        <Text textStyle="eyebrow" color={useColorModeValue('brand.600', 'brand.300')}>
+        <Text textStyle="eyebrow" color={useColorModeValue('accent.700', 'accent.200')}>
           {eyebrow}
         </Text>
       ) : null}
       <Heading
-        size="xl"
-        lineHeight={1.15}
-        maxW="3xl"
+        fontSize={{ base: '2.5rem', md: '4rem' }}
+        lineHeight={1}
+        maxW="4xl"
         bgGradient={headingGradient}
         backgroundClip="text"
       >
         {title}
       </Heading>
       {description ? (
-        <Text color="subtleText" fontSize="lg" maxW="2xl">
+        <Text color="subtleText" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" lineHeight={1.85}>
           {description}
         </Text>
       ) : null}

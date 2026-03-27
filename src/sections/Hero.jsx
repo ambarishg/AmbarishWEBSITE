@@ -7,6 +7,7 @@ import {
   Grid,
   Heading,
   HStack,
+  Icon,
   Link,
   Stack,
   Tag,
@@ -14,57 +15,47 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { FaArrowRight, FaEnvelope, FaLinkedin, FaStarOfLife } from 'react-icons/fa';
 import { hero } from '../data/profile.js';
 import heroAvatar from '../../images/AG.jpg';
 
 const Hero = () => {
-  const accent = useColorModeValue('brand.600', 'brand.300');
-  const badgeBg = useColorModeValue('rgba(59, 134, 245, 0.08)', 'rgba(59, 134, 245, 0.18)');
-  const badgeColor = useColorModeValue('brand.700', 'brand.200');
-  const textColor = useColorModeValue('gray.600', 'gray.300');
-  const metricBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const panelBg = useColorModeValue('rgba(255,255,255,0.84)', 'rgba(15,23,42,0.7)');
-  const panelBorder = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const labelColor = useColorModeValue('gray.500', 'gray.400');
+  const accent = useColorModeValue('brand.700', 'accent.200');
+  const badgeBg = useColorModeValue('rgba(201, 150, 31, 0.1)', 'rgba(201, 150, 31, 0.18)');
+  const badgeColor = useColorModeValue('accent.700', 'accent.100');
+  const textColor = useColorModeValue('#4f5b6c', '#d0dae7');
+  const metricBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.12)');
+  const panelBg = useColorModeValue('rgba(255,250,242,0.72)', 'rgba(9,19,36,0.72)');
+  const panelBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const labelColor = useColorModeValue('rgba(79,91,108,0.82)', 'rgba(195,206,220,0.84)');
+  const frameBg = useColorModeValue(
+    'linear-gradient(160deg, rgba(255,255,255,0.6), rgba(255,245,229,0.35))',
+    'linear-gradient(160deg, rgba(255,255,255,0.06), rgba(201,150,31,0.08))'
+  );
+  const heroSurface = useColorModeValue('rgba(255,250,244,0.58)', 'rgba(8,18,34,0.52)');
 
   return (
     <Box
       id="hero"
       position="relative"
       pt={{ base: 24, md: 28 }}
-      pb={{ base: 20, md: 28 }}
+      pb={{ base: 18, md: 24 }}
       overflow="hidden"
     >
+      <Box position="absolute" inset={0} bg={heroSurface} />
       <Box
         position="absolute"
-        inset={0}
-        bg={useColorModeValue('rgba(255,255,255,0.65)', 'rgba(15,23,42,0.65)')}
-      />
-      <Box
-        position="absolute"
-        top={{ base: '-6rem', md: '-8rem' }}
-        left={{ base: '-10rem', md: '-8rem' }}
-        w={{ base: '26rem', md: '32rem' }}
-        h={{ base: '26rem', md: '32rem' }}
-        bg="linear-gradient(135deg, rgba(59, 124, 223, 0.75), rgba(59, 134, 245, 0.55))"
-        opacity={0.35}
-        filter="blur(90px)"
-        rounded="full"
-      />
-      <Box
-        position="absolute"
-        bottom={{ base: '-6rem', md: '-8rem' }}
-        right={{ base: '-8rem', md: '-6rem' }}
-        w={{ base: '18rem', md: '24rem' }}
-        h={{ base: '18rem', md: '24rem' }}
-        bg={useColorModeValue('rgba(15, 23, 42, 0.75)', 'rgba(59, 134, 245, 0.08)')}
-        opacity={0.6}
-        filter="blur(90px)"
-        rounded="full"
+        insetX={{ base: 6, md: 10 }}
+        top={{ base: 8, md: 10 }}
+        bottom={{ base: 2, md: 4 }}
+        borderRadius={{ base: '32px', md: '40px' }}
+        border="1px solid"
+        borderColor={panelBorder}
+        bg={frameBg}
+        backdropFilter="blur(14px)"
       />
       <Container maxW="7xl" position="relative">
-        <Grid templateColumns={{ base: '1fr', lg: '1.3fr 0.9fr' }} gap={{ base: 12, lg: 16 }} alignItems="flex-start">
+        <Grid templateColumns={{ base: '1fr', lg: '1.2fr 0.8fr' }} gap={{ base: 12, lg: 12 }} alignItems="center">
           <Stack spacing={6} align="flex-start">
             <Tag
               size="md"
@@ -72,7 +63,7 @@ const Hero = () => {
               color={badgeColor}
               px={4}
               py={1.5}
-              letterSpacing="0.3em"
+              letterSpacing="0.28em"
               textTransform="uppercase"
               fontWeight="medium"
             >
@@ -80,43 +71,60 @@ const Hero = () => {
             </Tag>
             <Heading
               as="h1"
-              size={{ base: '2xl', md: '3xl' }}
-              lineHeight={1.02}
-              letterSpacing="-0.04em"
-              color={useColorModeValue('brand.800', 'brand.100')}
+              fontSize={{ base: '3.5rem', md: '5.2rem', lg: '6.1rem' }}
+              lineHeight={0.94}
+              color={useColorModeValue('brand.900', 'white')}
+              maxW="5xl"
             >
               {hero.name}
             </Heading>
             {hero.title ? (
               <Heading
                 as="h2"
-                size="lg"
+                fontFamily="body"
+                fontSize={{ base: 'lg', md: '2xl' }}
                 fontWeight="medium"
-                lineHeight={1.35}
-                color={useColorModeValue('gray.600', 'gray.200')}
+                lineHeight={1.45}
+                letterSpacing="-0.02em"
+                color={useColorModeValue('rgba(38,49,69,0.84)', 'rgba(236,242,248,0.86)')}
                 maxW="4xl"
               >
                 {hero.title}
               </Heading>
             ) : null}
             {hero.valueStatement ? (
-              <Text fontSize={{ base: 'md', md: 'lg' }} color={textColor} maxW="34rem" lineHeight={1.85}>
+              <Text fontSize={{ base: 'md', md: 'lg' }} color={textColor} maxW="36rem" lineHeight={1.9}>
                 {hero.valueStatement}
               </Text>
             ) : null}
+            <HStack spacing={3} flexWrap="wrap">
+              {hero.primarySkills?.map((skill) => (
+                <Tag
+                  key={skill}
+                  px={3.5}
+                  py={2}
+                  bg={useColorModeValue('rgba(255,255,255,0.7)', 'rgba(255,255,255,0.05)')}
+                  border="1px solid"
+                  borderColor={metricBorder}
+                  color={useColorModeValue('brand.800', 'gray.100')}
+                >
+                  {skill}
+                </Tag>
+              ))}
+            </HStack>
             <HStack
               spacing={{ base: 0, md: 8 }}
               flexDirection={{ base: 'column', md: 'row' }}
               align="stretch"
               w="full"
-              maxW="40rem"
+              maxW="42rem"
               borderTop="1px solid"
               borderColor={metricBorder}
               pt={6}
             >
               {hero.authorityMetrics?.map((item) => (
                 <Stack key={item.label} spacing={1} minW={{ md: '160px' }}>
-                  <Text fontSize="2xl" fontWeight="bold" color={accent} lineHeight={1}>
+                  <Text fontSize="2xl" fontWeight="800" color={accent} lineHeight={1}>
                     {item.value}
                   </Text>
                   <Text
@@ -132,37 +140,71 @@ const Hero = () => {
               ))}
             </HStack>
             <HStack spacing={3} flexWrap="wrap">
-              <Button
-                as={Link}
-                href={`mailto:${hero.contact.email}`}
-                leftIcon={<FaEnvelope />}
-                colorScheme="brand"
-              >
+              <Button as={Link} href={`mailto:${hero.contact.email}`} leftIcon={<FaEnvelope />} rightIcon={<FaArrowRight />}>
                 Email
               </Button>
-              <Button
-                as={Link}
-                href={hero.contact.linkedin}
-                leftIcon={<FaLinkedin />}
-                variant="outline"
-                colorScheme="brand"
-                isExternal
-              >
+              <Button as={Link} href={hero.contact.linkedin} leftIcon={<FaLinkedin />} variant="outline" isExternal>
                 LinkedIn
               </Button>
             </HStack>
           </Stack>
 
           <Stack spacing={5} align="stretch">
-            <Avatar
-              boxSize={{ base: '210px', md: '270px' }}
-              src={heroAvatar}
-              name={hero.name}
-              bg={useColorModeValue('brand.900', 'brand.900')}
-              color="white"
-              boxShadow="0 35px 70px rgba(15, 23, 42, 0.3)"
-              filter="contrast(1.05) saturate(1.08) brightness(1.05)"
-            />
+            <Box
+              p={{ base: 5, md: 6 }}
+              borderRadius="36px"
+              bg={panelBg}
+              border="1px solid"
+              borderColor={panelBorder}
+              backdropFilter="blur(16px)"
+              boxShadow="0 30px 80px -45px rgba(15, 23, 42, 0.55)"
+            >
+              <Stack spacing={5}>
+                <Box position="relative" alignSelf="center">
+                  <Box
+                    position="absolute"
+                    inset="-14px"
+                    borderRadius="full"
+                    bg={useColorModeValue('rgba(201,150,31,0.18)', 'rgba(201,150,31,0.12)')}
+                    filter="blur(18px)"
+                  />
+                  <Avatar
+                    position="relative"
+                    boxSize={{ base: '220px', md: '290px' }}
+                    src={heroAvatar}
+                    name={hero.name}
+                    bg={useColorModeValue('brand.900', 'brand.900')}
+                    color="white"
+                    boxShadow="0 35px 70px rgba(15, 23, 42, 0.3)"
+                    filter="contrast(1.05) saturate(1.08) brightness(1.05)"
+                  />
+                </Box>
+                <Stack spacing={3}>
+                  <HStack justify="space-between" align="center">
+                    <Text
+                      fontSize="xs"
+                      fontWeight="700"
+                      letterSpacing="0.24em"
+                      textTransform="uppercase"
+                      color={labelColor}
+                    >
+                      Executive Profile
+                    </Text>
+                    <HStack spacing={2} color={useColorModeValue('accent.600', 'accent.200')}>
+                      <Icon as={FaStarOfLife} boxSize={2.5} />
+                      <Icon as={FaStarOfLife} boxSize={2} />
+                      <Icon as={FaStarOfLife} boxSize={2.5} />
+                    </HStack>
+                  </HStack>
+                  <Heading size="lg" lineHeight={1.1}>
+                    Enterprise transformation leadership with technical judgment close to the work.
+                  </Heading>
+                  <Text color="subtleText" lineHeight={1.85}>
+                    Trusted across utilities, energy, public-interest AI, and platform modernisation where executive clarity and delivery credibility both matter.
+                  </Text>
+                </Stack>
+              </Stack>
+            </Box>
             <Box
               w="full"
               p={{ base: 5, md: 6 }}
@@ -180,21 +222,21 @@ const Hero = () => {
                   textTransform="uppercase"
                   color={labelColor}
                 >
-                  Executive Profile
+                  Quick Access
                 </Text>
-                <Heading size="md" lineHeight={1.35}>
-                  Enterprise transformation leadership with technical judgment close to the work.
+                <Heading size="md" lineHeight={1.2}>
+                  A portfolio positioned for enterprise trust.
                 </Heading>
                 <Text color="subtleText" lineHeight={1.85}>
-                  Trusted across utilities, energy, public-interest AI, and platform modernisation where executive clarity and delivery credibility both matter.
+                  Move from profile to evidence quickly: executive experience, applied AI case studies, and external credibility signals are structured to be scanned fast.
                 </Text>
                 <Divider borderColor={panelBorder} />
                 <Stack spacing={3}>
                   <Link as={RouterLink} to="/experience" color={accent} fontWeight="semibold">
-                    View executive experience →
+                    {'View executive experience ->'}
                   </Link>
                   <Link as={RouterLink} to="/highlights" color={accent} fontWeight="semibold">
-                    Review selected case studies →
+                    {'Review selected case studies ->'}
                   </Link>
                 </Stack>
               </Stack>

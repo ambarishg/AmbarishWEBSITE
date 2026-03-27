@@ -14,8 +14,8 @@ const trustedPartners = [
 ];
 
 const TrustedBy = () => {
-  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const bg = useColorModeValue('rgba(255,255,255,0.82)', 'rgba(15,23,42,0.68)');
+  const borderColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const bg = useColorModeValue('rgba(255,250,244,0.7)', 'rgba(10,20,38,0.66)');
   const badgeSize = { maxW: '220px', minW: '160px', maxH: { base: 54, md: 64 } };
 
   return (
@@ -34,17 +34,10 @@ const TrustedBy = () => {
             <Text textStyle="eyebrow" letterSpacing="0.36em">
               Trusted By
             </Text>
-            <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="medium" color="text" maxW="3xl">
+            <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="600" color="text" maxW="3xl">
               Trusted across enterprise, research, government, and practitioner communities.
             </Text>
-            <Flex
-              wrap="wrap"
-              gap={{ base: 6, md: 10 }}
-              justify="center"
-              align="center"
-              w="full"
-              mt={2}
-            >
+            <Flex wrap="wrap" gap={{ base: 6, md: 10 }} justify="center" align="center" w="full" mt={2}>
               {trustedPartners.map((partner) => (
                 <Box
                   key={partner.alt}
@@ -55,12 +48,7 @@ const TrustedBy = () => {
                   justifyContent="center"
                   opacity={0.92}
                 >
-                  <Image
-                    src={partner.src}
-                    alt={partner.alt}
-                    maxH={badgeSize.maxH}
-                    objectFit="contain"
-                  />
+                  <Image src={partner.src} alt={partner.alt} maxH={badgeSize.maxH} objectFit="contain" />
                 </Box>
               ))}
             </Flex>

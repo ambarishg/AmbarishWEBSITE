@@ -35,10 +35,13 @@ const cards = [
 ];
 
 const ExecutivePresence = () => {
-  const accent = useColorModeValue('brand.500', 'brand.200');
-  const borderColor = useColorModeValue('rgba(15,23,42,0.08)', 'rgba(148,163,184,0.18)');
-  const softBg = useColorModeValue('rgba(255,255,255,0.82)', 'rgba(15,23,42,0.68)');
-  const sideBg = useColorModeValue('rgba(59,134,245,0.06)', 'rgba(59,134,245,0.12)');
+  const accent = useColorModeValue('brand.700', 'accent.200');
+  const borderColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const softBg = useColorModeValue('rgba(255,250,244,0.72)', 'rgba(10,20,38,0.66)');
+  const sideBg = useColorModeValue(
+    'linear-gradient(180deg, rgba(255,246,231,0.84), rgba(241,245,251,0.72))',
+    'linear-gradient(180deg, rgba(26,37,59,0.84), rgba(14,23,39,0.74))'
+  );
 
   return (
     <Box id="executive-presence" py={{ base: 14, md: 18 }}>
@@ -60,7 +63,15 @@ const ExecutivePresence = () => {
             <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
               Leadership Context
             </Text>
-            <Heading size="md" lineHeight={1.35}>
+            <Heading
+              as="h3"
+              fontFamily="body"
+              fontSize={{ base: 'xl', md: '2xl' }}
+              fontWeight="800"
+              letterSpacing="-0.02em"
+              lineHeight={1.3}
+              color={useColorModeValue('brand.900', 'white')}
+            >
               External recognition reinforces the operating record rather than defining it.
             </Heading>
             <Text color="subtleText" lineHeight={1.85}>
@@ -92,7 +103,15 @@ const ExecutivePresence = () => {
                   <Text textTransform="uppercase" letterSpacing="0.18em" fontSize="xs" color="caption">
                     Signal {index + 1}
                   </Text>
-                  <Heading size="sm" color={accent} lineHeight={1.4}>
+                  <Heading
+                    as="h3"
+                    fontFamily="body"
+                    fontSize={{ base: 'lg', md: 'xl' }}
+                    fontWeight="800"
+                    letterSpacing="-0.02em"
+                    lineHeight={1.32}
+                    color={useColorModeValue('brand.900', 'white')}
+                  >
                     {card.title}
                   </Heading>
                   <Text color="text" lineHeight={1.8}>
@@ -105,7 +124,7 @@ const ExecutivePresence = () => {
                       fontWeight="semibold"
                       isExternal={card.link.href.startsWith('http')}
                     >
-                      {card.link.label} →
+                      {`${card.link.label} ->`}
                     </Link>
                   ) : null}
                   {card.links ? (
@@ -118,7 +137,7 @@ const ExecutivePresence = () => {
                           fontWeight="semibold"
                           isExternal={link.href.startsWith('http')}
                         >
-                          {link.label} →
+                          {`${link.label} ->`}
                         </Link>
                       ))}
                     </Stack>
