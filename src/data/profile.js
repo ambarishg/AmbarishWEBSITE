@@ -17,7 +17,7 @@ export const hero = {
     'Recognized by NASA, Microsoft, the Government of India, and Kaggle for applied AI execution'
   ],
   authorityMetrics: [
-    { value: '25+', label: 'Years in data, platforms, and AI delivery' },
+    { value: '26+', label: 'Years in data, platforms, and AI delivery' },
     { value: 'Global', label: 'Leadership across utilities and energy programs' },
     { value: 'C-Suite', label: 'Trusted advisor for transformation mandates' }
   ],
