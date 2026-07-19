@@ -1,13 +1,14 @@
 import {
   Box,
-  Button,
   Container,
+  Divider,
   Grid,
-  Image,
+  Heading,
   Link,
   List,
   ListIcon,
   ListItem,
+  SimpleGrid,
   Stack,
   Tag,
   Text,
@@ -15,7 +16,7 @@ import {
   WrapItem,
   useColorModeValue
 } from '@chakra-ui/react';
-import { ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons';
+import { CheckIcon } from '@chakra-ui/icons';
 import SectionHeading from '../components/SectionHeading.jsx';
 import WBAICOEProofImage from '../../docs/WBAICOE/29102025.jpeg';
 import WBAICOECycleMay2025 from '../../docs/WBAICOE/21052025.pdf';
@@ -23,175 +24,220 @@ import WBAICOECycleMar2026 from '../../docs/WBAICOE/10032026.pdf';
 import WBAICOECycleJul2026 from '../../docs/WBAICOE/12072026.pdf';
 
 const PublicServiceAdvisory = () => {
-  const cardBg = useColorModeValue('rgba(255,250,244,0.74)', 'rgba(10,20,38,0.68)');
-  const cardBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const cardBg = useColorModeValue('rgba(248,250,252,0.9)', 'rgba(10,20,38,0.72)');
+  const cardBorder = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.16)');
   const accent = useColorModeValue('brand.700', 'accent.200');
-  const subtleCard = useColorModeValue('rgba(255,255,255,0.8)', 'rgba(15,23,42,0.58)');
-  const subtleBorder = useColorModeValue('rgba(38,61,96,0.1)', 'rgba(208,220,240,0.12)');
+  const headingColor = useColorModeValue('brand.900', 'white');
+  const mutedAccent = useColorModeValue('rgba(38,61,96,0.7)', 'rgba(226,232,240,0.82)');
+  const subtleCard = useColorModeValue('rgba(255,255,255,0.94)', 'rgba(15,23,42,0.62)');
+  const subtleBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.12)');
+  const dividerColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.12)');
+  const statBg = useColorModeValue('rgba(241,245,249,0.95)', 'rgba(20,31,52,0.78)');
 
   return (
-    <Box id="public-service" py={{ base: 16, md: 20 }}>
+    <Box id="public-service" py={{ base: 12, md: 14 }}>
       <Container maxW="6xl">
         <SectionHeading
           eyebrow="Public Service & Advisory"
-          title="Helping shape AI talent standards for a state-backed Centre of Excellence."
-          description="This work reflects a leadership position in AI: contributing judgment, standards, and assessment rigor to how talent is evaluated in a public-sector context."
+          title="Supporting AI talent assessment for a state-backed Centre of Excellence."
+          description="This section outlines advisory work related to candidate evaluation, assessment standards, and interview processes in a public-sector setting."
         />
         <Box
-          mt={10}
-          p={{ base: 6, md: 8 }}
+          mt={8}
+          p={{ base: 5, md: 6 }}
           borderRadius="3xl"
           bg={cardBg}
           border="1px solid"
           borderColor={cardBorder}
           backdropFilter="blur(16px)"
         >
-          <Grid templateColumns={{ base: '1fr', md: '0.92fr 1.08fr' }} gap={{ base: 6, md: 10 }}>
-            <Stack spacing={5}>
-              <Stack spacing={3}>
+          <Grid templateColumns={{ base: '1fr', lg: '0.95fr 1.05fr' }} gap={{ base: 4, lg: 6 }}>
+            <Stack spacing={3}>
+              <Stack spacing={2}>
                 <Text color="caption" fontSize="xs" textTransform="uppercase" letterSpacing="0.18em">
                   Advisory Mandate
                 </Text>
-                <Text color={accent} fontSize={{ base: '2xl', md: '3xl' }} fontWeight="semibold" lineHeight={1.1}>
+                <Heading
+                  as="h3"
+                  fontFamily="body"
+                  color={headingColor}
+                  fontSize={{ base: '2xl', md: '3xl' }}
+                  fontWeight="800"
+                  letterSpacing="-0.02em"
+                  lineHeight={1.15}
+                >
                   Pro Bono Subject Matter Expert
-                </Text>
+                </Heading>
                 <Text color="subtleText" lineHeight={1.8}>
                   Government of West Bengal Centre of Excellence on Data Science &amp; Machine Learning.
                 </Text>
               </Stack>
-              <Wrap spacing={3}>
+              <Wrap spacing={2}>
                 <WrapItem>
-                  <Tag borderRadius="full" colorScheme="blue" variant="subtle">
+                  <Tag borderRadius="md" bg={statBg} color={mutedAccent} px={3} py={2}>
                     Five evaluation cycles
                   </Tag>
                 </WrapItem>
                 <WrapItem>
-                  <Tag borderRadius="full" colorScheme="green" variant="subtle">
-                    Talent quality calibration
+                  <Tag borderRadius="md" bg={statBg} color={mutedAccent} px={3} py={2}>
+                    Candidate calibration
                   </Tag>
                 </WrapItem>
                 <WrapItem>
-                  <Tag borderRadius="full" colorScheme="orange" variant="subtle">
-                    Principled hiring
+                  <Tag borderRadius="md" bg={statBg} color={mutedAccent} px={3} py={2}>
+                    Structured assessment
                   </Tag>
                 </WrapItem>
               </Wrap>
-              <Box
-                borderRadius="2xl"
-                overflow="hidden"
-                bg={subtleCard}
-                border="1px solid"
-                borderColor={subtleBorder}
-              >
-                <Image
-                  src={WBAICOEProofImage}
-                  alt="Government of West Bengal Centre of Excellence proof artifact"
-                  objectFit="cover"
-                  w="full"
-                />
-              </Box>
-              <Wrap spacing={3}>
-                <WrapItem>
-                  <Button
-                    as={Link}
+            </Stack>
+            <Stack spacing={3}>
+              <Text color="text" fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.9}>
+                Participated in five evaluation cycles focused on AI and data science talent
+                assessment, including candidate interviews and structured evaluation.
+              </Text>
+              <Text color="subtleText" lineHeight={1.8}>
+                The work centered on consistent assessment criteria, candidate calibration, and
+                review processes intended to support capability development over time, with
+                supporting evidence dated October 29, 2025, May 21, 2025, March 10, 2026, and
+                July 12, 2026.
+              </Text>
+              <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={3}>
+                <Box p={3} borderRadius="xl" bg={subtleCard} border="1px solid" borderColor={subtleBorder}>
+                  <Text color="caption" fontSize="xs" textTransform="uppercase" letterSpacing="0.14em">
+                    Role
+                  </Text>
+                  <Text mt={2} color={headingColor} fontWeight="semibold">
+                    Subject matter expert
+                  </Text>
+                </Box>
+                <Box p={3} borderRadius="xl" bg={subtleCard} border="1px solid" borderColor={subtleBorder}>
+                  <Text color="caption" fontSize="xs" textTransform="uppercase" letterSpacing="0.14em">
+                    Coverage
+                  </Text>
+                  <Text mt={2} color={headingColor} fontWeight="semibold">
+                    Five evaluation cycles
+                  </Text>
+                </Box>
+                <Box p={3} borderRadius="xl" bg={subtleCard} border="1px solid" borderColor={subtleBorder}>
+                  <Text color="caption" fontSize="xs" textTransform="uppercase" letterSpacing="0.14em">
+                    Focus
+                  </Text>
+                  <Text mt={2} color={headingColor} fontWeight="semibold">
+                    Assessment quality
+                  </Text>
+                </Box>
+              </SimpleGrid>
+            </Stack>
+          </Grid>
+          <Grid
+            mt={4}
+            templateColumns={{ base: '1fr', lg: '0.95fr 1.05fr' }}
+            gap={{ base: 4, lg: 6 }}
+            alignItems="stretch"
+          >
+            <Box
+              p={{ base: 4, md: 5 }}
+              borderRadius="2xl"
+              bg={subtleCard}
+              border="1px solid"
+              borderColor={subtleBorder}
+            >
+              <Stack spacing={3}>
+                <Text color={accent} fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
+                  Evidence
+                </Text>
+                <Divider borderColor={dividerColor} />
+                <Text color="subtleText" lineHeight={1.8}>
+                  Supporting materials are provided below for the recorded evaluation cycles and
+                  related advisory activity, dated May 21, 2025, October 29, 2025, March 10,
+                  2026, and July 12, 2026.
+                </Text>
+                <Stack spacing={2}>
+                  <Link
+                    href={WBAICOEProofImage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color={mutedAccent}
+                    fontWeight="medium"
+                  >
+                    Supporting image evidence dated 29 Oct 2025
+                  </Link>
+                  <Link
                     href={WBAICOECycleMay2025}
                     target="_blank"
                     rel="noopener noreferrer"
-                    size="sm"
-                    variant="outline"
-                    colorScheme="brand"
-                    rightIcon={<ArrowForwardIcon />}
+                    color={mutedAccent}
+                    fontWeight="medium"
                   >
-                    Evidence 21 May 2025
-                  </Button>
-                </WrapItem>
-                <WrapItem>
-                  <Button
-                    as={Link}
+                    Evaluation cycle evidence dated 21 May 2025
+                  </Link>
+                  <Link
                     href={WBAICOECycleMar2026}
                     target="_blank"
                     rel="noopener noreferrer"
-                    size="sm"
-                    variant="outline"
-                    colorScheme="brand"
-                    rightIcon={<ArrowForwardIcon />}
+                    color={mutedAccent}
+                    fontWeight="medium"
                   >
-                    Evidence 10 Mar 2026
-                  </Button>
-                </WrapItem>
-                <WrapItem>
-                  <Button
-                    as={Link}
+                    Evaluation cycle evidence dated 10 Mar 2026
+                  </Link>
+                  <Link
                     href={WBAICOECycleJul2026}
                     target="_blank"
                     rel="noopener noreferrer"
-                    size="sm"
-                    variant="outline"
-                    colorScheme="brand"
-                    rightIcon={<ArrowForwardIcon />}
+                    color={mutedAccent}
+                    fontWeight="medium"
                   >
-                    Evidence 12 Jul 2026
-                  </Button>
-                </WrapItem>
-              </Wrap>
-            </Stack>
-            <Stack spacing={5}>
-              <Text color="text" fontSize={{ base: 'md', md: 'lg' }} lineHeight={1.9}>
-                Contributed to AI talent assessment across five evaluation cycles, interviewing
-                candidates and bringing an industry perspective to how data science and AI capability
-                is evaluated.
-              </Text>
-              <Text color="subtleText" lineHeight={1.8}>
-                The focus was on standards, candidate calibration, structured assessment, principled
-                evaluation, and long-term capability development.
-              </Text>
-              <Box
-                p={{ base: 5, md: 6 }}
-                borderRadius="2xl"
-                bg={subtleCard}
-                border="1px solid"
-                borderColor={subtleBorder}
-              >
-                <Stack spacing={3}>
-                  <Text color={accent} fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-                    Public-Sector Trust
-                  </Text>
-                  <Text color="text" lineHeight={1.9}>
-                    This role reflects recognition beyond project delivery. It placed responsibility on
-                    evaluating judgment, readiness, and professional standards in AI talent, where the
-                    quality of assessment carries institutional significance.
-                  </Text>
+                    Evaluation cycle evidence dated 12 Jul 2026
+                  </Link>
                 </Stack>
-              </Box>
-              <Stack spacing={2}>
-                <Text color={accent} fontWeight="semibold">
-                  Positioning
+              </Stack>
+            </Box>
+            <Box
+              p={{ base: 4, md: 5 }}
+              borderRadius="2xl"
+              bg={subtleCard}
+              border="1px solid"
+              borderColor={subtleBorder}
+            >
+              <Stack spacing={3}>
+                <Text color={accent} fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
+                  Scope of Contribution
                 </Text>
-                <List spacing={2}>
+                <Divider borderColor={dividerColor} />
+                <Text color="text" lineHeight={1.9}>
+                  The role involved assessing candidate readiness, technical judgment, and
+                  professional standards within a formal public-sector evaluation context.
+                </Text>
+                <List spacing={3}>
                   <ListItem>
                     <ListIcon as={CheckIcon} color={accent} />
                     <Text as="span" color="subtleText">
-                      Places the work at the intersection of technical authority, governance, and talent
-                      stewardship.
+                      Work focused on structured evaluation, assessment consistency, and interview
+                      rigor.
                     </Text>
                   </ListItem>
                   <ListItem>
                     <ListIcon as={CheckIcon} color={accent} />
                     <Text as="span" color="subtleText">
-                      Shows sustained participation over time, with evidence spanning May 21, 2025 to
-                      July 12, 2026.
+                      Participation is documented across multiple cycles, with evidence dated May 21,
+                      2025, October 29, 2025, March 10, 2026, and July 12, 2026.
                     </Text>
                   </ListItem>
                   <ListItem>
                     <ListIcon as={CheckIcon} color={accent} />
                     <Text as="span" color="subtleText">
-                      Reinforces an AI leadership profile grounded in standards, calibration, and
-                      long-horizon capability building.
+                      The advisory contribution covered candidate review, calibration, and process
+                      quality in AI-related hiring.
                     </Text>
                   </ListItem>
                 </List>
+                <Divider borderColor={dividerColor} />
+                <Text color="subtleText" lineHeight={1.8}>
+                  The evidence is documented separately to keep the section concise and focused on
+                  the advisory scope.
+                </Text>
               </Stack>
-            </Stack>
+            </Box>
           </Grid>
         </Box>
       </Container>
