@@ -19,6 +19,8 @@ import { ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons';
 import useSEO from '../hooks/useSEO.js';
 import { seo } from '../data/seo.js';
 import ACMJUImage from '../../docs/ACM-JU.jpg';
+import FDPJISImage from '../../docs/FDP_JIS.jpg';
+import GlobalAzureImage from '../../docs/global_azure.jpg';
 import SIGNASSImage from '../../docs/SIGNASS.jpg';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -32,6 +34,18 @@ const SignassDetails = [
   'Session Chair for Track 4: Imaging, Computer Vision, and Multimedia Signal Processing at SIGNASS 2026.',
   'Panel Discussion on Domain-Aware AI/ML for Real-World Signal Processing: Healthcare and Communication.',
   'Collaboration with researchers exploring sensors, embedded analytics, and responsible deployment at scale.'
+];
+
+const globalAzureDetails = [
+  'Talk focus: transforming industrial operations with an Industrial Knowledge Fabric.',
+  'Live demo showcased how connected enterprise data can drive actionable operational insights.',
+  'The published video description includes the supporting code referenced during the session.'
+];
+
+const jisFacultyDevelopmentDetails = [
+  'Covered AI agents, tools, MCP, and the practical building blocks behind agent-based systems.',
+  'Walked through the Agent Framework, MCP tool integration, middleware, and multi-agent architectures.',
+  'Included Agent Governance guidance, Microsoft Agent Governance Toolkit discussion, and a live Jupyter Notebook demo.'
 ];
 
 const SpeakingConferences = () => {
@@ -97,26 +111,30 @@ const SpeakingConferences = () => {
                 color="white"
                 borderRadius="full"
               >
-                Campus Lecture
+                JIS University FDP
               </Tag>
               <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.2}>
-                Advanced RAG, Agents &amp; Industry Use Cases
+                AI Agents, MCP, Agent Governance and Multi-Agent Architecture
               </Heading>
+              <Text fontSize="sm" color="gray.400">
+                July 7, 2026
+              </Text>
               <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
-                Delivered to the ACM Jadavpur University Student Chapter on 30 January 2026, this session
-                traced how retrieval-augmented generation, autonomous agents, and hosted metadata layers
-                accelerate decision intelligence for utilities, healthcare, and smart cities.
+                Conducted as part of the Faculty Development Program at JIS University Kolkata, this
+                session explored AI agents from fundamentals through implementation. It covered agents,
+                tools, MCP, agent middleware, and multi-agent architectures, with a strong emphasis on
+                governance and practical learning through live Jupyter Notebook demonstrations.
               </Text>
             </Stack>
             <Box borderRadius="2xl" overflow="hidden">
-              <Image src={ACMJUImage} alt="ACM Jadavpur University session" objectFit="cover" w="full" />
+              <Image src={FDPJISImage} alt="Faculty Development Program session at JIS University Kolkata" objectFit="cover" w="full" />
             </Box>
             <Stack spacing={2}>
               <Text fontWeight="semibold" color={emphasis}>
-                What the session covered
+                Session highlights
               </Text>
               <List spacing={1.5}>
-                {lectureHighlights.map((item) => (
+                {jisFacultyDevelopmentDetails.map((item) => (
                   <ListItem key={item}>
                     <ListIcon as={CheckIcon} color={emphasis} />
                     <Text as="span" color={bodyColor}>
@@ -126,8 +144,70 @@ const SpeakingConferences = () => {
                 ))}
               </List>
               <Text color="gray.500" fontSize="sm">
-                Audience: ACM Jadavpur University Student Chapter members and invited researchers.
+                Inspired by Pamela Fox&apos;s &quot;Building your first agent in Python&quot; workshop from Microsoft.
               </Text>
+            </Stack>
+          </Stack>
+
+          <Stack
+            spacing={6}
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={borderColor}
+            bg={cardBg}
+            p={{ base: 5, md: 8 }}
+            boxShadow="0 18px 48px -30px rgba(15,118,201,0.65)"
+          >
+            <Stack spacing={3}>
+              <Tag
+                size="sm"
+                alignSelf="flex-start"
+                letterSpacing="0.3em"
+                textTransform="uppercase"
+                bg={emphasis}
+                color="white"
+                borderRadius="full"
+              >
+                Global Azure Kolkata
+              </Tag>
+              <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.2}>
+                Transforming Industrial Operations with an Industrial Knowledge Fabric
+              </Heading>
+              <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
+                Presented at Global Azure Kolkata, this session focused on how an Industrial Knowledge
+                Fabric can unify data from multiple sources to support faster, better operational
+                decisions. The session drew strong audience engagement, valuable follow-up discussions,
+                and a positive response from attendees and organizers alike.
+              </Text>
+            </Stack>
+            <Box borderRadius="2xl" overflow="hidden">
+              <Image src={GlobalAzureImage} alt="Global Azure Kolkata speaking session" objectFit="cover" w="full" />
+            </Box>
+            <Stack spacing={2}>
+              <Text fontWeight="semibold" color={emphasis}>
+                Session highlights
+              </Text>
+              <List spacing={1.5}>
+                {globalAzureDetails.map((item) => (
+                  <ListItem key={item}>
+                    <ListIcon as={CheckIcon} color={emphasis} />
+                    <Text as="span" color={bodyColor}>
+                      {item}
+                    </Text>
+                  </ListItem>
+                ))}
+              </List>
+              <Button
+                as={Link}
+                href="https://lnkd.in/gFg8qn_k"
+                target="_blank"
+                rel="noopener noreferrer"
+                rightIcon={<ArrowForwardIcon />}
+                alignSelf="flex-start"
+                colorScheme="brand"
+              >
+                Watch the talk and demo
+              </Button>
             </Stack>
           </Stack>
 
@@ -215,6 +295,59 @@ const SpeakingConferences = () => {
               >
                 View LinkedIn header page
               </Button>
+            </Stack>
+          </Stack>
+
+          <Stack
+            spacing={6}
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={borderColor}
+            bg={cardBg}
+            p={{ base: 5, md: 8 }}
+            boxShadow="0 18px 48px -30px rgba(15,118,201,0.65)"
+          >
+            <Stack spacing={3}>
+              <Tag
+                size="sm"
+                alignSelf="flex-start"
+                letterSpacing="0.3em"
+                textTransform="uppercase"
+                bg={emphasis}
+                color="white"
+                borderRadius="full"
+              >
+                Campus Lecture
+              </Tag>
+              <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.2}>
+                Advanced RAG, Agents &amp; Industry Use Cases
+              </Heading>
+              <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
+                Delivered to the ACM Jadavpur University Student Chapter on 30 January 2026, this session
+                traced how retrieval-augmented generation, autonomous agents, and hosted metadata layers
+                accelerate decision intelligence for utilities, healthcare, and smart cities.
+              </Text>
+            </Stack>
+            <Box borderRadius="2xl" overflow="hidden">
+              <Image src={ACMJUImage} alt="ACM Jadavpur University session" objectFit="cover" w="full" />
+            </Box>
+            <Stack spacing={2}>
+              <Text fontWeight="semibold" color={emphasis}>
+                What the session covered
+              </Text>
+              <List spacing={1.5}>
+                {lectureHighlights.map((item) => (
+                  <ListItem key={item}>
+                    <ListIcon as={CheckIcon} color={emphasis} />
+                    <Text as="span" color={bodyColor}>
+                      {item}
+                    </Text>
+                  </ListItem>
+                ))}
+              </List>
+              <Text color="gray.500" fontSize="sm">
+                Audience: ACM Jadavpur University Student Chapter members and invited researchers.
+              </Text>
             </Stack>
           </Stack>
         </SimpleGrid>
