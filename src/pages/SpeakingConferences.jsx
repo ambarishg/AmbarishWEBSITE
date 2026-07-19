@@ -146,6 +146,29 @@ const SpeakingConferences = () => {
               <Text color="gray.500" fontSize="sm">
                 Inspired by Pamela Fox&apos;s &quot;Building your first agent in Python&quot; workshop from Microsoft.
               </Text>
+              <Button
+                as={Link}
+                href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/learn-how-to-build-agents-and-workflows-in-python/4502144"
+                target="_blank"
+                rel="noopener noreferrer"
+                rightIcon={<ArrowForwardIcon />}
+                alignSelf="flex-start"
+                colorScheme="brand"
+              >
+                View workshop slides
+              </Button>
+              <Button
+                as={Link}
+                href="https://github.com/ambarishg/agent_framework_new"
+                target="_blank"
+                rel="noopener noreferrer"
+                rightIcon={<ArrowForwardIcon />}
+                alignSelf="flex-start"
+                variant="outline"
+                colorScheme="brand"
+              >
+                Open Jupyter notebooks
+              </Button>
             </Stack>
           </Stack>
 

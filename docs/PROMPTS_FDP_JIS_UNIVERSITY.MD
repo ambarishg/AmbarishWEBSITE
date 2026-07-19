@@ -16,6 +16,16 @@ The session was heavily inspired by the Building your first agent in Python work
 
 ------------
 
+
+
+Resources:
+Build your first agent in Python workshop by Pamela Fox 
+Check out the Slides in the link below:
+https://techcommunity.microsoft.com/blog/azuredevcommunityblog/learn-how-to-build-agents-and-workflows-in-python/4502144
+
+Jupyter Notebooks for the session can be found here:
+https://github.com/ambarishg/agent_framework_new
+
 Create the appropriate section in the site Speaking and Conferences for this entry.
 
 Arrange the entries in the Speaking and Conferences Page with the latest showing first
