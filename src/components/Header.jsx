@@ -38,8 +38,8 @@ const NAV_LINKS = [
 ];
 
 const Header = () => {
-  const bg = useColorModeValue('rgba(247, 241, 232, 0.76)', 'rgba(10, 20, 38, 0.82)');
-  const border = useColorModeValue('rgba(38, 61, 96, 0.14)', 'rgba(208, 220, 240, 0.14)');
+  const bg = useColorModeValue('rgba(244, 239, 230, 0.88)', 'rgba(10, 20, 38, 0.82)');
+  const border = useColorModeValue('rgba(38, 61, 96, 0.16)', 'rgba(208, 220, 240, 0.14)');
   const linkColor = useColorModeValue('rgba(38, 49, 69, 0.82)', 'rgba(226, 232, 240, 0.84)');
   const linkHover = useColorModeValue('brand.700', 'accent.200');
   const menuBg = useColorModeValue('rgba(255,250,242,0.98)', 'rgba(10,20,38,0.96)');
@@ -47,7 +47,7 @@ const Header = () => {
   const menuHover = useColorModeValue('rgba(38, 61, 96, 0.06)', 'rgba(201, 150, 31, 0.12)');
   const logoKicker = useColorModeValue('accent.600', 'accent.200');
   const logoColor = useColorModeValue('brand.800', 'white');
-  const navBg = useColorModeValue('rgba(255,255,255,0.46)', 'rgba(255,255,255,0.03)');
+  const navBg = useColorModeValue('rgba(255,252,247,0.72)', 'rgba(255,255,255,0.03)');
 
   return (
     <Box
@@ -96,15 +96,16 @@ const Header = () => {
         >
           <Stack spacing={0.5} align={{ base: 'center', md: 'flex-start' }}>
             <Text textStyle="eyebrow" color={logoKicker}>
-              Data & AI Leadership
+              Executive Portfolio
             </Text>
             <Link
               as={RouterLink}
               to={{ pathname: '/', hash: '#hero' }}
-              fontWeight="700"
-              fontSize={{ base: 'lg', md: 'xl' }}
+              fontFamily="heading"
+              fontWeight="600"
+              fontSize={{ base: '2rem', md: '2.25rem' }}
               color={logoColor}
-              letterSpacing="-0.02em"
+              letterSpacing="-0.03em"
             >
               {hero.name}
             </Link>
@@ -129,7 +130,7 @@ const Header = () => {
                     rightIcon={<ChevronDownIcon />}
                     variant="ghost"
                     fontSize="sm"
-                    fontWeight="medium"
+                    fontWeight="semibold"
                     color={linkColor}
                     px={{ base: 2, md: 3 }}
                     py={{ base: 2, md: 1 }}
@@ -182,7 +183,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   fontSize="sm"
-                  fontWeight="medium"
+                  fontWeight="semibold"
                   color={linkColor}
                   px={{ base: 2, md: 0 }}
                   py={{ base: 2, md: 1 }}
@@ -201,7 +202,7 @@ const Header = () => {
                   as={RouterLink}
                   to={item.to}
                   fontSize="sm"
-                  fontWeight="medium"
+                  fontWeight="semibold"
                   color={linkColor}
                   px={{ base: 2, md: 0 }}
                   py={{ base: 2, md: 1 }}

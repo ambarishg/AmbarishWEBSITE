@@ -21,18 +21,18 @@ import heroAvatar from '../../images/AG.jpg';
 
 const Hero = () => {
   const accent = useColorModeValue('brand.700', 'accent.200');
-  const badgeBg = useColorModeValue('rgba(201, 150, 31, 0.1)', 'rgba(201, 150, 31, 0.18)');
-  const badgeColor = useColorModeValue('accent.700', 'accent.100');
+  const badgeBg = useColorModeValue('rgba(201, 150, 31, 0.12)', 'rgba(201, 150, 31, 0.18)');
+  const badgeColor = useColorModeValue('accent.800', 'accent.100');
   const textColor = useColorModeValue('#4f5b6c', '#d0dae7');
-  const metricBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.12)');
-  const panelBg = useColorModeValue('rgba(255,250,242,0.72)', 'rgba(9,19,36,0.72)');
-  const panelBorder = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
+  const metricBorder = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.12)');
+  const panelBg = useColorModeValue('rgba(255,252,247,0.84)', 'rgba(9,19,36,0.72)');
+  const panelBorder = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.14)');
   const labelColor = useColorModeValue('rgba(79,91,108,0.82)', 'rgba(195,206,220,0.84)');
   const frameBg = useColorModeValue(
-    'linear-gradient(160deg, rgba(255,255,255,0.6), rgba(255,245,229,0.35))',
+    'linear-gradient(160deg, rgba(255,255,255,0.75), rgba(245,237,225,0.48))',
     'linear-gradient(160deg, rgba(255,255,255,0.06), rgba(201,150,31,0.08))'
   );
-  const heroSurface = useColorModeValue('rgba(255,250,244,0.58)', 'rgba(8,18,34,0.52)');
+  const heroSurface = useColorModeValue('rgba(255,250,244,0.68)', 'rgba(8,18,34,0.52)');
 
   return (
     <Box
@@ -57,24 +57,39 @@ const Hero = () => {
       <Container maxW="7xl" position="relative">
         <Grid templateColumns={{ base: '1fr', lg: '1.2fr 0.8fr' }} gap={{ base: 12, lg: 12 }} alignItems="center">
           <Stack spacing={6} align="flex-start">
-            <Tag
-              size="md"
-              bg={badgeBg}
-              color={badgeColor}
-              px={4}
-              py={1.5}
-              letterSpacing="0.28em"
-              textTransform="uppercase"
-              fontWeight="medium"
-            >
-              Data & AI Leadership
-            </Tag>
+            <HStack spacing={3} flexWrap="wrap">
+              <Tag
+                size="md"
+                bg={badgeBg}
+                color={badgeColor}
+                px={4}
+                py={1.5}
+                letterSpacing="0.28em"
+                textTransform="uppercase"
+                fontWeight="semibold"
+              >
+                Senior Executive Profile
+              </Tag>
+              <Tag
+                size="md"
+                bg={useColorModeValue('rgba(38,61,96,0.06)', 'rgba(255,255,255,0.06)')}
+                color={useColorModeValue('brand.800', 'gray.100')}
+                px={4}
+                py={1.5}
+                letterSpacing="0.18em"
+                textTransform="uppercase"
+                fontWeight="semibold"
+              >
+                27 Years Experience
+              </Tag>
+            </HStack>
             <Heading
               as="h1"
-              fontSize={{ base: '3.5rem', md: '5.2rem', lg: '6.1rem' }}
-              lineHeight={0.94}
+              fontSize={{ base: '4rem', md: '5.6rem', lg: '6.7rem' }}
+              lineHeight={0.88}
               color={useColorModeValue('brand.900', 'white')}
               maxW="5xl"
+              letterSpacing="-0.045em"
             >
               {hero.name}
             </Heading>
@@ -83,9 +98,10 @@ const Hero = () => {
                 as="h2"
                 fontFamily="body"
                 fontSize={{ base: 'lg', md: '2xl' }}
-                fontWeight="medium"
-                lineHeight={1.45}
-                letterSpacing="-0.02em"
+                fontWeight="600"
+                lineHeight={1.55}
+                letterSpacing="0.01em"
+                textTransform="uppercase"
                 color={useColorModeValue('rgba(38,49,69,0.84)', 'rgba(236,242,248,0.86)')}
                 maxW="4xl"
               >
@@ -93,7 +109,7 @@ const Hero = () => {
               </Heading>
             ) : null}
             {hero.valueStatement ? (
-              <Text fontSize={{ base: 'md', md: 'lg' }} color={textColor} maxW="36rem" lineHeight={1.9}>
+              <Text fontSize={{ base: 'md', md: 'lg' }} color={textColor} maxW="38rem" lineHeight={1.95}>
                 {hero.valueStatement}
               </Text>
             ) : null}
@@ -197,10 +213,10 @@ const Hero = () => {
                     </HStack>
                   </HStack>
                   <Heading size="lg" lineHeight={1.1}>
-                    Enterprise transformation leadership with technical judgment close to the work.
+                    Executive leadership with technical judgment that stays close to delivery reality.
                   </Heading>
                   <Text color="subtleText" lineHeight={1.85}>
-                    Work across utilities, energy, public-interest AI, and platform modernisation, with attention to both executive direction and delivery detail.
+                    Built across utilities, energy, public-interest AI, and platform modernisation, with a consistent ability to connect boardroom priorities to architecture, execution, and measurable outcomes.
                   </Text>
                 </Stack>
               </Stack>
@@ -225,10 +241,10 @@ const Hero = () => {
                   Quick Access
                 </Text>
                 <Heading size="md" lineHeight={1.2}>
-                  A portfolio positioned for enterprise trust.
+                  A portfolio shaped for enterprise trust.
                 </Heading>
                 <Text color="subtleText" lineHeight={1.85}>
-                  The site is organised to make it easy to review experience, case studies, and external references without unnecessary framing.
+                  Experience, case studies, and external recognition are presented with enough context for senior stakeholders to assess judgment, range, and delivery depth quickly.
                 </Text>
                 <Divider borderColor={panelBorder} />
                 <Stack spacing={3}>

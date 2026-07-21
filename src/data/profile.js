@@ -1,8 +1,8 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: 'Data & AI Leader for Utilities, Energy, and Enterprise Transformation',
+  title: 'Senior Data and AI Executive for Utilities, Energy, and Enterprise Transformation',
   valueStatement:
-    'Working across enterprise data, AI, and modernization programs with direct involvement in architecture, delivery, and decision-making.',
+    'Twenty-seven years of leadership across enterprise data, AI, and modernization programs, with direct involvement in architecture, delivery, and board-level decision-making.',
   location: '',
   professionalStatement:
     '',
@@ -17,7 +17,7 @@ export const hero = {
     'Work has been recognised by NASA, Microsoft, the Government of India, and Kaggle'
   ],
   authorityMetrics: [
-    { value: '26+', label: 'Years in data, platforms, and AI delivery' },
+    { value: '27', label: 'Years in data, platforms, and AI delivery' },
     { value: 'Global', label: 'Leadership across utilities and energy programs' },
     { value: 'C-Suite', label: 'Trusted advisor for transformation mandates' }
   ],
@@ -54,7 +54,7 @@ export const summary = {
     {
       title: 'Execution credibility built over 25+ years',
       description:
-        'Has spent more than 25 years turning strategic priorities into platforms, AI capabilities, and operating changes across large programs.'
+        'Has spent 27 years turning strategic priorities into platforms, AI capabilities, and operating changes across large programs.'
     }
   ],
   conclusion:

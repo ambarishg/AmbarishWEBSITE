@@ -36,10 +36,10 @@ const cards = [
 
 const ExecutivePresence = () => {
   const accent = useColorModeValue('brand.700', 'accent.200');
-  const borderColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
-  const softBg = useColorModeValue('rgba(255,250,244,0.72)', 'rgba(10,20,38,0.66)');
+  const borderColor = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.14)');
+  const softBg = useColorModeValue('rgba(255,252,247,0.8)', 'rgba(10,20,38,0.66)');
   const sideBg = useColorModeValue(
-    'linear-gradient(180deg, rgba(255,246,231,0.84), rgba(241,245,251,0.72))',
+    'linear-gradient(180deg, rgba(247,240,228,0.92), rgba(241,245,251,0.72))',
     'linear-gradient(180deg, rgba(26,37,59,0.84), rgba(14,23,39,0.74))'
   );
 
@@ -47,13 +47,14 @@ const ExecutivePresence = () => {
     <Box id="executive-presence" py={{ base: 14, md: 18 }}>
       <Container maxW="7xl">
         <SectionHeading
-          eyebrow="Selected Recognition"
-          title=""
+          eyebrow="External Validation"
+          title="Recognition that supports a senior operating record."
+          description="The signal here is not volume. It is relevance across enterprise leadership, public-interest work, and applied AI delivery."
         />
         <Grid templateColumns={{ base: '1fr', xl: '0.9fr 1.5fr' }} gap={{ base: 8, xl: 10 }} mt={10}>
           <Stack
             spacing={5}
-            borderRadius="3xl"
+            borderRadius="30px"
             border="1px solid"
             borderColor={borderColor}
             bg={sideBg}
@@ -74,14 +75,14 @@ const ExecutivePresence = () => {
               External recognition reinforces the operating record rather than defining it.
             </Heading>
             <Text color="subtleText" lineHeight={1.85}>
-              The portfolio spans enterprise transformation, public-interest research, applied AI, and community-facing delivery. The common thread is consistent technical work across different settings.
+              The portfolio spans enterprise transformation, public-interest research, applied AI, and community-facing delivery. The common thread is consistent judgment across materially different environments.
             </Text>
           </Stack>
           <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={6}>
             {cards.map((card, index) => (
               <Box
                 key={card.title}
-                borderRadius="3xl"
+                borderRadius="30px"
                 border="1px solid"
                 borderColor={borderColor}
                 bg={softBg}

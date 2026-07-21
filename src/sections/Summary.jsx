@@ -5,10 +5,10 @@ import { summary } from '../data/profile.js';
 const Summary = () => {
   const { cards, conclusion } = summary;
   const accent = useColorModeValue('brand.700', 'accent.200');
-  const borderColor = useColorModeValue('rgba(38,61,96,0.12)', 'rgba(208,220,240,0.14)');
-  const panelBg = useColorModeValue('rgba(255,250,244,0.7)', 'rgba(10,20,38,0.66)');
+  const borderColor = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.14)');
+  const panelBg = useColorModeValue('rgba(255,252,247,0.82)', 'rgba(10,20,38,0.66)');
   const featureBg = useColorModeValue(
-    'linear-gradient(180deg, rgba(255,246,231,0.86), rgba(241,245,251,0.72))',
+    'linear-gradient(180deg, rgba(247,240,228,0.92), rgba(241,245,251,0.74))',
     'linear-gradient(180deg, rgba(26,37,59,0.84), rgba(14,23,39,0.74))'
   );
 
@@ -16,13 +16,13 @@ const Summary = () => {
     <Box id="about" py={{ base: 16, md: 20 }}>
       <Container maxW="7xl">
         <SectionHeading
-          eyebrow="Working Style"
-          title="A direct view of how the work is approached."
-          description="A short summary of the way large, long-running transformation work is handled."
+          eyebrow="Leadership Approach"
+          title="Operating style shaped by long-horizon transformation work."
+          description="A concise view of how enterprise mandates are translated into architecture, execution, and durable operating change."
         />
         <Grid templateColumns={{ base: '1fr', lg: '1.1fr 0.9fr' }} gap={{ base: 8, lg: 10 }} mt={12}>
           <Box
-            borderRadius="3xl"
+            borderRadius="30px"
             border="1px solid"
             borderColor={borderColor}
             bg={panelBg}
@@ -61,7 +61,7 @@ const Summary = () => {
           </Box>
           <Stack
             spacing={5}
-            borderRadius="3xl"
+            borderRadius="30px"
             border="1px solid"
             borderColor={borderColor}
             bg={featureBg}
@@ -76,6 +76,9 @@ const Summary = () => {
                 {conclusion}
               </Text>
             ) : null}
+            <Text color="subtleText" lineHeight={1.9}>
+              The emphasis is on measured decision-making, executive alignment, and technical credibility that remains visible all the way through delivery.
+            </Text>
             <Link
               href="https://science.nasa.gov/people/ambarish-ganguly/"
               color={accent}

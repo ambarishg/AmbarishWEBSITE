@@ -1,14 +1,10 @@
 import { Divider, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 
 const SectionHeading = ({ eyebrow, title, description }) => {
-  const headingGradient = useColorModeValue(
-    'linear(to-r, brand.900, brand.600)',
-    'linear(to-r, white, accent.200)'
-  );
   const divider = useColorModeValue('rgba(38,61,96,0.18)', 'rgba(208,220,240,0.14)');
 
   return (
-    <Stack spacing={4} align="center" textAlign="center">
+    <Stack spacing={4} align="flex-start" textAlign="left">
       {eyebrow ? (
         <Text textStyle="eyebrow" color={useColorModeValue('accent.700', 'accent.200')}>
           {eyebrow}
@@ -16,19 +12,18 @@ const SectionHeading = ({ eyebrow, title, description }) => {
       ) : null}
       <Heading
         fontSize={{ base: '2.5rem', md: '4rem' }}
-        lineHeight={1}
+        lineHeight={0.94}
         maxW="4xl"
-        bgGradient={headingGradient}
-        backgroundClip="text"
+        color={useColorModeValue('brand.900', 'white')}
       >
         {title}
       </Heading>
       {description ? (
-        <Text color="subtleText" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" lineHeight={1.85}>
+        <Text color="subtleText" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" lineHeight={1.9}>
           {description}
         </Text>
       ) : null}
-      <Divider borderColor={divider} w={{ base: '60%', md: '40%' }} />
+      <Divider borderColor={divider} w={{ base: '10rem', md: '12rem' }} />
     </Stack>
   );
 };

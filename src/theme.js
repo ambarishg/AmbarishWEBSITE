@@ -6,8 +6,8 @@ const theme = extendTheme({
     useSystemColorMode: false
   },
   fonts: {
-    heading: `'Manrope', ${base.fonts?.heading}`,
-    body: `'Manrope', ${base.fonts?.body}`
+    heading: `'Source Serif 4', ${base.fonts?.heading}`,
+    body: `'IBM Plex Sans', ${base.fonts?.body}`
   },
   colors: {
     brand: {
@@ -38,29 +38,29 @@ const theme = extendTheme({
   semanticTokens: {
     colors: {
       text: { default: 'gray.800', _dark: 'gray.100' },
-      subtleText: { default: '#4f5b6c', _dark: '#c3cedc' },
+      subtleText: { default: '#52606f', _dark: '#c3cedc' },
       caption: { default: 'gray.500', _dark: 'gray.500' },
-      surface: { default: 'rgba(255,252,247,0.82)', _dark: 'rgba(10,20,38,0.86)' },
-      mutedSurface: { default: 'rgba(255,248,239,0.68)', _dark: 'rgba(17, 31, 56, 0.72)' },
-      outline: { default: 'rgba(32, 55, 94, 0.1)', _dark: 'rgba(173, 192, 225, 0.16)' },
+      surface: { default: 'rgba(255,252,248,0.88)', _dark: 'rgba(10,20,38,0.86)' },
+      mutedSurface: { default: 'rgba(247,241,232,0.78)', _dark: 'rgba(17, 31, 56, 0.72)' },
+      outline: { default: 'rgba(32, 55, 94, 0.14)', _dark: 'rgba(173, 192, 225, 0.16)' },
       headingAccent: { default: 'brand.700', _dark: 'accent.200' }
     }
   },
   shadows: {
-    elevated: '0 28px 70px -34px rgba(17, 33, 61, 0.35)',
-    floating: '0 22px 45px -26px rgba(17, 33, 61, 0.28)'
+    elevated: '0 36px 80px -44px rgba(17, 33, 61, 0.26)',
+    floating: '0 28px 52px -34px rgba(17, 33, 61, 0.2)'
   },
   layerStyles: {
     card: {
-      borderRadius: '3xl',
+      borderRadius: '28px',
       borderWidth: '1px',
       borderColor: 'outline',
-      backdropFilter: 'blur(16px)',
+      backdropFilter: 'blur(18px)',
       bg: 'surface',
       boxShadow: 'elevated'
     },
     subtleCard: {
-      borderRadius: '2xl',
+      borderRadius: '24px',
       borderWidth: '1px',
       borderColor: 'outline',
       bg: 'mutedSurface',
@@ -83,9 +83,11 @@ const theme = extendTheme({
       body: {
         bg:
           props.colorMode === 'dark'
-            ? 'radial-gradient(circle at top left, rgba(77,111,168,0.28), transparent 28%), radial-gradient(circle at top right, rgba(201,150,31,0.14), transparent 24%), linear-gradient(180deg, #08101e 0%, #0e1a30 55%, #111c2f 100%)'
-            : 'radial-gradient(circle at top left, rgba(69,107,167,0.14), transparent 28%), radial-gradient(circle at top right, rgba(201,150,31,0.12), transparent 22%), linear-gradient(180deg, #f3efe7 0%, #f7f1e8 45%, #eef3f8 100%)',
+            ? 'radial-gradient(circle at top left, rgba(77,111,168,0.22), transparent 28%), radial-gradient(circle at top right, rgba(201,150,31,0.1), transparent 24%), linear-gradient(180deg, #08101e 0%, #0e1a30 55%, #111c2f 100%)'
+            : 'linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.35)), linear-gradient(90deg, rgba(32,55,94,0.04) 1px, transparent 1px), linear-gradient(rgba(32,55,94,0.04) 1px, transparent 1px), linear-gradient(180deg, #f4efe6 0%, #f6f1e8 44%, #edf2f7 100%)',
         color: props.colorMode === 'dark' ? 'gray.100' : 'gray.800',
+        backgroundSize:
+          props.colorMode === 'dark' ? 'auto' : 'auto, 28px 28px, 28px 28px, auto',
         transitionProperty: 'background-color, background-image, color',
         transitionDuration: '0.3s'
       },
@@ -108,7 +110,8 @@ const theme = extendTheme({
       baseStyle: {
         borderRadius: 'full',
         fontWeight: 'semibold',
-        letterSpacing: '0.01em'
+        letterSpacing: '0.03em',
+        textTransform: 'uppercase'
       },
       variants: {
         solid: (props) => ({
@@ -148,16 +151,16 @@ const theme = extendTheme({
     Heading: {
       baseStyle: {
         color: 'text',
-        fontWeight: '700',
-        letterSpacing: '-0.035em',
-        lineHeight: '1.05'
+        fontWeight: '600',
+        letterSpacing: '-0.02em',
+        lineHeight: '1.02'
       }
     },
     Text: {
       baseStyle: {
         color: 'subtleText',
         fontSize: '1rem',
-        lineHeight: '1.8'
+        lineHeight: '1.85'
       }
     },
     Link: {
