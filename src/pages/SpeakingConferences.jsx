@@ -111,6 +111,74 @@ const SpeakingConferences = () => {
                 color="white"
                 borderRadius="full"
               >
+                Decoding Computer Vision
+              </Tag>
+              <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.2}>
+                Decoding Computer Vision: From Pixels to Diagnostic Intelligence
+              </Heading>
+              <Text fontSize="sm" color="gray.400">
+                July 30 2026
+              </Text>
+              <Text color={bodyColor} fontSize="md" lineHeight={1.7}>
+                A concise technical session on CNN fundamentals, the CNN pipeline, and applications to diagnostic AI in healthcare.
+              </Text>
+            </Stack>
+
+            <Stack spacing={2}>
+              <Text fontWeight="semibold" color={emphasis}>
+                Session overview
+              </Text>
+              <List spacing={1.5}>
+                <ListItem>
+                  <ListIcon as={CheckIcon} color={emphasis} />
+                  <Text as="span" color={bodyColor} fontWeight="semibold">1. Through the Machine's Eye:</Text>
+                  <Text as="div" color={bodyColor}>Explored how convolutional filters, feature maps, pooling, and hierarchical representations transform raw pixels into meaningful features — building intuition for why CNNs power modern vision.</Text>
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckIcon} color={emphasis} />
+                  <Text as="span" color={bodyColor} fontWeight="semibold">2. The CNN Assembly Line:</Text>
+                  <Text as="div" color={bodyColor}>Walked through the full CNN pipeline — from input and convolution to activations, pooling, and final prediction — visualizing each stage as an assembly line of learned features.</Text>
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={CheckIcon} color={emphasis} />
+                  <Text as="span" color={bodyColor} fontWeight="semibold">3. Building Diagnostic AI:</Text>
+                  <Text as="div" color={bodyColor}>Connected CNN fundamentals to medical imaging applications, discussing detection, classification, end-to-end pipelines, and the importance of explainability and trustworthy AI in healthcare.</Text>
+                </ListItem>
+              </List>
+
+              <Text fontWeight="semibold" color={emphasis} mt={3}>
+                Key takeaways
+              </Text>
+              <List spacing={1.2}>
+                <ListItem><ListIcon as={CheckIcon} color={emphasis} /><Text as="span" color={bodyColor}>Understand CNNs from first principles rather than as black boxes.</Text></ListItem>
+                <ListItem><ListIcon as={CheckIcon} color={emphasis} /><Text as="span" color={bodyColor}>Hierarchical feature extraction enables robust image recognition.</Text></ListItem>
+                <ListItem><ListIcon as={CheckIcon} color={emphasis} /><Text as="span" color={bodyColor}>Appreciate end-to-end deep learning workflows for vision.</Text></ListItem>
+                <ListItem><ListIcon as={CheckIcon} color={emphasis} /><Text as="span" color={bodyColor}>Practical translation of techniques to diagnostic AI with emphasis on explainability.</Text></ListItem>
+              </List>
+
+              
+            </Stack>
+          </Stack>
+
+          <Stack
+            spacing={6}
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={borderColor}
+            bg={cardBg}
+            p={{ base: 5, md: 8 }}
+            boxShadow="0 18px 48px -30px rgba(15,118,201,0.65)"
+          >
+            <Stack spacing={3}>
+              <Tag
+                size="sm"
+                alignSelf="flex-start"
+                letterSpacing="0.3em"
+                textTransform="uppercase"
+                bg={emphasis}
+                color="white"
+                borderRadius="full"
+              >
                 JIS University FDP
               </Tag>
               <Heading size={{ base: 'lg', md: 'xl' }} lineHeight={1.2}>
