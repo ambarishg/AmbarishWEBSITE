@@ -156,7 +156,25 @@ const SpeakingConferences = () => {
                 <ListItem><ListIcon as={CheckIcon} color={emphasis} /><Text as="span" color={bodyColor}>Practical translation of techniques to diagnostic AI with emphasis on explainability.</Text></ListItem>
               </List>
 
-              
+              <Button
+                as={Link}
+                href="https://github.com/ambarishg/FDP-30JUL-COMPUTERVISION"
+                target="_blank"
+                rel="noopener noreferrer"
+                rightIcon={<ArrowForwardIcon />}
+                alignSelf="flex-start"
+                colorScheme="brand"
+                size="lg"
+                fontWeight="bold"
+                py={6}
+                px={8}
+                mt={4}
+                bg="brand.500"
+                _hover={{ bg: 'brand.600', transform: 'translateY(-2px)', boxShadow: '0 8px 16px rgba(59, 130, 246, 0.4)' }}
+                transition="all 0.3s ease"
+              >
+                Explore Session Resources
+              </Button>
             </Stack>
           </Stack>
 
