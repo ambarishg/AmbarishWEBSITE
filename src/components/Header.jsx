@@ -13,41 +13,112 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
-import { ChevronDownIcon } from '@chakra-ui/icons';
 import { hero } from '../data/profile.js';
 
-const NAV_LINKS = [
-  { label: 'About', to: { pathname: '/', hash: '#about' } },
+const SECTION_LINKS = [
   { label: 'Public Service', to: { pathname: '/', hash: '#public-service' } },
   { label: 'NASA', to: { pathname: '/', hash: '#nasa' } },
   { label: 'Bees on Azure', to: { pathname: '/', hash: '#bees' } },
+  { label: 'Credentials', to: { pathname: '/', hash: '#credentials' } }
+];
+
+const CASE_STUDY_LINKS = [
+  { label: 'All case studies', to: '/highlights' },
+  { label: 'Azure', to: '/highlights/microsoft-azure' },
+  { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
+];
+
+const PRIMARY_LINKS = [
+  { label: 'About', to: { pathname: '/', hash: '#about' } },
   { label: 'Experience', to: '/experience' },
-  {
-    label: 'Case Studies',
-    to: '/highlights',
-    submenu: [
-      { label: 'Azure', to: '/highlights/microsoft-azure' },
-      { label: 'Kaggle', to: '/highlights/kaggle-achievements' }
-    ]
-  },
   { label: 'Speaking & Conferences', to: '/speaking-conferences' },
   { label: 'YouTube', to: '/ag-academy' },
-  { label: 'Credentials', to: { pathname: '/', hash: '#credentials' } },
   { label: 'Blogs', href: 'https://blog.ambarishganguly.com' }
 ];
 
 const Header = () => {
-  const bg = useColorModeValue('rgba(244, 239, 230, 0.88)', 'rgba(10, 20, 38, 0.82)');
-  const border = useColorModeValue('rgba(38, 61, 96, 0.16)', 'rgba(208, 220, 240, 0.14)');
-  const linkColor = useColorModeValue('rgba(38, 49, 69, 0.82)', 'rgba(226, 232, 240, 0.84)');
+  const bg = useColorModeValue('rgba(244, 239, 230, 0.94)', 'rgba(10, 20, 38, 0.92)');
+  const border = useColorModeValue('rgba(38, 61, 96, 0.14)', 'rgba(208, 220, 240, 0.14)');
+  const linkColor = useColorModeValue('rgba(38, 49, 69, 0.86)', 'rgba(226, 232, 240, 0.9)');
   const linkHover = useColorModeValue('brand.700', 'accent.200');
-  const menuBg = useColorModeValue('rgba(255,250,242,0.98)', 'rgba(10,20,38,0.96)');
-  const menuBorder = useColorModeValue('rgba(38,61,96,0.14)', 'rgba(208,220,240,0.14)');
-  const menuHover = useColorModeValue('rgba(38, 61, 96, 0.06)', 'rgba(201, 150, 31, 0.12)');
+  const menuBg = useColorModeValue('white', 'gray.800');
+  const menuHover = useColorModeValue('gray.100', 'whiteAlpha.100');
   const logoKicker = useColorModeValue('accent.600', 'accent.200');
   const logoColor = useColorModeValue('brand.800', 'white');
-  const navBg = useColorModeValue('rgba(255,252,247,0.72)', 'rgba(255,255,255,0.03)');
+
+  const renderLink = (item, options = {}) => {
+    const props = item.href
+      ? {
+          as: options.menuItem ? Link : undefined,
+          href: item.href,
+          target: '_blank',
+          rel: 'noopener noreferrer'
+        }
+      : {
+          as: RouterLink,
+          to: item.to
+        };
+
+    if (options.menuItem) {
+      return (
+        <MenuItem
+          key={item.label}
+          color={linkColor}
+          fontSize="sm"
+          textTransform="none"
+          _hover={{ bg: menuHover, color: linkHover, textDecoration: 'none' }}
+          {...props}
+        >
+          {item.label}
+        </MenuItem>
+      );
+    }
+
+    return (
+      <Link
+        key={item.label}
+        fontSize="sm"
+        fontWeight="semibold"
+        textTransform="none"
+        color={linkColor}
+        px={2}
+        py={2}
+        borderRadius="md"
+        whiteSpace="nowrap"
+        _hover={{ color: linkHover, bg: menuHover, textDecoration: 'none' }}
+        _focusVisible={{ outline: '2px solid', outlineColor: linkHover, outlineOffset: '2px' }}
+        {...props}
+      >
+        {item.label}
+      </Link>
+    );
+  };
+
+  const renderDropdown = (label, items) => (
+    <Menu key={label} placement="bottom-start">
+      <MenuButton
+        as={Button}
+        variant="ghost"
+        rightIcon={<ChevronDownIcon />}
+        fontSize="sm"
+        fontWeight="semibold"
+        textTransform="none"
+        color={linkColor}
+        px={2}
+        borderRadius="md"
+        _hover={{ color: linkHover, bg: menuHover }}
+        _expanded={{ color: linkHover, bg: menuHover }}
+        _focusVisible={{ outline: '2px solid', outlineColor: linkHover, outlineOffset: '2px' }}
+      >
+        {label}
+      </MenuButton>
+      <MenuList bg={menuBg} borderColor={border} boxShadow="lg" py={2}>
+        {items.map((item) => renderLink(item, { menuItem: true }))}
+      </MenuList>
+    </Menu>
+  );
 
   return (
     <Box
@@ -58,8 +129,7 @@ const Header = () => {
       bg={bg}
       borderBottom="1px solid"
       borderColor={border}
-      backdropFilter="blur(18px)"
-      boxShadow="0 18px 50px -32px rgba(15, 23, 42, 0.5)"
+      backdropFilter="blur(16px)"
     >
       <Link
         href="#main-content"
@@ -70,157 +140,93 @@ const Header = () => {
         color="white"
         px={4}
         py={2}
-        borderRadius="full"
+        borderRadius="md"
         fontWeight="semibold"
-        _focus={{
-          left: '16px',
-          top: '16px',
-          outline: '2px solid',
-          outlineColor: 'brand.500'
-        }}
-        _focusVisible={{
-          left: '16px',
-          top: '16px'
-        }}
+        _focus={{ left: '16px', top: '16px', zIndex: 30 }}
+        _focusVisible={{ outline: '2px solid', outlineColor: 'brand.500' }}
       >
         Skip to main content
       </Link>
       <Container maxW="7xl">
-        <Flex
-          align="center"
-          justify="space-between"
-          py={4}
-          flexDirection={{ base: 'column', md: 'row' }}
-          gap={{ base: 3, md: 0 }}
-          px={{ base: 0, md: 2 }}
-        >
-          <Stack spacing={0.5} align={{ base: 'center', md: 'flex-start' }}>
-            <Text textStyle="eyebrow" color={logoKicker}>
+        <Flex align="center" justify="space-between" py={{ base: 3, md: 4 }} gap={4}>
+          <Stack spacing={0} align="flex-start" flexShrink={0}>
+            <Text textStyle="eyebrow" color={logoKicker} fontSize="xs">
               Executive Portfolio
             </Text>
             <Link
               as={RouterLink}
               to={{ pathname: '/', hash: '#hero' }}
               fontFamily="heading"
-              fontWeight="600"
-              fontSize={{ base: '2rem', md: '2.25rem' }}
+              fontWeight="700"
+              fontSize={{ base: '1.35rem', md: '1.65rem' }}
+              lineHeight="1.2"
               color={logoColor}
               letterSpacing="-0.03em"
+              _hover={{ textDecoration: 'none', color: linkHover }}
             >
               {hero.name}
             </Link>
           </Stack>
-          <HStack
-            spacing={{ base: 2, md: 4 }}
-            flexWrap="wrap"
-            justify="center"
-            bg={navBg}
-            border="1px solid"
-            borderColor={border}
-            borderRadius="full"
-            px={{ base: 3, md: 4 }}
-            py={{ base: 2, md: 2.5 }}
-            backdropFilter="blur(8px)"
-          >
-            {NAV_LINKS.map((item) =>
-              item.submenu ? (
-                <Menu key={item.label} placement="bottom-start">
-                  <MenuButton
-                    as={Button}
-                    rightIcon={<ChevronDownIcon />}
-                    variant="ghost"
-                    fontSize="sm"
-                    fontWeight="semibold"
-                    color={linkColor}
-                    px={{ base: 2, md: 3 }}
-                    py={{ base: 2, md: 1 }}
-                    borderRadius="full"
-                    _hover={{
-                      color: linkHover,
-                      bg: menuHover
-                    }}
-                    _active={{
-                      bg: menuHover
-                    }}
-                    _expanded={{
-                      color: linkHover,
-                      bg: menuHover
-                    }}
-                  >
-                    {item.label}
-                  </MenuButton>
-                  <MenuList bg={menuBg} borderColor={menuBorder} py={2}>
-                    {item.submenu.map((subItem) => {
-                      const linkProps = subItem.href
-                        ? {
-                            as: Link,
-                            href: subItem.href,
-                            target: subItem.target || '_blank',
-                            rel: subItem.rel || 'noopener noreferrer'
-                          }
-                        : {
-                            as: RouterLink,
-                            to: subItem.to
-                          };
-                      return (
-                        <MenuItem
-                          key={subItem.to || subItem.href}
-                          fontSize="sm"
-                          color={linkColor}
-                          _hover={{ bg: menuHover, color: linkHover, textDecoration: 'none' }}
-                          {...linkProps}
-                        >
-                          {subItem.label}
-                        </MenuItem>
-                      );
-                    })}
-                  </MenuList>
-                </Menu>
-              ) : item.href ? (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  fontSize="sm"
-                  fontWeight="semibold"
-                  color={linkColor}
-                  px={{ base: 2, md: 0 }}
-                  py={{ base: 2, md: 1 }}
-                  borderRadius="full"
-                  _hover={{
-                    color: linkHover,
-                    textDecoration: 'none',
-                    bg: menuHover
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <Link
-                  key={item.label}
-                  as={RouterLink}
-                  to={item.to}
-                  fontSize="sm"
-                  fontWeight="semibold"
-                  color={linkColor}
-                  px={{ base: 2, md: 0 }}
-                  py={{ base: 2, md: 1 }}
-                  borderRadius="full"
-                  _hover={{
-                    color: linkHover,
-                    textDecoration: 'none',
-                    bg: menuHover
-                  }}
-                >
-                  {item.label}
-                </Link>
-              )
-            )}
-            <Button as={Link} href={`mailto:${hero.contact.email}`} size="sm">
+
+          <HStack spacing={1} display={{ base: 'none', xl: 'flex' }} align="center">
+            {renderLink(PRIMARY_LINKS[0])}
+            {renderDropdown('Highlights', SECTION_LINKS)}
+            {renderLink(PRIMARY_LINKS[1])}
+            {renderDropdown('Case Studies', CASE_STUDY_LINKS)}
+            {renderLink(PRIMARY_LINKS[2])}
+            {renderLink(PRIMARY_LINKS[3])}
+            {renderLink(PRIMARY_LINKS[4])}
+            <Button
+              as={Link}
+              href={`mailto:${hero.contact.email}`}
+              size="sm"
+              ml={2}
+              flexShrink={0}
+              textTransform="none"
+            >
               Contact
             </Button>
           </HStack>
+
+          <Box display={{ base: 'block', xl: 'none' }}>
+            <Menu placement="bottom-end">
+              <MenuButton
+                as={Button}
+                variant="outline"
+                size="sm"
+                leftIcon={<HamburgerIcon />}
+                aria-label="Open navigation menu"
+                textTransform="none"
+              >
+                Menu
+              </MenuButton>
+              <MenuList
+                bg={menuBg}
+                borderColor={border}
+                boxShadow="lg"
+                maxH="min(70vh, 32rem)"
+                overflowY="auto"
+                minW="15rem"
+                py={2}
+              >
+                {PRIMARY_LINKS.slice(0, 2).map((item) => renderLink(item, { menuItem: true }))}
+                {SECTION_LINKS.map((item) => renderLink(item, { menuItem: true }))}
+                {CASE_STUDY_LINKS.map((item) => renderLink(item, { menuItem: true }))}
+                {PRIMARY_LINKS.slice(2).map((item) => renderLink(item, { menuItem: true }))}
+                <MenuItem
+                  as={Link}
+                  href={`mailto:${hero.contact.email}`}
+                  color={linkColor}
+                  fontSize="sm"
+                  fontWeight="semibold"
+                  textTransform="none"
+                  _hover={{ bg: menuHover, color: linkHover, textDecoration: 'none' }}
+                >
+                  Contact
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Box>
         </Flex>
       </Container>
     </Box>

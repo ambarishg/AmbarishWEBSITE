@@ -1,6 +1,6 @@
 export const hero = {
   name: 'Ambarish Ganguly',
-  title: 'Senior Data and AI Executive for Utilities, Energy, and Enterprise Transformation',
+  title: 'Senior Data and AI Executive for Enterprise Transformation',
   valueStatement:
     'Twenty-seven years of leadership across enterprise data, AI, and modernization programs, with direct involvement in architecture, delivery, and board-level decision-making.',
   location: '',
@@ -404,7 +404,6 @@ export const blogs = [
     actionLabel: 'Read on Hashnode'
   }
 ];
-
 
 
 

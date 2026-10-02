@@ -1,4 +1,4 @@
-import { extendTheme, theme as base } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   config: {
@@ -6,8 +6,8 @@ const theme = extendTheme({
     useSystemColorMode: false
   },
   fonts: {
-    heading: `'Source Serif 4', ${base.fonts?.heading}`,
-    body: `'IBM Plex Sans', ${base.fonts?.body}`
+    heading: "'Lato', sans-serif",
+    body: "'Lato', sans-serif"
   },
   colors: {
     brand: {
