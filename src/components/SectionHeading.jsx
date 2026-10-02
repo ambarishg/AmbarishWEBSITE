@@ -11,19 +11,19 @@ const SectionHeading = ({ eyebrow, title, description }) => {
         </Text>
       ) : null}
       <Heading
-        fontSize={{ base: '2.5rem', md: '4rem' }}
-        lineHeight={0.94}
+        fontSize={{ base: '2.25rem', md: '3.25rem' }}
+        lineHeight={1.08}
         maxW="4xl"
         color={useColorModeValue('brand.900', 'white')}
       >
         {title}
       </Heading>
       {description ? (
-        <Text color="subtleText" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" lineHeight={1.9}>
+        <Text color="subtleText" fontSize={{ base: 'md', md: 'lg' }} maxW="2xl" lineHeight={1.75}>
           {description}
         </Text>
       ) : null}
-      <Divider borderColor={divider} w={{ base: '10rem', md: '12rem' }} />
+      <Divider borderColor={divider} w={{ base: '4rem', md: '5rem' }} />
     </Stack>
   );
 };
